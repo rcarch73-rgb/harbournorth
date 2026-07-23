@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#17365d" />
+  <title>Harbour North 2.0 Alpha 1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>Harbour North</h1>
+      <p>2.0 Alpha 1 · Controlled rebuild</p>
+    </div>
+    <span id="saveStatus" class="save-status">Ready</span>
+  </header>
+
+  <nav class="tabs" aria-label="Main navigation">
+    <button class="tab active" data-page="setup">Setup</button>
+    <button class="tab" data-page="dashboard">Dashboard</button>
+    <button class="tab" data-page="backup">Backup</button>
+  </nav>
+
+  <main>
+    <section id="setup" class="page active">
+      <div class="page-intro">
+        <h2>Household setup</h2>
+        <p>Start with the essentials. Every field saves automatically.</p>
+      </div>
+
+      <form id="profileForm" class="card form-grid" novalidate>
+        <label>
+          Your name
+          <input id="primaryName" name="primaryName" autocomplete="name" />
+        </label>
+        <label>
+          Your current age
+          <input id="primaryAge" name="primaryAge" type="number" min="18" max="100" inputmode="numeric" />
+        </label>
+        <label>
+          Your planned retirement age
+          <input id="primaryRetirementAge" name="primaryRetirementAge" type="number" min="40" max="80" inputmode="numeric" />
+        </label>
+        <label>
+          Partner name
+          <input id="partnerName" name="partnerName" autocomplete="name" />
+        </label>
+        <label>
+          Partner current age
+          <input id="partnerAge" name="partnerAge" type="number" min="18" max="100" inputmode="numeric" />
+        </label>
+        <label>
+          Partner planned retirement age
+          <input id="partnerRetirementAge" name="partnerRetirementAge" type="number" min="40" max="80" inputmode="numeric" />
+        </label>
+      </form>
+
+      <div class="card">
+        <h3>Current financial snapshot</h3>
+        <div class="form-grid">
+          <label>Cash and savings<input id="cash" type="number" min="0" step="100" inputmode="decimal" /></label>
+          <label>RRSP / RRIF<input id="rrsp" type="number" min="0" step="100" inputmode="decimal" /></label>
+          <label>TFSA<input id="tfsa" type="number" min="0" step="100" inputmode="decimal" /></label>
+          <label>Other investments<input id="nonRegistered" type="number" min="0" step="100" inputmode="decimal" /></label>
+          <label>Home and property<input id="property" type="number" min="0" step="100" inputmode="decimal" /></label>
+          <label>Total debt<input id="debt" type="number" min="0" step="100" inputmode="decimal" /></label>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="page">
+      <div class="page-intro">
+        <h2>Your starting point</h2>
+        <p>This first dashboard proves the new data model, calculations and storage are working together.</p>
+      </div>
+      <div class="metric-grid">
+        <article class="metric-card"><span>Total assets</span><strong id="totalAssets">$0</strong></article>
+        <article class="metric-card"><span>Total debt</span><strong id="totalDebt">$0</strong></article>
+        <article class="metric-card"><span>Net worth</span><strong id="netWorth">$0</strong></article>
+        <article class="metric-card"><span>Years to retirement</span><strong id="yearsToRetirement">—</strong></article>
+      </div>
+      <div class="card">
+        <h3>Foundation health</h3>
+        <div id="healthChecks" class="health-list"></div>
+      </div>
+    </section>
+
+    <section id="backup" class="page">
+      <div class="page-intro">
+        <h2>Backup and recovery</h2>
+        <p>Export your complete plan, restore it safely, or reset this Alpha build.</p>
+      </div>
+
+      <div class="card action-grid">
+        <button id="exportBtn">Export backup</button>
+        <label class="file-button">Import backup<input id="importFile" type="file" accept="application/json,.json" /></label>
+        <button id="resetBtn" class="danger">Reset Alpha data</button>
+      </div>
+
+      <div class="card">
+        <h3>Backup health test</h3>
+        <p class="muted">This simulates an export and restore in memory without replacing your real data.</p>
+        <button id="testBackupBtn">Run backup health test</button>
+        <div id="backupTestResult" class="test-result">Not yet run.</div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
