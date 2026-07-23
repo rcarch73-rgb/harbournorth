@@ -1,240 +1,38 @@
 'use strict';
-
-const APP_VERSION = '2.0.0-alpha.1';
-const SCHEMA_VERSION = 1;
-const STORAGE_KEY = 'harbourNorth2.plan';
-
-const defaultState = () => ({
-  meta: {
-    appVersion: APP_VERSION,
-    schemaVersion: SCHEMA_VERSION,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
-  },
-  household: {
-    primaryName: '', primaryAge: null, primaryRetirementAge: null,
-    partnerName: '', partnerAge: null, partnerRetirementAge: null
-  },
-  finances: {
-    cash: 0, rrsp: 0, tfsa: 0, nonRegistered: 0, property: 0, debt: 0
-  }
-});
-
-let state = loadState();
-let saveTimer = null;
-
-function isPlainObject(value) {
-  return value !== null && typeof value === 'object' && !Array.isArray(value);
-}
-
-function normalizeNumber(value) {
-  const number = Number(value);
-  return Number.isFinite(number) && number >= 0 ? number : 0;
-}
-
-function validateAndNormalize(candidate) {
-  if (!isPlainObject(candidate)) throw new Error('Backup does not contain a valid Harbour North plan.');
-  const clean = defaultState();
-  const household = isPlainObject(candidate.household) ? candidate.household : {};
-  const finances = isPlainObject(candidate.finances) ? candidate.finances : {};
-
-  clean.meta.createdAt = candidate.meta?.createdAt || clean.meta.createdAt;
-  clean.meta.updatedAt = new Date().toISOString();
-  clean.household.primaryName = String(household.primaryName || '').slice(0, 80);
-  clean.household.primaryAge = household.primaryAge === null || household.primaryAge === '' ? null : normalizeNumber(household.primaryAge);
-  clean.household.primaryRetirementAge = household.primaryRetirementAge === null || household.primaryRetirementAge === '' ? null : normalizeNumber(household.primaryRetirementAge);
-  clean.household.partnerName = String(household.partnerName || '').slice(0, 80);
-  clean.household.partnerAge = household.partnerAge === null || household.partnerAge === '' ? null : normalizeNumber(household.partnerAge);
-  clean.household.partnerRetirementAge = household.partnerRetirementAge === null || household.partnerRetirementAge === '' ? null : normalizeNumber(household.partnerRetirementAge);
-
-  for (const key of Object.keys(clean.finances)) clean.finances[key] = normalizeNumber(finances[key]);
-  return clean;
-}
-
-function loadState() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? validateAndNormalize(JSON.parse(raw)) : defaultState();
-  } catch (error) {
-    console.error('Harbour North storage recovery:', error);
-    return defaultState();
-  }
-}
-
-function saveState() {
-  state.meta.updatedAt = new Date().toISOString();
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  setSaveStatus('Saved');
-}
-
-function queueSave() {
-  setSaveStatus('Saving…');
-  clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => {
-    saveState();
-    renderDashboard();
-  }, 250);
-}
-
-function setSaveStatus(text) {
-  document.getElementById('saveStatus').textContent = text;
-}
-
-function money(value) {
-  return new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(value || 0);
-}
-
-function hydrateInputs() {
-  for (const [key, value] of Object.entries(state.household)) {
-    const input = document.getElementById(key);
-    if (input) input.value = value ?? '';
-  }
-  for (const [key, value] of Object.entries(state.finances)) {
-    const input = document.getElementById(key);
-    if (input) input.value = value ?? 0;
-  }
-}
-
-function bindInputs() {
-  document.querySelectorAll('#setup input').forEach(input => {
-    input.addEventListener('input', () => {
-      if (Object.hasOwn(state.household, input.id)) {
-        state.household[input.id] = input.type === 'number' ? (input.value === '' ? null : normalizeNumber(input.value)) : input.value;
-      } else if (Object.hasOwn(state.finances, input.id)) {
-        state.finances[input.id] = normalizeNumber(input.value);
-      }
-      queueSave();
-    });
-  });
-}
-
-function renderDashboard() {
-  const f = state.finances;
-  const assets = f.cash + f.rrsp + f.tfsa + f.nonRegistered + f.property;
-  const netWorth = assets - f.debt;
-  const age = state.household.primaryAge;
-  const retirementAge = state.household.primaryRetirementAge;
-  const years = Number.isFinite(age) && Number.isFinite(retirementAge) ? Math.max(0, retirementAge - age) : null;
-
-  document.getElementById('totalAssets').textContent = money(assets);
-  document.getElementById('totalDebt').textContent = money(f.debt);
-  document.getElementById('netWorth').textContent = money(netWorth);
-  document.getElementById('yearsToRetirement').textContent = years === null ? '—' : String(years);
-
-  const checks = [
-    ['Storage available', storageAvailable()],
-    ['Plan schema valid', state.meta.schemaVersion === SCHEMA_VERSION],
-    ['Financial values valid', Object.values(f).every(Number.isFinite)],
-    ['Net worth calculation valid', Number.isFinite(netWorth)]
-  ];
-  document.getElementById('healthChecks').innerHTML = checks.map(([label, pass]) =>
-    `<div class="health-item ${pass ? 'pass' : 'fail'}"><span>${label}</span><strong>${pass ? 'PASS' : 'FAIL'}</strong></div>`
-  ).join('');
-}
-
-function storageAvailable() {
-  try {
-    const key = '__hn_test__';
-    localStorage.setItem(key, '1');
-    localStorage.removeItem(key);
-    return true;
-  } catch { return false; }
-}
-
-function exportBackup() {
-  saveState();
-  const payload = {
-    product: 'Harbour North',
-    exportedAt: new Date().toISOString(),
-    appVersion: APP_VERSION,
-    schemaVersion: SCHEMA_VERSION,
-    plan: state
-  };
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = `harbour-north-backup-${new Date().toISOString().slice(0, 10)}.json`;
-  link.click();
-  URL.revokeObjectURL(url);
-  toast('Backup exported.');
-}
-
-async function importBackup(file) {
-  if (!file) return;
-  if (file.size > 5 * 1024 * 1024) throw new Error('Backup is too large.');
-  const text = await file.text();
-  const parsed = JSON.parse(text);
-  const candidate = parsed.plan || parsed;
-  const nextState = validateAndNormalize(candidate);
-  const recovery = JSON.stringify(state);
-  try {
-    localStorage.setItem(`${STORAGE_KEY}.recovery`, recovery);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(nextState));
-    state = nextState;
-    hydrateInputs();
-    renderDashboard();
-    toast('Backup restored and verified.');
-  } catch (error) {
-    localStorage.setItem(STORAGE_KEY, recovery);
-    throw error;
-  }
-}
-
-function runBackupHealthTest() {
-  const result = document.getElementById('backupTestResult');
-  try {
-    const serialized = JSON.stringify({ product: 'Harbour North', plan: state });
-    const restored = validateAndNormalize(JSON.parse(serialized).plan);
-    const originalCore = JSON.stringify({ household: state.household, finances: state.finances });
-    const restoredCore = JSON.stringify({ household: restored.household, finances: restored.finances });
-    if (originalCore !== restoredCore) throw new Error('Restored data did not match the current plan.');
-    result.className = 'test-result pass';
-    result.textContent = 'PASS — export, parse, validation and restore comparison all succeeded.';
-  } catch (error) {
-    result.className = 'test-result fail';
-    result.textContent = `FAIL — ${error.message}`;
-  }
-}
-
-function resetData() {
-  if (!confirm('Reset all Harbour North 2 Alpha data on this device?')) return;
-  localStorage.removeItem(STORAGE_KEY);
-  state = defaultState();
-  saveState();
-  hydrateInputs();
-  renderDashboard();
-  toast('Alpha data reset.');
-}
-
-function toast(message) {
-  const element = document.getElementById('toast');
-  element.textContent = message;
-  element.classList.add('show');
-  setTimeout(() => element.classList.remove('show'), 2200);
-}
-
-function bindNavigation() {
-  document.querySelectorAll('.tab').forEach(button => button.addEventListener('click', () => {
-    document.querySelectorAll('.tab').forEach(tab => tab.classList.toggle('active', tab === button));
-    document.querySelectorAll('.page').forEach(page => page.classList.toggle('active', page.id === button.dataset.page));
-    if (button.dataset.page === 'dashboard') renderDashboard();
-  }));
-}
-
-function init() {
-  hydrateInputs();
-  bindInputs();
-  bindNavigation();
-  renderDashboard();
-  document.getElementById('exportBtn').addEventListener('click', exportBackup);
-  document.getElementById('importFile').addEventListener('change', async event => {
-    try { await importBackup(event.target.files[0]); }
-    catch (error) { alert(`Import failed: ${error.message}`); }
-    finally { event.target.value = ''; }
-  });
-  document.getElementById('testBackupBtn').addEventListener('click', runBackupHealthTest);
-  document.getElementById('resetBtn').addEventListener('click', resetData);
-}
-
-document.addEventListener('DOMContentLoaded', init);
+const APP_VERSION='2.0.0-alpha.2',SCHEMA_VERSION=2,STORAGE_KEY='harbourNorth2.plan';
+const uid=()=>`${Date.now().toString(36)}-${Math.random().toString(36).slice(2,8)}`;
+const now=()=>new Date().toISOString();
+const defaultState=()=>({meta:{appVersion:APP_VERSION,schemaVersion:SCHEMA_VERSION,createdAt:now(),updatedAt:now()},household:{province:'British Columbia',planningAge:95,inflationRate:2,returnRate:5,people:[person()]},income:[],assets:[],debts:[],benefits:[],pensions:[],expenses:[],goals:[]});
+function person(v={}){return{id:v.id||uid(),name:v.name||'',relationship:v.relationship||'Primary',age:numOrNull(v.age),retirementAge:numOrNull(v.retirementAge),employmentStatus:v.employmentStatus||'Employed'}}
+const n=v=>{const x=Number(v);return Number.isFinite(x)?Math.max(0,x):0};const numOrNull=v=>v===''||v==null?null:n(v);const txt=(v,max=100)=>String(v??'').slice(0,max);const plain=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
+function income(v={}){return{id:v.id||uid(),name:txt(v.name),ownerId:txt(v.ownerId),type:v.type||'Employment',amount:n(v.amount),frequency:v.frequency||'Annual',taxable:v.taxable!==false,endAge:numOrNull(v.endAge)}}
+function asset(v={}){return{id:v.id||uid(),name:txt(v.name),ownerId:txt(v.ownerId),type:v.type||'Cash',value:n(v.value),contribution:n(v.contribution),returnRate:numOrNull(v.returnRate)}}
+function debt(v={}){return{id:v.id||uid(),name:txt(v.name),type:v.type||'Line of credit',balance:n(v.balance),interestRate:n(v.interestRate),payment:n(v.payment)}}
+function benefit(v={}){return{id:v.id||uid(),name:txt(v.name),ownerId:txt(v.ownerId),type:v.type||'CPP',startAge:numOrNull(v.startAge),monthlyAmount:n(v.monthlyAmount),taxable:v.taxable!==false,indexed:v.indexed!==false}}
+function pension(v={}){return{id:v.id||uid(),name:txt(v.name),ownerId:txt(v.ownerId),type:v.type||'Defined benefit',startAge:numOrNull(v.startAge),monthlyAmount:n(v.monthlyAmount),indexed:v.indexed===true,survivorPercent:n(v.survivorPercent)}}
+function expense(v={}){return{id:v.id||uid(),name:txt(v.name),category:v.category||'Lifestyle',amount:n(v.amount),frequency:v.frequency||'Monthly',startAge:numOrNull(v.startAge),endAge:numOrNull(v.endAge)}}
+function goal(v={}){return{id:v.id||uid(),name:txt(v.name),targetAmount:n(v.targetAmount),targetYear:numOrNull(v.targetYear),savedAmount:n(v.savedAmount),priority:v.priority||'Medium'}}
+const factories={income,asset,debt,benefit,pension,expense,goal};
+const collection={income:'income',asset:'assets',debt:'debts',benefit:'benefits',pension:'pensions',expense:'expenses',goal:'goals'};
+function migrate(c){if(!plain(c))throw Error('Backup does not contain a valid Harbour North plan.');if(Number(c.meta?.schemaVersion)>=2)return c;const s=defaultState(),h=c.household||{},f=c.finances||{};s.meta.createdAt=c.meta?.createdAt||s.meta.createdAt;s.household.people=[];if(h.primaryName||h.primaryAge!=null)s.household.people.push(person({name:h.primaryName,relationship:'Primary',age:h.primaryAge,retirementAge:h.primaryRetirementAge}));if(h.partnerName||h.partnerAge!=null)s.household.people.push(person({name:h.partnerName,relationship:'Partner',age:h.partnerAge,retirementAge:h.partnerRetirementAge}));if(!s.household.people.length)s.household.people.push(person());[['Cash and savings','Cash',f.cash],['RRSP / RRIF','RRSP',f.rrsp],['TFSA','TFSA',f.tfsa],['Other investments','Non-registered',f.nonRegistered],['Home and property','Real estate',f.property]].forEach(([name,type,value])=>{if(n(value)>0)s.assets.push(asset({name,type,value}))});if(n(f.debt)>0)s.debts.push(debt({name:'Total debt',type:'Other',balance:f.debt}));return s}
+function normalize(c){c=migrate(c);const s=defaultState(),h=plain(c.household)?c.household:{};s.meta.createdAt=c.meta?.createdAt||s.meta.createdAt;s.meta.updatedAt=now();s.household.province=txt(h.province||s.household.province,60);s.household.planningAge=Math.min(110,Math.max(75,n(h.planningAge)||95));s.household.inflationRate=Math.min(15,n(h.inflationRate));s.household.returnRate=Math.min(25,Math.max(-10,Number(h.returnRate)||0));s.household.people=Array.isArray(h.people)&&h.people.length?h.people.map(person):[person()];for(const k of Object.keys(factories)){const key=collection[k];s[key]=Array.isArray(c[key])?c[key].map(factories[k]):[]} return s}
+function load(){try{const raw=localStorage.getItem(STORAGE_KEY);return raw?normalize(JSON.parse(raw)):defaultState()}catch(e){console.error(e);return defaultState()}}
+let state=load(),timer=null;
+function save(){state.meta={...state.meta,appVersion:APP_VERSION,schemaVersion:SCHEMA_VERSION,updatedAt:now()};localStorage.setItem(STORAGE_KEY,JSON.stringify(state));status('Saved')}
+function queue(){status('Saving…');clearTimeout(timer);timer=setTimeout(()=>{save();renderDashboard()},220)}function status(t){document.getElementById('saveStatus').textContent=t}function money(v){return new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0}).format(v||0)}
+const ownerOptions=selected=>`<option value="">Household</option>${state.household.people.map(p=>`<option value="${p.id}" ${p.id===selected?'selected':''}>${esc(p.name||p.relationship||'Person')}</option>`).join('')}`;function esc(v){return String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function field(label,key,value,type='text',extra=''){return`<label>${label}<input data-key="${key}" type="${type}" value="${esc(value??'')}" ${extra}></label>`}function selectField(label,key,value,options){return`<label>${label}<select data-key="${key}">${options.map(o=>`<option ${o===value?'selected':''}>${o}</option>`).join('')}</select></label>`}
+function renderPeople(){document.getElementById('peopleList').innerHTML=state.household.people.map((p,i)=>`<article class="record-card" data-kind="people" data-id="${p.id}"><div class="record-header"><h4>${esc(p.name||`Household member ${i+1}`)}</h4>${state.household.people.length>1?'<button class="remove-btn" data-remove>Remove</button>':''}</div><div class="form-grid three">${field('Name','name',p.name)}${selectField('Relationship','relationship',p.relationship,['Primary','Partner','Dependent','Other'])}${field('Current age','age',p.age,'number','min="0" max="110"')}${field('Planned retirement age','retirementAge',p.retirementAge,'number','min="40" max="90"')}${selectField('Employment status','employmentStatus',p.employmentStatus,['Employed','Self-employed','Retired','Not working','Student'])}</div></article>`).join('')}
+function renderRecords(kind){const target=document.getElementById(`${kind}List`),items=state[collection[kind]];target.innerHTML=items.map(x=>recordHtml(kind,x)).join('')}
+function ownerField(x){return`<label>Owner<select data-key="ownerId">${ownerOptions(x.ownerId)}</select></label>`}
+function recordHtml(k,x){let fields='';if(k==='income')fields=field('Description','name',x.name)+ownerField(x)+selectField('Type','type',x.type,['Employment','Self-employment','Rental','Benefit','Other'])+field('Amount','amount',x.amount,'number','min="0" step="100"')+selectField('Frequency','frequency',x.frequency,['Monthly','Biweekly','Annual'])+selectField('Tax treatment','taxable',String(x.taxable),['true','false'])+field('Ends at age','endAge',x.endAge,'number','min="0" max="110"');if(k==='asset')fields=field('Description','name',x.name)+ownerField(x)+selectField('Type','type',x.type,['Cash','RRSP','RRIF','TFSA','Non-registered','Real estate','Business','Other'])+field('Current value','value',x.value,'number','min="0" step="100"')+field('Monthly contribution','contribution',x.contribution,'number','min="0" step="10"')+field('Return override (%)','returnRate',x.returnRate,'number','step="0.1"');if(k==='debt')fields=field('Description','name',x.name)+selectField('Type','type',x.type,['Credit card','Line of credit','Mortgage','Vehicle loan','Other'])+field('Balance','balance',x.balance,'number','min="0" step="100"')+field('Interest rate (%)','interestRate',x.interestRate,'number','min="0" step="0.1"')+field('Monthly payment','payment',x.payment,'number','min="0" step="10"');if(k==='benefit')fields=field('Description','name',x.name)+ownerField(x)+selectField('Type','type',x.type,['CPP','OAS','QPP','WCB','Other'])+field('Start age','startAge',x.startAge,'number','min="0" max="110"')+field('Monthly amount','monthlyAmount',x.monthlyAmount,'number','min="0" step="10"')+selectField('Taxable','taxable',String(x.taxable),['true','false'])+selectField('Indexed','indexed',String(x.indexed),['true','false']);if(k==='pension')fields=field('Description','name',x.name)+ownerField(x)+selectField('Type','type',x.type,['Defined benefit','Defined contribution','Annuity','Other'])+field('Start age','startAge',x.startAge,'number','min="0" max="110"')+field('Monthly amount','monthlyAmount',x.monthlyAmount,'number','min="0" step="10"')+selectField('Indexed','indexed',String(x.indexed),['true','false'])+field('Survivor benefit (%)','survivorPercent',x.survivorPercent,'number','min="0" max="100"');if(k==='expense')fields=field('Description','name',x.name)+selectField('Category','category',x.category,['Housing','Food','Transportation','Travel','Healthcare','Lifestyle','Taxes','Other'])+field('Amount','amount',x.amount,'number','min="0" step="10"')+selectField('Frequency','frequency',x.frequency,['Monthly','Annual','One-time'])+field('Starts at age','startAge',x.startAge,'number','min="0" max="110"')+field('Ends at age','endAge',x.endAge,'number','min="0" max="110"');if(k==='goal')fields=field('Goal','name',x.name)+field('Target amount','targetAmount',x.targetAmount,'number','min="0" step="100"')+field('Target year','targetYear',x.targetYear,'number','min="2026" max="2150"')+field('Already saved','savedAmount',x.savedAmount,'number','min="0" step="100"')+selectField('Priority','priority',x.priority,['High','Medium','Low']);return`<article class="record-card" data-kind="${k}" data-id="${x.id}"><div class="record-header"><h4>${esc(x.name||`New ${k}`)}</h4><button class="remove-btn" data-remove>Remove</button></div><div class="form-grid three">${fields}</div></article>`}
+function renderAll(){renderPeople();['income','asset','debt','benefit','pension','expense','goal'].forEach(renderRecords);document.getElementById('province').value=state.household.province;document.getElementById('planningAge').value=state.household.planningAge;document.getElementById('inflationRate').value=state.household.inflationRate;document.getElementById('returnRate').value=state.household.returnRate;renderDashboard()}
+const annual=(amt,f)=>f==='Monthly'?n(amt)*12:f==='Biweekly'?n(amt)*26:n(amt);function renderDashboard(){const assets=state.assets.reduce((s,x)=>s+n(x.value),0),debts=state.debts.reduce((s,x)=>s+n(x.balance),0),inc=state.income.reduce((s,x)=>s+annual(x.amount,x.frequency),0),spend=state.expenses.reduce((s,x)=>s+(x.frequency==='One-time'?0:annual(x.amount,x.frequency)),0),surplus=inc-spend;document.getElementById('netWorth').textContent=money(assets-debts);document.getElementById('annualIncome').textContent=money(inc);document.getElementById('annualSpending').textContent=money(spend);document.getElementById('annualSurplus').textContent=money(surplus);summary('balanceSummary',[['Assets',money(assets)],['Debts',money(debts)],['Net worth',money(assets-debts)],['Monthly debt payments',money(state.debts.reduce((s,x)=>s+n(x.payment),0))]]);summary('timelineSummary',state.household.people.map(p=>[p.name||p.relationship,p.age==null||p.retirementAge==null?'Retirement age needed':`${Math.max(0,p.retirementAge-p.age)} years to retirement`]));const categories=[['People',state.household.people.length],['Income sources',state.income.length],['Assets',state.assets.length],['Debts',state.debts.length],['Benefits',state.benefits.length],['Pensions',state.pensions.length],['Expenses',state.expenses.length],['Goals',state.goals.length]];summary('completenessSummary',categories.map(([a,b])=>[a,String(b)]));const checks=[['Storage available',storageAvailable()],['Schema version',state.meta.schemaVersion===SCHEMA_VERSION],['Unique record IDs',uniqueIds()],['Numeric values valid',numericValid()],['Backup model complete',['income','assets','debts','benefits','pensions','expenses','goals'].every(k=>Array.isArray(state[k]))]];document.getElementById('healthChecks').innerHTML=checks.map(([l,p])=>`<div class="health-item ${p?'pass':'fail'}"><span>${l}</span><strong>${p?'PASS':'FAIL'}</strong></div>`).join('')}
+function summary(id,rows){document.getElementById(id).innerHTML=rows.length?rows.map(([a,b])=>`<div class="summary-row"><span>${esc(a)}</span><strong>${esc(b)}</strong></div>`).join(''):'<p class="muted">No information entered yet.</p>'}function storageAvailable(){try{localStorage.setItem('__hn_test__','1');localStorage.removeItem('__hn_test__');return true}catch{return false}}function uniqueIds(){const all=[...state.household.people,...state.income,...state.assets,...state.debts,...state.benefits,...state.pensions,...state.expenses,...state.goals].map(x=>x.id);return new Set(all).size===all.length}function numericValid(){return JSON.stringify(state).indexOf('NaN')===-1}
+function bind(){document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===b.dataset.page));if(b.dataset.page==='dashboard')renderDashboard()});document.getElementById('addPersonBtn').onclick=()=>{state.household.people.push(person({relationship:'Other'}));renderAll();queue()};document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>{const k=b.dataset.add;state[collection[k]].push(factories[k]());renderAll();queue()});document.body.addEventListener('input',edit);document.body.addEventListener('change',edit);document.body.addEventListener('click',e=>{const btn=e.target.closest('[data-remove]');if(!btn)return;const card=btn.closest('[data-kind]'),k=card.dataset.kind,id=card.dataset.id;if(k==='people'){state.household.people=state.household.people.filter(x=>x.id!==id);['income','assets','benefits','pensions'].forEach(a=>state[a].forEach(x=>{if(x.ownerId===id)x.ownerId=''}))}else state[collection[k]]=state[collection[k]].filter(x=>x.id!==id);renderAll();queue()});document.getElementById('exportBtn').onclick=exportBackup;document.getElementById('importFile').onchange=async e=>{try{await importBackup(e.target.files[0])}catch(x){alert(`Import failed: ${x.message}`)}finally{e.target.value=''}};document.getElementById('testBackupBtn').onclick=testBackup;document.getElementById('resetBtn').onclick=reset}
+function edit(e){const t=e.target;if(['province','planningAge','inflationRate','returnRate'].includes(t.id)){state.household[t.id]=t.type==='number'?n(t.value):t.value;queue();return}const card=t.closest('[data-kind]');if(!card||!t.dataset.key)return;const k=card.dataset.kind,id=card.dataset.id,list=k==='people'?state.household.people:state[collection[k]],x=list.find(z=>z.id===id);if(!x)return;let v=t.value;if(t.type==='number')v=t.value===''?null:n(t.value);if(['taxable','indexed'].includes(t.dataset.key))v=t.value==='true';x[t.dataset.key]=v;const h=card.querySelector('h4');if(t.dataset.key==='name')h.textContent=v||`New ${k}`;queue()}
+function exportBackup(){save();const p={product:'Harbour North',exportedAt:now(),appVersion:APP_VERSION,schemaVersion:SCHEMA_VERSION,plan:state},blob=new Blob([JSON.stringify(p,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`harbour-north-alpha2-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),500);toast('Backup exported.')}
+async function importBackup(file){if(!file)return;if(file.size>5*1024*1024)throw Error('Backup is too large.');const parsed=JSON.parse(await file.text()),next=normalize(parsed.plan||parsed),recovery=JSON.stringify(state);try{localStorage.setItem(`${STORAGE_KEY}.recovery`,recovery);localStorage.setItem(STORAGE_KEY,JSON.stringify(next));state=next;renderAll();toast('Backup restored and verified.')}catch(e){localStorage.setItem(STORAGE_KEY,recovery);throw e}}
+function testBackup(){const el=document.getElementById('backupTestResult');try{const restored=normalize(JSON.parse(JSON.stringify({plan:state})).plan),a=JSON.stringify({...state,meta:{...state.meta,updatedAt:''}}),b=JSON.stringify({...restored,meta:{...restored.meta,updatedAt:''}});if(a!==b)throw Error('Restored data did not match.');el.className='test-result pass';el.textContent='PASS — every Phase 2 record exported, validated and restored correctly.'}catch(e){el.className='test-result fail';el.textContent=`FAIL — ${e.message}`}}
+function reset(){if(!confirm('Reset all Harbour North 2 data on this device?'))return;localStorage.removeItem(STORAGE_KEY);state=defaultState();save();renderAll();toast('Alpha data reset.')}function toast(m){const e=document.getElementById('toast');e.textContent=m;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
+document.addEventListener('DOMContentLoaded',()=>{renderAll();bind();save()});

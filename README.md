@@ -1,18 +1,21 @@
-# Harbour North 2.0 Alpha 1
+# Harbour North 2.0 Alpha 2
 
-Controlled rebuild foundation.
+Phase 2 introduces the core financial data model:
 
-## Included
-- Modular HTML, CSS and JavaScript files
-- Durable local browser storage
-- Automatic save
-- Validated JSON backup export/import
-- Recovery copy before imports
-- In-memory backup health test
-- Simple setup and dashboard
+- Household members
+- Income sources
+- Assets
+- Debts
+- Government benefits
+- Pensions
+- Spending
+- Goals
+- Shared plan assumptions
+- Automatic Alpha 1 migration
+- Complete backup and restore validation
 
-## Run locally
-Open `index.html` in a browser. For the most reliable testing, serve the folder from a small web server.
+## GitHub Pages update
 
-## GitHub Pages
-Upload the contents of this folder to the root of a repository, then enable GitHub Pages from the `main` branch and `/ (root)`.
+Upload `index.html`, `styles.css`, `app.js`, and `README.md` to the root of the existing Harbour North 2 repository, replacing the Alpha 1 files. Do not upload the ZIP itself.
+
+This is still an Alpha build. Retirement projections and tax calculations begin in Phase 3.
