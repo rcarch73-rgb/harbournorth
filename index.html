@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.4.0 Retirement Intelligence</title>
+<title>Harbour North 0.4.1 Retirement Intelligence Results</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -18,7 +18,7 @@
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.4.0 · Phase 3 Retirement Intelligence</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>0.4.1 · Phase 3 Retirement Intelligence</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -26,6 +26,7 @@
 <button class="tab" data-page="ledger">Financial Ledger</button>
 <button class="tab" data-page="assumptions">Assumptions</button>
 <button class="tab" data-page="optimizer">Optimizer</button>
+<button class="tab" data-page="results">Results</button>
 <button class="tab" data-page="projection">Projection</button>
 <button class="tab" data-page="backup">Backup</button>
 </nav>
@@ -63,8 +64,12 @@
 </section>
 <section id="optimizer" class="page">
 <div class="hero"><div class="row-head"><div><div class="eyebrow">Phase 3 · Retirement intelligence</div><h2>Retirement Optimizer</h2><p class="muted">Harbour North tests retirement timing and government-benefit start dates, then ranks plans by sustainability, retirement timing, and ending estate.</p></div><span id="optimizerStatus" class="badge warn">Ready to analyze</span></div></div>
+<div class="card"><div class="row-head"><div><h3>Run optimization</h3><p class="muted">The analysis remains on this device. When complete, Harbour North automatically opens the Results page.</p></div><button id="runOptimizer" class="btn primary">Analyze retirement options</button></div><div id="optimizerProgressWrap" class="progress-wrap hidden"><div id="optimizerProgress" class="progress-bar"></div></div><p id="optimizerMessage" class="muted">Complete birth dates, income sources, spending, and investment accounts for the most useful result.</p><div class="actions" style="margin-top:16px"><button class="btn" data-goto="results">View results</button></div></div>
+<div class="card"><h3>What the optimizer tests</h3><ul class="checklist"><li>Primary and partner retirement ages within the range set in Assumptions.</li><li>CPP start ages of 60, 65, and 70.</li><li>OAS start ages of 65 and 70.</li><li>Each scenario uses the current Canada-wide tax, spending, investment, and withdrawal engines.</li></ul></div>
+</section>
+<section id="results" class="page">
+<div class="hero"><div class="row-head"><div><div class="eyebrow">Phase 3 · Optimization results</div><h2>Retirement Results</h2><p class="muted">Review the recommended plan, the top-ranked alternatives, and the comparison with your current plan.</p></div><button class="btn primary" data-goto="optimizer">Run again</button></div></div>
 <div class="summary-grid"><div class="metric">Scenarios tested<strong id="oScenarios">0</strong><div class="submetric">Retirement and benefit combinations</div></div><div class="metric">Recommended retirement<strong id="oRetireAge">—</strong><div class="submetric">Primary person</div></div><div class="metric">Recommended CPP<strong id="oCppAge">—</strong><div class="submetric">Primary person</div></div><div class="metric">Projected ending estate<strong id="oEstate">—</strong><div class="submetric">At planning horizon</div></div></div>
-<div class="card"><div class="row-head"><div><h3>Run optimization</h3><p class="muted">The analysis remains on this device. More search combinations take longer.</p></div><button id="runOptimizer" class="btn primary">Analyze retirement options</button></div><div id="optimizerProgressWrap" class="progress-wrap hidden"><div id="optimizerProgress" class="progress-bar"></div></div><p id="optimizerMessage" class="muted">Complete birth dates, income sources, spending, and investment accounts for the most useful result.</p></div>
 <div id="optimizerRecommendation" class="card recommendation-hero hidden"></div>
 <div class="card"><div class="row-head"><div><h3>Top-ranked plans</h3><p class="muted">Plans with no unfunded years rank ahead of plans that run short.</p></div></div><div id="optimizerResults" class="optimizer-grid"><div class="empty">Run the optimizer to compare scenarios.</div></div></div>
 <div class="card"><h3>Current plan vs recommendation</h3><div class="table-wrap"><table class="scenario-table"><thead><tr><th>Measure</th><th>Current plan</th><th>Recommended plan</th><th>Difference</th></tr></thead><tbody id="optimizerComparison"><tr><td colspan="4" class="muted">No optimization result yet.</td></tr></tbody></table></div></div>
@@ -505,7 +510,7 @@ function projectionOptions(){
 function buildProjectionTimeline(){
  const opts=projectionOptions();
  const timeline=window.HNTimeline.buildTimeline(state,opts);
- const incomeRows=window.HNIncome.buildIncomeProjection(state,timeline,{...opts,indexRate:num(state.household.incomeIndexRate ?? opts.indexRate)});
+ const incomeRows=window.HNIncome.buildIncomeProjection(state,timeline,opts);
  return window.HNProjection.buildProjection(state,incomeRows,opts);
 }
 function renderProjection(){
@@ -572,12 +577,26 @@ async function runOptimizer(){
  const btn=document.getElementById('runOptimizer'),status=document.getElementById('optimizerStatus'),msg=document.getElementById('optimizerMessage'),wrap=document.getElementById('optimizerProgressWrap'),bar=document.getElementById('optimizerProgress');
  if(!state.people[0]?.birthDate){msg.textContent='Add the primary person’s birth date before running the optimizer.';return}
  btn.disabled=true;status.textContent='Analyzing';status.className='badge warn';wrap.classList.remove('hidden');bar.style.width='0%';
- const min=Math.max(45,num(state.household.optimizerMinRetirementAge)||55),max=Math.max(min,num(state.household.optimizerMaxRetirementAge)||70),step=[.5,1].includes(num(state.household.optimizerRetirementStep))?num(state.household.optimizerRetirementStep):1;
- const retireAges=ageRange(min,max,step),partnerAges=state.hasPartner?retireAges:[null],cppAges=[60,65,70],oasAges=[65,70];const combos=[];
- for(const ra of retireAges)for(const pa of partnerAges)for(const ca of cppAges)for(const oa of oasAges)combos.push([ra,pa,ca,oa]);
- const currentPlan=clone(state),currentRows=projectPlan(currentPlan);optimizerState.current=scenarioSummary(currentPlan,currentRows,{cppAge:(state.incomeSources.find(x=>x.type==='CPP'&&x.owner===(state.people[0].name||'Primary'))?.startAge)||null,oasAge:(state.incomeSources.find(x=>x.type==='OAS'&&x.owner===(state.people[0].name||'Primary'))?.startAge)||null});
- const results=[];for(let i=0;i<combos.length;i++){const [ra,pa,ca,oa]=combos[i],plan=clone(state);setPersonTiming(plan,0,ra,ca,oa);if(plan.hasPartner)setPersonTiming(plan,1,pa,ca,oa);try{results.push(scenarioSummary(plan,projectPlan(plan),{cppAge:ca,oasAge:oa}))}catch(e){}if(i%20===0){bar.style.width=Math.round((i+1)/combos.length*100)+'%';await new Promise(requestAnimationFrame)}}
- results.sort((a,b)=>b.score-a.score);optimizerState.results=results;optimizerState.recommended=results[0]||null;bar.style.width='100%';setTimeout(()=>wrap.classList.add('hidden'),300);btn.disabled=false;status.textContent=results.length?'Complete':'No result';status.className='badge '+(results.length?'good':'warn');msg.textContent=`Tested ${results.length.toLocaleString('en-CA')} scenarios using the current tax, spending, investment, and withdrawal engines.`;renderOptimizer();
+ try{
+  const min=Math.max(45,num(state.household.optimizerMinRetirementAge)||55),max=Math.max(min,num(state.household.optimizerMaxRetirementAge)||70),step=[.5,1].includes(num(state.household.optimizerRetirementStep))?num(state.household.optimizerRetirementStep):1;
+  const retireAges=ageRange(min,max,step),partnerAges=state.hasPartner?retireAges:[null],cppAges=[60,65,70],oasAges=[65,70],combos=[];
+  for(const ra of retireAges)for(const pa of partnerAges)for(const ca of cppAges)for(const oa of oasAges)combos.push([ra,pa,ca,oa]);
+  const currentPlan=clone(state),currentRows=projectPlan(currentPlan);optimizerState.current=scenarioSummary(currentPlan,currentRows,{cppAge:(state.incomeSources.find(x=>x.type==='CPP'&&x.owner===(state.people[0].name||'Primary'))?.startAge)||null,oasAge:(state.incomeSources.find(x=>x.type==='OAS'&&x.owner===(state.people[0].name||'Primary'))?.startAge)||null});
+  const results=[];let failed=0;
+  for(let i=0;i<combos.length;i++){
+   const [ra,pa,ca,oa]=combos[i],plan=clone(state);setPersonTiming(plan,0,ra,ca,oa);if(plan.hasPartner)setPersonTiming(plan,1,pa,ca,oa);
+   try{results.push(scenarioSummary(plan,projectPlan(plan),{cppAge:ca,oasAge:oa}))}catch(e){failed++}
+   if(i%20===0){bar.style.width=Math.round((i+1)/combos.length*100)+'%';await new Promise(requestAnimationFrame)}
+  }
+  results.sort((a,b)=>b.score-a.score);optimizerState.results=results;optimizerState.recommended=results[0]||null;bar.style.width='100%';
+  status.textContent=results.length?'Complete':'No result';status.className='badge '+(results.length?'good':'warn');
+  msg.textContent=results.length?`Tested ${results.length.toLocaleString('en-CA')} scenarios${failed?` (${failed} could not be calculated)`:''}. Results are shown on the Results page.`:`No scenarios could be calculated. Check the projection page for an input or calculation error.`;
+  renderOptimizer();showPage('results');
+ }catch(err){
+  console.error(err);status.textContent='Error';status.className='badge warn';msg.textContent='Optimizer error: '+(err?.message||String(err));
+ }finally{
+  btn.disabled=false;setTimeout(()=>wrap.classList.add('hidden'),300);
+ }
 }
 function resultCard(r,i){return `<div class="optimizer-result ${i===0?'recommended':''}"><div class="optimizer-rank">${i===0?'Recommended':'Rank '+(i+1)}</div><div class="optimizer-title">Retire at ${r.primaryAge}${r.partnerAge!==null?` / ${r.partnerAge}`:''}</div><div class="optimizer-score">${r.success?'Funded':'Shortfall'}</div><p class="muted">CPP ${r.cppAge} · OAS ${r.oasAge}</p><div class="income-detail"><span>Ending estate</span><strong>${money(r.endingEstate)}</strong></div><div class="income-detail"><span>First shortfall</span><strong>${r.firstShortfall||'None'}</strong></div><div class="income-detail"><span>Lifetime tax</span><strong>${money(r.totalTax)}</strong></div></div>`}
 function renderOptimizer(){
@@ -587,7 +606,7 @@ function renderOptimizer(){
 }
 
 function daypart(){const h=new Date().getHours();return h<12?'morning':h<17?'afternoon':'evening'}
-function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer')renderOptimizer();window.scrollTo({top:0,behavior:'smooth'})}
+function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();window.scrollTo({top:0,behavior:'smooth'})}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 document.getElementById('addAccount').onclick=()=>{state.accounts.push(account('New account','RRSP/RRIF',state.people[0].name||'Primary',0));renderAccounts();save()};document.getElementById('addIncome').onclick=()=>{state.incomeSources.push(income('New income','Salary',state.people[0].name||'Primary',0,0,state.people[0].retirementAge||65,true,true));renderIncome();save()};document.getElementById('addDebt').onclick=()=>{state.debts.push(debt('New debt','Line of credit',0));renderDebts();save()};document.getElementById('addExpense').onclick=()=>{state.expenses.push(expense('New spending','Essential',0,'Monthly'));renderExpenses();save()};document.getElementById('addEvent').onclick=()=>{state.events.push(eventItem('New event','Expense',0,nowYear+3));renderEvents();save()};
