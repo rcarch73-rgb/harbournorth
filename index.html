@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.3.3 Spending & Withdrawal Engine</title>
+<title>Harbour North 0.3.5 Canada-wide Tax Engine</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -16,7 +16,7 @@
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.3.3 · Spending & Withdrawal Engine</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>0.3.5 · Canada-wide Tax Engine</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -51,12 +51,12 @@
 </section>
 
 <section id="projection" class="page">
-<div class="hero"><div class="row-head"><div><div class="eyebrow">Phase 2 · Component 4</div><h2>Spending and withdrawal engine</h2><p class="muted">Harbour North now shows where spending comes from, which accounts fund each shortfall, and how every withdrawal changes the year-end result.</p></div><span id="timelineEngineStatus" class="badge warn">Waiting for profile</span></div></div>
+<div class="hero"><div class="row-head"><div><div class="eyebrow">Phase 2 · Component 5</div><h2>Canadian tax engine</h2><p class="muted">Harbour North now estimates federal and provincial or territorial income tax for every Canadian jurisdiction, then uses after-tax cash flow to determine contributions and withdrawals.</p></div><span id="timelineEngineStatus" class="badge warn">Waiting for profile</span></div></div>
 <div class="summary-grid"><div class="metric">Starting investments<strong id="pStartingInvestments">$0</strong><div class="submetric">Cash and investment accounts</div></div><div class="metric">Retirement-year balance<strong id="pRetirementBalance">$0</strong><div class="submetric" id="pRetirementYear">Primary retirement year</div></div><div class="metric">Ending investments<strong id="pEndingInvestments">$0</strong><div class="submetric" id="pEndingYear">Planning horizon</div></div><div class="metric">First shortfall year<strong id="pShortfallYear">None</strong><div class="submetric">Before investment withdrawals</div></div></div>
-<div class="card"><div class="row-head"><div><h3>Projection controls</h3><p class="muted">Income and spending are entered in current-year dollars. Indexed amounts grow using the inflation assumption.</p></div><button id="runTimelineTests" class="btn">Run engine tests</button></div><div class="grid"><div class="field"><label>Projection start year</label><input id="projectionStartYear" type="number" min="2020" max="2200"></div><div class="field"><label>Planning horizon age</label><input id="projectionPlanningAge" type="number" min="75" max="110"></div><div class="field"><label>Inflation / income indexing (%)</label><input id="projectionInflationRate" type="number" min="0" max="10" step="0.1"></div></div><p id="timelineTestMessage" class="muted"></p></div>
-<div class="card"><div class="row-head"><div><h3>Year-by-year retirement projection</h3><p class="muted">Withdrawals cover annual cash-flow deficits. Positive cash flow remaining after planned contributions is retained as cash.</p></div><button id="downloadTimelineCsv" class="btn primary">Download projection CSV</button></div><div class="table-wrap"><table class="projection-table"><thead id="projectionHead"></thead><tbody id="projectionBody"></tbody></table></div></div>
+<div class="card"><div class="row-head"><div><h3>Projection controls</h3><p class="muted">Income and spending are entered in current-year dollars. Tax brackets, personal amounts, income, and spending are indexed using the projection inflation assumption.</p></div><button id="runTimelineTests" class="btn">Run engine tests</button></div><div class="grid"><div class="field"><label>Projection start year</label><input id="projectionStartYear" type="number" min="2020" max="2200"></div><div class="field"><label>Planning horizon age</label><input id="projectionPlanningAge" type="number" min="75" max="110"></div><div class="field"><label>Inflation / income indexing (%)</label><input id="projectionInflationRate" type="number" min="0" max="10" step="0.1"></div></div><p id="timelineTestMessage" class="muted"></p></div>
+<div class="card"><div class="row-head"><div><h3>Year-by-year retirement projection</h3><p class="muted">Taxes are estimated separately for each person. Withdrawals cover the remaining after-tax cash-flow deficit, and taxable RRSP/RRIF withdrawals are included in the tax estimate.</p></div><button id="downloadTimelineCsv" class="btn primary">Download projection CSV</button></div><div class="table-wrap"><table class="projection-table"><thead id="projectionHead"></thead><tbody id="projectionBody"></tbody></table></div></div>
 <div class="card"><div class="row-head"><div><h3>Explain this year</h3><p class="muted">Choose a year to see the main reasons behind its result.</p></div><div class="field" style="min-width:150px"><label>Year</label><select id="explainYear"></select></div></div><div id="explainYearBody" class="explain-box"></div></div>
-<div class="card"><h3>Current engine rules</h3><ul class="checklist"><li>Investment growth uses each account’s expected return.</li><li>Planned contributions are applied only while their owner is working and only when household cash flow is positive.</li><li>Annual spending is indexed from the projection start year and retained by category for inspection.</li><li>One-time income, inheritance, gift, and asset-sale events increase cash flow; expense events reduce it.</li><li>Deficits are withdrawn in this order: non-registered, cash, TFSA, RRSP/RRIF, FHSA. Every account-level withdrawal is recorded.</li><li>Real estate and other non-investment assets remain at their entered value. Debt balances remain unchanged in this phase.</li><li>Income tax is not calculated yet.</li></ul></div>
+<div class="card"><h3>Current tax-engine rules</h3><ul class="checklist"><li>Federal and 2026 tax brackets for all 10 provinces and three territories are used as the base and indexed into future years using the projection inflation assumption.</li><li>Tax is estimated separately for each person using taxable recurring income and taxable RRSP/RRIF withdrawals.</li><li>Income sources marked non-taxable are excluded from taxable income. TFSA and cash withdrawals are not taxable.</li><li>The estimate includes federal and provincial or territorial basic personal credits, the Quebec federal abatement, B.C. tax reduction, and Ontario surtax, tax reduction, and health premium. It does not yet include CPP/EI/QPP payroll deductions, age and pension credits, OAS recovery tax, dividend gross-up, capital gains, medical credits, or income splitting.</li><li>Inheritance and gifts are treated as non-taxable cash flow. A generic one-time “Income” event is treated as taxable income for the primary person.</li><li>Deficits are funded in this order: non-registered, cash, TFSA, RRSP/RRIF, FHSA. RRSP/RRIF tax is recalculated until the after-tax shortfall stabilizes.</li><li>This is a planning estimate, not a tax return or professional tax advice.</li></ul></div>
 </section>
 <section id="backup" class="page"><div class="hero"><h2>Backup and recovery</h2><p class="muted">Export your full Harbour North plan before major updates.</p></div><div class="card"><div class="actions"><button id="exportBtn" class="btn primary">Export backup</button><label class="btn">Import backup<input id="importFile" class="hidden" type="file" accept="application/json,.json"></label><button id="healthBtn" class="btn">Run data health check</button><button id="resetBtn" class="btn danger">Reset plan</button></div><p id="backupMessage" class="muted"></p></div></section>
 </main><div id="toast" class="toast"></div>
@@ -188,72 +188,155 @@
 (function(global){
   'use strict';
   const n=v=>Number.isFinite(Number(v))?Number(v):0;
+  const FEDERAL_2026={brackets:[[58523,.14],[117045,.205],[181440,.26],[258482,.29],[Infinity,.33]],bpaMax:16452,bpaMin:14829,bpaPhaseStart:181440,bpaPhaseEnd:258482,creditRate:.14};
+  const PROVINCES={
+    'Alberta':{code:'AB',brackets:[[61200,.08],[154259,.10],[185111,.12],[246813,.13],[370220,.14],[Infinity,.15]],bpa:22769},
+    'British Columbia':{code:'BC',brackets:[[50363,.056],[100728,.077],[115648,.105],[140430,.1229],[190405,.147],[265545,.168],[Infinity,.205]],bpa:13216},
+    'Manitoba':{code:'MB',brackets:[[47564,.108],[101200,.1275],[Infinity,.174]],bpa:15780,bpaPhaseStart:200000,bpaPhaseEnd:400000,bpaMin:0},
+    'New Brunswick':{code:'NB',brackets:[[52333,.094],[104666,.14],[193861,.16],[Infinity,.195]],bpa:13664},
+    'Newfoundland and Labrador':{code:'NL',brackets:[[44678,.087],[89354,.145],[159528,.158],[223340,.178],[285319,.198],[570638,.208],[1141275,.213],[Infinity,.218]],bpa:13094},
+    'Northwest Territories':{code:'NT',brackets:[[53003,.059],[106009,.086],[172346,.122],[Infinity,.1405]],bpa:18198},
+    'Nova Scotia':{code:'NS',brackets:[[30995,.0879],[61991,.1495],[97417,.1667],[157124,.175],[Infinity,.21]],bpa:11932},
+    'Nunavut':{code:'NU',brackets:[[55801,.04],[111602,.07],[181439,.09],[Infinity,.115]],bpa:19659},
+    'Ontario':{code:'ON',brackets:[[53891,.0505],[107785,.0915],[150000,.1116],[220000,.1216],[Infinity,.1316]],bpa:12989},
+    'Prince Edward Island':{code:'PE',brackets:[[33928,.095],[65820,.1347],[106890,.166],[142520,.1762],[200000,.19],[Infinity,.20]],bpa:15000},
+    'Quebec':{code:'QC',brackets:[[54345,.14],[108680,.19],[132245,.24],[Infinity,.2575]],bpa:18952,federalAbatement:.165},
+    'Saskatchewan':{code:'SK',brackets:[[54532,.105],[155805,.125],[Infinity,.145]],bpa:20381},
+    'Yukon':{code:'YT',brackets:[[58523,.064],[117045,.09],[181440,.109],[500000,.128],[Infinity,.15]],bpaFormula:'federal'}
+  };
+  function indexed(value,year,indexRate){return n(value)*Math.pow(1+n(indexRate)/100,Math.max(0,n(year)-2026))}
+  function bracketTax(income,brackets,year,indexRate){
+    const taxable=Math.max(0,n(income));let tax=0,lower=0;
+    for(const [rawUpper,rate] of brackets){const upper=rawUpper===Infinity?Infinity:indexed(rawUpper,year,indexRate);const portion=Math.max(0,Math.min(taxable,upper)-lower);tax+=portion*rate;if(taxable<=upper)break;lower=upper}
+    return tax;
+  }
+  function federalBpa(income,year,indexRate){
+    const max=indexed(FEDERAL_2026.bpaMax,year,indexRate),min=indexed(FEDERAL_2026.bpaMin,year,indexRate),start=indexed(FEDERAL_2026.bpaPhaseStart,year,indexRate),end=indexed(FEDERAL_2026.bpaPhaseEnd,year,indexRate),x=n(income);
+    if(x<=start)return max;if(x>=end)return min;return max-(max-min)*(x-start)/(end-start);
+  }
+  function provincialBpa(config,income,year,indexRate){
+    if(config.bpaFormula==='federal')return federalBpa(income,year,indexRate);
+    const max=indexed(config.bpa||0,year,indexRate);
+    if(config.bpaPhaseStart===undefined)return max;
+    const start=indexed(config.bpaPhaseStart,year,indexRate),end=indexed(config.bpaPhaseEnd,year,indexRate),min=indexed(config.bpaMin||0,year,indexRate);
+    if(income<=start)return max;if(income>=end)return min;return max-(max-min)*(income-start)/(end-start);
+  }
+  function ontarioHealthPremium(income){
+    const a=Math.max(0,n(income));
+    if(a<=20000)return 0;if(a<=36000)return Math.min(300,.06*(a-20000));if(a<=48000)return Math.min(450,300+.06*(a-36000));if(a<=72000)return Math.min(600,450+.25*(a-48000));if(a<=200000)return Math.min(750,600+.25*(a-72000));return Math.min(900,750+.25*(a-200000));
+  }
+  function provincialAdjustments(province,income,basicTax,year,indexRate){
+    let tax=Math.max(0,basicTax),adjustment=0;
+    if(province==='British Columbia'){
+      const low=indexed(25570,year,indexRate),high=indexed(41722,year,indexRate),maxReduction=indexed(575,year,indexRate);
+      let reduction=income<=low?Math.min(tax,maxReduction):income<=high?Math.min(tax,Math.max(0,maxReduction-(income-low)*.0356)):0;
+      adjustment-=reduction;tax=Math.max(0,tax-reduction);
+    }
+    if(province==='Ontario'){
+      const first=indexed(5818,year,indexRate),second=indexed(7446,year,indexRate);
+      const surtax=tax<=first?0:tax<=second?.2*(tax-first):.2*(tax-first)+.36*(tax-second);
+      const reduction=Math.max(0,Math.min(tax+surtax,2*indexed(300,year,indexRate)-(tax+surtax)));
+      const health=ontarioHealthPremium(income);
+      adjustment+=surtax+health-reduction;tax=Math.max(0,tax+surtax-reduction)+health;
+    }
+    return{tax,adjustment};
+  }
+  function estimatePersonTax(taxableIncome,year,indexRate,province='British Columbia'){
+    const income=Math.max(0,n(taxableIncome)),config=PROVINCES[province];
+    const federalGross=bracketTax(income,FEDERAL_2026.brackets,year,indexRate);
+    const federalCredit=federalBpa(income,year,indexRate)*FEDERAL_2026.creditRate;
+    let federal=Math.max(0,federalGross-federalCredit);
+    if(config?.federalAbatement)federal=Math.max(0,federal*(1-config.federalAbatement));
+    let provincial=0,provinceSupported=!!config;
+    if(config){
+      const gross=bracketTax(income,config.brackets,year,indexRate),lowest=config.brackets[0][1],credit=provincialBpa(config,income,year,indexRate)*lowest;
+      provincial=provincialAdjustments(province,income,Math.max(0,gross-credit),year,indexRate).tax;
+    }
+    return{taxableIncome:income,federal,provincial,total:federal+provincial,provinceSupported,provinceCode:config?.code||''};
+  }
+  function estimateHouseholdTax(taxableByPerson,year,indexRate,province){
+    const byPerson=Object.entries(taxableByPerson||{}).map(([name,income])=>({name,...estimatePersonTax(income,year,indexRate,province)}));
+    return{byPerson,federal:byPerson.reduce((s,x)=>s+x.federal,0),provincial:byPerson.reduce((s,x)=>s+x.provincial,0),total:byPerson.reduce((s,x)=>s+x.total,0),provinceSupported:byPerson.every(x=>x.provinceSupported)};
+  }
+  function runSelfTests(){
+    const failed=[];let total=0;const test=(name,fn)=>{total++;try{if(!fn())failed.push(name)}catch{failed.push(name)}};
+    test('Zero income has zero tax',()=>estimatePersonTax(0,2026,0).total===0);
+    test('Federal first bracket calculation',()=>Math.round(estimatePersonTax(58523,2026,0,'Alberta').federal)===Math.round(58523*.14-16452*.14));
+    test('BC first bracket includes reduction',()=>estimatePersonTax(25000,2026,0,'British Columbia').provincial<25000*.056-13216*.056);
+    test('All provinces and territories supported',()=>Object.keys(PROVINCES).every(p=>estimatePersonTax(50000,2026,0,p).provinceSupported));
+    test('Quebec federal abatement lowers federal tax',()=>estimatePersonTax(100000,2026,0,'Quebec').federal<estimatePersonTax(100000,2026,0,'Ontario').federal);
+    test('Ontario health premium applies',()=>estimatePersonTax(50000,2026,0,'Ontario').provincial>bracketTax(50000,PROVINCES['Ontario'].brackets,2026,0)-12989*.0505);
+    test('Two-person tax calculated separately',()=>{const split=estimateHouseholdTax({A:50000,B:50000},2026,0,'British Columbia').total;const one=estimateHouseholdTax({A:100000},2026,0,'British Columbia').total;return split<one});
+    test('Future brackets indexed',()=>estimatePersonTax(60000,2027,2,'Alberta').total<estimatePersonTax(60000,2026,0,'Alberta').total);
+    return{ok:failed.length===0,total,failed};
+  }
+  global.HNTax={PROVINCES,indexed,bracketTax,federalBpa,provincialBpa,estimatePersonTax,estimateHouseholdTax,runSelfTests};
+})(typeof window!=='undefined'?window:globalThis);
+
+</script>
+<script>
+(function(global){
+  'use strict';
+  const n=v=>Number.isFinite(Number(v))?Number(v):0;
   const INVEST_TYPES=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'];
   const withdrawalPriority=['Non-registered','Cash','TFSA','RRSP/RRIF','FHSA'];
   function annualSpendingBreakdown(plan,year,startYear,inflationRate){
     const factor=Math.pow(1+n(inflationRate)/100,Math.max(0,year-startYear));
     const details=(plan.expenses||[]).map(x=>({name:x.name||x.category||'Spending',category:x.category||'Other',amount:n(x.amount)*(x.frequency==='Monthly'?12:1)*factor}));
-    const categories={};
-    for(const x of details)categories[x.category]=(categories[x.category]||0)+x.amount;
-    return {total:details.reduce((sum,x)=>sum+x.amount,0),details,categories};
+    const categories={};for(const x of details)categories[x.category]=(categories[x.category]||0)+x.amount;
+    return{total:details.reduce((sum,x)=>sum+x.amount,0),details,categories};
   }
   function annualSpending(plan,year,startYear,inflationRate){return annualSpendingBreakdown(plan,year,startYear,inflationRate).total}
   function eventCashFlow(plan,year){
-    let income=0,expense=0;
-    for(const e of plan.events||[]){
-      if(Math.trunc(n(e.year))!==year)continue;
-      if(['Income','Inheritance','Gift','Asset sale'].includes(e.type))income+=n(e.amount);else expense+=n(e.amount);
-    }
-    return {income,expense};
+    let income=0,expense=0,taxableIncome=0;
+    for(const e of plan.events||[]){if(Math.trunc(n(e.year))!==year)continue;if(['Income','Inheritance','Gift','Asset sale'].includes(e.type)){income+=n(e.amount);if(e.type==='Income')taxableIncome+=n(e.amount)}else expense+=n(e.amount)}
+    return{income,expense,taxableIncome};
   }
-  function ownerWorking(account,row,people){
-    if(account.owner==='Household')return row.people.some(p=>p.status==='Working');
-    const i=Math.max(0,people.findIndex(p=>p.name===account.owner));
-    return row.people[i]?.status==='Working';
+  function ownerWorking(account,row,people){if(account.owner==='Household')return row.people.some(p=>p.status==='Working');const i=Math.max(0,people.findIndex(p=>p.name===account.owner));return row.people[i]?.status==='Working'}
+  function taxableIncomeByPerson(row,people,eventTaxable=0){
+    const result={};people.forEach(p=>result[p.name||'Household member']=0);
+    for(const x of row.income.details||[]){if(!x.active||!x.taxable)continue;const key=result[x.owner]!==undefined?x.owner:(people[0]?.name||'Household member');result[key]=(result[key]||0)+x.amount}
+    if(eventTaxable){const key=people[0]?.name||'Household member';result[key]=(result[key]||0)+eventTaxable}
+    return result;
+  }
+  function copyAccounts(accounts){return accounts.map(a=>({...a}))}
+  function withdraw(accounts,need){
+    let remaining=Math.max(0,need),withdrawals=0;const byAccount=[];
+    for(const type of withdrawalPriority){for(const a of accounts.filter(x=>x.type===type)){const take=Math.min(a.balance,remaining);a.balance-=take;remaining-=take;withdrawals+=take;if(take>0)byAccount.push({id:a.id,name:a.name,type:a.type,owner:a.owner,amount:take});if(remaining<=.01)break}if(remaining<=.01)break}
+    return{withdrawals,unfunded:Math.max(0,remaining),byAccount};
   }
   function buildProjection(plan,incomeRows,options={}){
-    const startYear=n(options.startYear)||incomeRows?.[0]?.year||new Date().getFullYear();
-    const inflationRate=n(options.indexRate);
-    const people=global.HNTimeline.includedPeople(plan);
-    const accounts=(plan.accounts||[]).filter(a=>INVEST_TYPES.includes(a.type)).map(a=>({...a,balance:Math.max(0,n(a.balance))}));
+    const startYear=n(options.startYear)||incomeRows?.[0]?.year||new Date().getFullYear(),inflationRate=n(options.indexRate),people=global.HNTimeline.includedPeople(plan),province=plan.household?.province||'British Columbia';
+    let accounts=(plan.accounts||[]).filter(a=>INVEST_TYPES.includes(a.type)).map(a=>({...a,balance:Math.max(0,n(a.balance))}));
     if(!accounts.some(a=>a.type==='Cash'))accounts.push({id:'synthetic-cash',name:'Unallocated cash',type:'Cash',owner:'Household',balance:0,returnRate:0,annualContribution:0});
-    const nonInvestmentAssets=(plan.accounts||[]).filter(a=>!INVEST_TYPES.includes(a.type)).reduce((s,a)=>s+n(a.balance),0);
-    const debt=(plan.debts||[]).reduce((s,d)=>s+n(d.balance),0);
-    const rows=[];
+    const nonInvestmentAssets=(plan.accounts||[]).filter(a=>!INVEST_TYPES.includes(a.type)).reduce((s,a)=>s+n(a.balance),0),debt=(plan.debts||[]).reduce((s,d)=>s+n(d.balance),0),rows=[];
     for(const row of incomeRows||[]){
-      const startingInvestments=accounts.reduce((s,a)=>s+a.balance,0);
-      let growth=0;
+      const startingInvestments=accounts.reduce((s,a)=>s+a.balance,0);let growth=0;
       for(const a of accounts){const g=a.balance*n(a.returnRate)/100;a.balance+=g;growth+=g}
-      const events=eventCashFlow(plan,row.year);
-      const totalIncome=row.income.totalIncome+events.income;
-      const spendingBreakdown=annualSpendingBreakdown(plan,row.year,startYear,inflationRate);
-      const spending=spendingBreakdown.total+events.expense;
-      const preContributionCashFlow=totalIncome-spending;
-      const planned=accounts.reduce((s,a)=>s+(ownerWorking(a,row,people)?Math.max(0,n(a.annualContribution)):0),0);
-      const contributions=Math.min(Math.max(0,preContributionCashFlow),planned);
-      const contributionsByAccount=[];
-      if(contributions>0){
-        const eligible=accounts.filter(a=>ownerWorking(a,row,people)&&n(a.annualContribution)>0);
-        const totalPlan=eligible.reduce((s,a)=>s+n(a.annualContribution),0);
-        eligible.forEach(a=>{const amount=contributions*(n(a.annualContribution)/totalPlan);a.balance+=amount;contributionsByAccount.push({id:a.id,name:a.name,type:a.type,amount})});
-      }
-      let remainingCash=preContributionCashFlow-contributions;
-      let withdrawals=0,unfunded=0,surplusToCash=0;
-      const withdrawalsByAccount=[];
-      if(remainingCash<0){
-        let need=-remainingCash;
-        for(const type of withdrawalPriority){
-          for(const a of accounts.filter(x=>x.type===type)){
-            const take=Math.min(a.balance,need);a.balance-=take;need-=take;withdrawals+=take;if(take>0)withdrawalsByAccount.push({id:a.id,name:a.name,type:a.type,amount:take});if(need<=0)break;
-          }
-          if(need<=0)break;
+      const events=eventCashFlow(plan,row.year),totalIncome=row.income.totalIncome+events.income,spendingBreakdown=annualSpendingBreakdown(plan,row.year,startYear,inflationRate),spending=spendingBreakdown.total+events.expense;
+      const baseTaxable=taxableIncomeByPerson(row,people,events.taxableIncome),baseTax=global.HNTax.estimateHouseholdTax(baseTaxable,row.year,inflationRate,province);
+      const afterTaxBeforeContributions=totalIncome-baseTax.total-spending;
+      const planned=accounts.reduce((sum,a)=>sum+(ownerWorking(a,row,people)?Math.max(0,n(a.annualContribution)):0),0),contributions=Math.min(Math.max(0,afterTaxBeforeContributions),planned),contributionsByAccount=[];
+      if(contributions>0){const eligible=accounts.filter(a=>ownerWorking(a,row,people)&&n(a.annualContribution)>0),totalPlan=eligible.reduce((sum,a)=>sum+n(a.annualContribution),0);eligible.forEach(a=>{const amount=contributions*(n(a.annualContribution)/totalPlan);a.balance+=amount;contributionsByAccount.push({id:a.id,name:a.name,type:a.type,amount})})}
+      let finalTax=baseTax,withdrawResult={withdrawals:0,unfunded:0,byAccount:[]},workingAccounts=copyAccounts(accounts);
+      if(afterTaxBeforeContributions-contributions<0){
+        let previous=-1;
+        for(let i=0;i<20;i++){
+          workingAccounts=copyAccounts(accounts);
+          const need=Math.max(0,spending+contributions+finalTax.total-totalIncome);
+          withdrawResult=withdraw(workingAccounts,need);
+          const taxable={...baseTaxable};
+          for(const x of withdrawResult.byAccount.filter(x=>x.type==='RRSP/RRIF')){const key=taxable[x.owner]!==undefined?x.owner:(people[0]?.name||'Household member');taxable[key]=(taxable[key]||0)+x.amount}
+          const recalculated=global.HNTax.estimateHouseholdTax(taxable,row.year,inflationRate,province);
+          if(Math.abs(recalculated.total-finalTax.total)<.01&&Math.abs(withdrawResult.withdrawals-previous)<.01){finalTax=recalculated;break}
+          finalTax=recalculated;previous=withdrawResult.withdrawals;
         }
-        unfunded=need;remainingCash=0;
-      } else if(remainingCash>0){
-        surplusToCash=remainingCash;accounts.find(a=>a.type==='Cash').balance+=remainingCash;
+        accounts=workingAccounts;
       }
+      let surplusToCash=0;const netCash=totalIncome-finalTax.total-spending-contributions;
+      if(netCash>0){surplusToCash=netCash;accounts.find(a=>a.type==='Cash').balance+=netCash}
       const endingInvestments=accounts.reduce((s,a)=>s+a.balance,0);
-      rows.push({...row,projection:{startingInvestments,growth,totalIncome,baseIncome:row.income.totalIncome,eventIncome:events.income,spending,eventExpense:events.expense,spendingDetails:spendingBreakdown.details,spendingCategories:spendingBreakdown.categories,plannedContributions:planned,contributions,contributionsByAccount,withdrawals,withdrawalsByAccount,unfunded,surplusToCash,endingInvestments,netWorth:endingInvestments+nonInvestmentAssets-debt,accountBalances:accounts.map(a=>({id:a.id,name:a.name,type:a.type,balance:a.balance}))}});
+      rows.push({...row,projection:{startingInvestments,growth,totalIncome,baseIncome:row.income.totalIncome,eventIncome:events.income,spending,eventExpense:events.expense,spendingDetails:spendingBreakdown.details,spendingCategories:spendingBreakdown.categories,tax:finalTax.total,federalTax:finalTax.federal,provincialTax:finalTax.provincial,taxByPerson:finalTax.byPerson,taxProvinceSupported:finalTax.provinceSupported,afterTaxIncome:totalIncome-finalTax.total,plannedContributions:planned,contributions,contributionsByAccount,withdrawals:withdrawResult.withdrawals,withdrawalsByAccount:withdrawResult.byAccount,unfunded:withdrawResult.unfunded,surplusToCash,endingInvestments,netWorth:endingInvestments+nonInvestmentAssets-debt,accountBalances:accounts.map(a=>({id:a.id,name:a.name,type:a.type,balance:a.balance}))}})
     }
     return rows;
   }
@@ -262,17 +345,18 @@
     test('Monthly spending annualized',()=>annualSpending({expenses:[{amount:100,frequency:'Monthly'}]},2026,2026,2)===1200);
     test('Spending inflation',()=>Math.round(annualSpending({expenses:[{amount:1000,frequency:'Annual'}]},2027,2026,2))===1020);
     test('Income event classification',()=>eventCashFlow({events:[{year:2030,type:'Inheritance',amount:5000}]},2030).income===5000);
-    test('Expense event classification',()=>eventCashFlow({events:[{year:2030,type:'Expense',amount:5000}]},2030).expense===5000);
-    test('Spending category breakdown',()=>annualSpendingBreakdown({expenses:[{name:'Food',category:'Essential',amount:100,frequency:'Monthly'},{name:'Trips',category:'Travel',amount:500,frequency:'Annual'}]},2026,2026,2).categories.Essential===1200);
-    test('Withdrawal priority recorded',()=>{const plan={hasPartner:false,people:[{name:'A',birthDate:'2000-01-01',retirementAge:40}],accounts:[{id:'n',name:'Taxable',type:'Non-registered',owner:'A',balance:100,returnRate:0,annualContribution:0},{id:'t',name:'TFSA',type:'TFSA',owner:'A',balance:100,returnRate:0,annualContribution:0}],debts:[],expenses:[{name:'Spend',category:'Essential',amount:150,frequency:'Annual'}],events:[]};const rows=buildProjection(plan,[{year:2040,people:[{name:'A',age:40,status:'Retired'}],income:{totalIncome:0}}],{startYear:2040,indexRate:0});return rows[0].projection.withdrawalsByAccount.map(x=>x.type).join(',')==='Non-registered,TFSA'});
-    return {ok:failed.length===0,total,failed};
+    test('Generic income event is taxable',()=>eventCashFlow({events:[{year:2030,type:'Income',amount:5000}]},2030).taxableIncome===5000);
+    test('Spending category breakdown',()=>annualSpendingBreakdown({expenses:[{name:'Food',category:'Essential',amount:100,frequency:'Monthly'}]},2026,2026,2).categories.Essential===1200);
+    test('Withdrawal priority recorded',()=>{const plan={hasPartner:false,people:[{name:'A',birthDate:'2000-01-01',retirementAge:40}],household:{province:'British Columbia'},accounts:[{id:'n',name:'Taxable',type:'Non-registered',owner:'A',balance:100,returnRate:0,annualContribution:0},{id:'t',name:'TFSA',type:'TFSA',owner:'A',balance:100,returnRate:0,annualContribution:0}],debts:[],expenses:[{name:'Spend',category:'Essential',amount:150,frequency:'Annual'}],events:[]};const rows=buildProjection(plan,[{year:2040,people:[{name:'A',age:40,status:'Retired'}],income:{totalIncome:0,details:[]}}],{startYear:2040,indexRate:0});return rows[0].projection.withdrawalsByAccount.map(x=>x.type).join(',')==='Non-registered,TFSA'});
+    test('RRSP withdrawal increases tax',()=>{const plan={hasPartner:false,people:[{name:'A',birthDate:'2000-01-01',retirementAge:40}],household:{province:'British Columbia'},accounts:[{id:'r',name:'RRSP',type:'RRSP/RRIF',owner:'A',balance:50000,returnRate:0,annualContribution:0}],debts:[],expenses:[{name:'Spend',category:'Essential',amount:30000,frequency:'Annual'}],events:[]};const r=buildProjection(plan,[{year:2040,people:[{name:'A',age:40,status:'Retired'}],income:{totalIncome:0,details:[]}}],{startYear:2040,indexRate:0})[0].projection;return r.tax>0&&r.withdrawals>30000});
+    return{ok:failed.length===0,total,failed};
   }
-  global.HNProjection={annualSpending,annualSpendingBreakdown,eventCashFlow,buildProjection,runSelfTests};
+  global.HNProjection={annualSpending,annualSpendingBreakdown,eventCashFlow,taxableIncomeByPerson,buildProjection,runSelfTests};
 })(typeof window!=='undefined'?window:globalThis);
 
 </script>
 <script>
-const KEY='harbourNorth2.plan' ,APP='0.3.3-withdrawals',SCHEMA=7;
+const KEY='harbourNorth2.plan' ,APP='0.3.5-canada-tax',SCHEMA=9;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaults=()=>({meta:{appVersion:APP,schemaVersion:SCHEMA,updatedAt:new Date().toISOString()},hasPartner:true,people:[{name:'',birthDate:'',retirementAge:55,employmentStatus:'Employed'},{name:'',birthDate:'',retirementAge:55,employmentStatus:'Employed'}],household:{province:'British Columbia',planningAge:95,inflationRate:2,returnRate:5},accounts:[],incomeSources:[],debts:[],expenses:[],events:[]});
@@ -407,51 +491,30 @@ function buildProjectionTimeline(){
 }
 function renderProjection(){
  const start=document.getElementById('projectionStartYear'),horizon=document.getElementById('projectionPlanningAge'),inflation=document.getElementById('projectionInflationRate');
- if(!start||!horizon||!inflation)return;
- if(!start.value)start.value=nowYear;
- if(!horizon.value)horizon.value=num(state.household.planningAge)||95;
- if(inflation.value==='')inflation.value=num(state.household.inflationRate)||0;
- let rows=[];
- try{rows=buildProjectionTimeline()}catch(err){document.getElementById('timelineTestMessage').textContent='Projection error: '+err.message;return}
- const people=window.HNTimeline.includedPeople(state),investTypes=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'];
- const starting=state.accounts.filter(a=>investTypes.includes(a.type)).reduce((s,a)=>s+num(a.balance),0);
- const primary=people[0],retYear=primary?.birthDate?window.HNTimeline.yearAtAge(primary.birthDate,primary.retirementAge):null;
- const retirementRow=rows.find(r=>r.year===retYear),last=rows.at(-1),shortfall=rows.find(r=>r.projection.withdrawals>0||r.projection.unfunded>0);
- document.getElementById('pStartingInvestments').textContent=money(starting);
- document.getElementById('pRetirementBalance').textContent=money(retirementRow?.projection.endingInvestments||0);document.getElementById('pRetirementYear').textContent=retYear?`Primary retirement year · ${retYear}`:'Primary retirement year unavailable';
- document.getElementById('pEndingInvestments').textContent=money(last?.projection.endingInvestments||0);document.getElementById('pEndingYear').textContent=last?`Planning horizon · ${last.year}`:'Planning horizon';
- document.getElementById('pShortfallYear').textContent=shortfall?String(shortfall.year):'None';
- const status=document.getElementById('timelineEngineStatus');status.textContent=people.length&&people.every(p=>p.birthDate)?'Cash-flow engine ready':'Birth dates needed';status.className='badge '+(status.textContent==='Cash-flow engine ready'?'good':'warn');
- document.getElementById('projectionHead').innerHTML='<tr><th>Year</th>'+people.map(p=>`<th>${esc(p.name||'Person')} age</th>`).join('')+'<th class="money-cell">Income</th><th class="money-cell">Spending</th><th class="money-cell">Growth</th><th class="money-cell">Contributions</th><th class="money-cell">Withdrawals</th><th class="money-cell">Ending investments</th><th class="money-cell">Net worth</th></tr>';
- const cols=people.length+8;
- document.getElementById('projectionBody').innerHTML=rows.length?rows.map(r=>`<tr data-year="${r.year}"><td><strong>${r.year}</strong></td>${r.people.map(p=>`<td>${p.age??'—'}<div><span class="badge ${p.status==='Retired'?'good':'warn'}">${p.status}</span></div></td>`).join('')}<td class="money-cell">${money(r.projection.totalIncome)}</td><td class="money-cell">${money(r.projection.spending)}</td><td class="money-cell positive">${money(r.projection.growth)}</td><td class="money-cell">${money(r.projection.contributions)}</td><td class="money-cell ${r.projection.withdrawals||r.projection.unfunded?'negative':''}">${money(r.projection.withdrawals)}${r.projection.unfunded?`<div><small>Unfunded ${money(r.projection.unfunded)}</small></div>`:''}</td><td class="money-cell"><strong>${money(r.projection.endingInvestments)}</strong></td><td class="money-cell"><strong>${money(r.projection.netWorth)}</strong></td></tr>`).join(''):`<tr><td colspan="${cols}" class="empty">Add a valid date of birth to build the projection.</td></tr>`;
- const select=document.getElementById('explainYear');const previous=select.value;select.innerHTML=rows.map(r=>`<option value="${r.year}">${r.year}</option>`).join('');if(rows.some(r=>String(r.year)===previous))select.value=previous;else if(retirementRow)select.value=retirementRow.year;renderExplainYear(rows);
+ if(!start||!horizon||!inflation)return;if(!start.value)start.value=nowYear;if(!horizon.value)horizon.value=num(state.household.planningAge)||95;if(inflation.value==='')inflation.value=num(state.household.inflationRate)||0;
+ let rows=[];try{rows=buildProjectionTimeline()}catch(err){document.getElementById('timelineTestMessage').textContent='Projection error: '+err.message;return}
+ const people=window.HNTimeline.includedPeople(state),investTypes=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'],starting=state.accounts.filter(a=>investTypes.includes(a.type)).reduce((sum,a)=>sum+num(a.balance),0),primary=people[0],retYear=primary?.birthDate?window.HNTimeline.yearAtAge(primary.birthDate,primary.retirementAge):null,retirementRow=rows.find(r=>r.year===retYear),last=rows.at(-1),shortfall=rows.find(r=>r.projection.withdrawals>0||r.projection.unfunded>0);
+ document.getElementById('pStartingInvestments').textContent=money(starting);document.getElementById('pRetirementBalance').textContent=money(retirementRow?.projection.endingInvestments||0);document.getElementById('pRetirementYear').textContent=retYear?`Primary retirement year · ${retYear}`:'Primary retirement year unavailable';document.getElementById('pEndingInvestments').textContent=money(last?.projection.endingInvestments||0);document.getElementById('pEndingYear').textContent=last?`Planning horizon · ${last.year}`:'Planning horizon';document.getElementById('pShortfallYear').textContent=shortfall?String(shortfall.year):'None';
+ const status=document.getElementById('timelineEngineStatus'),supported=!!window.HNTax.PROVINCES[state.household.province];status.textContent=people.length&&people.every(p=>p.birthDate)?(supported?`${state.household.province} tax engine ready`:'Province unavailable'):'Birth dates needed';status.className='badge '+(people.length&&people.every(p=>p.birthDate)&&supported?'good':'warn');
+ document.getElementById('projectionHead').innerHTML='<tr><th>Year</th>'+people.map(p=>`<th>${esc(p.name||'Person')} age</th>`).join('')+'<th class="money-cell">Gross income</th><th class="money-cell">Est. tax</th><th class="money-cell">After-tax income</th><th class="money-cell">Spending</th><th class="money-cell">Growth</th><th class="money-cell">Contributions</th><th class="money-cell">Withdrawals</th><th class="money-cell">Ending investments</th><th class="money-cell">Net worth</th></tr>';
+ const cols=people.length+10;document.getElementById('projectionBody').innerHTML=rows.length?rows.map(r=>`<tr data-year="${r.year}"><td><strong>${r.year}</strong></td>${r.people.map(p=>`<td>${p.age??'—'}<div><span class="badge ${p.status==='Retired'?'good':'warn'}">${p.status}</span></div></td>`).join('')}<td class="money-cell">${money(r.projection.totalIncome)}</td><td class="money-cell negative">${money(r.projection.tax)}</td><td class="money-cell"><strong>${money(r.projection.afterTaxIncome)}</strong></td><td class="money-cell">${money(r.projection.spending)}</td><td class="money-cell positive">${money(r.projection.growth)}</td><td class="money-cell">${money(r.projection.contributions)}</td><td class="money-cell ${r.projection.withdrawals||r.projection.unfunded?'negative':''}">${money(r.projection.withdrawals)}${r.projection.unfunded?`<div><small>Unfunded ${money(r.projection.unfunded)}</small></div>`:''}</td><td class="money-cell"><strong>${money(r.projection.endingInvestments)}</strong></td><td class="money-cell"><strong>${money(r.projection.netWorth)}</strong></td></tr>`).join(''):`<tr><td colspan="${cols}" class="empty">Add a valid date of birth to build the projection.</td></tr>`;
+ const select=document.getElementById('explainYear'),previous=select.value;select.innerHTML=rows.map(r=>`<option value="${r.year}">${r.year}</option>`).join('');if(rows.some(r=>String(r.year)===previous))select.value=previous;else if(retirementRow)select.value=retirementRow.year;renderExplainYear(rows);
 }
 function renderExplainYear(rowsArg){
  const rows=rowsArg||buildProjectionTimeline(),year=num(document.getElementById('explainYear')?.value),r=rows.find(x=>x.year===year)||rows[0],root=document.getElementById('explainYearBody');if(!r||!root)return;
- const p=r.projection,notes=[];
- notes.push(`Household income is ${money(p.totalIncome)} and total spending is ${money(p.spending)}.`);
- if(p.eventIncome)notes.push(`One-time income events add ${money(p.eventIncome)} this year.`);
- if(p.eventExpense)notes.push(`One-time expense events add ${money(p.eventExpense)} to spending.`);
- notes.push(`Investments earn approximately ${money(p.growth)} using the return assigned to each account.`);
- if(p.contributions)notes.push(`${money(p.contributions)} is contributed to investment accounts.`);
- if(p.withdrawals)notes.push(`${money(p.withdrawals)} is withdrawn from ${p.withdrawalsByAccount.length} account${p.withdrawalsByAccount.length===1?'':'s'} to cover the cash-flow deficit.`);
- if(p.surplusToCash)notes.push(`${money(p.surplusToCash)} of unused cash flow is added to cash.`);
- if(p.unfunded)notes.push(`${money(p.unfunded)} remains unfunded after all projected investment accounts are exhausted.`);
- const spendingRows=Object.entries(p.spendingCategories||{}).sort((a,b)=>b[1]-a[1]).map(([name,amount])=>`<div class="detail-row"><span>${esc(name)}</span><strong>${money(amount)}</strong></div>`).join('')||'<div class="muted">No recurring spending recorded.</div>';
- const withdrawalRows=(p.withdrawalsByAccount||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">${esc(x.type)}</small></span><strong class="negative-text">${money(x.amount)}</strong></div>`).join('')||'<div class="muted">No investment withdrawals required.</div>';
- const accountRows=(p.accountBalances||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">${esc(x.type)}</small></span><strong>${money(x.balance)}</strong></div>`).join('');
- root.innerHTML=`<h4>${r.year} projection</h4><div class="detail-grid"><div class="detail-card">Income<strong>${money(p.totalIncome)}</strong></div><div class="detail-card">Spending<strong>${money(p.spending)}</strong></div><div class="detail-card">Ending investments<strong>${money(p.endingInvestments)}</strong></div></div><ul class="explain-list">${notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="detail-section"><h4>Spending by category</h4>${spendingRows}</div><div class="detail-section"><h4>Withdrawals by account</h4>${withdrawalRows}</div><div class="detail-section"><h4>Ending account balances</h4>${accountRows}</div>`;
- document.querySelectorAll('#projectionBody tr[data-year]').forEach(tr=>tr.classList.toggle('selected-year',num(tr.dataset.year)===r.year));
+ const p=r.projection,notes=[];notes.push(`Gross household income is ${money(p.totalIncome)}. Estimated federal and provincial income tax is ${money(p.tax)}, leaving ${money(p.afterTaxIncome)} after tax.`);notes.push(`Total spending is ${money(p.spending)}.`);if(p.eventIncome)notes.push(`One-time income events add ${money(p.eventIncome)} this year.`);if(p.eventExpense)notes.push(`One-time expense events add ${money(p.eventExpense)} to spending.`);notes.push(`Investments earn approximately ${money(p.growth)} using the return assigned to each account.`);if(p.contributions)notes.push(`${money(p.contributions)} is contributed to investment accounts.`);if(p.withdrawals)notes.push(`${money(p.withdrawals)} is withdrawn from ${p.withdrawalsByAccount.length} account${p.withdrawalsByAccount.length===1?'':'s'} to cover the after-tax cash-flow deficit.`);if(p.withdrawalsByAccount.some(x=>x.type==='RRSP/RRIF'))notes.push('RRSP/RRIF withdrawals are included as taxable income and the required withdrawal is grossed up for the resulting tax.');if(p.surplusToCash)notes.push(`${money(p.surplusToCash)} of unused after-tax cash flow is added to cash.`);if(p.unfunded)notes.push(`${money(p.unfunded)} remains unfunded after all projected investment accounts are exhausted.`);
+ const taxRows=(p.taxByPerson||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">Taxable income ${money(x.taxableIncome)}</small></span><strong>${money(x.total)}</strong></div>`).join('')+`<div class="detail-row"><span>Federal tax</span><strong>${money(p.federalTax)}</strong></div><div class="detail-row"><span>${esc(state.household.province)} tax</span><strong>${money(p.provincialTax)}</strong></div>`;
+ const spendingRows=Object.entries(p.spendingCategories||{}).sort((a,b)=>b[1]-a[1]).map(([name,amount])=>`<div class="detail-row"><span>${esc(name)}</span><strong>${money(amount)}</strong></div>`).join('')||'<div class="muted">No recurring spending recorded.</div>',withdrawalRows=(p.withdrawalsByAccount||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">${esc(x.type)}</small></span><strong class="negative-text">${money(x.amount)}</strong></div>`).join('')||'<div class="muted">No investment withdrawals required.</div>',accountRows=(p.accountBalances||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">${esc(x.type)}</small></span><strong>${money(x.balance)}</strong></div>`).join('');
+ root.innerHTML=`<h4>${r.year} projection</h4><div class="detail-grid"><div class="detail-card">Gross income<strong>${money(p.totalIncome)}</strong></div><div class="detail-card">Estimated tax<strong>${money(p.tax)}</strong></div><div class="detail-card">After-tax income<strong>${money(p.afterTaxIncome)}</strong></div><div class="detail-card">Spending<strong>${money(p.spending)}</strong></div><div class="detail-card">Ending investments<strong>${money(p.endingInvestments)}</strong></div></div><ul class="explain-list">${notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="detail-section"><h4>Estimated tax by person</h4>${taxRows}</div><div class="detail-section"><h4>Spending by category</h4>${spendingRows}</div><div class="detail-section"><h4>Withdrawals by account</h4>${withdrawalRows}</div><div class="detail-section"><h4>Ending account balances</h4>${accountRows}</div>`;document.querySelectorAll('#projectionBody tr[data-year]').forEach(tr=>tr.classList.toggle('selected-year',num(tr.dataset.year)===r.year));
 }
 function runTimelineSelfTests(){
- const timeline=window.HNTimeline.runSelfTests(),incomeTests=window.HNIncome.runSelfTests(),projectionTests=window.HNProjection.runSelfTests(),failed=[...timeline.failed,...incomeTests.failed,...projectionTests.failed],total=timeline.total+incomeTests.total+projectionTests.total;
- const el=document.getElementById('timelineTestMessage');el.textContent=failed.length===0?`All ${total} timeline, income, spending, and withdrawal tests passed.`:`${failed.length} of ${total} tests failed: ${failed.join('; ')}`;el.style.color=failed.length===0?'var(--ok)':'var(--danger)';
+ const timeline=window.HNTimeline.runSelfTests(),incomeTests=window.HNIncome.runSelfTests(),taxTests=window.HNTax.runSelfTests(),projectionTests=window.HNProjection.runSelfTests(),failed=[...timeline.failed,...incomeTests.failed,...taxTests.failed,...projectionTests.failed],total=timeline.total+incomeTests.total+taxTests.total+projectionTests.total;
+ const el=document.getElementById('timelineTestMessage');el.textContent=failed.length===0?`All ${total} timeline, income, tax, spending, and withdrawal tests passed.`:`${failed.length} of ${total} tests failed: ${failed.join('; ')}`;el.style.color=failed.length===0?'var(--ok)':'var(--danger)';
 }
 function downloadTimelineCsv(){
  const rows=buildProjectionTimeline(),people=window.HNTimeline.includedPeople(state);
- const headers=['Year',...people.map(p=>`${p.name||'Person'} Age`),'Income','Spending','Investment Growth','Contributions','Withdrawals','Unfunded Shortfall','Ending Investments','Net Worth','Withdrawal Breakdown'];
- const csv=[headers,...rows.map(r=>[r.year,...r.people.map(p=>p.age??''),Math.round(r.projection.totalIncome),Math.round(r.projection.spending),Math.round(r.projection.growth),Math.round(r.projection.contributions),Math.round(r.projection.withdrawals),Math.round(r.projection.unfunded),Math.round(r.projection.endingInvestments),Math.round(r.projection.netWorth),r.projection.withdrawalsByAccount.map(x=>`${x.name}: ${Math.round(x.amount)}`).join(' | ')])].map(row=>row.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\n');
+ const headers=['Year',...people.map(p=>`${p.name||'Person'} Age`),'Gross Income','Federal Tax','Provincial Tax','Total Tax','After-tax Income','Spending','Investment Growth','Contributions','Withdrawals','Unfunded Shortfall','Ending Investments','Net Worth','Withdrawal Breakdown'];
+ const csv=[headers,...rows.map(r=>[r.year,...r.people.map(p=>p.age??''),Math.round(r.projection.totalIncome),Math.round(r.projection.federalTax),Math.round(r.projection.provincialTax),Math.round(r.projection.tax),Math.round(r.projection.afterTaxIncome),Math.round(r.projection.spending),Math.round(r.projection.growth),Math.round(r.projection.contributions),Math.round(r.projection.withdrawals),Math.round(r.projection.unfunded),Math.round(r.projection.endingInvestments),Math.round(r.projection.netWorth),r.projection.withdrawalsByAccount.map(x=>`${x.name}: ${Math.round(x.amount)}`).join(' | ')])].map(row=>row.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\n');
  const blob=new Blob([csv],{type:'text/csv'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Harbour-North-projection-${new Date().toISOString().slice(0,10)}.csv`;a.click();URL.revokeObjectURL(a.href);
 }
 
