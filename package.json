@@ -1,0 +1,1 @@
+{"name":"harbour-north","private":true,"version":"0.3.0","scripts":{"test":"node tests/timeline-engine.test.js"}}
