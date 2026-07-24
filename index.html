@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.5.4 Guided Benefits Setup</title>
+<title>Harbour North 0.6.0 Core Stability</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -33,10 +33,25 @@
 @media(max-width:900px){.benefit-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.benefit-grid{grid-template-columns:1fr}.completeness-item{align-items:flex-start;flex-direction:column}}
 
+
+.health-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.health-check{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}
+.health-check.ok{border-left:5px solid var(--ok)}
+.health-check.warn{border-left:5px solid var(--warn)}
+.health-check.fail{border-left:5px solid var(--danger)}
+.health-check strong{display:block;color:var(--navy)}
+.error-console{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;white-space:pre-wrap;background:#101827;color:#e5edf7;border-radius:12px;padding:14px;max-height:280px;overflow:auto}
+.setup-steps{display:grid;gap:10px}
+.setup-step{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:13px;padding:12px 14px;background:#fff}
+.setup-step-number{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--blue2);color:var(--navy);font-weight:900}
+.setup-step.complete .setup-step-number{background:#dff2e7;color:var(--ok)}
+@media(max-width:800px){.health-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.setup-step{grid-template-columns:34px 1fr}.setup-step .btn{grid-column:1/-1}}
+
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.5.4 · Guided Benefits Setup</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>0.6.0 · Core Stability</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -48,6 +63,7 @@
 <button class="tab" data-page="results">Results</button>
 <button class="tab" data-page="scenarios">Scenarios</button>
 <button class="tab" data-page="projection">Projection</button>
+<button class="tab" data-page="stability">Setup & Health</button>
 <button class="tab" data-page="backup">Backup</button>
 </nav>
 <section id="home" class="page active">
@@ -138,6 +154,27 @@
 <div class="card"><div class="row-head"><div><h3>Explain this year</h3><p class="muted">Choose a year to see the main reasons behind its result.</p></div><div class="field" style="min-width:150px"><label>Year</label><select id="explainYear"></select></div></div><div id="explainYearBody" class="explain-box"></div></div>
 <div class="card"><h3>Current tax-engine rules</h3><ul class="checklist"><li>Federal and 2026 tax brackets for all 10 provinces and three territories are used as the base and indexed into future years using the projection inflation assumption.</li><li>Tax is estimated separately for each person using taxable recurring income and taxable RRSP/RRIF withdrawals.</li><li>Income sources marked non-taxable are excluded from taxable income. TFSA and cash withdrawals are not taxable.</li><li>The estimate includes federal and provincial or territorial basic personal credits, the Quebec federal abatement, B.C. tax reduction, and Ontario surtax, tax reduction, and health premium. It does not yet include CPP/EI/QPP payroll deductions, age and pension credits, OAS recovery tax, dividend gross-up, capital gains, medical credits, or income splitting.</li><li>Inheritance and gifts are treated as non-taxable cash flow. A generic one-time “Income” event is treated as taxable income for the primary person.</li><li>Deficits are funded in this order: non-registered, cash, TFSA, RRSP/RRIF, FHSA. RRSP/RRIF tax is recalculated until the after-tax shortfall stabilizes.</li><li>This is a planning estimate, not a tax return or professional tax advice.</li></ul></div>
 </section>
+
+<section id="stability" class="page">
+<div class="hero"><div class="eyebrow">0.6.0 · Core stability</div><h2>Setup &amp; Health</h2><p class="muted">Complete the essential planning steps and confirm that Harbour North’s core engines are working before relying on projections or optimizer results.</p></div>
+
+<div class="card">
+<div class="row-head"><div><h3>Guided setup</h3><p class="muted">Work through these steps in order. Completed steps update automatically.</p></div><span id="setupProgressBadge" class="badge warn">Checking</span></div>
+<div id="setupSteps" class="setup-steps"></div>
+</div>
+
+<div class="card">
+<div class="row-head"><div><h3>Application health report</h3><p class="muted">Checks data completeness, engine tests, and page rendering.</p></div><button id="runStabilityCheck" class="btn primary">Run full health check</button></div>
+<div id="stabilitySummary" class="notice">Health check has not run yet.</div>
+<div id="stabilityChecks" class="health-grid" style="margin-top:14px"></div>
+</div>
+
+<div class="card">
+<div class="row-head"><div><h3>Error console</h3><p class="muted">Unexpected browser errors are captured here instead of failing silently.</p></div><button id="clearErrorConsole" class="btn">Clear errors</button></div>
+<div id="errorConsole" class="error-console">No errors captured.</div>
+</div>
+</section>
+
 <section id="backup" class="page"><div class="hero"><h2>Backup and recovery</h2><p class="muted">Export your full Harbour North plan before major updates.</p></div><div class="card"><div class="actions"><button id="exportBtn" class="btn primary">Export backup</button><label class="btn">Import backup<input id="importFile" class="hidden" type="file" accept="application/json,.json"></label><button id="healthBtn" class="btn">Run data health check</button><button id="resetBtn" class="btn danger">Reset plan</button></div><p id="backupMessage" class="muted"></p></div><div class="card"><div class="row-head"><div><h3>Professional planning foundation</h3><p class="muted">The app now stores household data, assumptions, tax profile, scenarios, and optimizer results in a structured planning model while retaining compatibility with earlier backups.</p></div><span id="modelStatus" class="badge good">Ready</span></div><div class="summary-grid"><div class="metric">Model version<strong id="modelVersion">1</strong><div class="submetric">Professional planning schema</div></div><div class="metric">Active scenario<strong id="activeScenarioName">Base plan</strong><div class="submetric">Scenario workspace</div></div><div class="metric">Saved scenarios<strong id="scenarioCount">1</strong><div class="submetric">Ready for comparison tools</div></div><div class="metric">Last optimizer run<strong id="lastOptimizerRun">Never</strong><div class="submetric">Stored with the plan</div></div></div></div></section>
 </main><div id="toast" class="toast"></div>
 <script>
@@ -436,7 +473,8 @@
 
 </script>
 <script>
-const KEY='harbourNorth2.plan', APP='0.5.4-guided-benefits-setup', SCHEMA=16, MODEL_VERSION=6;
+const global=window;
+const KEY='harbourNorth2.plan', APP='0.6.0-core-stability', SCHEMA=17, MODEL_VERSION=7;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -557,6 +595,7 @@ function benefitCompletenessIssues(){
 }
 function renderBenefits(){
  const root=document.getElementById('benefitPeople');if(!root)return;
+ try{
  const people=global.HNTimeline.includedPeople(state);
  root.innerHTML=people.map((person,index)=>{
   const cpp=findBenefitSource(person,index,'CPP'),oas=findBenefitSource(person,index,'OAS'),pension=findPensionSource(person,index),label=person.name||(index===0?'Primary person':'Partner');
@@ -577,6 +616,10 @@ function renderBenefits(){
   set('CPP','startAge',cpp?.startAge??65);set('CPP','indexed',cpp?.indexed!==false);set('OAS','startAge',oas?.startAge??65);set('OAS','indexed',oas?.indexed!==false);set('Pension','indexed',pension?.indexed===true);
  });
  renderBenefitCompleteness();
+ }catch(e){
+  recordRuntimeError(e.message,'Retirement Benefits',0,0,e);
+  root.innerHTML=`<div class="notice"><strong>Benefits could not be displayed.</strong><br>${esc(e.message)}<div class="actions" style="margin-top:12px"><button class="btn" data-goto="stability">Open Setup & Health</button></div></div>`;
+ }
 }
 function handleBenefitChange(e){
  const card=e.target.closest('[data-person-index]');if(!card)return;
@@ -857,7 +900,65 @@ function renderOptimizer(){
 }
 
 function daypart(){const h=new Date().getHours();return h<12?'morning':h<17?'afternoon':'evening'}
-function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();window.scrollTo({top:0,behavior:'smooth'})}
+
+const runtimeErrors=[];
+function recordRuntimeError(message,source='',line=0,column=0,error=null){
+ const text=[new Date().toLocaleTimeString('en-CA'),message,source?`${source}:${line}:${column}`:'',error?.stack||''].filter(Boolean).join('\n');
+ runtimeErrors.push(text);if(runtimeErrors.length>20)runtimeErrors.shift();renderErrorConsole();
+}
+window.addEventListener('error',e=>recordRuntimeError(e.message,e.filename,e.lineno,e.colno,e.error));
+window.addEventListener('unhandledrejection',e=>recordRuntimeError(`Unhandled promise rejection: ${e.reason?.message||e.reason||'Unknown error'}`,'',0,0,e.reason));
+
+function renderErrorConsole(){
+ const root=document.getElementById('errorConsole');if(!root)return;
+ root.textContent=runtimeErrors.length?runtimeErrors.join('\n\n──────────\n\n'):'No errors captured.';
+}
+function setupStatus(){
+ const people=global.HNTimeline.includedPeople(state),primary=people[0],partner=people[1];
+ const benefitsReady=people.every((p,i)=>findBenefitSource(p,i,'CPP')&&findBenefitSource(p,i,'OAS'));
+ return[
+  {name:'Household profile',complete:!!(primary?.name&&primary?.birthDate&&(!state.hasPartner||(partner?.name&&partner?.birthDate))),page:'profile',detail:'Names, birth dates, and retirement ages'},
+  {name:'Financial accounts',complete:(state.accounts||[]).length>0,page:'ledger',detail:'Cash, RRSP, TFSA, property, and other assets'},
+  {name:'Employment and recurring income',complete:(state.incomeSources||[]).some(x=>employmentKind(x)||/wcb|ltd/i.test(`${x.type||''} ${x.name||''}`)),page:'ledger',detail:'Current salary, WCB/LTD, rental, or business income'},
+  {name:'CPP and OAS',complete:benefitsReady,page:'benefits',detail:'Government benefits for every included person'},
+  {name:'Workplace pensions',complete:true,page:'benefits',detail:'Review and add workplace pensions where applicable'},
+  {name:'Spending plan',complete:(state.expenses||[]).length>0,page:'ledger',detail:'Essential, lifestyle, travel, and healthcare spending'},
+  {name:'Planning assumptions',complete:num(state.household?.planningAge)>=85&&Number.isFinite(num(state.household?.inflationRate)),page:'assumptions',detail:'Inflation, return, horizon, and optimizer range'}
+ ];
+}
+function renderSetupSteps(){
+ const root=document.getElementById('setupSteps');if(!root)return;
+ const steps=setupStatus(),done=steps.filter(x=>x.complete).length;
+ document.getElementById('setupProgressBadge').textContent=`${done} of ${steps.length} complete`;
+ document.getElementById('setupProgressBadge').className=`badge ${done===steps.length?'good':'warn'}`;
+ root.innerHTML=steps.map((s,i)=>`<div class="setup-step ${s.complete?'complete':''}"><span class="setup-step-number">${s.complete?'✓':i+1}</span><span><strong>${esc(s.name)}</strong><br><small class="muted">${esc(s.detail)}</small></span><button class="btn small" data-goto="${s.page}">${s.complete?'Review':'Complete'}</button></div>`).join('');
+}
+function checkResult(name,ok,detail,level='warn'){return{name,ok,detail,status:ok?'ok':level}}
+function runStabilityCheck(){
+ const checks=[];
+ try{
+  checks.push(checkResult('Planning model',!!state.planningModel&&Array.isArray(state.planningModel.scenarios),'Structured planning model is available.','fail'));
+  checks.push(checkResult('Household records',global.HNTimeline.includedPeople(state).length>0,`${global.HNTimeline.includedPeople(state).length} included person record(s).`,'fail'));
+  const timelineTest=global.HNTimeline.runSelfTests();checks.push(checkResult('Timeline engine',timelineTest.ok,`${timelineTest.total-timelineTest.failed.length}/${timelineTest.total} tests passed${timelineTest.failed.length?': '+timelineTest.failed.join(', '):''}.`,'fail'));
+  const incomeTest=global.HNIncome.runSelfTests();checks.push(checkResult('Income engine',incomeTest.ok,`${incomeTest.total-incomeTest.failed.length}/${incomeTest.total} tests passed${incomeTest.failed.length?': '+incomeTest.failed.join(', '):''}.`,'fail'));
+  const taxTest=global.HNTax.runSelfTests();checks.push(checkResult('Canadian tax engine',taxTest.ok,`${taxTest.total-taxTest.failed.length}/${taxTest.total} tests passed${taxTest.failed.length?': '+taxTest.failed.join(', '):''}.`,'fail'));
+  const projectionTest=global.HNProjection.runSelfTests();checks.push(checkResult('Projection engine',projectionTest.ok,`${projectionTest.total-projectionTest.failed.length}/${projectionTest.total} tests passed${projectionTest.failed.length?': '+projectionTest.failed.join(', '):''}.`,'fail'));
+  const benefitRoot=document.getElementById('benefitPeople');renderBenefits();checks.push(checkResult('Benefits page rendering',!!benefitRoot&&benefitRoot.children.length>0,benefitRoot?`${benefitRoot.children.length} benefit card(s) rendered.`:'Benefits container is missing.','fail'));
+  const issues=benefitCompletenessIssues();checks.push(checkResult('Plan completeness',issues.length===0,issues.length?issues.map(x=>x.text).join(' '):'No completeness warnings.','warn'));
+  checks.push(checkResult('Runtime error console',runtimeErrors.length===0,runtimeErrors.length?`${runtimeErrors.length} error(s) captured.`:'No runtime errors captured.','fail'));
+ }catch(e){recordRuntimeError(e.message,'Health check',0,0,e);checks.push(checkResult('Health check execution',false,e.message,'fail'))}
+ const root=document.getElementById('stabilityChecks');
+ root.innerHTML=checks.map(c=>`<div class="health-check ${c.status}"><strong>${c.ok?'✓':'!'} ${esc(c.name)}</strong><p class="muted" style="margin:6px 0 0">${esc(c.detail)}</p></div>`).join('');
+ const failed=checks.filter(x=>x.status==='fail'&&!x.ok).length,warnings=checks.filter(x=>x.status==='warn'&&!x.ok).length;
+ const summary=document.getElementById('stabilitySummary');
+ summary.className=`notice ${failed===0?'good':''}`;
+ summary.innerHTML=failed?`<strong>Core issue detected:</strong> ${failed} failed check${failed===1?'':'s'} and ${warnings} warning${warnings===1?'':'s'}.`:
+  warnings?`<strong>Core engines passed.</strong> ${warnings} plan-completeness warning${warnings===1?' remains':'s remain'}.`:
+  `<strong>All checks passed.</strong> Core engines, benefit rendering, and plan completeness are ready.`;
+ renderSetupSteps();renderErrorConsole();
+}
+
+function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}window.scrollTo({top:0,behavior:'smooth'})}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 document.getElementById('addAccount').onclick=()=>{state.accounts.push(account('New account','RRSP/RRIF',state.people[0].name||'Primary',0));renderAccounts();save()};document.getElementById('addIncome').onclick=()=>{state.incomeSources.push(income('New income','Salary',state.people[0].name||'Primary',0,0,state.people[0].retirementAge||65,true,true));renderIncome();save()};document.getElementById('addDebt').onclick=()=>{state.debts.push(debt('New debt','Line of credit',0));renderDebts();save()};document.getElementById('addExpense').onclick=()=>{state.expenses.push(expense('New spending','Essential',0,'Monthly'));renderExpenses();save()};document.getElementById('addEvent').onclick=()=>{state.events.push(eventItem('New event','Expense',0,nowYear+3));renderEvents();save()};
@@ -882,10 +983,12 @@ document.getElementById('duplicateScenario').onclick=()=>{const current=activeSc
 document.getElementById('scenarioManagerList').addEventListener('click',e=>{const row=e.target.closest('[data-scenario-id]');if(!row)return;const sid=row.dataset.scenarioId;if(e.target.closest('.scenario-switch'))switchScenario(sid);if(e.target.closest('.scenario-delete'))deleteScenario(sid)});
 document.getElementById('scenarioManagerList').addEventListener('change',e=>{if(!e.target.classList.contains('scenario-name'))return;const row=e.target.closest('[data-scenario-id]');renameScenario(row.dataset.scenarioId,e.target.value)});
 const benefitRoot=document.getElementById('benefitPeople');if(benefitRoot){benefitRoot.addEventListener('change',handleBenefitChange);benefitRoot.addEventListener('input',e=>{if(e.target.type==='number')handleBenefitChange(e)})}
+document.getElementById('runStabilityCheck').onclick=runStabilityCheck;
+document.getElementById('clearErrorConsole').onclick=()=>{runtimeErrors.length=0;renderErrorConsole();toast('Error console cleared')};
 document.getElementById('runOptimizer').onclick=runOptimizer;
 bindAssumptions();syncAssumptionInputs();restoreOptimizerResults();renderOptimizer();
 
-bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderResultsBenefits();save(false);renderModelStatus();renderScenarioManager();
+bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderResultsBenefits();renderSetupSteps();renderErrorConsole();save(false);renderModelStatus();renderScenarioManager();
 
 </script>
 </body></html>
