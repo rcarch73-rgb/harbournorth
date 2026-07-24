@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.3.2 Investment & Cash-Flow Engine</title>
+<title>Harbour North 0.3.3 Spending & Withdrawal Engine</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -11,11 +11,12 @@
 .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}.projection-table{width:100%;border-collapse:collapse;min-width:760px}.projection-table th,.projection-table td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.projection-table th{position:sticky;top:0;background:#eef4fa;color:var(--navy);z-index:1}.projection-table tbody tr:hover{background:#f8fbfe}.money-cell{text-align:right!important;white-space:nowrap}.income-detail{display:flex;justify-content:space-between;gap:12px;padding:5px 0;border-bottom:1px dashed #dbe5ef}.income-detail:last-child{border-bottom:0}.income-detail small{color:var(--muted)}.timeline-cell{display:flex;flex-direction:column;gap:2px;margin-bottom:8px}.timeline-cell span{font-size:12px;color:var(--muted)}
 
 .explain-box{border:1px solid var(--line);border-radius:15px;padding:18px;background:#f8fbfe}.explain-box h4{margin:0 0 10px;color:var(--navy)}.explain-list{margin:0;padding-left:20px}.explain-list li{margin:7px 0}.negative{color:var(--danger)!important}.positive{color:var(--ok)!important}
+.detail-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}.detail-card{border:1px solid var(--line);border-radius:14px;padding:14px;background:#f8fafc}.detail-card strong{display:block;font-size:21px;margin-top:5px}.detail-section{margin-top:18px}.detail-row{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed #d6e0ea}.detail-row:last-child{border-bottom:0}.projection-table tbody tr{cursor:pointer}.projection-table tbody tr.selected-year{background:#eaf3fc}.negative-text{color:var(--danger)}@media(max-width:650px){.detail-grid{grid-template-columns:1fr}}
 
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.3.2 · Investment & Cash-Flow Engine</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>0.3.3 · Spending & Withdrawal Engine</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -50,12 +51,12 @@
 </section>
 
 <section id="projection" class="page">
-<div class="hero"><div class="row-head"><div><div class="eyebrow">Phase 2 · Component 3</div><h2>Investment and cash-flow engine</h2><p class="muted">Harbour North now combines recurring income, spending, investment growth, contributions, one-time events, and withdrawals into one year-by-year projection.</p></div><span id="timelineEngineStatus" class="badge warn">Waiting for profile</span></div></div>
+<div class="hero"><div class="row-head"><div><div class="eyebrow">Phase 2 · Component 4</div><h2>Spending and withdrawal engine</h2><p class="muted">Harbour North now shows where spending comes from, which accounts fund each shortfall, and how every withdrawal changes the year-end result.</p></div><span id="timelineEngineStatus" class="badge warn">Waiting for profile</span></div></div>
 <div class="summary-grid"><div class="metric">Starting investments<strong id="pStartingInvestments">$0</strong><div class="submetric">Cash and investment accounts</div></div><div class="metric">Retirement-year balance<strong id="pRetirementBalance">$0</strong><div class="submetric" id="pRetirementYear">Primary retirement year</div></div><div class="metric">Ending investments<strong id="pEndingInvestments">$0</strong><div class="submetric" id="pEndingYear">Planning horizon</div></div><div class="metric">First shortfall year<strong id="pShortfallYear">None</strong><div class="submetric">Before investment withdrawals</div></div></div>
 <div class="card"><div class="row-head"><div><h3>Projection controls</h3><p class="muted">Income and spending are entered in current-year dollars. Indexed amounts grow using the inflation assumption.</p></div><button id="runTimelineTests" class="btn">Run engine tests</button></div><div class="grid"><div class="field"><label>Projection start year</label><input id="projectionStartYear" type="number" min="2020" max="2200"></div><div class="field"><label>Planning horizon age</label><input id="projectionPlanningAge" type="number" min="75" max="110"></div><div class="field"><label>Inflation / income indexing (%)</label><input id="projectionInflationRate" type="number" min="0" max="10" step="0.1"></div></div><p id="timelineTestMessage" class="muted"></p></div>
 <div class="card"><div class="row-head"><div><h3>Year-by-year retirement projection</h3><p class="muted">Withdrawals cover annual cash-flow deficits. Positive cash flow remaining after planned contributions is retained as cash.</p></div><button id="downloadTimelineCsv" class="btn primary">Download projection CSV</button></div><div class="table-wrap"><table class="projection-table"><thead id="projectionHead"></thead><tbody id="projectionBody"></tbody></table></div></div>
 <div class="card"><div class="row-head"><div><h3>Explain this year</h3><p class="muted">Choose a year to see the main reasons behind its result.</p></div><div class="field" style="min-width:150px"><label>Year</label><select id="explainYear"></select></div></div><div id="explainYearBody" class="explain-box"></div></div>
-<div class="card"><h3>Current engine rules</h3><ul class="checklist"><li>Investment growth uses each account’s expected return.</li><li>Planned contributions are applied only while their owner is working and only when household cash flow is positive.</li><li>Annual spending is indexed from the projection start year.</li><li>One-time income, inheritance, gift, and asset-sale events increase cash flow; expense events reduce it.</li><li>Deficits are withdrawn in this order: non-registered, cash, TFSA, RRSP/RRIF, FHSA.</li><li>Real estate and other non-investment assets remain at their entered value. Debt balances remain unchanged in this phase.</li><li>Income tax is not calculated yet.</li></ul></div>
+<div class="card"><h3>Current engine rules</h3><ul class="checklist"><li>Investment growth uses each account’s expected return.</li><li>Planned contributions are applied only while their owner is working and only when household cash flow is positive.</li><li>Annual spending is indexed from the projection start year and retained by category for inspection.</li><li>One-time income, inheritance, gift, and asset-sale events increase cash flow; expense events reduce it.</li><li>Deficits are withdrawn in this order: non-registered, cash, TFSA, RRSP/RRIF, FHSA. Every account-level withdrawal is recorded.</li><li>Real estate and other non-investment assets remain at their entered value. Debt balances remain unchanged in this phase.</li><li>Income tax is not calculated yet.</li></ul></div>
 </section>
 <section id="backup" class="page"><div class="hero"><h2>Backup and recovery</h2><p class="muted">Export your full Harbour North plan before major updates.</p></div><div class="card"><div class="actions"><button id="exportBtn" class="btn primary">Export backup</button><label class="btn">Import backup<input id="importFile" class="hidden" type="file" accept="application/json,.json"></label><button id="healthBtn" class="btn">Run data health check</button><button id="resetBtn" class="btn danger">Reset plan</button></div><p id="backupMessage" class="muted"></p></div></section>
 </main><div id="toast" class="toast"></div>
@@ -189,10 +190,14 @@
   const n=v=>Number.isFinite(Number(v))?Number(v):0;
   const INVEST_TYPES=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'];
   const withdrawalPriority=['Non-registered','Cash','TFSA','RRSP/RRIF','FHSA'];
-  function annualSpending(plan,year,startYear,inflationRate){
+  function annualSpendingBreakdown(plan,year,startYear,inflationRate){
     const factor=Math.pow(1+n(inflationRate)/100,Math.max(0,year-startYear));
-    return (plan.expenses||[]).reduce((sum,x)=>sum+n(x.amount)*(x.frequency==='Monthly'?12:1)*factor,0);
+    const details=(plan.expenses||[]).map(x=>({name:x.name||x.category||'Spending',category:x.category||'Other',amount:n(x.amount)*(x.frequency==='Monthly'?12:1)*factor}));
+    const categories={};
+    for(const x of details)categories[x.category]=(categories[x.category]||0)+x.amount;
+    return {total:details.reduce((sum,x)=>sum+x.amount,0),details,categories};
   }
+  function annualSpending(plan,year,startYear,inflationRate){return annualSpendingBreakdown(plan,year,startYear,inflationRate).total}
   function eventCashFlow(plan,year){
     let income=0,expense=0;
     for(const e of plan.events||[]){
@@ -221,31 +226,34 @@
       for(const a of accounts){const g=a.balance*n(a.returnRate)/100;a.balance+=g;growth+=g}
       const events=eventCashFlow(plan,row.year);
       const totalIncome=row.income.totalIncome+events.income;
-      const spending=annualSpending(plan,row.year,startYear,inflationRate)+events.expense;
+      const spendingBreakdown=annualSpendingBreakdown(plan,row.year,startYear,inflationRate);
+      const spending=spendingBreakdown.total+events.expense;
       const preContributionCashFlow=totalIncome-spending;
       const planned=accounts.reduce((s,a)=>s+(ownerWorking(a,row,people)?Math.max(0,n(a.annualContribution)):0),0);
       const contributions=Math.min(Math.max(0,preContributionCashFlow),planned);
+      const contributionsByAccount=[];
       if(contributions>0){
         const eligible=accounts.filter(a=>ownerWorking(a,row,people)&&n(a.annualContribution)>0);
         const totalPlan=eligible.reduce((s,a)=>s+n(a.annualContribution),0);
-        eligible.forEach(a=>a.balance+=contributions*(n(a.annualContribution)/totalPlan));
+        eligible.forEach(a=>{const amount=contributions*(n(a.annualContribution)/totalPlan);a.balance+=amount;contributionsByAccount.push({id:a.id,name:a.name,type:a.type,amount})});
       }
       let remainingCash=preContributionCashFlow-contributions;
-      let withdrawals=0,unfunded=0;
+      let withdrawals=0,unfunded=0,surplusToCash=0;
+      const withdrawalsByAccount=[];
       if(remainingCash<0){
         let need=-remainingCash;
         for(const type of withdrawalPriority){
           for(const a of accounts.filter(x=>x.type===type)){
-            const take=Math.min(a.balance,need);a.balance-=take;need-=take;withdrawals+=take;if(need<=0)break;
+            const take=Math.min(a.balance,need);a.balance-=take;need-=take;withdrawals+=take;if(take>0)withdrawalsByAccount.push({id:a.id,name:a.name,type:a.type,amount:take});if(need<=0)break;
           }
           if(need<=0)break;
         }
         unfunded=need;remainingCash=0;
       } else if(remainingCash>0){
-        accounts.find(a=>a.type==='Cash').balance+=remainingCash;
+        surplusToCash=remainingCash;accounts.find(a=>a.type==='Cash').balance+=remainingCash;
       }
       const endingInvestments=accounts.reduce((s,a)=>s+a.balance,0);
-      rows.push({...row,projection:{startingInvestments,growth,totalIncome,baseIncome:row.income.totalIncome,eventIncome:events.income,spending,eventExpense:events.expense,plannedContributions:planned,contributions,withdrawals,unfunded,endingInvestments,netWorth:endingInvestments+nonInvestmentAssets-debt,accountBalances:accounts.map(a=>({id:a.id,name:a.name,type:a.type,balance:a.balance}))}});
+      rows.push({...row,projection:{startingInvestments,growth,totalIncome,baseIncome:row.income.totalIncome,eventIncome:events.income,spending,eventExpense:events.expense,spendingDetails:spendingBreakdown.details,spendingCategories:spendingBreakdown.categories,plannedContributions:planned,contributions,contributionsByAccount,withdrawals,withdrawalsByAccount,unfunded,surplusToCash,endingInvestments,netWorth:endingInvestments+nonInvestmentAssets-debt,accountBalances:accounts.map(a=>({id:a.id,name:a.name,type:a.type,balance:a.balance}))}});
     }
     return rows;
   }
@@ -255,14 +263,16 @@
     test('Spending inflation',()=>Math.round(annualSpending({expenses:[{amount:1000,frequency:'Annual'}]},2027,2026,2))===1020);
     test('Income event classification',()=>eventCashFlow({events:[{year:2030,type:'Inheritance',amount:5000}]},2030).income===5000);
     test('Expense event classification',()=>eventCashFlow({events:[{year:2030,type:'Expense',amount:5000}]},2030).expense===5000);
+    test('Spending category breakdown',()=>annualSpendingBreakdown({expenses:[{name:'Food',category:'Essential',amount:100,frequency:'Monthly'},{name:'Trips',category:'Travel',amount:500,frequency:'Annual'}]},2026,2026,2).categories.Essential===1200);
+    test('Withdrawal priority recorded',()=>{const plan={hasPartner:false,people:[{name:'A',birthDate:'2000-01-01',retirementAge:40}],accounts:[{id:'n',name:'Taxable',type:'Non-registered',owner:'A',balance:100,returnRate:0,annualContribution:0},{id:'t',name:'TFSA',type:'TFSA',owner:'A',balance:100,returnRate:0,annualContribution:0}],debts:[],expenses:[{name:'Spend',category:'Essential',amount:150,frequency:'Annual'}],events:[]};const rows=buildProjection(plan,[{year:2040,people:[{name:'A',age:40,status:'Retired'}],income:{totalIncome:0}}],{startYear:2040,indexRate:0});return rows[0].projection.withdrawalsByAccount.map(x=>x.type).join(',')==='Non-registered,TFSA'});
     return {ok:failed.length===0,total,failed};
   }
-  global.HNProjection={annualSpending,eventCashFlow,buildProjection,runSelfTests};
+  global.HNProjection={annualSpending,annualSpendingBreakdown,eventCashFlow,buildProjection,runSelfTests};
 })(typeof window!=='undefined'?window:globalThis);
 
 </script>
 <script>
-const KEY='harbourNorth2.plan' ,APP='0.3.2-cashflow',SCHEMA=6;
+const KEY='harbourNorth2.plan' ,APP='0.3.3-withdrawals',SCHEMA=7;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaults=()=>({meta:{appVersion:APP,schemaVersion:SCHEMA,updatedAt:new Date().toISOString()},hasPartner:true,people:[{name:'',birthDate:'',retirementAge:55,employmentStatus:'Employed'},{name:'',birthDate:'',retirementAge:55,employmentStatus:'Employed'}],household:{province:'British Columbia',planningAge:95,inflationRate:2,returnRate:5},accounts:[],incomeSources:[],debts:[],expenses:[],events:[]});
@@ -414,31 +424,34 @@ function renderProjection(){
  const status=document.getElementById('timelineEngineStatus');status.textContent=people.length&&people.every(p=>p.birthDate)?'Cash-flow engine ready':'Birth dates needed';status.className='badge '+(status.textContent==='Cash-flow engine ready'?'good':'warn');
  document.getElementById('projectionHead').innerHTML='<tr><th>Year</th>'+people.map(p=>`<th>${esc(p.name||'Person')} age</th>`).join('')+'<th class="money-cell">Income</th><th class="money-cell">Spending</th><th class="money-cell">Growth</th><th class="money-cell">Contributions</th><th class="money-cell">Withdrawals</th><th class="money-cell">Ending investments</th><th class="money-cell">Net worth</th></tr>';
  const cols=people.length+8;
- document.getElementById('projectionBody').innerHTML=rows.length?rows.map(r=>`<tr><td><strong>${r.year}</strong></td>${r.people.map(p=>`<td>${p.age??'—'}<div><span class="badge ${p.status==='Retired'?'good':'warn'}">${p.status}</span></div></td>`).join('')}<td class="money-cell">${money(r.projection.totalIncome)}</td><td class="money-cell">${money(r.projection.spending)}</td><td class="money-cell positive">${money(r.projection.growth)}</td><td class="money-cell">${money(r.projection.contributions)}</td><td class="money-cell ${r.projection.withdrawals||r.projection.unfunded?'negative':''}">${money(r.projection.withdrawals)}${r.projection.unfunded?`<div><small>Unfunded ${money(r.projection.unfunded)}</small></div>`:''}</td><td class="money-cell"><strong>${money(r.projection.endingInvestments)}</strong></td><td class="money-cell"><strong>${money(r.projection.netWorth)}</strong></td></tr>`).join(''):`<tr><td colspan="${cols}" class="empty">Add a valid date of birth to build the projection.</td></tr>`;
+ document.getElementById('projectionBody').innerHTML=rows.length?rows.map(r=>`<tr data-year="${r.year}"><td><strong>${r.year}</strong></td>${r.people.map(p=>`<td>${p.age??'—'}<div><span class="badge ${p.status==='Retired'?'good':'warn'}">${p.status}</span></div></td>`).join('')}<td class="money-cell">${money(r.projection.totalIncome)}</td><td class="money-cell">${money(r.projection.spending)}</td><td class="money-cell positive">${money(r.projection.growth)}</td><td class="money-cell">${money(r.projection.contributions)}</td><td class="money-cell ${r.projection.withdrawals||r.projection.unfunded?'negative':''}">${money(r.projection.withdrawals)}${r.projection.unfunded?`<div><small>Unfunded ${money(r.projection.unfunded)}</small></div>`:''}</td><td class="money-cell"><strong>${money(r.projection.endingInvestments)}</strong></td><td class="money-cell"><strong>${money(r.projection.netWorth)}</strong></td></tr>`).join(''):`<tr><td colspan="${cols}" class="empty">Add a valid date of birth to build the projection.</td></tr>`;
  const select=document.getElementById('explainYear');const previous=select.value;select.innerHTML=rows.map(r=>`<option value="${r.year}">${r.year}</option>`).join('');if(rows.some(r=>String(r.year)===previous))select.value=previous;else if(retirementRow)select.value=retirementRow.year;renderExplainYear(rows);
 }
 function renderExplainYear(rowsArg){
  const rows=rowsArg||buildProjectionTimeline(),year=num(document.getElementById('explainYear')?.value),r=rows.find(x=>x.year===year)||rows[0],root=document.getElementById('explainYearBody');if(!r||!root)return;
  const p=r.projection,notes=[];
- notes.push(`Household income is ${money(p.totalIncome)} and indexed spending is ${money(p.spending)}.`);
+ notes.push(`Household income is ${money(p.totalIncome)} and total spending is ${money(p.spending)}.`);
  if(p.eventIncome)notes.push(`One-time income events add ${money(p.eventIncome)} this year.`);
  if(p.eventExpense)notes.push(`One-time expense events add ${money(p.eventExpense)} to spending.`);
  notes.push(`Investments earn approximately ${money(p.growth)} using the return assigned to each account.`);
  if(p.contributions)notes.push(`${money(p.contributions)} is contributed to investment accounts.`);
- if(p.withdrawals)notes.push(`${money(p.withdrawals)} is withdrawn from investments to cover the cash-flow deficit.`);
+ if(p.withdrawals)notes.push(`${money(p.withdrawals)} is withdrawn from ${p.withdrawalsByAccount.length} account${p.withdrawalsByAccount.length===1?'':'s'} to cover the cash-flow deficit.`);
+ if(p.surplusToCash)notes.push(`${money(p.surplusToCash)} of unused cash flow is added to cash.`);
  if(p.unfunded)notes.push(`${money(p.unfunded)} remains unfunded after all projected investment accounts are exhausted.`);
- if(!p.withdrawals&&!p.unfunded&&p.totalIncome>=p.spending)notes.push('Income covers spending without an investment withdrawal.');
- notes.push(`Ending investments are ${money(p.endingInvestments)} and projected net worth is ${money(p.netWorth)}.`);
- root.innerHTML=`<h4>${r.year} projection</h4><ul class="explain-list">${notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+ const spendingRows=Object.entries(p.spendingCategories||{}).sort((a,b)=>b[1]-a[1]).map(([name,amount])=>`<div class="detail-row"><span>${esc(name)}</span><strong>${money(amount)}</strong></div>`).join('')||'<div class="muted">No recurring spending recorded.</div>';
+ const withdrawalRows=(p.withdrawalsByAccount||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">${esc(x.type)}</small></span><strong class="negative-text">${money(x.amount)}</strong></div>`).join('')||'<div class="muted">No investment withdrawals required.</div>';
+ const accountRows=(p.accountBalances||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">${esc(x.type)}</small></span><strong>${money(x.balance)}</strong></div>`).join('');
+ root.innerHTML=`<h4>${r.year} projection</h4><div class="detail-grid"><div class="detail-card">Income<strong>${money(p.totalIncome)}</strong></div><div class="detail-card">Spending<strong>${money(p.spending)}</strong></div><div class="detail-card">Ending investments<strong>${money(p.endingInvestments)}</strong></div></div><ul class="explain-list">${notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="detail-section"><h4>Spending by category</h4>${spendingRows}</div><div class="detail-section"><h4>Withdrawals by account</h4>${withdrawalRows}</div><div class="detail-section"><h4>Ending account balances</h4>${accountRows}</div>`;
+ document.querySelectorAll('#projectionBody tr[data-year]').forEach(tr=>tr.classList.toggle('selected-year',num(tr.dataset.year)===r.year));
 }
 function runTimelineSelfTests(){
  const timeline=window.HNTimeline.runSelfTests(),incomeTests=window.HNIncome.runSelfTests(),projectionTests=window.HNProjection.runSelfTests(),failed=[...timeline.failed,...incomeTests.failed,...projectionTests.failed],total=timeline.total+incomeTests.total+projectionTests.total;
- const el=document.getElementById('timelineTestMessage');el.textContent=failed.length===0?`All ${total} timeline, income, and cash-flow tests passed.`:`${failed.length} of ${total} tests failed: ${failed.join('; ')}`;el.style.color=failed.length===0?'var(--ok)':'var(--danger)';
+ const el=document.getElementById('timelineTestMessage');el.textContent=failed.length===0?`All ${total} timeline, income, spending, and withdrawal tests passed.`:`${failed.length} of ${total} tests failed: ${failed.join('; ')}`;el.style.color=failed.length===0?'var(--ok)':'var(--danger)';
 }
 function downloadTimelineCsv(){
  const rows=buildProjectionTimeline(),people=window.HNTimeline.includedPeople(state);
- const headers=['Year',...people.map(p=>`${p.name||'Person'} Age`),'Income','Spending','Investment Growth','Contributions','Withdrawals','Unfunded Shortfall','Ending Investments','Net Worth'];
- const csv=[headers,...rows.map(r=>[r.year,...r.people.map(p=>p.age??''),Math.round(r.projection.totalIncome),Math.round(r.projection.spending),Math.round(r.projection.growth),Math.round(r.projection.contributions),Math.round(r.projection.withdrawals),Math.round(r.projection.unfunded),Math.round(r.projection.endingInvestments),Math.round(r.projection.netWorth)])].map(row=>row.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\n');
+ const headers=['Year',...people.map(p=>`${p.name||'Person'} Age`),'Income','Spending','Investment Growth','Contributions','Withdrawals','Unfunded Shortfall','Ending Investments','Net Worth','Withdrawal Breakdown'];
+ const csv=[headers,...rows.map(r=>[r.year,...r.people.map(p=>p.age??''),Math.round(r.projection.totalIncome),Math.round(r.projection.spending),Math.round(r.projection.growth),Math.round(r.projection.contributions),Math.round(r.projection.withdrawals),Math.round(r.projection.unfunded),Math.round(r.projection.endingInvestments),Math.round(r.projection.netWorth),r.projection.withdrawalsByAccount.map(x=>`${x.name}: ${Math.round(x.amount)}`).join(' | ')])].map(row=>row.map(v=>'"'+String(v??'').replaceAll('"','""')+'"').join(',')).join('\n');
  const blob=new Blob([csv],{type:'text/csv'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Harbour-North-projection-${new Date().toISOString().slice(0,10)}.csv`;a.click();URL.revokeObjectURL(a.href);
 }
 
@@ -459,6 +472,7 @@ document.getElementById('projectionInflationRate').addEventListener('input',()=>
 document.getElementById('runTimelineTests').onclick=runTimelineSelfTests;
 document.getElementById('downloadTimelineCsv').onclick=downloadTimelineCsv;
 document.getElementById('explainYear').addEventListener('change',()=>renderExplainYear());
+document.getElementById('projectionBody').addEventListener('click',e=>{const tr=e.target.closest('tr[data-year]');if(!tr)return;document.getElementById('explainYear').value=tr.dataset.year;renderExplainYear();document.getElementById('explainYearBody').scrollIntoView({behavior:'smooth',block:'center'})});
 
 bindStatic();renderAllLists();renderHome();renderProjection();save(false);
 
