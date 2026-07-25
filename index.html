@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.6.2 Monthly Benefits Display</title>
+<title>Harbour North 0.6.3 Benefits Keyboard Fix</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -51,7 +51,7 @@
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.6.2 · Monthly Benefits Display</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>0.6.3 · Benefits Keyboard Fix</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -84,7 +84,7 @@
 </section>
 
 <section id="benefits" class="page">
-<div class="hero"><div class="eyebrow">0.5.4 · Guided setup</div><h2>Retirement Benefits</h2><p class="muted">Enter CPP, OAS, and workplace pensions as monthly amounts. Harbour North automatically converts them to annual values for projections and updates the matching Financial Ledger records.</p></div>
+<div class="hero"><div class="eyebrow">0.5.4 · Guided setup</div><h2>Retirement Benefits</h2><p class="muted">Enter CPP, OAS, and workplace pensions as monthly amounts. Values now save while you type without rebuilding the form or dismissing the on-screen keyboard.</p></div>
 <div class="card">
 <div class="row-head"><div><h3>Plan completeness</h3><p class="muted">Missing retirement income can make projections and optimizer recommendations misleading.</p></div><span id="benefitsCompletenessBadge" class="badge warn">Checking plan</span></div>
 <div id="benefitsCompleteness" class="completeness-list"></div>
@@ -115,7 +115,7 @@
 <div class="card"><h3>Optimizer search range</h3><div class="grid"><div class="field"><label>Primary minimum retirement age</label><input id="aMinRetire" type="number" min="45" max="75" step="0.5"></div><div class="field"><label>Primary maximum retirement age</label><input id="aMaxRetire" type="number" min="45" max="80" step="0.5"></div><div class="field"><label>Retirement-age step</label><select id="aRetireStep"><option value="1">1 year</option><option value="0.5">6 months</option></select></div></div><div class="grid" style="margin-top:16px"><div class="field"><label><input id="aOptimizePartner" type="checkbox" style="width:auto;min-height:auto"> Optimize partner retirement age</label><small>Off by default so the optimizer cannot solve the plan simply by making your partner work longer.</small></div><div class="field"><label>Partner minimum retirement age</label><input id="aPartnerMinRetire" type="number" min="45" max="75" step="0.5"></div><div class="field"><label>Partner maximum retirement age</label><input id="aPartnerMaxRetire" type="number" min="45" max="80" step="0.5"></div></div><div class="assumption-note" style="margin-top:16px">CPP and OAS amounts are adjusted when their start ages change. The optimizer does not change your saved plan until you choose <strong>Apply recommendation</strong>.</div></div>
 </section>
 <section id="optimizer" class="page">
-<div class="hero"><div class="row-head"><div><div class="eyebrow">0.6.2 · Monthly benefits display</div><h2>Retirement Optimizer</h2><p class="muted">Choose what matters most. Harbour North ranks financially viable plans according to your goal instead of simply maximizing wealth.</p></div><span id="optimizerStatus" class="badge warn">Ready to analyze</span></div></div>
+<div class="hero"><div class="row-head"><div><div class="eyebrow">0.6.3 · Benefits keyboard fix</div><h2>Retirement Optimizer</h2><p class="muted">Choose what matters most. Harbour North ranks financially viable plans according to your goal instead of simply maximizing wealth.</p></div><span id="optimizerStatus" class="badge warn">Ready to analyze</span></div></div>
 <div class="grid two"><div class="card"><h3>1. Choose your primary goal</h3><div id="optimizerGoalChoices" class="goal-choice-grid">
 <label class="goal-choice"><input type="radio" name="optimizerGoal" value="target"><strong>Retire on my target date</strong><small>Stay as close as possible to your saved retirement age.</small></label>
 <label class="goal-choice"><input type="radio" name="optimizerGoal" value="earliest"><strong>Earliest possible retirement</strong><small>Find the earliest age that remains fully funded.</small></label>
@@ -474,7 +474,7 @@
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='0.6.2-monthly-benefits-display', SCHEMA=19, MODEL_VERSION=9;
+const KEY='harbourNorth2.plan', APP='0.6.3-benefits-keyboard-fix', SCHEMA=20, MODEL_VERSION=10;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -633,12 +633,15 @@ function renderBenefits(){
   root.innerHTML=`<div class="notice"><strong>Benefits could not be displayed.</strong><br>${esc(e.message)}<div class="actions" style="margin-top:12px"><button class="btn" data-goto="stability">Open Setup & Health</button></div></div>`;
  }
 }
-function handleBenefitChange(e){
+function handleBenefitChange(e,{rerender=true}={}){
  const card=e.target.closest('[data-person-index]');if(!card)return;
  const index=num(card.dataset.personIndex),person=global.HNTimeline.includedPeople(state)[index],kind=e.target.dataset.benefit;if(!person||!kind)return;
  const enabled=card.querySelector(`[data-benefit="${kind}"][data-key="enabled"]`)?.checked,get=key=>card.querySelector(`[data-benefit="${kind}"][data-key="${key}"]`);
  upsertBenefitSource(person,index,kind,enabled,{monthlyAmount:num(get('annualAmount')?.value),startAge:num(get('startAge')?.value)||(kind==='CPP'||kind==='OAS'?65:num(person.retirementAge)||55),endAge:num(get('endAge')?.value)||110,indexed:get('indexed')?.value==='true'});
- renderIncome();renderBenefits();save();
+ renderIncome();
+ if(rerender)renderBenefits();
+ else renderBenefitCompleteness();
+ save();
 }
 function renderBenefitCompleteness(){
  const root=document.getElementById('benefitsCompleteness');if(!root)return;
@@ -1052,7 +1055,11 @@ document.getElementById('createScenario').onclick=()=>{const input=document.getE
 document.getElementById('duplicateScenario').onclick=()=>{const current=activeScenario();createScenario((current?.name||'Scenario')+' copy',true)};
 document.getElementById('scenarioManagerList').addEventListener('click',e=>{const row=e.target.closest('[data-scenario-id]');if(!row)return;const sid=row.dataset.scenarioId;if(e.target.closest('.scenario-switch'))switchScenario(sid);if(e.target.closest('.scenario-delete'))deleteScenario(sid)});
 document.getElementById('scenarioManagerList').addEventListener('change',e=>{if(!e.target.classList.contains('scenario-name'))return;const row=e.target.closest('[data-scenario-id]');renameScenario(row.dataset.scenarioId,e.target.value)});
-const benefitRoot=document.getElementById('benefitPeople');if(benefitRoot){benefitRoot.addEventListener('change',handleBenefitChange);benefitRoot.addEventListener('input',e=>{if(e.target.type==='number')handleBenefitChange(e)})}
+const benefitRoot=document.getElementById('benefitPeople');
+if(benefitRoot){
+ benefitRoot.addEventListener('change',e=>handleBenefitChange(e,{rerender:true}));
+ benefitRoot.addEventListener('input',e=>{if(e.target.type==='number')handleBenefitChange(e,{rerender:false})});
+}
 document.getElementById('runStabilityCheck').onclick=runStabilityCheck;
 document.getElementById('clearErrorConsole').onclick=()=>{runtimeErrors.length=0;renderErrorConsole();toast('Error console cleared')};
 document.getElementById('runOptimizer').onclick=runOptimizer;
