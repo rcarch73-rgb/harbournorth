@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.8.3 Projection Diagnostics</title>
+<title>Harbour North 0.8.4 Portfolio Reconciliation Repair</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -82,7 +82,7 @@
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.8.3 · Projection Diagnostics</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>0.8.4 · Portfolio Reconciliation Repair</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -186,7 +186,7 @@
 <div class="card"><div class="row-head"><div><h3>Calculation integrity</h3><p class="muted">Harbour North verifies every projection row and reconciles the Projection, Audit, and Optimizer views.</p></div><button id="runIntegrityCheck" class="btn">Run integrity check</button></div><div id="integritySummary" class="reconcile-grid"></div><div id="integrityDetails" class="validation-list" style="margin-top:14px"></div></div>
 
 <div class="card">
-<div class="row-head"><div><h3>Projection diagnostics</h3><p class="muted">Check the selected year for unusual values, column mismatches, and account behaviour.</p></div><button id="runProjectionDiagnostics" class="btn">Refresh diagnostics</button></div>
+<div class="row-head"><div><h3>Portfolio reconciliation</h3><p class="muted">Verify the selected year's opening balances, growth, contributions, withdrawals, retained cash, and closing account totals.</p></div><button id="runProjectionDiagnostics" class="btn">Refresh diagnostics</button></div>
 <div id="projectionDiagnosticSummary" class="diagnostic-grid"></div>
 <div id="projectionAnomalies" class="anomaly-list" style="margin-top:14px"></div>
 </div>
@@ -509,8 +509,9 @@
     if(!accounts.some(a=>a.type==='Cash'))accounts.push({id:'synthetic-cash',name:'Unallocated cash',type:'Cash',owner:'Household',balance:0,returnRate:0,annualContribution:0});
     const nonInvestmentAssets=(plan.accounts||[]).filter(a=>!INVEST_TYPES.includes(a.type)).reduce((s,a)=>s+n(a.balance),0),debt=(plan.debts||[]).reduce((s,d)=>s+n(d.balance),0),rows=[];
     for(const row of incomeRows||[]){
-      const startingInvestments=accounts.reduce((s,a)=>s+a.balance,0);let growth=0;
-      for(const a of accounts){const g=a.balance*n(a.returnRate)/100;a.balance+=g;growth+=g}
+      const openingAccountBalances=accounts.map(a=>({id:a.id,name:a.name,type:a.type,balance:a.balance}));
+      const startingInvestments=openingAccountBalances.reduce((s,a)=>s+a.balance,0);let growth=0;const growthByAccount=[];
+      for(const a of accounts){const g=a.balance*n(a.returnRate)/100;a.balance+=g;growth+=g;growthByAccount.push({id:a.id,name:a.name,type:a.type,amount:g})}
       const events=eventCashFlow(plan,row.year),totalIncome=row.income.totalIncome+events.income,spendingBreakdown=annualSpendingBreakdown(plan,row.year,startYear,inflationRate),spending=spendingBreakdown.total+events.expense;
       const baseTaxable=taxableIncomeByPerson(row,people,events.taxableIncome),baseTax=global.HNTax.estimateHouseholdTax(baseTaxable,row.year,inflationRate,province);
       const afterTaxBeforeContributions=totalIncome-baseTax.total-spending;
@@ -534,7 +535,9 @@
       let surplusToCash=0;const netCash=totalIncome-finalTax.total-spending-contributions;
       if(netCash>0){surplusToCash=netCash;accounts.find(a=>a.type==='Cash').balance+=netCash}
       const endingInvestments=accounts.reduce((s,a)=>s+a.balance,0);
-      rows.push({...row,projection:{startingInvestments,growth,totalIncome,baseIncome:row.income.totalIncome,eventIncome:events.income,spending,eventExpense:events.expense,spendingDetails:spendingBreakdown.details,spendingCategories:spendingBreakdown.categories,tax:finalTax.total,federalTax:finalTax.federal,provincialTax:finalTax.provincial,taxByPerson:finalTax.byPerson,taxProvinceSupported:finalTax.provinceSupported,afterTaxIncome:totalIncome-finalTax.total,plannedContributions:planned,contributions,contributionsByAccount,withdrawals:withdrawResult.withdrawals,withdrawalsByAccount:withdrawResult.byAccount,unfunded:withdrawResult.unfunded,surplusToCash,endingInvestments,netWorth:endingInvestments+nonInvestmentAssets-debt,accountBalances:accounts.map(a=>({id:a.id,name:a.name,type:a.type,balance:a.balance}))}})
+      const expectedEndingInvestments=startingInvestments+growth+contributions-withdrawResult.withdrawals+surplusToCash;
+      const reconciliationDifference=endingInvestments-expectedEndingInvestments;
+      rows.push({...row,projection:{startingInvestments,openingAccountBalances,growth,growthByAccount,totalIncome,baseIncome:row.income.totalIncome,eventIncome:events.income,spending,eventExpense:events.expense,spendingDetails:spendingBreakdown.details,spendingCategories:spendingBreakdown.categories,tax:finalTax.total,federalTax:finalTax.federal,provincialTax:finalTax.provincial,taxByPerson:finalTax.byPerson,taxProvinceSupported:finalTax.provinceSupported,afterTaxIncome:totalIncome-finalTax.total,plannedContributions:planned,contributions,contributionsByAccount,withdrawals:withdrawResult.withdrawals,withdrawalsByAccount:withdrawResult.byAccount,unfunded:withdrawResult.unfunded,surplusToCash,expectedEndingInvestments,reconciliationDifference,endingInvestments,netWorth:endingInvestments+nonInvestmentAssets-debt,accountBalances:accounts.map(a=>({id:a.id,name:a.name,type:a.type,balance:a.balance}))}})
     }
     return rows;
   }
@@ -547,6 +550,7 @@
     test('Spending category breakdown',()=>annualSpendingBreakdown({expenses:[{name:'Food',category:'Essential',amount:100,frequency:'Monthly'}]},2026,2026,2).categories.Essential===1200);
     test('Withdrawal priority recorded',()=>{const plan={hasPartner:false,people:[{name:'A',birthDate:'2000-01-01',retirementAge:40}],household:{province:'British Columbia'},accounts:[{id:'n',name:'Taxable',type:'Non-registered',owner:'A',balance:100,returnRate:0,annualContribution:0},{id:'t',name:'TFSA',type:'TFSA',owner:'A',balance:100,returnRate:0,annualContribution:0}],debts:[],expenses:[{name:'Spend',category:'Essential',amount:150,frequency:'Annual'}],events:[]};const rows=buildProjection(plan,[{year:2040,people:[{name:'A',age:40,status:'Retired'}],income:{totalIncome:0,details:[]}}],{startYear:2040,indexRate:0});return rows[0].projection.withdrawalsByAccount.map(x=>x.type).join(',')==='Non-registered,TFSA'});
     test('RRSP withdrawal increases tax',()=>{const plan={hasPartner:false,people:[{name:'A',birthDate:'2000-01-01',retirementAge:40}],household:{province:'British Columbia'},accounts:[{id:'r',name:'RRSP',type:'RRSP/RRIF',owner:'A',balance:50000,returnRate:0,annualContribution:0}],debts:[],expenses:[{name:'Spend',category:'Essential',amount:30000,frequency:'Annual'}],events:[]};const r=buildProjection(plan,[{year:2040,people:[{name:'A',age:40,status:'Retired'}],income:{totalIncome:0,details:[]}}],{startYear:2040,indexRate:0})[0].projection;return r.tax>0&&r.withdrawals>30000});
+    test('Portfolio roll-forward reconciles',()=>{const plan={hasPartner:false,people:[{name:'A',birthDate:'2000-01-01',retirementAge:65}],household:{province:'British Columbia'},accounts:[{id:'t',name:'TFSA',type:'TFSA',owner:'A',balance:100000,returnRate:5,annualContribution:7800}],debts:[],expenses:[{name:'Spend',category:'Essential',amount:20000,frequency:'Annual'}],events:[]};const r=buildProjection(plan,[{year:2026,people:[{name:'A',age:26,status:'Working'}],income:{totalIncome:80000,details:[{active:true,taxable:true,owner:'A',amount:80000}]}}],{startYear:2026,indexRate:0})[0].projection;return Math.abs(r.reconciliationDifference)<.01&&Math.abs(r.accountBalances.reduce((s,a)=>s+a.balance,0)-r.endingInvestments)<.01});
     return{ok:failed.length===0,total,failed};
   }
   global.HNProjection={annualSpending,annualSpendingBreakdown,eventCashFlow,taxableIncomeByPerson,buildProjection,runSelfTests};
@@ -555,7 +559,7 @@
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='0.8.3-projection-diagnostics', SCHEMA=26, MODEL_VERSION=16;
+const KEY='harbourNorth2.plan', APP='0.8.4-portfolio-reconciliation-repair', SCHEMA=27, MODEL_VERSION=17;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -984,7 +988,12 @@ function projectionDiagnostics(row){
  const activeIncome=(row.income?.details||[]).filter(x=>x.active&&x.amount>0);
  summary.push({label:'Active income sources',value:String(activeIncome.length),ok:true});
  summary.push({label:'Accounts tracked',value:String((p.accountBalances||[]).length),ok:true});
- for(const check of failed)items.push({level:'fail',title:`${check.name} mismatch`,detail:`Expected ${money(check.expected)} but calculated ${money(check.actual)}.`});
+ for(const check of failed){
+  const detail=check.name==='Portfolio roll-forward'
+   ?`Opening ${money(p.startingInvestments)} + growth ${money(p.growth)} + contributions ${money(p.contributions)} − withdrawals ${money(p.withdrawals)} + retained cash ${money(p.surplusToCash)} = ${money(check.expected)}; account balances total ${money(check.actual)}.`
+   :`Expected ${money(check.expected)} but calculated ${money(check.actual)}.`;
+  items.push({level:'fail',title:`${check.name} mismatch`,detail});
+ }
  const idx=projectionRows.findIndex(x=>x.year===row.year),prior=idx>0?projectionRows[idx-1]:null;
  if(prior){
   const incomeChange=num(p.totalIncome)-num(prior.projection?.totalIncome);
@@ -998,8 +1007,7 @@ function projectionDiagnostics(row){
  if(num(p.growth)>num(p.startingInvestments)*.15&&num(p.startingInvestments)>0)items.push({level:'warn',title:'High portfolio growth',detail:`Growth of ${money(p.growth)} exceeds 15% of opening investments.`});
  if(num(p.withdrawals)>0&&num(p.surplusToCash)>0)items.push({level:'warn',title:'Withdrawals and surplus in same year',detail:`The plan withdraws ${money(p.withdrawals)} while adding ${money(p.surplusToCash)} to cash.`});
  if(num(p.unfunded)>0)items.push({level:'fail',title:'Unfunded spending',detail:`The plan cannot fund ${money(p.unfunded)} in ${row.year}.`});
- const accountTotal=(p.accountBalances||[]).reduce((s,x)=>s+num(x.balance),0);
- if(!approxEqual(accountTotal,p.endingInvestments,2))items.push({level:'fail',title:'Account totals do not match portfolio',detail:`Account balances total ${money(accountTotal)}, while ending investments show ${money(p.endingInvestments)}.`});
+
  if(!items.length)items.push({level:'ok',title:'No material anomalies detected',detail:`The ${row.year} projection row passes arithmetic and reasonableness checks.`});
  return{summary,items};
 }
@@ -1327,8 +1335,12 @@ function projectionRowChecks(row){
  const incomeExpected=recurring+num(p.eventIncome);
  checks.push({name:'Income sources',ok:approxEqual(incomeExpected,p.totalIncome,1),expected:incomeExpected,actual:p.totalIncome});
  checks.push({name:'After-tax income',ok:approxEqual(num(p.totalIncome)-num(p.tax),p.afterTaxIncome,1),expected:num(p.totalIncome)-num(p.tax),actual:p.afterTaxIncome});
- const closingExpected=num(p.startingInvestments)+num(p.growth)+num(p.contributions)-num(p.withdrawals)+num(p.surplusToCash);
- checks.push({name:'Portfolio roll-forward',ok:approxEqual(closingExpected,p.endingInvestments,2),expected:closingExpected,actual:p.endingInvestments});
+ const accountTotal=(p.accountBalances||[]).reduce((s,x)=>s+num(x.balance),0);
+ checks.push({name:'Account balance total',ok:approxEqual(accountTotal,p.endingInvestments,2),expected:accountTotal,actual:p.endingInvestments});
+ const bridgeExpected=num(p.expectedEndingInvestments)||(
+  num(p.startingInvestments)+num(p.growth)+num(p.contributions)-num(p.withdrawals)+num(p.surplusToCash)
+ );
+ checks.push({name:'Portfolio roll-forward',ok:approxEqual(bridgeExpected,p.endingInvestments,2),expected:bridgeExpected,actual:p.endingInvestments});
  const cashExpected=num(p.totalIncome)-num(p.tax)-num(p.spending)-num(p.contributions)+num(p.withdrawals)-num(p.unfunded);
  checks.push({name:'Cash-flow reconciliation',ok:approxEqual(cashExpected,p.surplusToCash,2),expected:cashExpected,actual:p.surplusToCash});
  return checks;
