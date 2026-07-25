@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.6.3 Benefits Keyboard Fix</title>
+<title>Harbour North 0.7.0 Audit and Trust</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -48,10 +48,27 @@
 @media(max-width:800px){.health-grid{grid-template-columns:1fr}}
 @media(max-width:650px){.setup-step{grid-template-columns:34px 1fr}.setup-step .btn{grid-column:1/-1}}
 
+
+.audit-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.audit-card{border:1px solid var(--line);border-radius:14px;padding:14px;background:#f8fafc}
+.audit-card strong{display:block;font-size:21px;margin-top:5px}
+.audit-table{width:100%;border-collapse:collapse;min-width:980px}
+.audit-table th,.audit-table td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left}
+.audit-table th{background:#eef4fa;color:var(--navy);position:sticky;top:0}
+.audit-money{text-align:right!important;white-space:nowrap}
+.validation-list{display:grid;gap:10px}
+.validation-item{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff}
+.validation-item.warn{border-left:5px solid var(--warn);background:#fff9ef}
+.validation-item.fail{border-left:5px solid var(--danger);background:#fff3f3}
+.validation-item.ok{border-left:5px solid var(--ok);background:#f2faf5}
+.audit-note{border-left:5px solid var(--blue);background:#eef5fc;padding:14px 16px;border-radius:10px}
+@media(max-width:900px){.audit-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.audit-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.6.3 · Benefits Keyboard Fix</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>0.7.0 · Audit & Trust</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -63,6 +80,7 @@
 <button class="tab" data-page="results">Results</button>
 <button class="tab" data-page="scenarios">Scenarios</button>
 <button class="tab" data-page="projection">Projection</button>
+<button class="tab" data-page="audit">Audit</button>
 <button class="tab" data-page="stability">Setup & Health</button>
 <button class="tab" data-page="backup">Backup</button>
 </nav>
@@ -115,7 +133,7 @@
 <div class="card"><h3>Optimizer search range</h3><div class="grid"><div class="field"><label>Primary minimum retirement age</label><input id="aMinRetire" type="number" min="45" max="75" step="0.5"></div><div class="field"><label>Primary maximum retirement age</label><input id="aMaxRetire" type="number" min="45" max="80" step="0.5"></div><div class="field"><label>Retirement-age step</label><select id="aRetireStep"><option value="1">1 year</option><option value="0.5">6 months</option></select></div></div><div class="grid" style="margin-top:16px"><div class="field"><label><input id="aOptimizePartner" type="checkbox" style="width:auto;min-height:auto"> Optimize partner retirement age</label><small>Off by default so the optimizer cannot solve the plan simply by making your partner work longer.</small></div><div class="field"><label>Partner minimum retirement age</label><input id="aPartnerMinRetire" type="number" min="45" max="75" step="0.5"></div><div class="field"><label>Partner maximum retirement age</label><input id="aPartnerMaxRetire" type="number" min="45" max="80" step="0.5"></div></div><div class="assumption-note" style="margin-top:16px">CPP and OAS amounts are adjusted when their start ages change. The optimizer does not change your saved plan until you choose <strong>Apply recommendation</strong>.</div></div>
 </section>
 <section id="optimizer" class="page">
-<div class="hero"><div class="row-head"><div><div class="eyebrow">0.6.3 · Benefits keyboard fix</div><h2>Retirement Optimizer</h2><p class="muted">Choose what matters most. Harbour North ranks financially viable plans according to your goal instead of simply maximizing wealth.</p></div><span id="optimizerStatus" class="badge warn">Ready to analyze</span></div></div>
+<div class="hero"><div class="row-head"><div><div class="eyebrow">0.7.0 · Audit and trust</div><h2>Retirement Optimizer</h2><p class="muted">Choose what matters most. Harbour North ranks financially viable plans according to your goal instead of simply maximizing wealth.</p></div><span id="optimizerStatus" class="badge warn">Ready to analyze</span></div></div>
 <div class="grid two"><div class="card"><h3>1. Choose your primary goal</h3><div id="optimizerGoalChoices" class="goal-choice-grid">
 <label class="goal-choice"><input type="radio" name="optimizerGoal" value="target"><strong>Retire on my target date</strong><small>Stay as close as possible to your saved retirement age.</small></label>
 <label class="goal-choice"><input type="radio" name="optimizerGoal" value="earliest"><strong>Earliest possible retirement</strong><small>Find the earliest age that remains fully funded.</small></label>
@@ -152,7 +170,7 @@
 <div class="card"><div class="row-head"><div><h3>Projection controls</h3><p class="muted">Income and spending are entered in current-year dollars. Tax brackets, personal amounts, income, and spending are indexed using the projection inflation assumption.</p></div><button id="runTimelineTests" class="btn">Run engine tests</button></div><div class="grid"><div class="field"><label>Projection start year</label><input id="projectionStartYear" type="number" min="2020" max="2200"></div><div class="field"><label>Planning horizon age</label><input id="projectionPlanningAge" type="number" min="75" max="110"></div><div class="field"><label>Inflation / income indexing (%)</label><input id="projectionInflationRate" type="number" min="0" max="10" step="0.1"></div></div><p id="timelineTestMessage" class="muted"></p></div>
 <div class="card"><div class="row-head"><div><h3>Year-by-year retirement projection</h3><p class="muted">Taxes are estimated separately for each person. Withdrawals cover the remaining after-tax cash-flow deficit, and taxable RRSP/RRIF withdrawals are included in the tax estimate.</p></div><button id="downloadTimelineCsv" class="btn primary">Download projection CSV</button></div><div class="table-wrap"><table class="projection-table"><thead id="projectionHead"></thead><tbody id="projectionBody"></tbody></table></div></div>
 <div class="card"><div class="row-head"><div><h3>Explain this year</h3><p class="muted">Choose a year to see the main reasons behind its result.</p></div><div class="field" style="min-width:150px"><label>Year</label><select id="explainYear"></select></div></div><div id="explainYearBody" class="explain-box"></div></div>
-<div class="card"><h3>Current tax-engine rules</h3><ul class="checklist"><li>Federal and 2026 tax brackets for all 10 provinces and three territories are used as the base and indexed into future years using the projection inflation assumption.</li><li>Tax is estimated separately for each person using taxable recurring income and taxable RRSP/RRIF withdrawals.</li><li>Income sources marked non-taxable are excluded from taxable income. TFSA and cash withdrawals are not taxable.</li><li>The estimate includes federal and provincial or territorial basic personal credits, the Quebec federal abatement, B.C. tax reduction, and Ontario surtax, tax reduction, and health premium. It does not yet include CPP/EI/QPP payroll deductions, age and pension credits, OAS recovery tax, dividend gross-up, capital gains, medical credits, or income splitting.</li><li>Inheritance and gifts are treated as non-taxable cash flow. A generic one-time “Income” event is treated as taxable income for the primary person.</li><li>Deficits are funded in this order: non-registered, cash, TFSA, RRSP/RRIF, FHSA. RRSP/RRIF tax is recalculated until the after-tax shortfall stabilizes.</li><li>This is a planning estimate, not a tax return or professional tax advice.</li></ul></div>
+<div class="card"><h3>Current tax-engine rules</h3><ul class="checklist"><li>Federal and 2026 tax brackets for all 10 provinces and three territories are used as the base and indexed into future years using the projection inflation assumption.</li><li>Tax is estimated separately for each person using taxable recurring income and taxable RRSP/RRIF withdrawals.</li><li>Income sources marked non-taxable are excluded from taxable income. TFSA and cash withdrawals are not taxable.</li><li>The estimate includes federal and provincial or territorial basic personal credits, the Quebec federal abatement, B.C. tax reduction, and Ontario surtax, tax reduction, and health premium. It does not yet include CPP/EI/QPP payroll deductions, age and pension credits, OAS recovery tax, dividend gross-up, capital gains, medical credits, or income splitting.</li><li>Inheritance and gifts are treated as non-taxable cash flow. A generic one-time “Income” event is treated as taxable income for the primary person.</li><li>Deficits are funded in this order: non-registered, cash, TFSA, RRSP/RRIF, FHSA. RRSP/RRIF tax is recalculated until the after-tax shortfall stabilizes.</li><li>This is a planning estimate, not a tax return or professional tax advice. Use the Audit page to inspect yearly income, taxes, withdrawals, and account balances.</li></ul></div>
 </section>
 
 <section id="stability" class="page">
@@ -172,6 +190,45 @@
 <div class="card">
 <div class="row-head"><div><h3>Error console</h3><p class="muted">Unexpected browser errors are captured here instead of failing silently.</p></div><button id="clearErrorConsole" class="btn">Clear errors</button></div>
 <div id="errorConsole" class="error-console">No errors captured.</div>
+</div>
+</section>
+
+
+<section id="audit" class="page">
+<div class="hero"><div class="eyebrow">0.7.0 · Audit &amp; trust</div><h2>Projection Audit</h2><p class="muted">See exactly how Harbour North calculates each year, each account, and each optimizer recommendation.</p></div>
+
+<div class="card">
+<div class="row-head"><div><h3>Audit controls</h3><p class="muted">Choose a projection year to inspect.</p></div><button id="runAuditValidation" class="btn primary">Run validation</button></div>
+<div class="grid"><div class="field"><label>Audit year</label><select id="auditYear"></select></div><div class="field"><label>Display basis</label><select id="auditBasis"><option value="future">Future dollars</option><option value="today">Today's dollars</option></select></div></div>
+</div>
+
+<div id="auditSummary" class="audit-grid"></div>
+
+<div class="card">
+<h3>Cash-flow audit</h3>
+<div id="auditCashFlow"></div>
+</div>
+
+<div class="card">
+<h3>Income by source</h3>
+<div id="auditIncomeSources"></div>
+</div>
+
+<div class="card">
+<h3>Account-level audit</h3>
+<p class="muted">Opening balance, growth, contributions, withdrawals, and closing balance for every investment account.</p>
+<div class="table-wrap"><table class="audit-table"><thead><tr><th>Account</th><th>Type</th><th>Owner</th><th class="audit-money">Opening</th><th class="audit-money">Growth</th><th class="audit-money">Contributions</th><th class="audit-money">Withdrawals</th><th class="audit-money">Closing</th></tr></thead><tbody id="auditAccountsBody"></tbody></table></div>
+</div>
+
+<div class="card">
+<h3>Optimizer audit</h3>
+<p class="muted">One best benefit-timing combination for each retirement age.</p>
+<div class="table-wrap"><table class="audit-table"><thead><tr><th>Retire age</th><th>CPP</th><th>OAS</th><th>Status</th><th class="audit-money">Lifetime tax</th><th class="audit-money">Lifetime withdrawals</th><th class="audit-money">Ending portfolio today</th><th>First shortfall</th></tr></thead><tbody id="auditOptimizerBody"></tbody></table></div>
+</div>
+
+<div class="card">
+<h3>Validation report</h3>
+<div id="auditValidation" class="validation-list"></div>
 </div>
 </section>
 
@@ -474,7 +531,7 @@
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='0.6.3-benefits-keyboard-fix', SCHEMA=20, MODEL_VERSION=10;
+const KEY='harbourNorth2.plan', APP='0.7.0-audit-trust', SCHEMA=21, MODEL_VERSION=11;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -1031,7 +1088,116 @@ function runStabilityCheck(){
  renderSetupSteps();renderErrorConsole();
 }
 
-function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}window.scrollTo({top:0,behavior:'smooth'})}
+
+function auditProjectionRows(){
+ try{return buildCurrentProjection()}catch{return []}
+}
+function buildCurrentProjection(){
+ const startYear=num(document.getElementById('projectionStartYear')?.value)||nowYear;
+ const planningAge=num(document.getElementById('projectionPlanningAge')?.value)||num(state.household?.planningAge)||95;
+ const indexRate=num(document.getElementById('projectionInflationRate')?.value)||num(state.household?.inflationRate)||2;
+ const timeline=global.HNTimeline.buildTimeline(state,{startYear,planningAge});
+ const incomeRows=global.HNIncome.buildIncomeProjection(state,timeline,{startYear,indexRate});
+ return global.HNProjection.buildProjection(state,incomeRows,{startYear,indexRate});
+}
+function auditMoney(value,year,basis){
+ if(basis!=='today')return money(value);
+ const start=num(document.getElementById('projectionStartYear')?.value)||nowYear;
+ const inflation=num(document.getElementById('projectionInflationRate')?.value)||num(state.household?.inflationRate)||2;
+ const factor=Math.pow(1+inflation/100,Math.max(0,year-start));
+ return money(num(value)/factor);
+}
+function renderAuditYearOptions(){
+ const select=document.getElementById('auditYear');if(!select)return;
+ const rows=auditProjectionRows(),current=select.value;
+ select.innerHTML=rows.map(r=>`<option value="${r.year}">${r.year}</option>`).join('');
+ if(current&&rows.some(r=>String(r.year)===current))select.value=current;
+ else if(rows.length)select.value=String(rows[0].year);
+}
+function accountAuditForYear(rows,index){
+ const row=rows[index],prev=index>0?rows[index-1]:null;
+ const openingMap=new Map((prev?.projection?.accountBalances||[]).map(x=>[x.id,x.balance]));
+ const currentMap=new Map((row?.projection?.accountBalances||[]).map(x=>[x.id,x]));
+ const contribMap=new Map((row?.projection?.contributionsByAccount||[]).map(x=>[x.id,x.amount]));
+ const wdMap=new Map((row?.projection?.withdrawalsByAccount||[]).map(x=>[x.id,x.amount]));
+ return (state.accounts||[]).filter(a=>['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'].includes(a.type)).map(a=>{
+  const opening=index===0?num(a.balance):num(openingMap.get(a.id));
+  const contribution=num(contribMap.get(a.id)),withdrawal=num(wdMap.get(a.id));
+  const closing=num(currentMap.get(a.id)?.balance);
+  const growth=closing-opening-contribution+withdrawal;
+  return{...a,opening,growth,contribution,withdrawal,closing};
+ });
+}
+function renderAudit(){
+ const rows=auditProjectionRows(),year=num(document.getElementById('auditYear')?.value),basis=document.getElementById('auditBasis')?.value||'future';
+ if(!rows.length)return;
+ let index=rows.findIndex(r=>r.year===year);if(index<0)index=0;
+ const row=rows[index],p=row.projection;
+ const summary=document.getElementById('auditSummary');
+ summary.innerHTML=[
+  ['Opening investments',p.startingInvestments],
+  ['Gross income',p.totalIncome],
+  ['Tax',p.tax],
+  ['Spending',p.spending],
+  ['Contributions',p.contributions],
+  ['Withdrawals',p.withdrawals],
+  ['Closing investments',p.endingInvestments],
+  ['Net worth',p.netWorth]
+ ].map(([label,val])=>`<div class="audit-card">${label}<strong>${auditMoney(val,row.year,basis)}</strong></div>`).join('');
+ const cash=document.getElementById('auditCashFlow');
+ const afterTax=p.totalIncome-p.tax;
+ const available=afterTax-p.spending-p.contributions+p.withdrawals;
+ cash.innerHTML=`<div class="detail-row"><span>Gross income</span><strong>${auditMoney(p.totalIncome,row.year,basis)}</strong></div>
+ <div class="detail-row"><span>Less: income tax</span><strong>-${auditMoney(p.tax,row.year,basis)}</strong></div>
+ <div class="detail-row"><span>After-tax income</span><strong>${auditMoney(afterTax,row.year,basis)}</strong></div>
+ <div class="detail-row"><span>Less: spending</span><strong>-${auditMoney(p.spending,row.year,basis)}</strong></div>
+ <div class="detail-row"><span>Less: contributions</span><strong>-${auditMoney(p.contributions,row.year,basis)}</strong></div>
+ <div class="detail-row"><span>Add: withdrawals</span><strong>${auditMoney(p.withdrawals,row.year,basis)}</strong></div>
+ <div class="detail-row"><span>Unfunded amount</span><strong class="${p.unfunded>0?'negative-text':''}">${auditMoney(p.unfunded,row.year,basis)}</strong></div>
+ <div class="detail-row"><span>Cash-flow balance</span><strong>${auditMoney(available,row.year,basis)}</strong></div>`;
+ const income=document.getElementById('auditIncomeSources');
+ const active=(row.income?.details||[]).filter(x=>x.active&&x.amount>0);
+ income.innerHTML=active.length?active.map(x=>`<div class="detail-row"><span>${esc(x.name)} <small>(${esc(x.owner)})</small></span><strong>${auditMoney(x.amount,row.year,basis)}</strong></div>`).join(''):'<p class="muted">No recurring income sources active this year.</p>';
+ const accountRows=accountAuditForYear(rows,index);
+ document.getElementById('auditAccountsBody').innerHTML=accountRows.length?accountRows.map(a=>`<tr><td>${esc(a.name)}</td><td>${esc(a.type)}</td><td>${esc(a.owner||'Household')}</td><td class="audit-money">${auditMoney(a.opening,row.year,basis)}</td><td class="audit-money">${auditMoney(a.growth,row.year,basis)}</td><td class="audit-money">${auditMoney(a.contribution,row.year,basis)}</td><td class="audit-money">${auditMoney(a.withdrawal,row.year,basis)}</td><td class="audit-money">${auditMoney(a.closing,row.year,basis)}</td></tr>`).join(''):'<tr><td colspan="8" class="muted">No investment accounts.</td></tr>';
+ const optimizer=optimizerState.results||[];
+ document.getElementById('auditOptimizerBody').innerHTML=optimizer.length?optimizer.map(r=>`<tr><td>${r.primaryAge}</td><td>${r.cppAge??'—'}</td><td>${r.oasAge??'—'}</td><td>${r.success?'Funded':'Shortfall'}</td><td class="audit-money">${money(r.totalTax)}</td><td class="audit-money">${money(r.totalWithdrawals)}</td><td class="audit-money">${money(r.endingPortfolioReal)}</td><td>${r.firstShortfall||'None'}</td></tr>`).join(''):'<tr><td colspan="8" class="muted">Run the optimizer to populate this audit.</td></tr>';
+}
+function auditValidationRules(){
+ const items=[];
+ const annualSpend=(state.expenses||[]).reduce((s,x)=>s+num(x.amount)*(x.frequency==='Monthly'?12:1),0);
+ const invest=(state.accounts||[]).filter(a=>['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'].includes(a.type));
+ if(annualSpend<24000)items.push({level:'warn',title:'Spending may be understated',detail:`Recorded annual spending is ${money(annualSpend)}.`});
+ else items.push({level:'ok',title:'Spending recorded',detail:`Annual spending is ${money(annualSpend)}.`});
+ for(const a of invest){
+  if(num(a.returnRate)>10)items.push({level:'warn',title:'High return assumption',detail:`${a.name} uses ${a.returnRate}% annually.`});
+  if(num(a.annualContribution)>0&&a.owner!=='Household'){
+   const person=(state.people||[]).find(p=>p.name===a.owner||p.id===a.ownerId);
+   if(person&&num(person.retirementAge)<80)items.push({level:'warn',title:'Contribution timing review',detail:`${a.name} contributes ${money(a.annualContribution)}/yr while working. Confirm contributions stop at retirement.`});
+  }
+ }
+ for(const p of global.HNTimeline.includedPeople(state)){
+  const idx=(state.people||[]).findIndex(x=>x.id===p.id);
+  if(!findBenefitSource(p,idx,'CPP'))items.push({level:'warn',title:'CPP missing',detail:`${p.name||'Household member'} has no CPP record.`});
+  if(!findBenefitSource(p,idx,'OAS'))items.push({level:'warn',title:'OAS missing',detail:`${p.name||'Household member'} has no OAS record.`});
+ }
+ const rows=auditProjectionRows();
+ if(rows.length){
+  const end=rows[rows.length-1]?.projection?.endingInvestments||0;
+  const start=rows[0]?.projection?.startingInvestments||0;
+  if(start>0&&end/start>20)items.push({level:'warn',title:'Large portfolio growth',detail:`Ending investments are more than 20× starting investments. Review returns, income indexing, spending, and projection horizon.`});
+  else items.push({level:'ok',title:'Portfolio growth check',detail:'No extreme growth multiple detected.'});
+ }
+ if(!items.some(x=>x.level==='warn'||x.level==='fail'))items.push({level:'ok',title:'Validation complete',detail:'No material warnings detected.'});
+ return items;
+}
+function renderAuditValidation(){
+ const root=document.getElementById('auditValidation');if(!root)return;
+ const items=auditValidationRules();
+ root.innerHTML=items.map(x=>`<div class="validation-item ${x.level}"><strong>${esc(x.title)}</strong><p class="muted" style="margin:5px 0 0">${esc(x.detail)}</p></div>`).join('');
+}
+
+function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}window.scrollTo({top:0,behavior:'smooth'})}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 document.getElementById('addAccount').onclick=()=>{state.accounts.push(account('New account','RRSP/RRIF',state.people[0].name||'Primary',0));renderAccounts();save()};document.getElementById('addIncome').onclick=()=>{state.incomeSources.push(income('New income','Salary',state.people[0].name||'Primary',0,0,state.people[0].retirementAge||65,true,true));renderIncome();save()};document.getElementById('addDebt').onclick=()=>{state.debts.push(debt('New debt','Line of credit',0));renderDebts();save()};document.getElementById('addExpense').onclick=()=>{state.expenses.push(expense('New spending','Essential',0,'Monthly'));renderExpenses();save()};document.getElementById('addEvent').onclick=()=>{state.events.push(eventItem('New event','Expense',0,nowYear+3));renderEvents();save()};
@@ -1060,12 +1226,15 @@ if(benefitRoot){
  benefitRoot.addEventListener('change',e=>handleBenefitChange(e,{rerender:true}));
  benefitRoot.addEventListener('input',e=>{if(e.target.type==='number')handleBenefitChange(e,{rerender:false})});
 }
+document.getElementById('runAuditValidation').onclick=()=>{renderAuditValidation();toast('Validation refreshed')};
+document.getElementById('auditYear').addEventListener('change',renderAudit);
+document.getElementById('auditBasis').addEventListener('change',renderAudit);
 document.getElementById('runStabilityCheck').onclick=runStabilityCheck;
 document.getElementById('clearErrorConsole').onclick=()=>{runtimeErrors.length=0;renderErrorConsole();toast('Error console cleared')};
 document.getElementById('runOptimizer').onclick=runOptimizer;
 bindAssumptions();syncAssumptionInputs();restoreOptimizerResults();renderOptimizer();
 
-bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderResultsBenefits();renderSetupSteps();renderErrorConsole();save(false);renderModelStatus();renderScenarioManager();
+bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderResultsBenefits();renderSetupSteps();renderErrorConsole();renderAuditYearOptions();renderAuditValidation();save(false);renderModelStatus();renderScenarioManager();
 
 </script>
 </body></html>
