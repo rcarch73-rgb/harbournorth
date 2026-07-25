@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 1.2.3 Tax-Bracket Optimization</title>
+<title>Harbour North 1.3 Streamlined Experience</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -157,32 +157,47 @@
 @media(max-width:900px){.ws-choice{grid-template-columns:1fr 1fr}.ws-summary{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.ws-choice,.ws-summary{grid-template-columns:1fr}}
 
+
+
+.streamlined-tabs{justify-content:center;gap:8px}
+.streamlined-tabs .tab{min-width:112px}
+.stream-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0}
+.stream-grid.compact{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stream-card{display:flex;align-items:flex-start;gap:14px;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:20px;cursor:pointer;color:inherit;box-shadow:var(--shadow)}
+.stream-card:hover{transform:translateY(-1px);border-color:#9fb6ca}
+.stream-card>span{display:grid;place-items:center;flex:0 0 38px;height:38px;border-radius:12px;background:#e8f0f7;color:#244b76;font-weight:800}
+.stream-card strong{font-size:1.05rem}.stream-card p{margin:6px 0 0;color:var(--muted);line-height:1.45}
+.background-status-card{border-left:5px solid #7f9bb5}
+.background-status-card.pass{border-left-color:#39845a}.background-status-card.attention{border-left-color:#c48b2a}.background-status-card.fail{border-left-color:#b64c4c}
+.background-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.background-metrics>div{background:#f5f8fb;border-radius:12px;padding:13px}.background-metrics span{display:block;color:var(--muted);font-size:.82rem}.background-metrics strong{display:block;margin-top:4px;font-size:1.1rem}
+.vital-list{display:grid;gap:8px;margin-top:14px}.vital-item{padding:10px 12px;border-radius:10px;background:#fff7e8}.vital-item.good{background:#edf8f1}.vital-item.fail{background:#fff0f0}
+.legacy-tools-note{font-size:.8rem;color:var(--muted)}
+@media(max-width:760px){.stream-grid,.stream-grid.compact,.background-metrics{grid-template-columns:1fr}.streamlined-tabs{justify-content:flex-start}.streamlined-tabs .tab{min-width:auto}}
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>1.2.3 · Tax-Bracket Optimization</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>1.3 · Streamlined Experience</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
-<nav class="tabs">
-<button class="tab active" data-page="home">My Plan</button>
-<button class="tab" data-page="profile">Household</button>
-<button class="tab" data-page="ledger">Financial Ledger</button>
-<button class="tab" data-page="benefits">Retirement Benefits</button>
-<button class="tab" data-page="assumptions">Assumptions</button>
-<button class="tab" data-page="optimizer">Optimizer</button>
-<button class="tab" data-page="results">Results</button>
-<button class="tab" data-page="scenarios">Scenarios</button>
-<button class="tab" data-page="projection">Projection</button>
-<button class="tab" data-page="audit">Audit</button>
-<button class="tab" data-page="validation">Validation</button>
-<button class="tab" data-page="withdrawal">Withdrawal Strategy</button>
-<button class="tab" data-page="montecarlo">Monte Carlo</button>
+<nav class="tabs streamlined-tabs">
+<button class="tab active" data-page="home">Overview</button>
+<button class="tab" data-page="planhub">Your Plan</button>
+<button class="tab" data-page="withdrawal">Strategy</button>
+<button class="tab" data-page="resulthub">Results</button>
 <button class="tab" data-page="report">Report</button>
-<button class="tab" data-page="stability">Setup & Health</button>
-<button class="tab" data-page="backup">Backup</button>
 </nav>
 <section id="home" class="page active">
-<div class="hero plan-banner"><div><div class="eyebrow">Your retirement plan</div><div id="greeting" class="plan-message">Welcome to Harbour North</div><p id="planSummary" class="muted">Complete your household and financial ledger to begin building your plan.</p><div class="actions"><button class="btn primary" data-goto="profile">Continue building your plan</button><button class="btn" data-goto="ledger">Update finances</button></div></div><div class="health"><div id="homeScore" class="score">0</div><div><strong>Retirement readiness</strong><p id="scoreLabel" class="muted">Building your financial foundation.</p></div></div></div>
+<div class="hero plan-banner"><div><div class="eyebrow">Your retirement plan</div><div id="greeting" class="plan-message">Welcome to Harbour North</div><p id="planSummary" class="muted">Complete your household and financial ledger to begin building your plan.</p><div class="actions"><button class="btn primary" data-goto="planhub">Review your plan</button><button class="btn" data-goto="ledger">Update finances</button></div></div><div class="health"><div id="homeScore" class="score">0</div><div><strong>Retirement readiness</strong><p id="scoreLabel" class="muted">Building your financial foundation.</p></div></div></div>
 <div class="summary-grid"><div class="metric">Investable assets<strong id="mInvestable">$0</strong><div class="submetric">Cash and investment accounts</div></div><div class="metric">Total net worth<strong id="mNetWorth">$0</strong><div class="submetric">Assets less recorded debt</div></div><div class="metric">Annual income<strong id="mIncome">$0</strong><div class="submetric">Current active income sources</div></div><div class="metric">Annual spending<strong id="mSpending">$0</strong><div class="submetric">All recorded spending needs</div></div></div>
+<div class="card background-status-card">
+ <div class="row-head"><div><div class="eyebrow">Automatic analysis</div><h3 id="backgroundHeadline">Checking your plan…</h3><p id="backgroundMessage" class="muted">Audit, validation, setup, health and retirement-risk checks run automatically.</p></div><span id="backgroundBadge" class="badge warn">Checking</span></div>
+ <div id="backgroundMetrics" class="background-metrics">
+  <div><span>Plan checks</span><strong id="bgChecks">—</strong></div>
+  <div><span>Retirement confidence</span><strong id="bgConfidence">—</strong></div>
+  <div><span>First shortfall</span><strong id="bgShortfall">—</strong></div>
+ </div>
+ <div id="backgroundIssues" class="vital-list"></div>
+</div>
 <div class="dashboard-grid">
 <div class="card flush"><div class="card-head"><div class="row-head"><div><h3 style="margin:0">Readiness breakdown</h3><p class="muted" style="margin:5px 0 0">Each category shows how the score was earned.</p></div><span id="readinessBadge" class="badge warn">Getting started</span></div></div><div class="card-body"><div id="scoreBreakdown" class="score-breakdown"></div></div></div>
 <div class="card flush"><div class="card-head"><h3 style="margin:0">Smart recommendations</h3><p class="muted" style="margin:5px 0 0">Prioritized from your current information.</p></div><div id="recommendations" class="card-body"></div></div>
@@ -190,6 +205,29 @@
 <div class="grid two"><div class="card"><h3>Plan strengths</h3><ul id="strengths" class="checklist"></ul></div><div class="card"><h3>Next actions</h3><ul id="actionsList" class="checklist"></ul></div></div>
 <div class="card"><div class="row-head"><div><h3>Financial timeline</h3><p class="muted">Major goals, income starts, and retirement milestones in chronological order.</p></div><span id="timelineCount" class="pill">0 events</span></div><div id="timeline" class="timeline"></div></div>
 </section>
+<section id="planhub" class="page">
+<div class="hero"><div class="eyebrow">Your information</div><h2>Build and maintain your plan</h2><p class="muted">Keep the information below current. Harbour North automatically recalculates projections and plan checks as your information changes.</p></div>
+<div class="stream-grid">
+ <button class="stream-card" data-goto="profile"><span>1</span><div><strong>Household</strong><p>Names, ages, retirement dates and province.</p></div></button>
+ <button class="stream-card" data-goto="ledger"><span>2</span><div><strong>Finances</strong><p>Accounts, income, spending, debts and future events.</p></div></button>
+ <button class="stream-card" data-goto="benefits"><span>3</span><div><strong>Retirement income</strong><p>CPP, OAS, pensions and other long-term income.</p></div></button>
+ <button class="stream-card" data-goto="assumptions"><span>4</span><div><strong>Planning assumptions</strong><p>Inflation, returns, planning age and optimization range.</p></div></button>
+</div>
+<div class="card"><div class="row-head"><div><h3>Plan maintenance</h3><p class="muted">Scenarios and backups are available when needed without cluttering the main workflow.</p></div></div><div class="actions"><button class="btn" data-goto="scenarios">Manage scenarios</button><button class="btn" data-goto="backup">Backup or restore</button><button class="btn" data-goto="stability">Technical details</button></div></div>
+</section>
+
+<section id="resulthub" class="page">
+<div class="hero"><div class="eyebrow">Retirement outlook</div><h2>Your results</h2><p class="muted">Start with the key answers, then open detailed projections only when you need them.</p></div>
+<div id="resultHubSummary" class="summary-grid"></div>
+<div id="resultHubMessage" class="card"></div>
+<div class="stream-grid compact">
+ <button class="stream-card" data-goto="projection"><span>↗</span><div><strong>Year-by-year projection</strong><p>Income, tax, withdrawals, balances and estate.</p></div></button>
+ <button class="stream-card" data-goto="optimizer"><span>★</span><div><strong>Retirement optimizer</strong><p>Compare retirement and benefit-start ages.</p></div></button>
+ <button class="stream-card" data-goto="montecarlo"><span>%</span><div><strong>Risk details</strong><p>Review the automatic Monte Carlo analysis.</p></div></button>
+ <button class="stream-card" data-goto="audit"><span>✓</span><div><strong>Calculation details</strong><p>Open audit and validation information.</p></div></button>
+</div>
+</section>
+
 <section id="profile" class="page">
 <div class="hero"><h2>Household profile</h2><p class="muted">These permanent records are used throughout Harbour North.</p></div>
 <div class="card"><div class="row-head"><div><h3>Primary person</h3><p class="muted">Use date of birth so age remains accurate.</p></div></div><div class="grid"><div class="field"><label>Name</label><input data-bind="people.0.name"></div><div class="field"><label>Date of birth</label><input type="date" data-bind="people.0.birthDate"></div><div class="field"><label>Planned retirement age</label><input type="number" min="40" max="80" step="0.5" data-bind="people.0.retirementAge"></div><div class="field"><label>Employment status</label><select data-bind="people.0.employmentStatus"><option>Employed</option><option>Self-employed</option><option>Retired</option><option>Not working</option></select></div></div></div>
@@ -784,7 +822,7 @@
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='1.2.3-tax-bracket-optimization', SCHEMA=35, MODEL_VERSION=25;
+const KEY='harbourNorth2.plan', APP='1.3-streamlined-experience', SCHEMA=36, MODEL_VERSION=26;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -1189,6 +1227,7 @@ function renderHome(){
  document.getElementById('strengths').innerHTML=(r.flags.filter(x=>x[0]==='good').slice(0,5).map(x=>`<li>${esc(x[1])}</li>`).join('')||'<li>Complete more of your profile to identify strengths.</li>');
  document.getElementById('actionsList').innerHTML=(r.flags.filter(x=>x[0]==='action').slice(0,5).map(x=>`<li>${esc(x[1])}</li>`).join('')||'<li>Your financial foundation is ready for projection testing.</li>');
  const items=timelineItems();document.getElementById('timelineCount').textContent=`${items.length} event${items.length===1?'':'s'}`;document.getElementById('timeline').innerHTML=items.length?items.slice(0,12).map(x=>`<div class="timeline-item"><div class="timeline-year">${x.year}</div><div class="timeline-name"><strong>${esc(x.name)}</strong></div><div class="muted">${esc(x.detail)}</div></div>`).join(''):'<div class="empty">Add retirement ages, future income, or timeline events to build your financial timeline.</div>';
+ if(typeof scheduleBackgroundAnalysis==='function')scheduleBackgroundAnalysis();
 }
 
 function projectionOptions(){
@@ -2137,9 +2176,110 @@ function renderProfessionalReport(){
  <div class="report-footer">Generated by Harbour North 1.0 · Currency shown in Canadian dollars · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
 }
 
-function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();if(id==='withdrawal')renderWithdrawalStrategy();if(id==='montecarlo'&&monteCarloState.results)renderMonteCarloResults();window.scrollTo({top:0,behavior:'smooth'})}
+
+let backgroundAnalysis={fingerprint:'',running:false,timer:null,result:null};
+
+function backgroundFingerprint(){
+ const ws=state.planningModel?.withdrawalStrategy?.mode||'balanced';
+ return JSON.stringify({
+  people:state.people,hasPartner:state.hasPartner,household:state.household,
+  accounts:state.accounts,income:state.incomeSources,debts:state.debts,
+  expenses:state.expenses,events:state.events,strategy:ws
+ });
+}
+function coreBackgroundChecks(rows){
+ const checks=[];
+ const selfTests=[
+  ['Timeline engine',global.HNTimeline.runSelfTests()],
+  ['Income engine',global.HNIncome.runSelfTests()],
+  ['Tax engine',global.HNTax.runSelfTests()],
+  ['Projection engine',global.HNProjection.runSelfTests()]
+ ];
+ for(const [name,test] of selfTests)checks.push({name,ok:test.ok,level:'fail',detail:test.ok?'Passed':test.failed.join(', ')});
+ const setup=setupStatus();
+ const missing=setup.filter(x=>!x.complete);
+ checks.push({name:'Plan setup',ok:missing.length===0,level:'warn',detail:missing.length?missing.map(x=>x.name).join(', '):'Complete'});
+ const ledgerOK=rows.length>0&&rows.every(row=>projectionRowChecks(row).every(x=>x.ok));
+ checks.push({name:'Projection reconciliation',ok:ledgerOK,level:'fail',detail:ledgerOK?'Every projection year balances.':'A projection equation needs attention.'});
+ checks.push({name:'Runtime health',ok:runtimeErrors.length===0,level:'fail',detail:runtimeErrors.length?`${runtimeErrors.length} browser error(s) recorded.`:'No browser errors recorded.'});
+ return checks;
+}
+async function automaticMonteCarlo(runs=120){
+ const mean=5,vol=12,inflation=num(state.household?.inflationRate)||2,rng=seededRandom(73),simulations=[],plan=clone(state);
+ for(let i=0;i<runs;i++){
+  const rows=simulationProjection(plan,mean,vol,inflation,rng),last=rows.at(-1)?.projection||{},failure=rows.find(r=>num(r.projection.unfunded)>0);
+  simulations.push({rows,success:!failure,failureYear:failure?.year||null,endingEstate:num(last.netWorth),endingPortfolio:num(last.endingInvestments),minimumPortfolio:Math.min(...rows.map(r=>num(r.projection.endingInvestments)))});
+  if(i%20===0)await new Promise(resolve=>setTimeout(resolve,0));
+ }
+ return summarizeMonteCarlo(simulations);
+}
+function renderBackgroundAnalysis(){
+ const r=backgroundAnalysis.result;
+ const card=document.querySelector('.background-status-card');
+ if(!r||!card)return;
+ const failures=r.checks.filter(x=>!x.ok&&x.level==='fail'),warnings=r.checks.filter(x=>!x.ok&&x.level==='warn');
+ const status=failures.length?'fail':warnings.length||r.firstShort?'attention':'pass';
+ card.classList.remove('pass','attention','fail');card.classList.add(status);
+ const badge=document.getElementById('backgroundBadge');
+ badge.textContent=status==='pass'?'Passed':status==='attention'?'Attention':'Failed';
+ badge.className='badge '+(status==='pass'?'good':'warn');
+ document.getElementById('backgroundHeadline').textContent=status==='pass'?'Your plan checks passed':status==='attention'?'Your plan needs attention':'A calculation check failed';
+ document.getElementById('backgroundMessage').textContent=status==='pass'
+  ?'Core calculations reconcile and no vital planning issue was detected.'
+  :failures.length?'Open the technical details before relying on the plan.':'Review the vital items below.';
+ document.getElementById('bgChecks').textContent=`${r.checks.filter(x=>x.ok).length}/${r.checks.length} passed`;
+ document.getElementById('bgConfidence').textContent=r.mc?`${Math.round(r.mc.successRate*100)}%`:'—';
+ document.getElementById('bgShortfall').textContent=r.firstShort||'None';
+ const vital=[];
+ for(const x of failures)vital.push({level:'fail',text:`${x.name}: ${x.detail}`});
+ for(const x of warnings)vital.push({level:'',text:`${x.name}: ${x.detail}`});
+ if(r.mc&&r.mc.successRate<.8)vital.push({level:'fail',text:`Retirement confidence is ${Math.round(r.mc.successRate*100)}%. Consider adjusting retirement age, spending or savings.`});
+ else if(r.mc&&r.mc.successRate<.9)vital.push({level:'',text:`Retirement confidence is ${Math.round(r.mc.successRate*100)}%. Review downside scenarios.`});
+ if(r.firstShort)vital.push({level:'fail',text:`The deterministic projection first becomes unfunded in ${r.firstShort}.`});
+ if(!vital.length)vital.push({level:'good',text:'No vital issues require action.'});
+ document.getElementById('backgroundIssues').innerHTML=vital.slice(0,5).map(x=>`<div class="vital-item ${x.level}">${esc(x.text)}</div>`).join('');
+}
+async function runBackgroundAnalysis(){
+ if(backgroundAnalysis.running)return;
+ const fingerprint=backgroundFingerprint();
+ if(backgroundAnalysis.result&&backgroundAnalysis.fingerprint===fingerprint){renderBackgroundAnalysis();return}
+ backgroundAnalysis.running=true;backgroundAnalysis.fingerprint=fingerprint;
+ const badge=document.getElementById('backgroundBadge');if(badge){badge.textContent='Checking';badge.className='badge warn'}
+ try{
+  const rows=buildCurrentProjection(),checks=coreBackgroundChecks(rows),firstShort=rows.find(r=>num(r.projection.unfunded)>0)?.year||null;
+  const mc=await automaticMonteCarlo();
+  monteCarloState.results=mc;
+  backgroundAnalysis.result={checks,firstShort,mc,rows};
+  renderBackgroundAnalysis();renderResultHub();
+ }catch(error){
+  recordRuntimeError(error.message,'Automatic analysis',0,0,error);
+  backgroundAnalysis.result={checks:[{name:'Automatic analysis',ok:false,level:'fail',detail:error.message}],firstShort:null,mc:null,rows:[]};
+  renderBackgroundAnalysis();
+ }finally{backgroundAnalysis.running=false}
+}
+function scheduleBackgroundAnalysis(){
+ clearTimeout(backgroundAnalysis.timer);
+ backgroundAnalysis.timer=setTimeout(runBackgroundAnalysis,500);
+}
+function renderResultHub(){
+ const root=document.getElementById('resultHubSummary'),message=document.getElementById('resultHubMessage');if(!root||!message)return;
+ let rows;
+ try{rows=backgroundAnalysis.result?.rows||buildCurrentProjection()}catch{rows=[]}
+ const last=rows.at(-1)?.projection||{},firstShort=rows.find(r=>num(r.projection.unfunded)>0)?.year||null;
+ const confidence=backgroundAnalysis.result?.mc?.successRate;
+ const strategy=strategyDefinition(ensureWithdrawalStrategy().mode).label;
+ root.innerHTML=`
+  <div class="metric">Retirement confidence<strong>${confidence==null?'Checking…':Math.round(confidence*100)+'%'}</strong><div class="submetric">Automatic market-risk analysis</div></div>
+  <div class="metric">Ending portfolio<strong>${money(last.endingInvestments||0)}</strong><div class="submetric">At the planning horizon</div></div>
+  <div class="metric">Ending estate<strong>${money(last.netWorth||0)}</strong><div class="submetric">Assets less recorded debt</div></div>
+  <div class="metric">Active strategy<strong>${esc(strategy)}</strong><div class="submetric">Current withdrawal approach</div></div>`;
+ message.innerHTML=firstShort
+  ?`<h3>Action required</h3><p>The current deterministic plan first shows unfunded spending in <strong>${firstShort}</strong>. Review spending, retirement timing, contributions or benefit timing.</p>`
+  :`<h3>Your deterministic plan is funded</h3><p>No unfunded year appears within the current planning horizon. Use the confidence result above to understand market risk.</p>`;
+}
+function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home'){renderHome();scheduleBackgroundAnalysis()}if(id==='planhub')renderSetupSteps();if(id==='resulthub'){renderResultHub();scheduleBackgroundAnalysis()}if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();if(id==='withdrawal')renderWithdrawalStrategy();if(id==='montecarlo'&&monteCarloState.results)renderMonteCarloResults();window.scrollTo({top:0,behavior:'smooth'})}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
-document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));document.addEventListener('click',e=>{const b=e.target.closest('[data-goto]');if(b){e.preventDefault();showPage(b.dataset.goto)}});
 document.getElementById('addAccount').onclick=()=>{state.accounts.push(account('New account','RRSP/RRIF',state.people[0].name||'Primary',0));renderAccounts();save()};document.getElementById('addIncome').onclick=()=>{state.incomeSources.push(income('New income','Salary',state.people[0].name||'Primary',0,0,state.people[0].retirementAge||65,true,true));renderIncome();save()};document.getElementById('addDebt').onclick=()=>{state.debts.push(debt('New debt','Line of credit',0));renderDebts();save()};document.getElementById('addExpense').onclick=()=>{state.expenses.push(expense('New spending','Essential',0,'Monthly'));renderExpenses();save()};document.getElementById('addEvent').onclick=()=>{state.events.push(eventItem('New event','Expense',0,nowYear+3));renderEvents();save()};
 ['accountsList','incomeList','debtList','expenseList','eventList'].forEach(x=>{const el=document.getElementById(x);el.addEventListener('input',listHandler);el.addEventListener('change',listHandler);el.addEventListener('click',listHandler)});
 document.getElementById('exportBtn').onclick=()=>{const payload={product:'Harbour North',version:APP,schemaVersion:SCHEMA,modelVersion:MODEL_VERSION,exportedAt:new Date().toISOString(),plan:buildPersistedState()};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Harbour-North-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href);document.getElementById('backupMessage').textContent='Backup exported successfully.'};
@@ -2192,7 +2332,7 @@ document.getElementById('runOptimizer').onclick=runOptimizer;
 bindAssumptions();syncAssumptionInputs();restoreOptimizerResults();renderOptimizer();
 
 bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderIntegrityCheck();renderProfessionalReport();renderResultsBenefits();renderSetupSteps();renderErrorConsole();renderAuditYearOptions();renderAuditValidation();renderValidationCentre();
-const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(byteSize(startupPayload),'Checking');save(false);renderModelStatus();renderScenarioManager();
+const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(byteSize(startupPayload),'Checking');save(false);renderModelStatus();renderScenarioManager();scheduleBackgroundAnalysis();
 
 </script>
 </body></html>
