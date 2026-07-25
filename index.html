@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.8.0 Financial Engine Validation</title>
+<title>Harbour North 0.8.1 Storage and Validation Repair</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -70,7 +70,7 @@
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.8.0 · Financial Engine Validation</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>0.8.1 · Storage & Validation Repair</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -186,7 +186,7 @@
 
 <div class="card">
 <div class="row-head"><div><h3>Application health report</h3><p class="muted">Checks data completeness, engine tests, and page rendering.</p></div><button id="runStabilityCheck" class="btn primary">Run full health check</button></div>
-<div id="stabilitySummary" class="notice">Health check has not run yet.</div>
+<div id="stabilitySummary" class="notice">Health check has not run yet.</div><div class="summary-grid" style="margin-top:14px"><div class="metric">Saved plan size<strong id="storagePlanSize">—</strong><div class="submetric">Inputs and scenario snapshots only</div></div><div class="metric">Browser storage status<strong id="storageStatus">Checking</strong><div class="submetric">Local device persistence</div></div><div class="metric">Optimizer cache<strong>Session only</strong><div class="submetric">Recalculated after reopening</div></div><div class="metric">Validation details<strong>Session only</strong><div class="submetric">Summary stored with plan</div></div></div>
 <div id="stabilityChecks" class="health-grid" style="margin-top:14px"></div>
 </div>
 
@@ -535,7 +535,7 @@
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='0.8.0-financial-engine-validation', SCHEMA=23, MODEL_VERSION=13;
+const KEY='harbourNorth2.plan', APP='0.8.1-storage-validation-repair', SCHEMA=24, MODEL_VERSION=14;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -605,9 +605,28 @@ function syncPlanningModel(){
  active.snapshot=snapshot;active.updatedAt=now;
  state.planningModel={modelVersion:MODEL_VERSION,activeScenarioId:activeId,taxProfile:{jurisdiction:state.household.province||'British Columbia',filingMode:existing.taxProfile?.filingMode||'individual'},assumptions:clone(state.household),scenarios,optimizer:existing.optimizer||{lastRunAt:null,scenarioCount:0,current:null,recommended:null,topResults:[]}};
 }
-function optimizerSummary(r){if(!r)return null;const {plan,...summary}=r;return clone(summary)}
+function optimizerSummary(r){
+ if(!r)return null;
+ return{
+  primaryAge:r.primaryAge,partnerAge:r.partnerAge,cppAge:r.cppAge,oasAge:r.oasAge,
+  success:r.success,meetsEstate:r.meetsEstate,firstShortfall:r.firstShortfall,
+  endingEstate:r.endingEstate,endingNetWorth:r.endingNetWorth,endingNetWorthReal:r.endingNetWorthReal,
+  endingPortfolio:r.endingPortfolio,endingPortfolioReal:r.endingPortfolioReal,
+  nonInvestmentAssets:r.nonInvestmentAssets,recordedDebt:r.recordedDebt,horizonYear:r.horizonYear,
+  minInvest:r.minInvest,totalTax:r.totalTax,totalWithdrawals:r.totalWithdrawals,
+  score:r.score,goal:r.goal,targetAge:r.targetAge,targetWindow:r.targetWindow,
+  targetDistance:r.targetDistance,withinTargetWindow:r.withinTargetWindow,reasons:clone(r.reasons||[])
+ }
+}
 function persistOptimizerResults(){
- syncPlanningModel();state.planningModel.optimizer={lastRunAt:new Date().toISOString(),scenarioCount:optimizerState.results.length,current:optimizerSummary(optimizerState.current),recommended:optimizerSummary(optimizerState.recommended),topResults:optimizerState.results.slice(0,20).map(optimizerSummary)};
+ syncPlanningModel();
+ state.planningModel.optimizer={
+  lastRunAt:new Date().toISOString(),
+  scenarioCount:optimizerState.results.length,
+  current:optimizerSummary(optimizerState.current),
+  recommended:optimizerSummary(optimizerState.recommended),
+  topResults:optimizerState.results.slice(0,8).map(optimizerSummary)
+ };
 }
 function restoreOptimizerResults(){const o=state.planningModel?.optimizer||{};optimizerState={results:Array.isArray(o.topResults)?clone(o.topResults):[],recommended:clone(o.recommended||null),current:clone(o.current||null)}}
 
@@ -632,9 +651,103 @@ if(n.incomeSources.length===0&&source.employment){source.employment.forEach((e,i
 if(n.debts.length===0&&source.debts&&!Array.isArray(source.debts)){if(num(source.debts.mortgage))n.debts.push(debt('Mortgage','Mortgage',source.debts.mortgage));if(num(source.debts.loc))n.debts.push(debt('Line of credit','Line of credit',source.debts.loc));if(num(source.debts.other))n.debts.push(debt('Other debt','Other',source.debts.other))}
 if(n.expenses.length===0&&source.spending){if(num(source.spending.essentialMonthly))n.expenses.push(expense('Essential living','Essential',source.spending.essentialMonthly,'Monthly'));if(num(source.spending.lifestyleMonthly))n.expenses.push(expense('Lifestyle','Lifestyle',source.spending.lifestyleMonthly,'Monthly'));if(num(source.spending.travelAnnual))n.expenses.push(expense('Travel','Travel',source.spending.travelAnnual,'Annual'));if(num(source.spending.otherAnnual))n.expenses.push(expense('Other spending','Other',source.spending.otherAnnual,'Annual'))}
 if(n.events.length===0&&source.goal?.amount)n.events.push(eventItem(source.goal.name||'Financial goal','Expense',source.goal.amount,source.goal.year||nowYear+3));n.incomeSources=n.incomeSources.map(x=>({...x,taxable:x.taxable!==undefined?!!x.taxable:x.type!=='WCB/LTD'}));n.planningModel=merge(d.planningModel,source.planningModel||{});n.meta={appVersion:APP,schemaVersion:SCHEMA,updatedAt:new Date().toISOString()};return normalizePlan(n)}
+
+function compactValidationForStorage(validation){
+ if(!validation)return{lastRunAt:null,confidence:null,summary:null};
+ const summarize=list=>({
+  total:Array.isArray(list)?list.length:0,
+  passed:Array.isArray(list)?list.filter(x=>x.passed).length:0
+ });
+ return{
+  lastRunAt:validation.lastRunAt||null,
+  confidence:validation.confidence??null,
+  golden:summarize(validation.golden),
+  arithmetic:summarize(validation.arithmetic),
+  engines:summarize(validation.engines),
+  completeness:validation.completeness?{
+   score:validation.completeness.score,
+   done:validation.completeness.done,
+   total:validation.completeness.total,
+   issueCount:Array.isArray(validation.completeness.issues)?validation.completeness.issues.length:0
+  }:null
+ };
+}
+function buildPersistedState(){
+ syncPlanningModel();
+ const persisted={
+  meta:{...state.meta,appVersion:APP,schemaVersion:SCHEMA,updatedAt:new Date().toISOString()},
+  hasPartner:state.hasPartner!==false,
+  people:clone(state.people||[]),
+  household:clone(state.household||{}),
+  accounts:clone(state.accounts||[]),
+  incomeSources:clone(state.incomeSources||[]),
+  debts:clone(state.debts||[]),
+  expenses:clone(state.expenses||[]),
+  events:clone(state.events||[]),
+  planningModel:clone(state.planningModel||{})
+ };
+ if(persisted.planningModel){
+  persisted.planningModel.optimizer={
+   lastRunAt:persisted.planningModel.optimizer?.lastRunAt||null,
+   scenarioCount:persisted.planningModel.optimizer?.scenarioCount||0,
+   current:persisted.planningModel.optimizer?.current||null,
+   recommended:persisted.planningModel.optimizer?.recommended||null,
+   topResults:(persisted.planningModel.optimizer?.topResults||[]).slice(0,8)
+  };
+  persisted.planningModel.validation=compactValidationForStorage(state.planningModel?.validation);
+ }
+ return persisted;
+}
+function byteSize(text){return new Blob([text]).size}
+function formatBytes(bytes){
+ if(bytes<1024)return`${bytes} B`;
+ if(bytes<1024*1024)return`${(bytes/1024).toFixed(1)} KB`;
+ return`${(bytes/1024/1024).toFixed(2)} MB`;
+}
+function renderStorageStatus(bytes=null,status='Ready'){
+ const sizeEl=document.getElementById('storagePlanSize'),statusEl=document.getElementById('storageStatus');
+ if(sizeEl)sizeEl.textContent=bytes==null?'—':formatBytes(bytes);
+ if(statusEl)statusEl.textContent=status;
+}
+function safeSetItem(key,value){
+ try{
+  localStorage.setItem(key,value);
+  return{ok:true,error:null};
+ }catch(error){
+  if(error?.name==='QuotaExceededError'){
+   try{
+    localStorage.removeItem(KEY+'.recovery');
+    localStorage.removeItem(KEY+'.legacy');
+    localStorage.setItem(key,value);
+    return{ok:true,error:null};
+   }catch(secondError){return{ok:false,error:secondError}}
+  }
+  return{ok:false,error};
+ }
+}
+
 function load(){try{return migrate(JSON.parse(localStorage.getItem(KEY)))}catch{return defaults()}}let state=repairGovernmentBenefitAmounts(load());
+try{const recovery=localStorage.getItem(KEY+'.recovery');if(recovery&&byteSize(recovery)>500000)localStorage.removeItem(KEY+'.recovery')}catch{}
 function pathGet(o,p){return p.split('.').reduce((a,k)=>a?.[k],o)}function pathSet(o,p,v){const a=p.split('.');let x=o;for(let i=0;i<a.length-1;i++)x=x[a[i]];x[a.at(-1)]=v}
-function save(msg=true){syncPlanningModel();state.meta={...state.meta,appVersion:APP,schemaVersion:SCHEMA,updatedAt:new Date().toISOString()};localStorage.setItem(KEY,JSON.stringify(state));if(msg){const s=document.getElementById('saveStatus');s.textContent='Saved';setTimeout(()=>s.textContent='Ready',800)}renderHome();renderModelStatus()}
+function save(msg=true){
+ const persisted=buildPersistedState(),json=JSON.stringify(persisted),bytes=byteSize(json);
+ const result=safeSetItem(KEY,json);
+ const statusEl=document.getElementById('saveStatus');
+ if(result.ok){
+  state.meta={...persisted.meta};
+  renderStorageStatus(bytes,'Healthy');
+  if(msg&&statusEl){statusEl.textContent='Saved';setTimeout(()=>statusEl.textContent='Ready',800)}
+ }else{
+  renderStorageStatus(bytes,'Storage full');
+  if(statusEl)statusEl.textContent='Save failed';
+  recordRuntimeError(`Save failed: ${result.error?.message||'Browser storage quota exceeded'}`,'Persistence',0,0,result.error);
+  const message='Harbour North could not save because browser storage is full. Export a backup, then clear older site data or reset this plan.';
+  const backup=document.getElementById('backupMessage');if(backup)backup.textContent=message;
+  if(msg)toast('Save failed — browser storage is full');
+ }
+ renderHome();renderModelStatus();
+ return result.ok;
+}
 function bindStatic(){document.querySelectorAll('[data-bind]').forEach(el=>{el.value=pathGet(state,el.dataset.bind)??'';const handler=()=>{pathSet(state,el.dataset.bind,el.type==='number'?num(el.value):el.value);save()};el.addEventListener('input',handler);el.addEventListener('change',handler)});const hp=document.getElementById('hasPartner');hp.checked=state.hasPartner;hp.onchange=()=>{state.hasPartner=hp.checked;document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner);save()};document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner)}
 function ownerOptions(selected){const opts=['Household',state.people[0].name||'Primary'];if(state.hasPartner)opts.push(state.people[1].name||'Partner');return [...new Set(opts)].map(x=>`<option ${x===selected?'selected':''}>${esc(x)}</option>`).join('')}
 function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
@@ -1253,10 +1366,49 @@ function validationCase(name,passed,detail,expected='',actual=''){return{name,pa
 function runGoldenScenarios(){const cases=[];try{const p={hasPartner:false,people:[{id:'p1',name:'Test',birthDate:'1965-01-01',retirementAge:65}],household:{province:'British Columbia',planningAge:66,inflationRate:0},accounts:[],incomeSources:[{id:'i1',name:'CPP',type:'CPP',owner:'Test',ownerId:'p1',annualAmount:12000,startAge:65,endAge:110,indexed:false,taxable:true}],debts:[],expenses:[],events:[]};const tl=global.HNTimeline.buildTimeline(p,{startYear:2030,planningAge:66}),inc=global.HNIncome.buildIncomeProjection(p,tl,{startYear:2030,indexRate:0}),r=inc.find(x=>x.people[0].age===65);cases.push(validationCase('CPP begins at selected age',r?.income?.totalIncome===12000,'CPP should be active at age 65.','$12,000',money(r?.income?.totalIncome||0)))}catch(e){cases.push(validationCase('CPP begins at selected age',false,e.message))}try{const p={hasPartner:false,people:[{id:'p1',name:'Test',birthDate:'1965-01-01',retirementAge:65}],household:{province:'British Columbia',planningAge:65,inflationRate:0},accounts:[{id:'a1',name:'TFSA',type:'TFSA',owner:'Test',ownerId:'p1',balance:10000,returnRate:0,annualContribution:0}],incomeSources:[],debts:[],expenses:[{id:'e1',name:'Living',category:'Essential',amount:6000,frequency:'Annual'}],events:[]};const tl=global.HNTimeline.buildTimeline(p,{startYear:2030,planningAge:65}),inc=global.HNIncome.buildIncomeProjection(p,tl,{startYear:2030,indexRate:0}),r=global.HNProjection.buildProjection(p,inc,{startYear:2030,indexRate:0})[0].projection;cases.push(validationCase('TFSA withdrawal closes correctly',approxEqual(r.withdrawals,6000)&&approxEqual(r.endingInvestments,4000),'$6,000 withdrawn from $10,000 leaves $4,000.','$4,000',money(r.endingInvestments)))}catch(e){cases.push(validationCase('TFSA withdrawal closes correctly',false,e.message))}try{const p={hasPartner:false,people:[{id:'p1',name:'Test',birthDate:'1965-01-01',retirementAge:65}],household:{province:'British Columbia',planningAge:65,inflationRate:0},accounts:[{id:'a1',name:'RRSP',type:'RRSP/RRIF',owner:'Test',ownerId:'p1',balance:50000,returnRate:0,annualContribution:0}],incomeSources:[],debts:[],expenses:[{id:'e1',name:'Living',category:'Essential',amount:20000,frequency:'Annual'}],events:[]};const tl=global.HNTimeline.buildTimeline(p,{startYear:2030,planningAge:65}),inc=global.HNIncome.buildIncomeProjection(p,tl,{startYear:2030,indexRate:0}),r=global.HNProjection.buildProjection(p,inc,{startYear:2030,indexRate:0})[0].projection;cases.push(validationCase('RRSP withdrawal includes tax gross-up',r.withdrawals>20000&&r.tax>0,'Taxable withdrawal should exceed spending.','> $20,000',money(r.withdrawals)))}catch(e){cases.push(validationCase('RRSP withdrawal includes tax gross-up',false,e.message))}try{const split=global.HNTax.estimateHouseholdTax({A:50000,B:50000},2026,0,'British Columbia').total,one=global.HNTax.estimateHouseholdTax({A:100000},2026,0,'British Columbia').total;cases.push(validationCase('Couple tax is calculated separately',split<one,'Income splitting across two taxpayers should lower tax.','Split lower',`${money(split)} vs ${money(one)}`))}catch(e){cases.push(validationCase('Couple tax is calculated separately',false,e.message))}try{const a=global.HNIncome.sourceAmount({annualAmount:10000,indexed:true},2028,2026,2);cases.push(validationCase('Indexed income compounds correctly',approxEqual(a,10404,.5),'$10,000 at 2% for two years.','$10,404',money(a)))}catch(e){cases.push(validationCase('Indexed income compounds correctly',false,e.message))}return cases}
 function validateCurrentPlanEquations(){const rows=auditProjectionRows(),results=[];for(const r of rows){const p=r.projection||{},income=(r.income?.details||[]).filter(x=>x.active).reduce((s,x)=>s+num(x.amount),0)+num(p.eventIncome);if(!approxEqual(income,p.totalIncome,1))results.push(validationCase(`Income balances in ${r.year}`,false,'Active sources plus event income must equal gross income.',money(income),money(p.totalIncome)));if(!approxEqual(num(p.totalIncome)-num(p.tax),p.afterTaxIncome,1))results.push(validationCase(`After-tax income balances in ${r.year}`,false,'Gross income less tax must equal after-tax income.',money(num(p.totalIncome)-num(p.tax)),money(p.afterTaxIncome)));const closing=num(p.startingInvestments)+num(p.growth)+num(p.contributions)-num(p.withdrawals)+num(p.surplusToCash);if(!approxEqual(closing,p.endingInvestments,2))results.push(validationCase(`Portfolio balances in ${r.year}`,false,'Opening + growth + contributions − withdrawals + surplus must equal closing.',money(closing),money(p.endingInvestments)))}if(!results.length)results.push(validationCase('All current-plan equations balance',true,`${rows.length} years passed all equation checks.`));return results}
 function runCoreEngineValidation(){return[['Timeline',global.HNTimeline.runSelfTests()],['Income',global.HNIncome.runSelfTests()],['Tax',global.HNTax.runSelfTests()],['Projection',global.HNProjection.runSelfTests()]].map(([n,r])=>validationCase(`${n} engine tests`,r.ok,`${r.total-r.failed.length}/${r.total} passed${r.failed.length?': '+r.failed.join(', '):''}.`))}
-function validationState(){state.planningModel=state.planningModel||{};state.planningModel.validation=state.planningModel.validation||{lastRunAt:null,confidence:null,golden:[],arithmetic:[],engines:[],completeness:null};return state.planningModel.validation}
+function validationState(){
+ state.planningModel=state.planningModel||{};
+ const v=state.planningModel.validation||{};
+ if(!Array.isArray(v.golden))v.golden=[];
+ if(!Array.isArray(v.arithmetic))v.arithmetic=[];
+ if(!Array.isArray(v.engines))v.engines=[];
+ state.planningModel.validation={
+  lastRunAt:v.lastRunAt||null,
+  confidence:v.confidence??null,
+  golden:v.golden,
+  arithmetic:v.arithmetic,
+  engines:v.engines,
+  completeness:v.completeness||null
+ };
+ return state.planningModel.validation;
+}
 function renderValidationCaseList(id,cases){const root=document.getElementById(id);if(!root)return;root.innerHTML=(cases||[]).map(c=>`<div class="test-case ${c.status}"><div class="test-case-head"><strong>${c.passed?'✓':'✕'} ${esc(c.name)}</strong><span class="badge ${c.passed?'good':'warn'}">${c.passed?'Pass':'Fail'}</span></div><p class="muted" style="margin:7px 0 0">${esc(c.detail||'')}</p>${c.expected||c.actual?`<small>Expected: ${esc(c.expected||'—')} · Actual: ${esc(c.actual||'—')}</small>`:''}</div>`).join('')}
 function renderValidationCentre(){const v=validationState();renderValidationCaseList('goldenTestResults',v.golden);renderValidationCaseList('currentPlanValidationResults',v.arithmetic);const gp=(v.golden||[]).filter(x=>x.passed).length,gt=(v.golden||[]).length,ap=(v.arithmetic||[]).filter(x=>x.passed).length,at=(v.arithmetic||[]).length,ep=(v.engines||[]).filter(x=>x.passed).length,et=(v.engines||[]).length;document.getElementById('vGoldenScore').textContent=gt?`${gp}/${gt}`:'—';document.getElementById('vArithmeticScore').textContent=at?`${ap}/${at}`:'—';document.getElementById('vEngineScore').textContent=et?`${ep}/${et}`:'—';document.getElementById('vCompletenessScore').textContent=v.completeness?`${Math.round(v.completeness.score)}%`:'—';const gb=document.getElementById('goldenStatusBadge'),ab=document.getElementById('arithmeticStatusBadge');gb.textContent=gt?(gp===gt?'All passed':`${gt-gp} failed`):'Not run';gb.className=`badge ${gt&&gp===gt?'good':'warn'}`;ab.textContent=at?(ap===at?'All balanced':`${at-ap} failed`):'Not run';ab.className=`badge ${at&&ap===at?'good':'warn'}`;const ring=document.getElementById('validationConfidenceRing'),label=document.getElementById('validationConfidenceLabel'),text=document.getElementById('validationConfidenceText');if(v.confidence==null){ring.textContent='—';ring.className='confidence-ring warn';return}ring.textContent=`${Math.round(v.confidence)}%`;ring.className=`confidence-ring ${v.confidence>=90?'good':v.confidence>=70?'warn':'fail'}`;label.textContent=v.confidence>=90?'High confidence':v.confidence>=70?'Moderate confidence':'Validation issues require attention';text.textContent=`Last run ${new Date(v.lastRunAt).toLocaleString('en-CA')}.`}
-function runFullValidationSuite(){const golden=runGoldenScenarios(),arithmetic=validateCurrentPlanEquations(),engines=runCoreEngineValidation(),issues=benefitCompletenessIssues(),setup=setupStatus(),done=setup.filter(x=>x.complete).length,completeness={score:Math.max(0,100-issues.length*10-(setup.length-done)*5),issues,done,total:setup.length},checks=[...golden,...arithmetic,...engines],confidence=(checks.filter(x=>x.passed).length/checks.length)*85+completeness.score*.15,v=validationState();Object.assign(v,{lastRunAt:new Date().toISOString(),confidence:Math.max(0,Math.min(100,confidence)),golden,arithmetic,engines,completeness});save(false);renderValidationCentre();toast(v.confidence>=90?'Validation passed with high confidence':'Validation completed with issues to review');return v}
+function runFullValidationSuite(){
+ const button=document.getElementById('runValidationSuite');
+ try{
+  if(button){button.disabled=true;button.textContent='Running validation…'}
+  const golden=runGoldenScenarios(),arithmetic=validateCurrentPlanEquations(),engines=runCoreEngineValidation();
+  const issues=benefitCompletenessIssues(),setup=setupStatus(),done=setup.filter(x=>x.complete).length;
+  const completeness={score:Math.max(0,100-issues.length*10-(setup.length-done)*5),issues,done,total:setup.length};
+  const checks=[...golden,...arithmetic,...engines];
+  const confidence=checks.length?(checks.filter(x=>x.passed).length/checks.length)*85+completeness.score*.15:0;
+  const v=validationState();
+  Object.assign(v,{lastRunAt:new Date().toISOString(),confidence:Math.max(0,Math.min(100,confidence)),golden,arithmetic,engines,completeness});
+  renderValidationCentre();
+  save(false);
+  toast(v.confidence>=90?'Validation passed with high confidence':'Validation completed with issues to review');
+  return v;
+ }catch(error){
+  recordRuntimeError(error.message,'Validation Suite',0,0,error);
+  const root=document.getElementById('currentPlanValidationResults');
+  if(root)root.innerHTML=`<div class="test-case fail"><div class="test-case-head"><strong>✕ Validation could not complete</strong><span class="badge warn">Error</span></div><p class="muted">${esc(error.message)}</p></div>`;
+  toast('Validation failed — see error console');
+  return null;
+ }finally{
+  if(button){button.disabled=false;button.textContent='Run full validation suite'}
+ }
+}
 function hasBlockingValidationFailure(){const v=validationState();return !!v.lastRunAt&&[...(v.golden||[]),...(v.arithmetic||[]),...(v.engines||[])].some(x=>!x.passed)}
 
 function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();window.scrollTo({top:0,behavior:'smooth'})}
@@ -1264,8 +1416,15 @@ function toast(m){const t=document.getElementById('toast');t.textContent=m;t.cla
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 document.getElementById('addAccount').onclick=()=>{state.accounts.push(account('New account','RRSP/RRIF',state.people[0].name||'Primary',0));renderAccounts();save()};document.getElementById('addIncome').onclick=()=>{state.incomeSources.push(income('New income','Salary',state.people[0].name||'Primary',0,0,state.people[0].retirementAge||65,true,true));renderIncome();save()};document.getElementById('addDebt').onclick=()=>{state.debts.push(debt('New debt','Line of credit',0));renderDebts();save()};document.getElementById('addExpense').onclick=()=>{state.expenses.push(expense('New spending','Essential',0,'Monthly'));renderExpenses();save()};document.getElementById('addEvent').onclick=()=>{state.events.push(eventItem('New event','Expense',0,nowYear+3));renderEvents();save()};
 ['accountsList','incomeList','debtList','expenseList','eventList'].forEach(x=>{const el=document.getElementById(x);el.addEventListener('input',listHandler);el.addEventListener('change',listHandler);el.addEventListener('click',listHandler)});
-document.getElementById('exportBtn').onclick=()=>{syncPlanningModel();const payload={product:'Harbour North',version:APP,schemaVersion:SCHEMA,modelVersion:MODEL_VERSION,exportedAt:new Date().toISOString(),plan:state};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Harbour-North-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href);document.getElementById('backupMessage').textContent='Backup exported successfully.'};
-document.getElementById('importFile').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;if(f.size>5_000_000)throw new Error('Backup file is too large.');const parsed=JSON.parse(await f.text());const imported=migrate(parsed);localStorage.setItem(KEY+'.recovery',JSON.stringify(state));state=imported;save(false);location.reload()}catch(err){document.getElementById('backupMessage').textContent='Import failed: '+err.message}};
+document.getElementById('exportBtn').onclick=()=>{const payload={product:'Harbour North',version:APP,schemaVersion:SCHEMA,modelVersion:MODEL_VERSION,exportedAt:new Date().toISOString(),plan:buildPersistedState()};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Harbour-North-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href);document.getElementById('backupMessage').textContent='Backup exported successfully.'};
+document.getElementById('importFile').onchange=async e=>{try{
+ const f=e.target.files[0];if(!f)return;if(f.size>5_000_000)throw new Error('Backup file is too large.');
+ const parsed=JSON.parse(await f.text()),imported=migrate(parsed);
+ safeSetItem(KEY+'.recovery',JSON.stringify(buildPersistedState()));
+ state=imported;
+ if(!save(false))throw new Error('The imported plan could not be saved because browser storage is full.');
+ location.reload();
+}catch(err){document.getElementById('backupMessage').textContent='Import failed: '+err.message}};
 document.getElementById('healthBtn').onclick=()=>{syncPlanningModel();const issues=[];if(!state.meta||state.meta.schemaVersion!==SCHEMA)issues.push('Schema version mismatch');for(const key of ['accounts','incomeSources','debts','expenses','events'])if(!Array.isArray(state[key]))issues.push(`${key} is invalid`);const ids=[...state.people,...state.accounts,...state.incomeSources,...state.debts,...state.expenses,...state.events].map(x=>x.id).filter(Boolean);if(new Set(ids).size!==ids.length)issues.push('Duplicate record IDs found');if(state.planningModel?.modelVersion!==MODEL_VERSION)issues.push('Planning-model version mismatch');if(!Array.isArray(state.planningModel?.scenarios)||!state.planningModel.scenarios.length)issues.push('Scenario library is missing');const active=state.planningModel?.scenarios?.find(x=>x.id===state.planningModel.activeScenarioId);if(!active)issues.push('Active scenario is invalid');document.getElementById('backupMessage').textContent=issues.length?'Health check found: '+issues.join('; '):'Data health check passed: schema, IDs, planning model, active scenario, and optimizer store are valid.';renderModelStatus()};
 document.getElementById('resetBtn').onclick=()=>{if(confirm('Reset all Harbour North data on this device?')){localStorage.removeItem(KEY);location.reload()}};
 
@@ -1297,7 +1456,8 @@ document.getElementById('clearErrorConsole').onclick=()=>{runtimeErrors.length=0
 document.getElementById('runOptimizer').onclick=runOptimizer;
 bindAssumptions();syncAssumptionInputs();restoreOptimizerResults();renderOptimizer();
 
-bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderResultsBenefits();renderSetupSteps();renderErrorConsole();renderAuditYearOptions();renderAuditValidation();renderValidationCentre();save(false);renderModelStatus();renderScenarioManager();
+bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderResultsBenefits();renderSetupSteps();renderErrorConsole();renderAuditYearOptions();renderAuditValidation();renderValidationCentre();
+const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(byteSize(startupPayload),'Checking');save(false);renderModelStatus();renderScenarioManager();
 
 </script>
 </body></html>
