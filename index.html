@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.9.1 Validation Reconciliation Fix</title>
+<title>Harbour North 1.0 Professional Retirement Report</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -82,10 +82,49 @@
 
 .ledger-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}.ledger-table{width:100%;border-collapse:collapse;min-width:960px}.ledger-table th,.ledger-table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}.ledger-table th:first-child,.ledger-table td:first-child{text-align:left;position:sticky;left:0;background:#fff}.ledger-ok{color:var(--ok);font-weight:900}.ledger-fail{color:var(--danger);font-weight:900}
 
+
+.report-toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.report-sheet{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px;box-shadow:0 12px 30px rgba(25,55,90,.08)}
+.report-cover{padding:18px 0 28px;border-bottom:3px solid var(--blue)}
+.report-cover h2{font-size:36px;margin:8px 0}
+.report-kicker{text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:var(--blue);font-size:12px}
+.report-meta{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted)}
+.report-section{padding:26px 0;border-bottom:1px solid var(--line)}
+.report-section:last-child{border-bottom:0}
+.report-section h3{font-size:23px;margin:0 0 12px}
+.report-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.report-metric{border:1px solid var(--line);border-radius:13px;padding:14px;background:#f8fbfe}
+.report-metric span{display:block;color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.report-metric strong{display:block;font-size:24px;margin-top:6px}
+.report-chart{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff;overflow:hidden}
+.report-chart svg{width:100%;height:auto;display:block}
+.report-table{width:100%;border-collapse:collapse}
+.report-table th,.report-table td{padding:10px;border-bottom:1px solid var(--line);text-align:right}
+.report-table th:first-child,.report-table td:first-child{text-align:left}
+.report-callout{border-left:5px solid var(--blue);background:#f2f7fc;border-radius:10px;padding:14px 16px}
+.report-callout.warn{border-left-color:var(--warn);background:#fff8ec}
+.report-callout.good{border-left-color:var(--ok);background:#f1faf5}
+.report-actions-list{display:grid;gap:9px}
+.report-action{padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.report-footer{padding-top:22px;color:var(--muted);font-size:12px}
+@media(max-width:800px){.report-sheet{padding:20px}.report-metrics{grid-template-columns:1fr 1fr}.report-cover h2{font-size:29px}}
+@media print{
+ @page{size:letter;margin:12mm}
+ body{background:#fff!important}
+ body>header,.tabs,#toast,.report-toolbar{display:none!important}
+ .shell{max-width:none;margin:0;padding:0}
+ .page{display:none!important}
+ #report.page{display:block!important}
+ .report-sheet{box-shadow:none;border:0;border-radius:0;padding:0}
+ .report-section{break-inside:avoid}
+ .report-chart{break-inside:avoid}
+ .report-cover{break-after:avoid}
+}
+
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.9.1 · Validation Reconciliation Fix</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>1.0 · Professional Retirement Report</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -99,6 +138,7 @@
 <button class="tab" data-page="projection">Projection</button>
 <button class="tab" data-page="audit">Audit</button>
 <button class="tab" data-page="validation">Validation</button>
+<button class="tab" data-page="report">Report</button>
 <button class="tab" data-page="stability">Setup & Health</button>
 <button class="tab" data-page="backup">Backup</button>
 </nav>
@@ -260,6 +300,17 @@
 </section>
 
 <section id="validation" class="page"><div class="hero"><div class="eyebrow">0.8.0 · Financial engine validation</div><h2>Validation Centre</h2><p class="muted">Run known-answer scenarios, verify every projection equation, and review a confidence score before relying on optimizer results.</p></div><div class="card"><div class="row-head"><div><h3>Planner confidence</h3><p class="muted">Based on golden scenarios, current-plan arithmetic, core engine tests, and plan completeness.</p></div><button id="runValidationSuite" class="btn primary">Run full validation suite</button></div><div class="confidence-layout"><div id="validationConfidenceRing" class="confidence-ring warn">—</div><div><h3 id="validationConfidenceLabel">Not yet validated</h3><p id="validationConfidenceText" class="muted">Run the suite to evaluate the current plan and calculation engine.</p></div></div></div><div class="validation-dashboard"><div class="metric">Golden scenarios<strong id="vGoldenScore">—</strong><div class="submetric">Known-answer test cases</div></div><div class="metric">Projection arithmetic<strong id="vArithmeticScore">—</strong><div class="submetric">Current plan checks</div></div><div class="metric">Core engine tests<strong id="vEngineScore">—</strong><div class="submetric">Timeline, income, tax, projection</div></div><div class="metric">Plan completeness<strong id="vCompletenessScore">—</strong><div class="submetric">Benefits, spending, household data</div></div></div><div class="card"><div class="row-head"><div><h3>Golden test scenarios</h3><p class="muted">Predetermined cases detect regressions between releases.</p></div><span id="goldenStatusBadge" class="badge warn">Not run</span></div><div id="goldenTestResults" class="test-suite"></div></div><div class="card"><div class="row-head"><div><h3>Current-plan equation checks</h3><p class="muted">Every projection year must balance before results are considered trustworthy.</p></div><span id="arithmeticStatusBadge" class="badge warn">Not run</span></div><div id="currentPlanValidationResults" class="test-suite"></div></div></section>
+
+<section id="report" class="page">
+<div class="hero">
+ <div class="report-toolbar">
+  <div><h2>Professional Retirement Report</h2><p class="muted">A printable summary of the active Harbour North scenario.</p></div>
+  <div class="actions"><button id="refreshReport" class="btn">Refresh report</button><button id="printReport" class="btn primary">Print / Save as PDF</button></div>
+ </div>
+</div>
+<div id="retirementReport" class="report-sheet"></div>
+</section>
+
 <section id="backup" class="page"><div class="hero"><h2>Backup and recovery</h2><p class="muted">Export your full Harbour North plan before major updates.</p></div><div class="card"><div class="actions"><button id="exportBtn" class="btn primary">Export backup</button><label class="btn">Import backup<input id="importFile" class="hidden" type="file" accept="application/json,.json"></label><button id="healthBtn" class="btn">Run data health check</button><button id="resetBtn" class="btn danger">Reset plan</button></div><p id="backupMessage" class="muted"></p></div><div class="card"><div class="row-head"><div><h3>Professional planning foundation</h3><p class="muted">The app now stores household data, assumptions, tax profile, scenarios, and optimizer results in a structured planning model while retaining compatibility with earlier backups.</p></div><span id="modelStatus" class="badge good">Ready</span></div><div class="summary-grid"><div class="metric">Model version<strong id="modelVersion">1</strong><div class="submetric">Professional planning schema</div></div><div class="metric">Active scenario<strong id="activeScenarioName">Base plan</strong><div class="submetric">Scenario workspace</div></div><div class="metric">Saved scenarios<strong id="scenarioCount">1</strong><div class="submetric">Ready for comparison tools</div></div><div class="metric">Last optimizer run<strong id="lastOptimizerRun">Never</strong><div class="submetric">Stored with the plan</div></div></div></div></section>
 </main><div id="toast" class="toast"></div>
 <script>
@@ -549,7 +600,7 @@
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='0.9.1-validation-reconciliation-fix', SCHEMA=29, MODEL_VERSION=19;
+const KEY='harbourNorth2.plan', APP='1.0-professional-retirement-report', SCHEMA=30, MODEL_VERSION=20;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -1571,7 +1622,113 @@ function runFullValidationSuite(){
 }
 function hasBlockingValidationFailure(){const v=validationState();return !!v.lastRunAt&&[...(v.golden||[]),...(v.arithmetic||[]),...(v.engines||[])].some(x=>!x.passed)}
 
-function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();window.scrollTo({top:0,behavior:'smooth'})}
+
+function reportLineChart(rows,valueFn,label){
+ const data=rows.map(r=>({year:r.year,value:num(valueFn(r))})).filter(x=>Number.isFinite(x.value));
+ if(!data.length)return'<div class="empty">No chart data available.</div>';
+ const w=760,h=250,pad=42,min=Math.min(...data.map(x=>x.value),0),max=Math.max(...data.map(x=>x.value),1),span=Math.max(1,max-min);
+ const pts=data.map((x,i)=>`${pad+(i/(Math.max(1,data.length-1)))*(w-pad*2)},${h-pad-((x.value-min)/span)*(h-pad*2)}`).join(' ');
+ const ticks=[0,.25,.5,.75,1].map(t=>{const y=h-pad-t*(h-pad*2),v=min+t*span;return`<line x1="${pad}" y1="${y}" x2="${w-pad}" y2="${y}" stroke="#dce6ef"/><text x="${pad-7}" y="${y+4}" text-anchor="end" font-size="11" fill="#61758a">${money(v)}</text>`}).join('');
+ return`<div class="report-chart"><strong>${esc(label)}</strong><svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(label)}">${ticks}<polyline points="${pts}" fill="none" stroke="#244b76" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><text x="${pad}" y="${h-10}" font-size="11" fill="#61758a">${data[0].year}</text><text x="${w-pad}" y="${h-10}" text-anchor="end" font-size="11" fill="#61758a">${data[data.length-1].year}</text></svg></div>`;
+}
+function reportIncomeTimeline(){
+ const people=global.HNTimeline.includedPeople(state),sources=state.incomeSources||[];
+ if(!sources.length)return'<div class="empty">No retirement income sources recorded.</div>';
+ return`<table class="report-table"><thead><tr><th>Income source</th><th>Owner</th><th>Monthly</th><th>Start age</th><th>Indexed</th></tr></thead><tbody>${sources.map(x=>`<tr><td>${esc(x.name||x.type)}</td><td>${esc(x.owner||'Household')}</td><td>${money(num(x.annualAmount)/12)}</td><td>${num(x.startAge)||'—'}</td><td>${x.indexed?'Yes':'No'}</td></tr>`).join('')}</tbody></table>`;
+}
+function reportWithdrawalSummary(rows){
+ const retirementYear=Math.min(...global.HNTimeline.includedPeople(state).map(p=>global.HNTimeline.yearAtAge(p.birthDate,p.retirementAge)).filter(Number.isFinite));
+ const sample=rows.filter(r=>r.year>=retirementYear).slice(0,12);
+ if(!sample.length)return'<div class="empty">No retirement withdrawal years available.</div>';
+ return`<table class="report-table"><thead><tr><th>Year</th><th>Gross income</th><th>Tax</th><th>Spending</th><th>Withdrawals</th><th>Ending portfolio</th></tr></thead><tbody>${sample.map(r=>`<tr><td>${r.year}</td><td>${money(r.projection.totalIncome)}</td><td>${money(r.projection.tax)}</td><td>${money(r.projection.spending)}</td><td>${money(r.projection.withdrawals)}</td><td>${money(r.projection.endingInvestments)}</td></tr>`).join('')}</tbody></table>`;
+}
+function reportRiskItems(rows){
+ const items=[],validation=validationState(),issues=benefitCompletenessIssues();
+ if(issues.length)items.push(...issues.map(x=>x.text));
+ const firstShort=rows.find(r=>num(r.projection.unfunded)>0);
+ if(firstShort)items.push(`The projection first shows unfunded spending in ${firstShort.year}.`);
+ if(validation.confidence!=null&&validation.confidence<90)items.push(`Validation confidence is ${Math.round(validation.confidence)}%; review failed or incomplete checks.`);
+ const contributionWarnings=(state.accounts||[]).filter(a=>num(a.annualContribution)>0).map(a=>`${a.name} contributes ${money(a.annualContribution)} per year while its owner is working.`);
+ items.push(...contributionWarnings);
+ if(!items.length)items.push('No material setup or projection risks were detected by the current validation rules.');
+ return items;
+}
+function renderProfessionalReport(){
+ const root=document.getElementById('retirementReport');if(!root)return;
+ const rows=buildProjectionTimeline();projectionRows=rows;
+ const totalsNow=totals(),ready=readiness(),first=rows[0]?.projection||{},last=rows[rows.length-1]?.projection||{};
+ const active=activeScenario(),people=global.HNTimeline.includedPeople(state),primary=people[0],partner=people[1];
+ const retirementLabels=people.map(p=>`${p.name||'Household member'} at age ${num(p.retirementAge)}`).join(' · ');
+ const validation=validationState(),reportDate=new Date().toLocaleDateString('en-CA',{year:'numeric',month:'long',day:'numeric'});
+ const firstRetirementYear=Math.min(...people.map(p=>global.HNTimeline.yearAtAge(p.birthDate,p.retirementAge)).filter(Number.isFinite));
+ const retirementRow=rows.find(r=>r.year===firstRetirementYear)||rows[0],retirementPortfolio=retirementRow?.projection?.startingInvestments||0;
+ const totalTax=rows.reduce((s,r)=>s+num(r.projection.tax),0),totalWithdrawals=rows.reduce((s,r)=>s+num(r.projection.withdrawals),0);
+ const risks=reportRiskItems(rows);
+ const integrity=rows.every(r=>projectionRowChecks(r).every(x=>x.ok));
+ const actions=recommendations(ready,totalsNow).slice(0,5);
+ root.innerHTML=`
+ <div class="report-cover">
+  <div class="report-kicker">Harbour North Retirement Planning</div>
+  <h2>${esc(active?.name||'Retirement Plan')}</h2>
+  <div class="report-meta"><span>Prepared ${reportDate}</span><span>${esc(retirementLabels)}</span><span>Planning horizon: ${rows.at(-1)?.year||'—'}</span></div>
+ </div>
+ <div class="report-section">
+  <h3>Executive summary</h3>
+  <div class="report-metrics">
+   <div class="report-metric"><span>Readiness score</span><strong>${ready.score}/100</strong></div>
+   <div class="report-metric"><span>Current net worth</span><strong>${money(totalsNow.netWorth)}</strong></div>
+   <div class="report-metric"><span>Portfolio at retirement</span><strong>${money(retirementPortfolio)}</strong></div>
+   <div class="report-metric"><span>Ending estate</span><strong>${money(last.netWorth)}</strong></div>
+  </div>
+  <div class="report-callout ${integrity?'good':'warn'}" style="margin-top:14px"><strong>${integrity?'Projection equations verified':'Projection review required'}</strong><br>${integrity?`All ${rows.length} projection years reconcile through the account-ledger engine.`:'One or more projection checks require review before relying on this report.'}</div>
+ </div>
+ <div class="report-section">
+  <h3>Household and planning assumptions</h3>
+  <table class="report-table"><tbody>
+   ${people.map(p=>`<tr><td>${esc(p.name||p.role||'Household member')}</td><td>Retirement age ${num(p.retirementAge)}</td><td>${esc(p.employmentStatus||'')}</td></tr>`).join('')}
+   <tr><td>Province</td><td colspan="2">${esc(state.household.province||'Not entered')}</td></tr>
+   <tr><td>Inflation assumption</td><td colspan="2">${num(state.household.inflationRate)}%</td></tr>
+   <tr><td>Planning age</td><td colspan="2">${num(state.household.planningAge)||95}</td></tr>
+  </tbody></table>
+ </div>
+ <div class="report-section">
+  <h3>Lifetime portfolio projection</h3>
+  ${reportLineChart(rows,r=>r.projection.endingInvestments,'Projected investment portfolio')}
+ </div>
+ <div class="report-section">
+  <h3>Lifetime net worth</h3>
+  ${reportLineChart(rows,r=>r.projection.netWorth,'Projected net worth')}
+ </div>
+ <div class="report-section">
+  <h3>Retirement income timeline</h3>
+  ${reportIncomeTimeline()}
+ </div>
+ <div class="report-section">
+  <h3>Withdrawal and tax summary</h3>
+  <div class="report-metrics">
+   <div class="report-metric"><span>Lifetime estimated tax</span><strong>${money(totalTax)}</strong></div>
+   <div class="report-metric"><span>Total portfolio withdrawals</span><strong>${money(totalWithdrawals)}</strong></div>
+   <div class="report-metric"><span>Current annual spending</span><strong>${money(totalsNow.annualSpend)}</strong></div>
+   <div class="report-metric"><span>First projected year</span><strong>${rows[0]?.year||'—'}</strong></div>
+  </div>
+  <div style="margin-top:14px">${reportWithdrawalSummary(rows)}</div>
+ </div>
+ <div class="report-section">
+  <h3>Risks and planning observations</h3>
+  <div class="report-actions-list">${risks.map(x=>`<div class="report-action">${esc(x)}</div>`).join('')}</div>
+ </div>
+ <div class="report-section">
+  <h3>Recommended next actions</h3>
+  <div class="report-actions-list">${actions.map((x,i)=>`<div class="report-action"><strong>${i+1}. ${esc(x[0])}</strong><br><span class="muted">${esc(x[1])}</span></div>`).join('')}</div>
+ </div>
+ <div class="report-section">
+  <h3>Validation and limitations</h3>
+  <div class="report-callout"><strong>Planner confidence: ${validation.confidence==null?'Not run':Math.round(validation.confidence)+'%'}</strong><br>This report is an educational projection based on the information and assumptions entered in Harbour North. Tax estimates, benefit rules, investment returns, inflation, and personal circumstances may change. Confirm major retirement decisions with qualified tax, investment, legal, and pension professionals.</div>
+ </div>
+ <div class="report-footer">Generated by Harbour North 1.0 · Currency shown in Canadian dollars · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
+}
+
+function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();window.scrollTo({top:0,behavior:'smooth'})}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 document.getElementById('addAccount').onclick=()=>{state.accounts.push(account('New account','RRSP/RRIF',state.people[0].name||'Primary',0));renderAccounts();save()};document.getElementById('addIncome').onclick=()=>{state.incomeSources.push(income('New income','Salary',state.people[0].name||'Primary',0,0,state.people[0].retirementAge||65,true,true));renderIncome();save()};document.getElementById('addDebt').onclick=()=>{state.debts.push(debt('New debt','Line of credit',0));renderDebts();save()};document.getElementById('addExpense').onclick=()=>{state.expenses.push(expense('New spending','Essential',0,'Monthly'));renderExpenses();save()};document.getElementById('addEvent').onclick=()=>{state.events.push(eventItem('New event','Expense',0,nowYear+3));renderEvents();save()};
@@ -1610,6 +1767,8 @@ if(benefitRoot){
  benefitRoot.addEventListener('change',e=>handleBenefitChange(e,{rerender:true}));
  benefitRoot.addEventListener('input',e=>{if(e.target.type==='number')handleBenefitChange(e,{rerender:false})});
 }
+document.getElementById('refreshReport').onclick=()=>{renderProfessionalReport();toast('Report refreshed')};
+document.getElementById('printReport').onclick=()=>{renderProfessionalReport();setTimeout(()=>window.print(),80)};
 document.getElementById('runValidationSuite').onclick=runFullValidationSuite;
 document.getElementById('runAuditValidation').onclick=()=>{renderAuditValidation();toast('Validation refreshed')};
 document.getElementById('auditYear').addEventListener('change',renderAudit);
@@ -1619,7 +1778,7 @@ document.getElementById('clearErrorConsole').onclick=()=>{runtimeErrors.length=0
 document.getElementById('runOptimizer').onclick=runOptimizer;
 bindAssumptions();syncAssumptionInputs();restoreOptimizerResults();renderOptimizer();
 
-bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderIntegrityCheck();renderResultsBenefits();renderSetupSteps();renderErrorConsole();renderAuditYearOptions();renderAuditValidation();renderValidationCentre();
+bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderIntegrityCheck();renderProfessionalReport();renderResultsBenefits();renderSetupSteps();renderErrorConsole();renderAuditYearOptions();renderAuditValidation();renderValidationCentre();
 const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(byteSize(startupPayload),'Checking');save(false);renderModelStatus();renderScenarioManager();
 
 </script>
