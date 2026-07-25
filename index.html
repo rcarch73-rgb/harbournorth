@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 0.7.0 Audit and Trust</title>
+<title>Harbour North 0.7.1 Benefit Amount Repair</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -68,7 +68,7 @@
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>0.7.0 · Audit & Trust</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>0.7.1 · Benefit Amount Repair</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -102,10 +102,10 @@
 </section>
 
 <section id="benefits" class="page">
-<div class="hero"><div class="eyebrow">0.5.4 · Guided setup</div><h2>Retirement Benefits</h2><p class="muted">Enter CPP, OAS, and workplace pensions as monthly amounts. Values now save while you type without rebuilding the form or dismissing the on-screen keyboard.</p></div>
+<div class="hero"><div class="eyebrow">0.5.4 · Guided setup</div><h2>Retirement Benefits</h2><p class="muted">Enter CPP, OAS, and workplace pensions as monthly amounts. Harbour North now validates government-benefit ranges and repairs accidental repeated monthly-to-annual conversions.</p></div>
 <div class="card">
 <div class="row-head"><div><h3>Plan completeness</h3><p class="muted">Missing retirement income can make projections and optimizer recommendations misleading.</p></div><span id="benefitsCompletenessBadge" class="badge warn">Checking plan</span></div>
-<div id="benefitsCompleteness" class="completeness-list"></div>
+<div id="benefitRepairNotice" class="notice hidden" style="margin-bottom:12px"></div><div id="benefitsCompleteness" class="completeness-list"></div>
 </div>
 <div id="benefitPeople" class="grid two"></div>
 <div class="card"><h3>How benefit amounts are handled</h3><ul class="checklist">
@@ -133,7 +133,7 @@
 <div class="card"><h3>Optimizer search range</h3><div class="grid"><div class="field"><label>Primary minimum retirement age</label><input id="aMinRetire" type="number" min="45" max="75" step="0.5"></div><div class="field"><label>Primary maximum retirement age</label><input id="aMaxRetire" type="number" min="45" max="80" step="0.5"></div><div class="field"><label>Retirement-age step</label><select id="aRetireStep"><option value="1">1 year</option><option value="0.5">6 months</option></select></div></div><div class="grid" style="margin-top:16px"><div class="field"><label><input id="aOptimizePartner" type="checkbox" style="width:auto;min-height:auto"> Optimize partner retirement age</label><small>Off by default so the optimizer cannot solve the plan simply by making your partner work longer.</small></div><div class="field"><label>Partner minimum retirement age</label><input id="aPartnerMinRetire" type="number" min="45" max="75" step="0.5"></div><div class="field"><label>Partner maximum retirement age</label><input id="aPartnerMaxRetire" type="number" min="45" max="80" step="0.5"></div></div><div class="assumption-note" style="margin-top:16px">CPP and OAS amounts are adjusted when their start ages change. The optimizer does not change your saved plan until you choose <strong>Apply recommendation</strong>.</div></div>
 </section>
 <section id="optimizer" class="page">
-<div class="hero"><div class="row-head"><div><div class="eyebrow">0.7.0 · Audit and trust</div><h2>Retirement Optimizer</h2><p class="muted">Choose what matters most. Harbour North ranks financially viable plans according to your goal instead of simply maximizing wealth.</p></div><span id="optimizerStatus" class="badge warn">Ready to analyze</span></div></div>
+<div class="hero"><div class="row-head"><div><div class="eyebrow">0.7.1 · Benefit amount repair</div><h2>Retirement Optimizer</h2><p class="muted">Choose what matters most. Harbour North ranks financially viable plans according to your goal instead of simply maximizing wealth.</p></div><span id="optimizerStatus" class="badge warn">Ready to analyze</span></div></div>
 <div class="grid two"><div class="card"><h3>1. Choose your primary goal</h3><div id="optimizerGoalChoices" class="goal-choice-grid">
 <label class="goal-choice"><input type="radio" name="optimizerGoal" value="target"><strong>Retire on my target date</strong><small>Stay as close as possible to your saved retirement age.</small></label>
 <label class="goal-choice"><input type="radio" name="optimizerGoal" value="earliest"><strong>Earliest possible retirement</strong><small>Find the earliest age that remains fully funded.</small></label>
@@ -531,7 +531,7 @@
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='0.7.0-audit-trust', SCHEMA=21, MODEL_VERSION=11;
+const KEY='harbourNorth2.plan', APP='0.7.1-benefit-amount-repair', SCHEMA=22, MODEL_VERSION=12;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -559,14 +559,26 @@ function hydrateFromPlanningModel(source){
  return hydrated;
 }
 
-function migrateBenefitsToMonthlyUiV062(plan){
- if(plan?.meta?.benefitMonthlyUiV062)return plan;
- for(const src of plan?.incomeSources||[]){
-  const kind=benefitKind(src);
-  if((kind==='CPP'||kind==='OAS')&&num(src.annualAmount)>0)src.annualAmount=num(src.annualAmount)*12;
+function repairGovernmentBenefitAmounts(plan){
+ const sources=Array.isArray(plan?.incomeSources)?plan.incomeSources:[];
+ const seen=new Map(),removeIds=new Set(),repairs=[];
+ for(const src of sources){
+  const kind=benefitKind(src);if(!kind)continue;
+  const ownerKey=src.ownerId||String(src.owner||'Household').trim().toLowerCase();
+  const key=`${ownerKey}|${kind}`;
+  if(seen.has(key)){removeIds.add(src.id);repairs.push(`Removed duplicate ${kind} record for ${src.owner||'household'}.`);continue}
+  seen.set(key,src.id);
+  let amount=Math.max(0,num(src.annualAmount)),divisions=0;
+  const ceiling=kind==='CPP'?30000:15000;
+  while(amount>ceiling&&divisions<4){amount/=12;divisions++}
+  if(divisions){repairs.push(`Corrected ${kind} for ${src.owner||'household'} by reversing ${divisions} accidental monthly-to-annual conversion${divisions===1?'':'s'}.`)}
+  src.annualAmount=Math.round(amount*100)/100;
+  src.benefitUnit='annual_internal_v1';
  }
+ if(removeIds.size)plan.incomeSources=sources.filter(x=>!removeIds.has(x.id));
  plan.meta=plan.meta||{};
- plan.meta.benefitMonthlyUiV062=true;
+ plan.meta.benefitAmountRepairV071=true;
+ plan.meta.benefitRepairNotes=repairs;
  return plan;
 }
 
@@ -596,7 +608,7 @@ function persistOptimizerResults(){
 function restoreOptimizerResults(){const o=state.planningModel?.optimizer||{};optimizerState={results:Array.isArray(o.topResults)?clone(o.topResults):[],recommended:clone(o.recommended||null),current:clone(o.current||null)}}
 
 function activeScenario(){return state.planningModel?.scenarios?.find(x=>x.id===state.planningModel.activeScenarioId)||null}
-function loadScenarioSnapshot(snapshot){if(!snapshot)return;for(const key of ['hasPartner','people','household','accounts','incomeSources','debts','expenses','events'])state[key]=clone(snapshot[key]);normalizePlan(state)}
+function loadScenarioSnapshot(snapshot){if(!snapshot)return;for(const key of ['hasPartner','people','household','accounts','incomeSources','debts','expenses','events'])state[key]=clone(snapshot[key]);normalizePlan(state);repairGovernmentBenefitAmounts(state)}
 function createScenario(name,duplicate=true){syncPlanningModel();const pm=state.planningModel,now=new Date().toISOString(),sid='scenario-'+id();const scenario={id:sid,name:(name||'New scenario').trim()||'New scenario',createdAt:now,updatedAt:now,snapshot:duplicate?corePlanSnapshot(state):corePlanSnapshot(defaults())};pm.scenarios.push(scenario);pm.activeScenarioId=sid;loadScenarioSnapshot(scenario.snapshot);save(false);refreshAfterScenarioChange();toast('Scenario created')}
 function switchScenario(sid){if(sid===state.planningModel?.activeScenarioId)return;syncPlanningModel();const target=state.planningModel.scenarios.find(x=>x.id===sid);if(!target)return;state.planningModel.activeScenarioId=sid;loadScenarioSnapshot(target.snapshot);restoreOptimizerResults();save(false);refreshAfterScenarioChange();toast('Scenario loaded')}
 function renameScenario(sid,name){const x=state.planningModel?.scenarios?.find(y=>y.id===sid);if(!x)return;x.name=(name||'Scenario').trim()||'Scenario';x.updatedAt=new Date().toISOString();save(false);renderScenarioManager()}
@@ -616,7 +628,7 @@ if(n.incomeSources.length===0&&source.employment){source.employment.forEach((e,i
 if(n.debts.length===0&&source.debts&&!Array.isArray(source.debts)){if(num(source.debts.mortgage))n.debts.push(debt('Mortgage','Mortgage',source.debts.mortgage));if(num(source.debts.loc))n.debts.push(debt('Line of credit','Line of credit',source.debts.loc));if(num(source.debts.other))n.debts.push(debt('Other debt','Other',source.debts.other))}
 if(n.expenses.length===0&&source.spending){if(num(source.spending.essentialMonthly))n.expenses.push(expense('Essential living','Essential',source.spending.essentialMonthly,'Monthly'));if(num(source.spending.lifestyleMonthly))n.expenses.push(expense('Lifestyle','Lifestyle',source.spending.lifestyleMonthly,'Monthly'));if(num(source.spending.travelAnnual))n.expenses.push(expense('Travel','Travel',source.spending.travelAnnual,'Annual'));if(num(source.spending.otherAnnual))n.expenses.push(expense('Other spending','Other',source.spending.otherAnnual,'Annual'))}
 if(n.events.length===0&&source.goal?.amount)n.events.push(eventItem(source.goal.name||'Financial goal','Expense',source.goal.amount,source.goal.year||nowYear+3));n.incomeSources=n.incomeSources.map(x=>({...x,taxable:x.taxable!==undefined?!!x.taxable:x.type!=='WCB/LTD'}));n.planningModel=merge(d.planningModel,source.planningModel||{});n.meta={appVersion:APP,schemaVersion:SCHEMA,updatedAt:new Date().toISOString()};return normalizePlan(n)}
-function load(){try{return migrate(JSON.parse(localStorage.getItem(KEY)))}catch{return defaults()}}let state=migrateBenefitsToMonthlyUiV062(load());
+function load(){try{return migrate(JSON.parse(localStorage.getItem(KEY)))}catch{return defaults()}}let state=repairGovernmentBenefitAmounts(load());
 function pathGet(o,p){return p.split('.').reduce((a,k)=>a?.[k],o)}function pathSet(o,p,v){const a=p.split('.');let x=o;for(let i=0;i<a.length-1;i++)x=x[a[i]];x[a.at(-1)]=v}
 function save(msg=true){syncPlanningModel();state.meta={...state.meta,appVersion:APP,schemaVersion:SCHEMA,updatedAt:new Date().toISOString()};localStorage.setItem(KEY,JSON.stringify(state));if(msg){const s=document.getElementById('saveStatus');s.textContent='Saved';setTimeout(()=>s.textContent='Ready',800)}renderHome();renderModelStatus()}
 function bindStatic(){document.querySelectorAll('[data-bind]').forEach(el=>{el.value=pathGet(state,el.dataset.bind)??'';const handler=()=>{pathSet(state,el.dataset.bind,el.type==='number'?num(el.value):el.value);save()};el.addEventListener('input',handler);el.addEventListener('change',handler)});const hp=document.getElementById('hasPartner');hp.checked=state.hasPartner;hp.onchange=()=>{state.hasPartner=hp.checked;document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner);save()};document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner)}
@@ -664,6 +676,8 @@ function benefitCompletenessIssues(){
 }
 function renderBenefits(){
  const root=document.getElementById('benefitPeople');if(!root)return;
+ const repairNotice=document.getElementById('benefitRepairNotice'),repairNotes=state.meta?.benefitRepairNotes||[];
+ if(repairNotice){repairNotice.classList.toggle('hidden',!repairNotes.length);repairNotice.innerHTML=repairNotes.length?`<strong>Benefit values repaired:</strong> ${repairNotes.map(esc).join(' ')}`:'';}
  try{
  const people=global.HNTimeline.includedPeople(state);
  root.innerHTML=people.map((person,index)=>{
@@ -785,7 +799,7 @@ function recommendations(r,t){
  return rec.slice(0,3);
 }
 function timelineItems(){
- const items=[];
+ const items=[...governmentBenefitValidation()];
  const now=new Date().getFullYear();
  state.people.forEach((p,i)=>{if(i===1&&!state.hasPartner)return;if(p.birthDate&&num(p.retirementAge)>0){const y=new Date(p.birthDate).getFullYear()+Math.floor(num(p.retirementAge));items.push({year:y,name:`${p.name||'Household member'} retires`,detail:`Target retirement age ${p.retirementAge}`})}});
  state.incomeSources.forEach(x=>{if(num(x.startAge)>0){const owner=state.people.find(p=>p.name===x.owner)||state.people[0];if(owner?.birthDate){const y=new Date(owner.birthDate).getFullYear()+Math.floor(num(x.startAge));items.push({year:y,name:`${x.name||x.type} begins`,detail:`${money(x.annualAmount)} per year`})}}});
@@ -836,7 +850,7 @@ function renderExplainYear(rowsArg){
  const p=r.projection,notes=[];notes.push(`Gross household income is ${money(p.totalIncome)}. Estimated federal and provincial income tax is ${money(p.tax)}, leaving ${money(p.afterTaxIncome)} after tax.`);notes.push(`Total spending is ${money(p.spending)}.`);if(p.eventIncome)notes.push(`One-time income events add ${money(p.eventIncome)} this year.`);if(p.eventExpense)notes.push(`One-time expense events add ${money(p.eventExpense)} to spending.`);notes.push(`Investments earn approximately ${money(p.growth)} using the return assigned to each account.`);if(p.contributions)notes.push(`${money(p.contributions)} is contributed to investment accounts.`);if(p.withdrawals)notes.push(`${money(p.withdrawals)} is withdrawn from ${p.withdrawalsByAccount.length} account${p.withdrawalsByAccount.length===1?'':'s'} to cover the after-tax cash-flow deficit.`);if(p.withdrawalsByAccount.some(x=>x.type==='RRSP/RRIF'))notes.push('RRSP/RRIF withdrawals are included as taxable income and the required withdrawal is grossed up for the resulting tax.');if(p.surplusToCash)notes.push(`${money(p.surplusToCash)} of unused after-tax cash flow is added to cash.`);if(p.unfunded)notes.push(`${money(p.unfunded)} remains unfunded after all projected investment accounts are exhausted.`);
  const taxRows=(p.taxByPerson||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">Taxable income ${money(x.taxableIncome)}</small></span><strong>${money(x.total)}</strong></div>`).join('')+`<div class="detail-row"><span>Federal tax</span><strong>${money(p.federalTax)}</strong></div><div class="detail-row"><span>${esc(state.household.province)} tax</span><strong>${money(p.provincialTax)}</strong></div>`;
  const spendingRows=Object.entries(p.spendingCategories||{}).sort((a,b)=>b[1]-a[1]).map(([name,amount])=>`<div class="detail-row"><span>${esc(name)}</span><strong>${money(amount)}</strong></div>`).join('')||'<div class="muted">No recurring spending recorded.</div>',withdrawalRows=(p.withdrawalsByAccount||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">${esc(x.type)}</small></span><strong class="negative-text">${money(x.amount)}</strong></div>`).join('')||'<div class="muted">No investment withdrawals required.</div>',accountRows=(p.accountBalances||[]).map(x=>`<div class="detail-row"><span><strong>${esc(x.name)}</strong><br><small class="muted">${esc(x.type)}</small></span><strong>${money(x.balance)}</strong></div>`).join('');
- const incomeRows=(r.income?.details||[]).filter(x=>x.active&&x.amount>0).map(x=>`<div class="detail-row"><span>${esc(x.name)} <small>(${esc(x.owner)})</small></span><strong>${money(x.amount)}</strong></div>`).join('')||'<p class="muted">No recurring income sources are active this year.</p>'; root.innerHTML=`<h4>${r.year} projection</h4><div class="detail-grid"><div class="detail-card">Gross income<strong>${money(p.totalIncome)}</strong></div><div class="detail-card">Estimated tax<strong>${money(p.tax)}</strong></div><div class="detail-card">After-tax income<strong>${money(p.afterTaxIncome)}</strong></div><div class="detail-card">Spending<strong>${money(p.spending)}</strong></div><div class="detail-card">Ending investments<strong>${money(p.endingInvestments)}</strong></div></div><ul class="explain-list">${notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="detail-section"><h4>Gross income by source</h4>${incomeRows}</div><div class="detail-section"><h4>Estimated tax by person</h4>${taxRows}</div><div class="detail-section"><h4>Spending by category</h4>${spendingRows}</div><div class="detail-section"><h4>Withdrawals by account</h4>${withdrawalRows}</div><div class="detail-section"><h4>Ending account balances</h4>${accountRows}</div>`;document.querySelectorAll('#projectionBody tr[data-year]').forEach(tr=>tr.classList.toggle('selected-year',num(tr.dataset.year)===r.year));
+ const incomeRows=(r.income?.details||[]).filter(x=>x.active&&x.amount>0).map(x=>`<div class="detail-row"><span>${esc(x.name)} <small>(${esc(x.owner)})</small></span><strong>${money(x.amount)}</strong></div>`).join('')||'<p class="muted">No recurring income sources are active this year.</p>'; root.innerHTML=`<h4>${r.year} projection</h4><div class="detail-grid"><div class="detail-card">Gross income<strong>${money(p.totalIncome)}</strong></div><div class="detail-card">Estimated tax<strong>${money(p.tax)}</strong></div><div class="detail-card">After-tax income<strong>${money(p.afterTaxIncome)}</strong></div><div class="detail-card">Spending<strong>${money(p.spending)}</strong></div><div class="detail-card">Ending investments<strong>${money(p.endingInvestments)}</strong></div></div><ul class="explain-list">${notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="detail-section"><h4>Gross income by source</h4>${incomeRows}<div class="detail-row"><span><strong>Total recurring income sources</strong></span><strong>${money((r.income?.details||[]).filter(x=>x.active).reduce((s,x)=>s+num(x.amount),0))}</strong></div></div><div class="detail-section"><h4>Estimated tax by person</h4>${taxRows}</div><div class="detail-section"><h4>Spending by category</h4>${spendingRows}</div><div class="detail-section"><h4>Withdrawals by account</h4>${withdrawalRows}</div><div class="detail-section"><h4>Ending account balances</h4>${accountRows}</div>`;document.querySelectorAll('#projectionBody tr[data-year]').forEach(tr=>tr.classList.toggle('selected-year',num(tr.dataset.year)===r.year));
 }
 function runTimelineSelfTests(){
  const timeline=window.HNTimeline.runSelfTests(),incomeTests=window.HNIncome.runSelfTests(),taxTests=window.HNTax.runSelfTests(),projectionTests=window.HNProjection.runSelfTests(),failed=[...timeline.failed,...incomeTests.failed,...taxTests.failed,...projectionTests.failed],total=timeline.total+incomeTests.total+taxTests.total+projectionTests.total;
@@ -1163,6 +1177,23 @@ function renderAudit(){
  const optimizer=optimizerState.results||[];
  document.getElementById('auditOptimizerBody').innerHTML=optimizer.length?optimizer.map(r=>`<tr><td>${r.primaryAge}</td><td>${r.cppAge??'—'}</td><td>${r.oasAge??'—'}</td><td>${r.success?'Funded':'Shortfall'}</td><td class="audit-money">${money(r.totalTax)}</td><td class="audit-money">${money(r.totalWithdrawals)}</td><td class="audit-money">${money(r.endingPortfolioReal)}</td><td>${r.firstShortfall||'None'}</td></tr>`).join(''):'<tr><td colspan="8" class="muted">Run the optimizer to populate this audit.</td></tr>';
 }
+
+function governmentBenefitValidation(){
+ const findings=[];
+ for(const person of global.HNTimeline.includedPeople(state)){
+  const index=(state.people||[]).findIndex(x=>x.id===person.id);
+  for(const kind of ['CPP','OAS']){
+   const src=findBenefitSource(person,index,kind);if(!src)continue;
+   const annual=num(src.annualAmount),monthly=annual/12,maxMonthly=kind==='CPP'?2500:1250;
+   if(monthly>maxMonthly)findings.push({level:'fail',title:`${kind} amount is implausibly high`,detail:`${person.name||'Household member'} is recorded at ${money(monthly)}/month (${money(annual)}/year).`});
+   else findings.push({level:'ok',title:`${kind} amount checked`,detail:`${person.name||'Household member'}: ${money(monthly)}/month.`});
+  }
+ }
+ const notes=state.meta?.benefitRepairNotes||[];
+ for(const note of notes)findings.push({level:'warn',title:'Automatic benefit repair applied',detail:note});
+ return findings;
+}
+
 function auditValidationRules(){
  const items=[];
  const annualSpend=(state.expenses||[]).reduce((s,x)=>s+num(x.amount)*(x.frequency==='Monthly'?12:1),0);
@@ -1191,9 +1222,23 @@ function auditValidationRules(){
  if(!items.some(x=>x.level==='warn'||x.level==='fail'))items.push({level:'ok',title:'Validation complete',detail:'No material warnings detected.'});
  return items;
 }
+
+function validateProjectionArithmetic(rows){
+ const findings=[];
+ for(const r of rows){
+  const p=r.projection||{},incomeDetail=(r.income?.details||[]).filter(x=>x.active).reduce((s,x)=>s+num(x.amount),0)+num(p.eventIncome);
+  if(Math.abs(incomeDetail-num(p.totalIncome))>1)findings.push({level:'fail',title:`Income mismatch in ${r.year}`,detail:`Displayed gross income is ${money(p.totalIncome)}, but active sources total ${money(incomeDetail)}.`});
+  if(Math.abs((num(p.totalIncome)-num(p.tax))-num(p.afterTaxIncome))>1)findings.push({level:'fail',title:`After-tax mismatch in ${r.year}`,detail:'Gross income less tax does not equal after-tax income.'});
+  const balanceCheck=num(p.startingInvestments)+num(p.growth)+num(p.contributions)-num(p.withdrawals)-num(p.endingInvestments);
+  if(Math.abs(balanceCheck)>2)findings.push({level:'fail',title:`Portfolio roll-forward mismatch in ${r.year}`,detail:`Opening + growth + contributions − withdrawals differs from closing by ${money(Math.abs(balanceCheck))}.`});
+ }
+ if(!findings.length)findings.push({level:'ok',title:'Projection arithmetic verified',detail:`All ${rows.length} projection years passed income, after-tax, and portfolio roll-forward checks.`});
+ return findings;
+}
+
 function renderAuditValidation(){
  const root=document.getElementById('auditValidation');if(!root)return;
- const items=auditValidationRules();
+ const items=[...auditValidationRules(),...validateProjectionArithmetic(auditProjectionRows())];
  root.innerHTML=items.map(x=>`<div class="validation-item ${x.level}"><strong>${esc(x.title)}</strong><p class="muted" style="margin:5px 0 0">${esc(x.detail)}</p></div>`).join('');
 }
 
