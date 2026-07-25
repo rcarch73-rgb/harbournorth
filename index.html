@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 1.1 Monte Carlo Retirement Analysis</title>
+<title>Harbour North 1.2 Withdrawal Strategy Framework</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -139,10 +139,28 @@
 @media(max-width:950px){.mc-controls,.mc-metrics{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.mc-controls,.mc-metrics{grid-template-columns:1fr}}
 
+
+.ws-choice{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ws-option{border:2px solid var(--line);border-radius:14px;padding:14px;background:#fff;cursor:pointer}
+.ws-option.active{border-color:var(--blue);box-shadow:0 0 0 3px rgba(36,75,118,.10)}
+.ws-option input{margin-right:7px}
+.ws-option strong{font-size:15px}
+.ws-option p{font-size:12px;margin:7px 0 0;color:var(--muted)}
+.ws-order{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ws-order select{min-width:150px}
+.ws-arrow{font-weight:900;color:var(--muted)}
+.ws-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ws-summary>div{border:1px solid var(--line);border-radius:12px;padding:13px;background:#fff}
+.ws-summary span{display:block;color:var(--muted);font-size:11px;font-weight:850;text-transform:uppercase}
+.ws-summary strong{display:block;font-size:22px;margin-top:5px}
+.ws-recommended{border-left:5px solid var(--ok);background:#f1faf5;border-radius:12px;padding:13px 15px}
+@media(max-width:900px){.ws-choice{grid-template-columns:1fr 1fr}.ws-summary{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ws-choice,.ws-summary{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>1.1 · Monte Carlo Retirement Analysis</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>1.2 · Withdrawal Strategy Framework</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs">
 <button class="tab active" data-page="home">My Plan</button>
@@ -156,6 +174,7 @@
 <button class="tab" data-page="projection">Projection</button>
 <button class="tab" data-page="audit">Audit</button>
 <button class="tab" data-page="validation">Validation</button>
+<button class="tab" data-page="withdrawal">Withdrawal Strategy</button>
 <button class="tab" data-page="montecarlo">Monte Carlo</button>
 <button class="tab" data-page="report">Report</button>
 <button class="tab" data-page="stability">Setup & Health</button>
@@ -320,6 +339,48 @@
 
 <section id="validation" class="page"><div class="hero"><div class="eyebrow">0.8.0 · Financial engine validation</div><h2>Validation Centre</h2><p class="muted">Run known-answer scenarios, verify every projection equation, and review a confidence score before relying on optimizer results.</p></div><div class="card"><div class="row-head"><div><h3>Planner confidence</h3><p class="muted">Based on golden scenarios, current-plan arithmetic, core engine tests, and plan completeness.</p></div><button id="runValidationSuite" class="btn primary">Run full validation suite</button></div><div class="confidence-layout"><div id="validationConfidenceRing" class="confidence-ring warn">—</div><div><h3 id="validationConfidenceLabel">Not yet validated</h3><p id="validationConfidenceText" class="muted">Run the suite to evaluate the current plan and calculation engine.</p></div></div></div><div class="validation-dashboard"><div class="metric">Golden scenarios<strong id="vGoldenScore">—</strong><div class="submetric">Known-answer test cases</div></div><div class="metric">Projection arithmetic<strong id="vArithmeticScore">—</strong><div class="submetric">Current plan checks</div></div><div class="metric">Core engine tests<strong id="vEngineScore">—</strong><div class="submetric">Timeline, income, tax, projection</div></div><div class="metric">Plan completeness<strong id="vCompletenessScore">—</strong><div class="submetric">Benefits, spending, household data</div></div></div><div class="card"><div class="row-head"><div><h3>Golden test scenarios</h3><p class="muted">Predetermined cases detect regressions between releases.</p></div><span id="goldenStatusBadge" class="badge warn">Not run</span></div><div id="goldenTestResults" class="test-suite"></div></div><div class="card"><div class="row-head"><div><h3>Current-plan equation checks</h3><p class="muted">Every projection year must balance before results are considered trustworthy.</p></div><span id="arithmeticStatusBadge" class="badge warn">Not run</span></div><div id="currentPlanValidationResults" class="test-suite"></div></div></section>
 
+
+
+<section id="withdrawal" class="page">
+<div class="hero">
+ <div class="row-head">
+  <div><h2>Intelligent Withdrawal Strategy</h2><p class="muted">Choose how retirement cash shortfalls are funded, then compare the projected tax and estate impact.</p></div>
+  <span id="wsActiveBadge" class="badge good">Balanced</span>
+ </div>
+</div>
+
+<div class="card">
+ <h3>Choose a strategy</h3>
+ <div id="wsChoices" class="ws-choice"></div>
+</div>
+
+<div id="wsCustomCard" class="card hidden">
+ <h3>Custom account order</h3>
+ <p class="muted">Accounts are used from left to right. Each account type may appear once.</p>
+ <div id="wsCustomOrder" class="ws-order"></div>
+</div>
+
+<div class="card">
+ <div class="row-head"><div><h3>Selected-strategy projection</h3><p class="muted">Calculated with the active scenario and current assumptions.</p></div><button id="wsRefresh" class="btn">Refresh comparison</button></div>
+ <div id="wsSelectedSummary" class="ws-summary"></div>
+</div>
+
+<div class="card">
+ <div class="row-head"><div><h3>Strategy comparison</h3><p class="muted">Each strategy uses the same income, spending, tax, return, and benefit assumptions.</p></div><span class="badge">Deterministic projection</span></div>
+ <div id="wsRecommendation"></div>
+ <div id="wsComparison" class="table-wrap" style="margin-top:14px"></div>
+</div>
+
+<div class="card">
+ <h3>First 15 retirement withdrawal years</h3>
+ <div id="wsTimeline" class="table-wrap"></div>
+</div>
+
+<div class="card">
+ <h3>Important limitation</h3>
+ <p class="muted">Version 1.2 introduces the strategy framework and compares account-order rules. It does not yet perform year-by-year tax-bracket filling, capital-gain lot selection, pension-income splitting, or explicit OAS recovery-tax optimization. Those require additional tax-engine stages.</p>
+</div>
+</section>
 
 <section id="montecarlo" class="page">
 <div class="hero">
@@ -598,7 +659,21 @@
   'use strict';
   const n=v=>Number.isFinite(Number(v))?Number(v):0;
   const INVEST_TYPES=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'];
-  const withdrawalPriority=['Non-registered','Cash','TFSA','RRSP/RRIF','FHSA'];
+  const WITHDRAWAL_STRATEGIES={
+    balanced:{label:'Balanced',description:'Uses taxable and cash assets first, then registered savings while preserving the TFSA for later flexibility.',order:['Non-registered','Cash','RRSP/RRIF','TFSA','FHSA']},
+    minimumTax:{label:'Minimum current tax',description:'Prioritizes tax-free sources and defers taxable RRSP/RRIF withdrawals.',order:['Cash','TFSA','Non-registered','FHSA','RRSP/RRIF']},
+    rrspMeltdown:{label:'RRSP/RRIF drawdown',description:'Draws registered savings earlier to reduce future registered balances and possible forced withdrawals.',order:['RRSP/RRIF','Non-registered','Cash','TFSA','FHSA']},
+    preserveTFSA:{label:'Preserve TFSA',description:'Keeps TFSA assets invested as long as possible for tax-free growth and estate flexibility.',order:['Non-registered','Cash','RRSP/RRIF','FHSA','TFSA']},
+    preserveRRSP:{label:'Preserve RRSP/RRIF',description:'Defers registered withdrawals until other available accounts have been used.',order:['Non-registered','Cash','TFSA','FHSA','RRSP/RRIF']},
+    custom:{label:'Custom order',description:'Uses the account order selected on the Withdrawal Strategy page.',order:['Non-registered','Cash','RRSP/RRIF','TFSA','FHSA']}
+  };
+  function withdrawalStrategy(plan){
+    const saved=plan?.planningModel?.withdrawalStrategy||{},mode=WITHDRAWAL_STRATEGIES[saved.mode]?saved.mode:'balanced';
+    const valid=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'];
+    const custom=Array.isArray(saved.customOrder)?saved.customOrder.filter((x,i,a)=>valid.includes(x)&&a.indexOf(x)===i):[];
+    for(const type of valid)if(!custom.includes(type))custom.push(type);
+    return{mode,order:mode==='custom'?custom:WITHDRAWAL_STRATEGIES[mode].order,label:WITHDRAWAL_STRATEGIES[mode].label};
+  }
   function annualSpendingBreakdown(plan,year,startYear,inflationRate){
     const factor=Math.pow(1+n(inflationRate)/100,Math.max(0,year-startYear));
     const details=(plan.expenses||[]).map(x=>({name:x.name||x.category||'Spending',category:x.category||'Other',amount:n(x.amount)*(x.frequency==='Monthly'?12:1)*factor}));
@@ -619,10 +694,10 @@
     return result;
   }
   function copyAccounts(accounts){return accounts.map(a=>({...a}))}
-  function withdraw(accounts,need){
-    let remaining=Math.max(0,need),withdrawals=0;const byAccount=[];
-    for(const type of withdrawalPriority){for(const a of accounts.filter(x=>x.type===type)){const take=Math.min(a.balance,remaining);a.balance-=take;remaining-=take;withdrawals+=take;if(take>0)byAccount.push({id:a.id,name:a.name,type:a.type,owner:a.owner,amount:take});if(remaining<=.01)break}if(remaining<=.01)break}
-    return{withdrawals,unfunded:Math.max(0,remaining),byAccount};
+  function withdraw(accounts,need,plan){
+    let remaining=Math.max(0,need),withdrawals=0;const byAccount=[],strategy=withdrawalStrategy(plan);
+    for(const type of strategy.order){for(const a of accounts.filter(x=>x.type===type)){const take=Math.min(a.balance,remaining);a.balance-=take;remaining-=take;withdrawals+=take;if(take>0)byAccount.push({id:a.id,name:a.name,type:a.type,owner:a.owner,amount:take});if(remaining<=.01)break}if(remaining<=.01)break}
+    return{withdrawals,unfunded:Math.max(0,remaining),byAccount,strategy:strategy.mode,strategyLabel:strategy.label};
   }
   function buildProjection(plan,incomeRows,options={}){
     const startYear=n(options.startYear)||incomeRows?.[0]?.year||new Date().getFullYear(),inflationRate=n(options.indexRate),people=global.HNTimeline.includedPeople(plan),province=plan.household?.province||'British Columbia';
@@ -638,12 +713,12 @@
       const planned=accounts.reduce((sum,a)=>sum+(ownerWorking(a,row,people)?Math.max(0,n(a.annualContribution)):0),0),contributions=Math.min(Math.max(0,afterTaxBeforeContributions),planned),contributionsByAccount=[];
       if(contributions>0){const eligible=accounts.filter(a=>ownerWorking(a,row,people)&&n(a.annualContribution)>0),totalPlan=eligible.reduce((sum,a)=>sum+n(a.annualContribution),0);for(const a of eligible){const amount=totalPlan>0?contributions*(n(a.annualContribution)/totalPlan):0;a.balance+=amount;ledger.find(x=>x.id===a.id).contribution+=amount;contributionsByAccount.push({id:a.id,name:a.name,type:a.type,amount})}}
       let finalTax=baseTax,withdrawResult={withdrawals:0,unfunded:0,byAccount:[]};
-      if(afterTaxBeforeContributions-contributions<0){let previous=-1,finalWorking=copyAccounts(accounts);for(let i=0;i<20;i++){const candidate=copyAccounts(accounts),need=Math.max(0,spending+contributions+finalTax.total-totalIncome),result=withdraw(candidate,need),taxable={...baseTaxable};for(const x of result.byAccount.filter(x=>x.type==='RRSP/RRIF')){const key=taxable[x.owner]!==undefined?x.owner:(people[0]?.name||'Household member');taxable[key]=(taxable[key]||0)+x.amount}const recalculated=global.HNTax.estimateHouseholdTax(taxable,row.year,inflationRate,province);finalWorking=candidate;withdrawResult=result;if(Math.abs(recalculated.total-finalTax.total)<.01&&Math.abs(result.withdrawals-previous)<.01){finalTax=recalculated;break}finalTax=recalculated;previous=result.withdrawals}accounts=finalWorking;for(const w of withdrawResult.byAccount){const entry=ledger.find(x=>x.id===w.id);if(entry)entry.withdrawal+=w.amount}}
+      if(afterTaxBeforeContributions-contributions<0){let previous=-1,finalWorking=copyAccounts(accounts);for(let i=0;i<20;i++){const candidate=copyAccounts(accounts),need=Math.max(0,spending+contributions+finalTax.total-totalIncome),result=withdraw(candidate,need,plan),taxable={...baseTaxable};for(const x of result.byAccount.filter(x=>x.type==='RRSP/RRIF')){const key=taxable[x.owner]!==undefined?x.owner:(people[0]?.name||'Household member');taxable[key]=(taxable[key]||0)+x.amount}const recalculated=global.HNTax.estimateHouseholdTax(taxable,row.year,inflationRate,province);finalWorking=candidate;withdrawResult=result;if(Math.abs(recalculated.total-finalTax.total)<.01&&Math.abs(result.withdrawals-previous)<.01){finalTax=recalculated;break}finalTax=recalculated;previous=result.withdrawals}accounts=finalWorking;for(const w of withdrawResult.byAccount){const entry=ledger.find(x=>x.id===w.id);if(entry)entry.withdrawal+=w.amount}}
       let surplusToCash=0;const netCash=totalIncome-finalTax.total-spending-contributions;
       if(netCash>0){surplusToCash=netCash;const cash=accounts.find(a=>a.type==='Cash');cash.balance+=netCash;ledger.find(x=>x.id===cash.id).retainedCash+=netCash}
       for(const entry of ledger){const account=accounts.find(a=>a.id===entry.id);entry.closingBalance=account?.balance||0;entry.expectedClosing=entry.openingBalance+entry.growth+entry.contribution-entry.withdrawal+entry.retainedCash;entry.difference=entry.closingBalance-entry.expectedClosing}
       const startingInvestments=ledger.reduce((s,x)=>s+x.openingBalance,0),endingInvestments=ledger.reduce((s,x)=>s+x.closingBalance,0),expectedEndingInvestments=ledger.reduce((s,x)=>s+x.expectedClosing,0),reconciliationDifference=endingInvestments-expectedEndingInvestments;
-      rows.push({...row,projection:{startingInvestments,growth,totalIncome,baseIncome:row.income.totalIncome,eventIncome:events.income,spending,eventExpense:events.expense,spendingDetails:spendingBreakdown.details,spendingCategories:spendingBreakdown.categories,tax:finalTax.total,federalTax:finalTax.federal,provincialTax:finalTax.provincial,taxByPerson:finalTax.byPerson,taxProvinceSupported:finalTax.provinceSupported,afterTaxIncome:totalIncome-finalTax.total,plannedContributions:planned,contributions,contributionsByAccount,withdrawals:withdrawResult.withdrawals,withdrawalsByAccount:withdrawResult.byAccount,unfunded:withdrawResult.unfunded,surplusToCash,expectedEndingInvestments,reconciliationDifference,endingInvestments,netWorth:endingInvestments+nonInvestmentAssets-debt,accountLedger:ledger,accountBalances:ledger.map(x=>({id:x.id,name:x.name,type:x.type,balance:x.closingBalance}))}})
+      rows.push({...row,projection:{startingInvestments,growth,totalIncome,baseIncome:row.income.totalIncome,eventIncome:events.income,spending,eventExpense:events.expense,spendingDetails:spendingBreakdown.details,spendingCategories:spendingBreakdown.categories,tax:finalTax.total,federalTax:finalTax.federal,provincialTax:finalTax.provincial,taxByPerson:finalTax.byPerson,taxProvinceSupported:finalTax.provinceSupported,afterTaxIncome:totalIncome-finalTax.total,plannedContributions:planned,contributions,contributionsByAccount,withdrawals:withdrawResult.withdrawals,withdrawalsByAccount:withdrawResult.byAccount,withdrawalStrategy:withdrawResult.strategy||withdrawalStrategy(plan).mode,withdrawalStrategyLabel:withdrawResult.strategyLabel||withdrawalStrategy(plan).label,unfunded:withdrawResult.unfunded,surplusToCash,expectedEndingInvestments,reconciliationDifference,endingInvestments,netWorth:endingInvestments+nonInvestmentAssets-debt,accountLedger:ledger,accountBalances:ledger.map(x=>({id:x.id,name:x.name,type:x.type,balance:x.closingBalance}))}})
     }
     return rows;
   }
@@ -665,12 +740,12 @@
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='1.1-monte-carlo-retirement-analysis', SCHEMA=31, MODEL_VERSION=21;
+const KEY='harbourNorth2.plan', APP='1.2-withdrawal-strategy-framework', SCHEMA=32, MODEL_VERSION=22;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
 const defaultPeople=()=>[{id:id(),role:'primary',name:'',birthDate:'',retirementAge:55,employmentStatus:'Employed'},{id:id(),role:'partner',name:'',birthDate:'',retirementAge:55,employmentStatus:'Employed'}];
-const defaults=()=>({meta:{appVersion:APP,schemaVersion:SCHEMA,updatedAt:new Date().toISOString()},hasPartner:true,people:defaultPeople(),household:defaultHousehold(),accounts:[],incomeSources:[],debts:[],expenses:[],events:[],planningModel:{modelVersion:MODEL_VERSION,activeScenarioId:'base',taxProfile:{jurisdiction:'British Columbia',filingMode:'individual'},assumptions:defaultHousehold(),scenarios:[{id:'base',name:'Base plan',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),snapshot:null}],optimizer:{lastRunAt:null,scenarioCount:0,current:null,recommended:null,topResults:[]}}});
+const defaults=()=>({meta:{appVersion:APP,schemaVersion:SCHEMA,updatedAt:new Date().toISOString()},hasPartner:true,people:defaultPeople(),household:defaultHousehold(),accounts:[],incomeSources:[],debts:[],expenses:[],events:[],planningModel:{modelVersion:MODEL_VERSION,activeScenarioId:'base',taxProfile:{jurisdiction:'British Columbia',filingMode:'individual'},assumptions:defaultHousehold(),withdrawalStrategy:{mode:'balanced',customOrder:['Non-registered','Cash','RRSP/RRIF','TFSA','FHSA']},scenarios:[{id:'base',name:'Base plan',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),snapshot:null}],optimizer:{lastRunAt:null,scenarioCount:0,current:null,recommended:null,topResults:[]}}});
 const num=v=>Number.isFinite(Number(v))?Number(v):0;
 const money=v=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0}).format(num(v));
 function clone(x){return JSON.parse(JSON.stringify(x))}
@@ -856,7 +931,7 @@ function safeSetItem(key,value){
  }
 }
 
-function load(){try{return migrate(JSON.parse(localStorage.getItem(KEY)))}catch{return defaults()}}let state=repairGovernmentBenefitAmounts(load());
+function load(){try{return migrate(JSON.parse(localStorage.getItem(KEY)))}catch{return defaults()}}let state=repairGovernmentBenefitAmounts(load());ensureWithdrawalStrategy();
 try{const recovery=localStorage.getItem(KEY+'.recovery');if(recovery&&byteSize(recovery)>500000)localStorage.removeItem(KEY+'.recovery')}catch{}
 function pathGet(o,p){return p.split('.').reduce((a,k)=>a?.[k],o)}function pathSet(o,p,v){const a=p.split('.');let x=o;for(let i=0;i<a.length-1;i++)x=x[a[i]];x[a.at(-1)]=v}
 function save(msg=true){
@@ -1689,6 +1764,95 @@ function hasBlockingValidationFailure(){const v=validationState();return !!v.las
 
 
 
+
+const withdrawalStrategyModes=['balanced','minimumTax','rrspMeltdown','preserveTFSA','preserveRRSP','custom'];
+function ensureWithdrawalStrategy(){
+ state.planningModel=state.planningModel||{};
+ const valid=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'];
+ const current=state.planningModel.withdrawalStrategy||{};
+ if(!withdrawalStrategyModes.includes(current.mode))current.mode='balanced';
+ current.customOrder=Array.isArray(current.customOrder)?current.customOrder.filter((x,i,a)=>valid.includes(x)&&a.indexOf(x)===i):[];
+ for(const type of valid)if(!current.customOrder.includes(type))current.customOrder.push(type);
+ state.planningModel.withdrawalStrategy=current;
+ return current;
+}
+function strategyDefinition(mode){
+ const defs={
+  balanced:{label:'Balanced',description:'Taxable assets and cash first, followed by RRSP/RRIF and then TFSA.'},
+  minimumTax:{label:'Minimum current tax',description:'Uses cash and TFSA early to reduce tax in the current year.'},
+  rrspMeltdown:{label:'RRSP/RRIF drawdown',description:'Uses registered savings early to lower future registered balances.'},
+  preserveTFSA:{label:'Preserve TFSA',description:'Keeps tax-free assets invested until other sources are exhausted.'},
+  preserveRRSP:{label:'Preserve RRSP/RRIF',description:'Defers registered withdrawals and uses other accounts first.'},
+  custom:{label:'Custom order',description:'Follows the account-type order selected below.'}
+ };
+ return defs[mode]||defs.balanced;
+}
+function setWithdrawalStrategy(mode){
+ const ws=ensureWithdrawalStrategy();ws.mode=withdrawalStrategyModes.includes(mode)?mode:'balanced';
+ save(false);renderWithdrawalStrategy();renderProjection();monteCarloState.results=null;
+ toast(`${strategyDefinition(ws.mode).label} strategy selected`);
+}
+function customOrderChanged(){
+ const selects=[...document.querySelectorAll('#wsCustomOrder select')],chosen=[],valid=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'];
+ for(const s of selects){if(!chosen.includes(s.value))chosen.push(s.value)}
+ for(const type of valid)if(!chosen.includes(type))chosen.push(type);
+ ensureWithdrawalStrategy().customOrder=chosen.slice(0,5);save(false);renderWithdrawalStrategy();
+}
+function buildPlanProjectionForStrategy(mode){
+ const plan=clone(state);plan.planningModel=plan.planningModel||{};
+ const current=ensureWithdrawalStrategy();
+ plan.planningModel.withdrawalStrategy={mode,customOrder:clone(current.customOrder)};
+ const opts=projectionOptions(plan),timeline=global.HNTimeline.buildTimeline(plan,opts),incomeRows=global.HNIncome.buildIncomeProjection(plan,timeline,opts);
+ return global.HNProjection.buildProjection(plan,incomeRows,opts);
+}
+function withdrawalStrategyMetrics(rows){
+ const last=rows.at(-1)?.projection||{},firstShort=rows.find(r=>num(r.projection.unfunded)>0);
+ const lifetimeTax=rows.reduce((s,r)=>s+num(r.projection.tax),0);
+ const totalWithdrawals=rows.reduce((s,r)=>s+num(r.projection.withdrawals),0);
+ const byType={};for(const r of rows)for(const w of r.projection.withdrawalsByAccount||[])byType[w.type]=(byType[w.type]||0)+num(w.amount);
+ return{rows,lifetimeTax,totalWithdrawals,endingEstate:num(last.netWorth),endingPortfolio:num(last.endingInvestments),firstShort:firstShort?.year||null,byType};
+}
+function compareWithdrawalStrategies(){
+ const modes=['balanced','minimumTax','rrspMeltdown','preserveTFSA','preserveRRSP'];
+ return modes.map(mode=>({mode,...strategyDefinition(mode),...withdrawalStrategyMetrics(buildPlanProjectionForStrategy(mode))}));
+}
+function chooseRecommendedStrategy(results){
+ const funded=results.filter(x=>!x.firstShort);
+ const pool=funded.length?funded:results;
+ return [...pool].sort((a,b)=>(b.endingEstate-a.endingEstate)||(a.lifetimeTax-b.lifetimeTax))[0];
+}
+function retirementStartYear(plan=state){
+ const years=global.HNTimeline.includedPeople(plan).map(p=>global.HNTimeline.yearAtAge(p.birthDate,p.retirementAge)).filter(Number.isFinite);
+ return years.length?Math.min(...years):new Date().getFullYear();
+}
+function renderWithdrawalStrategy(){
+ const ws=ensureWithdrawalStrategy(),def=strategyDefinition(ws.mode);
+ document.getElementById('wsActiveBadge').textContent=def.label;
+ document.getElementById('wsChoices').innerHTML=withdrawalStrategyModes.map(mode=>{
+  const d=strategyDefinition(mode);
+  return`<label class="ws-option ${ws.mode===mode?'active':''}"><div><input type="radio" name="wsMode" value="${mode}" ${ws.mode===mode?'checked':''}><strong>${esc(d.label)}</strong></div><p>${esc(d.description)}</p></label>`;
+ }).join('');
+ document.querySelectorAll('input[name="wsMode"]').forEach(x=>x.onchange=()=>setWithdrawalStrategy(x.value));
+ document.getElementById('wsCustomCard').classList.toggle('hidden',ws.mode!=='custom');
+ if(ws.mode==='custom'){
+  const valid=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'];
+  document.getElementById('wsCustomOrder').innerHTML=ws.customOrder.map((selected,i)=>`${i?'<span class="ws-arrow">→</span>':''}<select aria-label="Withdrawal priority ${i+1}">${valid.map(type=>`<option ${type===selected?'selected':''}>${type}</option>`).join('')}</select>`).join('');
+  document.querySelectorAll('#wsCustomOrder select').forEach(x=>x.onchange=customOrderChanged);
+ }
+ const selected=withdrawalStrategyMetrics(buildPlanProjectionForStrategy(ws.mode));
+ document.getElementById('wsSelectedSummary').innerHTML=`
+  <div><span>Lifetime tax</span><strong>${money(selected.lifetimeTax)}</strong></div>
+  <div><span>Ending portfolio</span><strong>${money(selected.endingPortfolio)}</strong></div>
+  <div><span>Ending estate</span><strong>${money(selected.endingEstate)}</strong></div>
+  <div><span>First unfunded year</span><strong>${selected.firstShort||'None'}</strong></div>`;
+ const comparisons=compareWithdrawalStrategies(),recommended=chooseRecommendedStrategy(comparisons);
+ document.getElementById('wsRecommendation').innerHTML=`<div class="ws-recommended"><strong>Best deterministic result: ${esc(recommended.label)}</strong><br><span class="muted">Among the standard account-order strategies, this produced ${recommended.firstShort?'the strongest available result despite a shortfall in '+recommended.firstShort:'a fully funded projection'} and an ending estate of ${money(recommended.endingEstate)}. This is a model comparison, not individualized tax advice.</span></div>`;
+ document.getElementById('wsComparison').innerHTML=`<table><thead><tr><th>Strategy</th><th>Lifetime tax</th><th>Total withdrawals</th><th>Ending portfolio</th><th>Ending estate</th><th>First shortfall</th><th></th></tr></thead><tbody>${comparisons.map(x=>`<tr class="${x.mode===ws.mode?'selected-row':''}"><td><strong>${esc(x.label)}</strong><br><span class="muted">${esc(x.description)}</span></td><td>${money(x.lifetimeTax)}</td><td>${money(x.totalWithdrawals)}</td><td>${money(x.endingPortfolio)}</td><td>${money(x.endingEstate)}</td><td>${x.firstShort||'None'}</td><td><button class="btn small ws-use" data-mode="${x.mode}">${x.mode===ws.mode?'Active':'Use'}</button></td></tr>`).join('')}</tbody></table>`;
+ document.querySelectorAll('.ws-use').forEach(x=>x.onclick=()=>setWithdrawalStrategy(x.dataset.mode));
+ const start=retirementStartYear(),sample=selected.rows.filter(r=>r.year>=start&&(r.projection.withdrawals>0||r.year===start)).slice(0,15);
+ document.getElementById('wsTimeline').innerHTML=sample.length?`<table><thead><tr><th>Year</th><th>Tax</th><th>Spending</th><th>Cash</th><th>TFSA</th><th>RRSP/RRIF</th><th>Non-registered</th><th>Total</th></tr></thead><tbody>${sample.map(r=>{const sums={};for(const w of r.projection.withdrawalsByAccount||[])sums[w.type]=(sums[w.type]||0)+num(w.amount);return`<tr><td>${r.year}</td><td>${money(r.projection.tax)}</td><td>${money(r.projection.spending)}</td><td>${money(sums.Cash)}</td><td>${money(sums.TFSA)}</td><td>${money(sums['RRSP/RRIF'])}</td><td>${money(sums['Non-registered'])}</td><td><strong>${money(r.projection.withdrawals)}</strong></td></tr>`}).join('')}</tbody></table>`:'<div class="empty">No retirement withdrawals are required in the first 15 displayed years.</div>';
+}
+
 let monteCarloState={results:null,running:false};
 
 function seededRandom(seed){
@@ -1927,7 +2091,7 @@ function renderProfessionalReport(){
  <div class="report-footer">Generated by Harbour North 1.0 · Currency shown in Canadian dollars · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
 }
 
-function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();if(id==='montecarlo'&&monteCarloState.results)renderMonteCarloResults();window.scrollTo({top:0,behavior:'smooth'})}
+function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home')renderHome();if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();if(id==='withdrawal')renderWithdrawalStrategy();if(id==='montecarlo'&&monteCarloState.results)renderMonteCarloResults();window.scrollTo({top:0,behavior:'smooth'})}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 document.getElementById('addAccount').onclick=()=>{state.accounts.push(account('New account','RRSP/RRIF',state.people[0].name||'Primary',0));renderAccounts();save()};document.getElementById('addIncome').onclick=()=>{state.incomeSources.push(income('New income','Salary',state.people[0].name||'Primary',0,0,state.people[0].retirementAge||65,true,true));renderIncome();save()};document.getElementById('addDebt').onclick=()=>{state.debts.push(debt('New debt','Line of credit',0));renderDebts();save()};document.getElementById('addExpense').onclick=()=>{state.expenses.push(expense('New spending','Essential',0,'Monthly'));renderExpenses();save()};document.getElementById('addEvent').onclick=()=>{state.events.push(eventItem('New event','Expense',0,nowYear+3));renderEvents();save()};
@@ -1966,6 +2130,7 @@ if(benefitRoot){
  benefitRoot.addEventListener('change',e=>handleBenefitChange(e,{rerender:true}));
  benefitRoot.addEventListener('input',e=>{if(e.target.type==='number')handleBenefitChange(e,{rerender:false})});
 }
+document.getElementById('wsRefresh').onclick=()=>{renderWithdrawalStrategy();toast('Withdrawal comparison refreshed')};
 document.getElementById('runMonteCarlo').onclick=runMonteCarlo;
 document.getElementById('mcDeterministicTest').onclick=runMonteCarloDeterministicTest;
 document.querySelectorAll('.mc-preset').forEach(b=>b.onclick=()=>{document.getElementById('mcReturn').value=b.dataset.return;document.getElementById('mcVolatility').value=b.dataset.vol;document.getElementById('mcInflation').value=b.dataset.inflation;toast(`${b.textContent} assumptions loaded`)});
