@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.6.1</title>
+<title>Harbour North 2.6.2</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -683,6 +683,17 @@ button{touch-action:manipulation}
 .health-check.warn{border-left:4px solid var(--warn)}
 </style>
 
+
+<style id="hn262ScenarioStyles">
+.scenario-name-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
+.scenario-name-row input{min-width:0}
+#scenarioManagerMessage{min-height:18px}
+@media(max-width:650px){
+ .scenario-name-row{grid-template-columns:1fr}
+ .scenario-name-row .btn,.scenario-toolbar .btn{width:100%}
+}
+</style>
+
 </head>
 <body>
 <header><div><h1>Harbour North</h1><p>Retirement planning, made clear.</p></div><div id="saveStatus" class="status">Ready</div></header>
@@ -1057,7 +1068,12 @@ button{touch-action:manipulation}
 
 <section id="scenarios" class="page">
 <div class="hero"><div class="eyebrow">Harbour North 0.5 · Planning workspace</div><h2>Scenario Manager</h2><p class="muted">Create separate retirement plans without overwriting your base plan. Each scenario stores its own household timing, accounts, income, spending, events, and assumptions.</p></div>
-<div class="card"><div class="scenario-toolbar"><div class="field" style="min-width:240px"><label>New scenario name</label><input id="newScenarioName" placeholder="Example: Retire at 56"></div><button id="createScenario" class="btn primary">Create from active plan</button><button id="duplicateScenario" class="btn">Duplicate active scenario</button></div></div>
+<div class="card"><div class="scenario-toolbar">
+<div class="field" style="min-width:240px"><label>New scenario name</label><input id="newScenarioName" placeholder="Example: Retire at 56" autocomplete="off"></div>
+<button id="createScenarioButton" class="btn primary">Create from active plan</button>
+<button id="createBlankScenarioButton" class="btn">Create blank scenario</button>
+<button id="duplicateScenarioButton" class="btn">Duplicate active scenario</button>
+</div><p id="scenarioManagerMessage" class="muted" style="margin:12px 0 0">Create a copy of the active plan, or start with a blank planning workspace.</p></div>
 <div class="card"><div class="row-head"><div><h3>Saved scenarios</h3><p class="muted">Switching scenarios saves the current plan first, then loads the selected workspace.</p></div><span id="scenarioWorkspaceBadge" class="badge good">Base plan active</span></div><div id="scenarioManagerList" class="scenario-list"></div></div>
 <div class="card"><h3>Foundation modules</h3><p class="muted">Version 0.5 keeps one-file deployment while separating the planning responsibilities internally.</p><div class="architecture-grid"><div class="module-chip">Planning model</div><div class="module-chip">Timeline engine</div><div class="module-chip">Income engine</div><div class="module-chip">Canada tax engine</div><div class="module-chip">Projection engine</div><div class="module-chip">Optimization engine</div><div class="module-chip">Scenario workspace</div><div class="module-chip">Persistence & migration</div><div class="module-chip">Results dashboard</div></div></div>
 </section>
@@ -1734,13 +1750,50 @@ function restoreOptimizerResults(){const o=state.planningModel?.optimizer||{};op
 
 function activeScenario(){return state.planningModel?.scenarios?.find(x=>x.id===state.planningModel.activeScenarioId)||null}
 function loadScenarioSnapshot(snapshot){if(!snapshot)return;for(const key of ['hasPartner','people','household','accounts','incomeSources','debts','expenses','events'])state[key]=clone(snapshot[key]);normalizePlan(state);repairGovernmentBenefitAmounts(state)}
-function createScenario(name,duplicate=true){syncPlanningModel();const pm=state.planningModel,now=new Date().toISOString(),sid='scenario-'+id();const scenario={id:sid,name:(name||'New scenario').trim()||'New scenario',createdAt:now,updatedAt:now,snapshot:duplicate?corePlanSnapshot(state):corePlanSnapshot(defaults())};pm.scenarios.push(scenario);pm.activeScenarioId=sid;loadScenarioSnapshot(scenario.snapshot);save(false);refreshAfterScenarioChange();toast('Scenario created')}
+function createPlanningScenario(name,duplicate=true){
+ syncPlanningModel();
+ const pm=state.planningModel,now=new Date().toISOString(),sid='scenario-'+id();
+ const cleanName=(name||'New scenario').trim()||'New scenario';
+ const sourceSnapshot=duplicate?corePlanSnapshot(state):corePlanSnapshot(defaults());
+ const scenario={id:sid,name:cleanName,createdAt:now,updatedAt:now,snapshot:clone(sourceSnapshot)};
+ pm.scenarios.push(scenario);
+ pm.activeScenarioId=sid;
+ loadScenarioSnapshot(scenario.snapshot);
+ const saved=save(false);
+ refreshAfterScenarioChange();
+ const message=document.getElementById('scenarioManagerMessage');
+ if(message)message.textContent=saved?`“${cleanName}” was created and opened.`:`“${cleanName}” was created but could not be saved to browser storage.`;
+ toast(saved?'Scenario created':'Scenario save failed');
+ return scenario;
+}
 function switchScenario(sid){if(sid===state.planningModel?.activeScenarioId)return;syncPlanningModel();const target=state.planningModel.scenarios.find(x=>x.id===sid);if(!target)return;state.planningModel.activeScenarioId=sid;loadScenarioSnapshot(target.snapshot);restoreOptimizerResults();save(false);refreshAfterScenarioChange();toast('Scenario loaded')}
-function renameScenario(sid,name){const x=state.planningModel?.scenarios?.find(y=>y.id===sid);if(!x)return;x.name=(name||'Scenario').trim()||'Scenario';x.updatedAt=new Date().toISOString();save(false);renderScenarioManager()}
+function renamePlanningScenario(sid,name){
+ const x=state.planningModel?.scenarios?.find(y=>y.id===sid);if(!x)return false;
+ const clean=(name||'Scenario').trim()||'Scenario';
+ x.name=clean;x.updatedAt=new Date().toISOString();
+ const saved=save(false);
+ const message=document.getElementById('scenarioManagerMessage');
+ if(message)message.textContent=saved?`Scenario renamed to “${clean}”.`:'The scenario name changed but could not be saved.';
+ renderScenarioManager();
+ return saved;
+}
 function deleteScenario(sid){const pm=state.planningModel;if(!pm||pm.scenarios.length<=1){toast('At least one scenario is required');return}const x=pm.scenarios.find(y=>y.id===sid);if(!x||!confirm(`Delete scenario “${x.name}”?`))return;pm.scenarios=pm.scenarios.filter(y=>y.id!==sid);if(pm.activeScenarioId===sid){pm.activeScenarioId=pm.scenarios[0].id;loadScenarioSnapshot(pm.scenarios[0].snapshot)}save(false);refreshAfterScenarioChange();toast('Scenario deleted')}
 function refreshAfterScenarioChange(){bindStaticValues();renderAllLists();syncAssumptionInputs();renderHome();renderProjection();renderOptimizer();renderModelStatus();renderScenarioManager()}
 function bindStaticValues(){document.querySelectorAll('[data-bind]').forEach(el=>{el.value=pathGet(state,el.dataset.bind)??''});const hp=document.getElementById('hasPartner');if(hp){hp.checked=state.hasPartner;document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner)}}
-function renderScenarioManager(){const root=document.getElementById('scenarioManagerList');if(!root)return;syncPlanningModel();const pm=state.planningModel,active=activeScenario();document.getElementById('scenarioWorkspaceBadge').textContent=(active?.name||'Base plan')+' active';root.innerHTML=pm.scenarios.map(x=>`<div class="scenario-row ${x.id===pm.activeScenarioId?'active':''}" data-scenario-id="${esc(x.id)}"><div><input class="scenario-name" value="${esc(x.name)}" aria-label="Scenario name"><div class="scenario-meta">Updated ${new Date(x.updatedAt||x.createdAt).toLocaleString('en-CA')}${x.id===pm.activeScenarioId?' · Active workspace':''}</div></div><div><strong>${x.snapshot?.people?.[0]?.retirementAge??state.people[0]?.retirementAge??'—'}</strong><div class="scenario-meta">Primary retirement age</div></div><div class="actions"><button class="btn small scenario-switch" ${x.id===pm.activeScenarioId?'disabled':''}>${x.id===pm.activeScenarioId?'Active':'Open'}</button><button class="btn danger small scenario-delete">Delete</button></div></div>`).join('')}
+function renderScenarioManager(){
+ const root=document.getElementById('scenarioManagerList');if(!root)return;
+ syncPlanningModel();
+ const pm=state.planningModel,active=activeScenario();
+ document.getElementById('scenarioWorkspaceBadge').textContent=(active?.name||'Base plan')+' active';
+ root.innerHTML=pm.scenarios.map(x=>`<div class="scenario-row ${x.id===pm.activeScenarioId?'active':''}" data-scenario-id="${esc(x.id)}">
+  <div>
+   <div class="scenario-name-row"><input class="scenario-name" value="${esc(x.name)}" aria-label="Scenario name"><button class="btn small scenario-save-name">Save name</button></div>
+   <div class="scenario-meta">Updated ${new Date(x.updatedAt||x.createdAt).toLocaleString('en-CA')}${x.id===pm.activeScenarioId?' · Active workspace':''}</div>
+  </div>
+  <div><strong>${x.snapshot?.people?.[0]?.retirementAge??state.people[0]?.retirementAge??'—'}</strong><div class="scenario-meta">Primary retirement age</div></div>
+  <div class="actions"><button class="btn small scenario-switch" ${x.id===pm.activeScenarioId?'disabled':''}>${x.id===pm.activeScenarioId?'Editing now':'Open and edit'}</button><button class="btn danger small scenario-delete">Delete</button></div>
+ </div>`).join('');
+}
 function renderModelStatus(){
  const pm=state.planningModel;if(!pm)return;
  const active=(pm.scenarios||[]).find(x=>x.id===pm.activeScenarioId);
@@ -2387,6 +2440,19 @@ function runStabilityCheck(){
  const checks=[];
  try{
   checks.push(checkResult('Planning model',!!state.planningModel&&Array.isArray(state.planningModel.scenarios),'Structured planning model is available.','fail'));
+  try{
+   syncPlanningModel();
+   const pm=state.planningModel,activeId=pm.activeScenarioId,before=pm.scenarios.length,testId='health-scenario-'+id();
+   const test={id:testId,name:'Health check scenario',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),snapshot:corePlanSnapshot(state)};
+   pm.scenarios.push(test);
+   const created=pm.scenarios.some(x=>x.id===testId);
+   test.name='Health check renamed';
+   const renamed=pm.scenarios.find(x=>x.id===testId)?.name==='Health check renamed';
+   pm.scenarios=pm.scenarios.filter(x=>x.id!==testId);pm.activeScenarioId=activeId;
+   checks.push(checkResult('Scenario manager',created&&renamed&&pm.scenarios.length===before,'Create, rename and delete operations passed in memory.','fail'));
+  }catch(error){
+   checks.push(checkResult('Scenario manager',false,error.message,'fail'));
+  }
   checks.push(checkResult('Household records',global.HNTimeline.includedPeople(state).length>0,`${global.HNTimeline.includedPeople(state).length} included person record(s).`,'fail'));
   const timelineTest=global.HNTimeline.runSelfTests();checks.push(checkResult('Timeline engine',timelineTest.ok,`${timelineTest.total-timelineTest.failed.length}/${timelineTest.total} tests passed${timelineTest.failed.length?': '+timelineTest.failed.join(', '):''}.`,'fail'));
   const incomeTest=global.HNIncome.runSelfTests();checks.push(checkResult('Income engine',incomeTest.ok,`${incomeTest.total-incomeTest.failed.length}/${incomeTest.total} tests passed${incomeTest.failed.length?': '+incomeTest.failed.join(', '):''}.`,'fail'));
@@ -3254,10 +3320,39 @@ document.getElementById('projectionBody').addEventListener('click',e=>{const tr=
 
 
 
-document.getElementById('createScenario').onclick=()=>{const input=document.getElementById('newScenarioName');createScenario(input.value||'New scenario',true);input.value=''};
-document.getElementById('duplicateScenario').onclick=()=>{const current=activeScenario();createScenario((current?.name||'Scenario')+' copy',true)};
-document.getElementById('scenarioManagerList').addEventListener('click',e=>{const row=e.target.closest('[data-scenario-id]');if(!row)return;const sid=row.dataset.scenarioId;if(e.target.closest('.scenario-switch'))switchScenario(sid);if(e.target.closest('.scenario-delete'))deleteScenario(sid)});
-document.getElementById('scenarioManagerList').addEventListener('change',e=>{if(!e.target.classList.contains('scenario-name'))return;const row=e.target.closest('[data-scenario-id]');renameScenario(row.dataset.scenarioId,e.target.value)});
+document.getElementById('createScenarioButton').onclick=()=>{
+ const input=document.getElementById('newScenarioName');
+ createPlanningScenario(input.value||'New scenario',true);
+ input.value='';
+};
+document.getElementById('createBlankScenarioButton').onclick=()=>{
+ const input=document.getElementById('newScenarioName');
+ createPlanningScenario(input.value||'Blank scenario',false);
+ input.value='';
+};
+document.getElementById('duplicateScenarioButton').onclick=()=>{
+ const current=activeScenario();
+ createPlanningScenario((current?.name||'Scenario')+' copy',true);
+};
+document.getElementById('newScenarioName').addEventListener('keydown',e=>{
+ if(e.key==='Enter'){e.preventDefault();document.getElementById('createScenarioButton').click()}
+});
+document.getElementById('scenarioManagerList').addEventListener('click',e=>{
+ const row=e.target.closest('[data-scenario-id]');if(!row)return;
+ const sid=row.dataset.scenarioId;
+ if(e.target.closest('.scenario-switch'))switchScenario(sid);
+ if(e.target.closest('.scenario-delete'))deleteScenario(sid);
+ if(e.target.closest('.scenario-save-name')){
+  const input=row.querySelector('.scenario-name');
+  renamePlanningScenario(sid,input?.value);
+ }
+});
+document.getElementById('scenarioManagerList').addEventListener('keydown',e=>{
+ if(e.key!=='Enter'||!e.target.classList.contains('scenario-name'))return;
+ e.preventDefault();
+ const row=e.target.closest('[data-scenario-id]');
+ renamePlanningScenario(row.dataset.scenarioId,e.target.value);
+});
 const benefitRoot=document.getElementById('benefitPeople');
 if(benefitRoot){
  benefitRoot.addEventListener('change',e=>handleBenefitChange(e,{rerender:true}));
@@ -3646,7 +3741,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     state.household.inheritanceScenario={amount:n('wInheritance'),year:n('wInheritanceYear'),certainty:inheritanceMode};
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.6.1';
+    state.meta.appVersion='2.6.2';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
