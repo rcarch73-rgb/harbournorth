@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.1.1</title>
+<title>Harbour North 2.2</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -390,6 +390,72 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
   .hn211-welcome-copy>p{font-size:18px}
   .hn211-welcome-actions{flex-direction:column}
   .hn211-welcome-actions button{width:100%}
+}
+</style>
+
+
+<style id="hn22Styles">
+.hn22-improve-overlay{
+  position:fixed;inset:0;z-index:1800;background:rgba(18,35,48,.52);
+  backdrop-filter:blur(7px);display:none;align-items:center;justify-content:center;padding:20px
+}
+.hn22-improve-overlay.open{display:flex}
+.hn22-improve-card{
+  width:min(680px,100%);max-height:calc(100vh - 40px);overflow:auto;background:#fff;
+  border-radius:24px;box-shadow:0 28px 80px rgba(15,35,50,.28);border:1px solid rgba(255,255,255,.4)
+}
+.hn22-improve-top{
+  display:flex;align-items:center;justify-content:space-between;padding:20px 22px;
+  border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.96);z-index:2
+}
+.hn22-improve-brand{font-weight:900;color:var(--navy)}
+.hn22-improve-close{border:0;background:transparent;font-size:27px;color:var(--muted);cursor:pointer}
+.hn22-improve-body{padding:30px}
+.hn22-progress-meta{display:flex;justify-content:space-between;gap:12px;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:8px}
+.hn22-progress{height:7px;background:#e7edef;border-radius:999px;overflow:hidden;margin-bottom:24px}
+.hn22-progress span{display:block;height:100%;background:var(--blue);width:0;transition:width .2s ease}
+.hn22-kicker{text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:900;color:var(--blue);margin-bottom:10px}
+.hn22-improve-body h2{font-size:34px;line-height:1.14;letter-spacing:-.04em;color:var(--navy);margin:0 0 12px}
+.hn22-improve-body>p{font-size:16px;line-height:1.55;color:var(--muted);margin:0 0 24px}
+.hn22-question-card{background:#f4f7f8;border:1px solid var(--line);border-radius:17px;padding:20px;margin-bottom:18px}
+.hn22-question-card label{display:block;font-size:14px;font-weight:850;color:var(--ink);margin-bottom:8px}
+.hn22-question-card input,.hn22-question-card select{
+  width:100%;min-height:52px;padding:13px 14px;border:1px solid #cfdade;border-radius:11px;font-size:16px;background:#fff
+}
+.hn22-question-card small{display:block;margin-top:8px;color:var(--muted);line-height:1.4}
+.hn22-actions{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+.hn22-actions-right{display:flex;gap:10px;margin-left:auto}
+.hn22-actions button{border:0;border-radius:11px;padding:12px 17px;font-weight:850;cursor:pointer}
+.hn22-secondary{background:#edf1f2;color:var(--navy)}
+.hn22-primary{background:var(--navy);color:#fff}
+.hn22-complete{text-align:center;padding:14px 0}
+.hn22-complete-mark{
+  width:82px;height:82px;border-radius:24px;background:#eaf4ef;color:var(--ok);
+  display:grid;place-items:center;font-size:38px;font-weight:900;margin:0 auto 20px
+}
+.hn22-impact{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0
+}
+.hn22-impact div{border:1px solid var(--line);border-radius:14px;padding:16px;background:#fff}
+.hn22-impact span{display:block;font-size:11px;color:var(--muted);font-weight:800;margin-bottom:6px}
+.hn22-impact strong{font-size:22px;color:var(--navy)}
+.hn22-nav-button{
+  margin-left:auto;background:#edf5f7!important;color:var(--navy)!important
+}
+.hn22-prompt-card{
+  background:linear-gradient(135deg,#183552,#254c6e);color:#fff;border-radius:18px;
+  padding:22px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;margin-bottom:18px
+}
+.hn22-prompt-card .eyebrow{color:#a9d2df}
+.hn22-prompt-card h3{margin:4px 0 5px;font-size:20px}
+.hn22-prompt-card p{margin:0;opacity:.76;font-size:13px}
+.hn22-prompt-card .btn{background:#fff;color:var(--navy);border:0}
+@media(max-width:620px){
+  .hn22-improve-body{padding:23px}.hn22-improve-body h2{font-size:29px}
+  .hn22-impact{grid-template-columns:1fr}
+  .hn22-actions{flex-direction:column}.hn22-actions-right{margin:0;width:100%}
+  .hn22-actions button{flex:1}
+  .hn22-prompt-card{grid-template-columns:1fr}.hn22-prompt-card .btn{width:100%}
 }
 </style>
 
@@ -3008,7 +3074,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     upsertEvent('Expected inheritance','Inheritance',n('wInheritance'),n('wInheritanceYear'));
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.1.1';
+    state.meta.appVersion='2.2';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
@@ -3203,6 +3269,301 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     setTimeout(function(){
       if(typeof openSetup==='function')openSetup(0);
     },220);
+  }
+})();
+</script>
+
+
+<div id="hn22ImproveOverlay" class="hn22-improve-overlay" aria-hidden="true">
+  <div class="hn22-improve-card" role="dialog" aria-modal="true" aria-labelledby="hn22Title">
+    <div class="hn22-improve-top">
+      <div class="hn22-improve-brand">Improve My Plan</div>
+      <button id="hn22Close" class="hn22-improve-close" aria-label="Close">×</button>
+    </div>
+    <div class="hn22-improve-body">
+      <div id="hn22Flow">
+        <div class="hn22-progress-meta"><span id="hn22StepText">Question 1</span><span id="hn22PctText">0% complete</span></div>
+        <div class="hn22-progress"><span id="hn22ProgressBar"></span></div>
+        <div class="hn22-kicker">Highest-value next question</div>
+        <h2 id="hn22Title">Let’s improve your plan.</h2>
+        <p id="hn22Why">Harbour North has identified the next detail that will make your retirement picture more complete.</p>
+        <div id="hn22Question"></div>
+        <div class="hn22-actions">
+          <button id="hn22Later" class="hn22-secondary">Ask me later</button>
+          <div class="hn22-actions-right">
+            <button id="hn22Skip" class="hn22-secondary">Skip</button>
+            <button id="hn22Save" class="hn22-primary">Save and continue</button>
+          </div>
+        </div>
+      </div>
+      <div id="hn22Complete" class="hn22-complete" style="display:none">
+        <div class="hn22-complete-mark">✓</div>
+        <div class="hn22-kicker">Plan improved</div>
+        <h2>You’ve completed the highest-value updates.</h2>
+        <p id="hn22CompleteText">Your retirement picture now has a stronger information foundation.</p>
+        <div class="hn22-impact">
+          <div><span>Plan completeness</span><strong id="hn22FinalScore">—</strong></div>
+          <div><span>Questions completed</span><strong id="hn22Answered">0</strong></div>
+        </div>
+        <button id="hn22Done" class="hn22-primary">Return to retirement snapshot</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script id="hn22Script">
+(function(){
+  const overlay=document.getElementById('hn22ImproveOverlay');
+  const q=id=>document.getElementById(id);
+  const num=v=>Math.max(0,Number(v)||0);
+  const money=v=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0}).format(num(v));
+  let queue=[],index=0,answered=0,current=null;
+
+  function primary(){return state.people?.find(p=>p.role==='primary')||state.people?.[0]}
+  function partner(){return state.people?.find(p=>p.role==='partner')||state.people?.[1]}
+  function incomeBy(prefix){return state.incomeSources?.find(x=>String(x.name||'').startsWith(prefix))}
+  function accountType(type){return state.accounts?.filter(x=>x.type===type)||[]}
+  function totalType(type){return accountType(type).reduce((s,x)=>s+num(x.balance),0)}
+  function hasAssetType(type){return totalType(type)>0}
+  function totalDebt(){return (state.debts||[]).reduce((s,x)=>s+num(x.balance),0)}
+  function annualRetirementSpend(){
+    return (state.expenses||[]).reduce((s,x)=>s+num(x.amount)*(x.frequency==='Monthly'?12:1),0)
+  }
+  function addIncome(name,type,owner,monthly,startAge,endAge,taxable=true,indexed=true){
+    let x=incomeBy('Improve: '+name);
+    const annual=monthly*12;
+    if(!x){
+      x=income('Improve: '+name,type,owner,annual,startAge,endAge,indexed,taxable);
+      state.incomeSources.push(x);
+    }
+    Object.assign(x,{name:'Improve: '+name,type,owner,annualAmount:annual,startAge,endAge,taxable,indexed});
+  }
+  function addAccount(name,type,balance,contribution=0){
+    let x=state.accounts.find(a=>a.name==='Improve: '+name);
+    if(!x){
+      x=account('Improve: '+name,type,'Household',balance,contribution);
+      state.accounts.push(x);
+    }
+    Object.assign(x,{name:'Improve: '+name,type,owner:'Household',balance,annualContribution:contribution});
+  }
+  function addDebt(name,type,balance,payment=0){
+    let x=state.debts.find(d=>d.name==='Improve: '+name);
+    if(!x){
+      x=debt('Improve: '+name,type,balance,payment,0);
+      state.debts.push(x);
+    }
+    Object.assign(x,{name:'Improve: '+name,type,balance,monthlyPayment:payment});
+  }
+  function addExpense(name,category,monthly){
+    let x=state.expenses.find(e=>e.name==='Improve: '+name);
+    if(!x){
+      x=expense('Improve: '+name,category,monthly,'Monthly');
+      state.expenses.push(x);
+    }
+    Object.assign(x,{name:'Improve: '+name,category,amount:monthly,frequency:'Monthly'});
+  }
+  function completeness(){
+    try{return readiness().score||0}catch(e){return 0}
+  }
+
+  function buildQueue(){
+    const p=primary(),s=partner(),hasPartner=state.hasPartner!==false;
+    const household=state.household||{};
+    const questions=[];
+
+    if(!p?.birthDate)questions.push({
+      id:'primaryBirth',title:'When were you born?',why:'Your date of birth determines retirement timing, CPP, OAS and the length of the projection.',
+      label:'Your date of birth',type:'date',save:v=>{p.birthDate=v}
+    });
+    if(hasPartner&&!s?.birthDate)questions.push({
+      id:'partnerBirth',title:'When was your partner born?',why:'Your partner’s age affects the household retirement timeline and benefit timing.',
+      label:'Partner’s date of birth',type:'date',save:v=>{s.birthDate=v}
+    });
+    if(!p?.retirementAge)questions.push({
+      id:'primaryRetire',title:'When would you like to retire?',why:'This is one of the most important assumptions in the plan.',
+      label:'Your target retirement age',type:'number',min:40,max:80,placeholder:'e.g., 55',save:v=>{p.retirementAge=num(v)}
+    });
+    if(hasPartner&&!s?.retirementAge)questions.push({
+      id:'partnerRetire',title:'When would your partner like to retire?',why:'Different retirement dates can materially change household cash flow.',
+      label:'Partner’s target retirement age',type:'number',min:40,max:80,placeholder:'e.g., 55',save:v=>{s.retirementAge=num(v)}
+    });
+    if(!household.province)questions.push({
+      id:'province',title:'Where do you live?',why:'Province affects income-tax estimates.',
+      label:'Province or territory',type:'select',options:['Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Northwest Territories','Nova Scotia','Nunavut','Ontario','Prince Edward Island','Quebec','Saskatchewan','Yukon'],
+      save:v=>{state.household.province=v}
+    });
+
+    if(!incomeBy('Guided: Primary CPP')&&!incomeBy('Improve: Your CPP'))questions.push({
+      id:'primaryCpp',title:'What is your CPP estimate at age 65?',why:'CPP is a major source of indexed retirement income. A personal estimate is more accurate than a general assumption.',
+      label:'Your CPP estimate',type:'number',placeholder:'CAD per month',suffix:'per month',
+      save:v=>addIncome('Your CPP','CPP',p?.name||'Primary',num(v),65,110,true,true)
+    });
+    if(hasPartner&&!incomeBy('Guided: Partner CPP')&&!incomeBy('Improve: Partner CPP'))questions.push({
+      id:'partnerCpp',title:'What is your partner’s CPP estimate at age 65?',why:'Adding both CPP estimates creates a more complete household-income picture.',
+      label:'Partner’s CPP estimate',type:'number',placeholder:'CAD per month',suffix:'per month',
+      save:v=>addIncome('Partner CPP','CPP',s?.name||'Partner',num(v),65,110,true,true)
+    });
+
+    const pensionPrimary=(state.incomeSources||[]).some(x=>x.type==='Pension'&&x.owner===(p?.name||'Primary'));
+    if(!pensionPrimary)questions.push({
+      id:'primaryPension',title:'Will you receive a workplace pension?',why:'Even a modest pension can materially reduce required portfolio withdrawals.',
+      label:'Expected pension at retirement',type:'number',placeholder:'Enter 0 if none — CAD per month',suffix:'per month',
+      save:v=>{if(num(v)>0)addIncome('Your pension','Pension',p?.name||'Primary',num(v),num(p?.retirementAge)||65,110,true,true)}
+    });
+    const pensionPartner=(state.incomeSources||[]).some(x=>x.type==='Pension'&&x.owner===(s?.name||'Partner'));
+    if(hasPartner&&!pensionPartner)questions.push({
+      id:'partnerPension',title:'Will your partner receive a workplace pension?',why:'A spouse or partner’s pension can be one of the largest income sources in retirement.',
+      label:'Partner’s pension at retirement',type:'number',placeholder:'Enter 0 if none — CAD per month',suffix:'per month',
+      save:v=>{if(num(v)>0)addIncome('Partner pension','Pension',s?.name||'Partner',num(v),num(s?.retirementAge)||65,110,true,true)}
+    });
+
+    if(!hasAssetType('RRSP/RRIF'))questions.push({
+      id:'rrsp',title:'How much is currently in your RRSP or RRIF?',why:'Registered savings often fund the early years of retirement and affect future taxes.',
+      label:'Combined RRSP and RRIF balance',type:'number',placeholder:'CAD',
+      save:v=>{if(num(v)>0)addAccount('RRSP / RRIF','RRSP/RRIF',num(v),0)}
+    });
+    if(!hasAssetType('TFSA'))questions.push({
+      id:'tfsa',title:'How much is currently in your TFSA?',why:'TFSA savings provide flexible, tax-free retirement income.',
+      label:'Combined TFSA balance',type:'number',placeholder:'CAD',
+      save:v=>{if(num(v)>0)addAccount('TFSA','TFSA',num(v),0)}
+    });
+    if(!hasAssetType('Non-registered'))questions.push({
+      id:'nonreg',title:'Do you have non-registered investments?',why:'These investments have different tax treatment and can affect withdrawal order.',
+      label:'Current non-registered balance',type:'number',placeholder:'Enter 0 if none — CAD',
+      save:v=>{if(num(v)>0)addAccount('Non-registered investments','Non-registered',num(v),0)}
+    });
+
+    if(!num(household.emergencyFundAmount))questions.push({
+      id:'emergency',title:'How much do you keep specifically for emergencies?',why:'An emergency reserve helps prevent unplanned retirement withdrawals.',
+      label:'Emergency fund amount',type:'number',placeholder:'CAD',
+      note:'Do not include money already counted in cash savings unless it is held separately.',
+      save:v=>{state.household.emergencyFundAmount=num(v)}
+    });
+
+    const hasRealEstate=(state.accounts||[]).some(a=>a.type==='Real estate'&&num(a.balance)>0);
+    if(!hasRealEstate)questions.push({
+      id:'homeValue',title:'Do you own a home or other real estate?',why:'Property is included in complete net worth, even when it is not used to fund retirement.',
+      label:'Current combined property value',type:'number',placeholder:'Enter 0 if none — CAD',
+      save:v=>{if(num(v)>0)addAccount('Home and real estate','Real estate',num(v),0)}
+    });
+
+    if(totalDebt()===0)questions.push({
+      id:'debt',title:'Do you have any outstanding debt?',why:'Debt affects net worth and may reduce retirement cash flow.',
+      label:'Current total debt balance',type:'number',placeholder:'Enter 0 if debt-free — CAD',
+      save:v=>{if(num(v)>0)addDebt('Other household debt','Other',num(v),0)}
+    });
+
+    if(annualRetirementSpend()===0)questions.push({
+      id:'retireSpend',title:'What monthly lifestyle should retirement support?',why:'Spending is the central target your savings and income need to fund.',
+      label:'Desired retirement spending',type:'number',placeholder:'CAD per month',
+      save:v=>{if(num(v)>0)addExpense('Retirement lifestyle','Essential',num(v))}
+    });
+
+    if(!num(household.estateTarget))questions.push({
+      id:'estate',title:'Would you like to leave a financial estate?',why:'An estate goal helps Harbour North distinguish between money available to spend and money you want to preserve.',
+      label:'Desired estate in today’s dollars',type:'number',placeholder:'Enter 0 if no specific target — CAD',
+      save:v=>{state.household.estateTarget=num(v)}
+    });
+
+    if(!num(household.planningAge))questions.push({
+      id:'planningAge',title:'How far should the plan project?',why:'A longer planning age provides more protection against longevity risk.',
+      label:'Planning age',type:'number',min:80,max:110,placeholder:'e.g., 95',
+      save:v=>{state.household.planningAge=num(v)||95}
+    });
+
+    return questions;
+  }
+
+  function render(){
+    current=queue[index];
+    if(!current){finish();return}
+    const pct=Math.round(index/Math.max(1,queue.length)*100);
+    q('hn22StepText').textContent=`Question ${index+1} of ${queue.length}`;
+    q('hn22PctText').textContent=pct+'% complete';
+    q('hn22ProgressBar').style.width=pct+'%';
+    q('hn22Title').textContent=current.title;
+    q('hn22Why').textContent=current.why;
+    let input='';
+    if(current.type==='select'){
+      input=`<select id="hn22Input">${current.options.map(x=>`<option>${x}</option>`).join('')}</select>`;
+    }else{
+      input=`<input id="hn22Input" type="${current.type||'text'}" ${current.min!=null?`min="${current.min}"`:''} ${current.max!=null?`max="${current.max}"`:''} inputmode="${current.type==='number'?'decimal':'text'}" placeholder="${current.placeholder||''}">`;
+    }
+    q('hn22Question').innerHTML=`<div class="hn22-question-card"><label>${current.label}</label>${input}${current.note?`<small>${current.note}</small>`:''}</div>`;
+    setTimeout(()=>q('hn22Input')?.focus(),50);
+  }
+
+  function saveCurrent(){
+    const input=q('hn22Input');
+    if(!input)return;
+    current.save(input.value);
+    answered++;
+    syncPlanningModel();
+    save(false);
+    renderAllLists();renderBenefits();renderHome();renderSetupSteps();
+    index++;
+    render();
+  }
+
+  function skipCurrent(){index++;render()}
+  function finish(){
+    q('hn22Flow').style.display='none';
+    q('hn22Complete').style.display='block';
+    q('hn22FinalScore').textContent=completeness()+'%';
+    q('hn22Answered').textContent=answered;
+    q('hn22CompleteText').textContent=answered
+      ?'Your new information has been saved and the retirement analysis is being refreshed automatically.'
+      :'Your plan already contains the highest-priority information currently identified.';
+    if(typeof scheduleBackgroundAnalysis==='function')scheduleBackgroundAnalysis();
+  }
+
+  function open(){
+    queue=buildQueue();index=0;answered=0;
+    q('hn22Flow').style.display='block';q('hn22Complete').style.display='none';
+    overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    if(queue.length)render();else finish();
+  }
+  function close(){
+    overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+
+  q('hn22Close').onclick=close;
+  q('hn22Later').onclick=close;
+  q('hn22Skip').onclick=skipCurrent;
+  q('hn22Save').onclick=saveCurrent;
+  q('hn22Done').onclick=()=>{close();if(typeof showPage==='function')showPage('home')};
+  overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
+
+  window.openImproveMyPlan=open;
+
+  document.querySelectorAll('[data-goto="planhub"]').forEach(btn=>{
+    if(btn.textContent.trim()==='Improve my plan'){
+      btn.removeAttribute('data-goto');
+      btn.onclick=open;
+    }
+  });
+
+  const nav=document.querySelector('.streamlined-tabs');
+  if(nav){
+    const b=document.createElement('button');
+    b.className='tab hn22-nav-button';
+    b.type='button';
+    b.textContent='Improve My Plan';
+    b.onclick=open;
+    nav.appendChild(b);
+  }
+
+  const home=document.getElementById('home');
+  const nextCard=home?.querySelector('.hn21-next-card');
+  if(nextCard){
+    const prompt=document.createElement('div');
+    prompt.className='hn22-prompt-card';
+    prompt.innerHTML=`<div><div class="eyebrow">Guided improvement</div><h3>Make your plan more complete, one question at a time.</h3><p>Harbour North prioritizes the information that will improve your retirement picture most.</p></div><button class="btn">Improve My Plan</button>`;
+    prompt.querySelector('button').onclick=open;
+    nextCard.insertAdjacentElement('afterend',prompt);
   }
 })();
 </script>
