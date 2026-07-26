@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.4</title>
+<title>Harbour North 2.5</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -626,6 +626,13 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
  .hn24-action-panel .btn,.hn24-recommendation .btn{width:100%}.hn24-recommendation-mark{display:none}
  .hn24-detail-links{grid-template-columns:1fr}.hn24-active-metrics{grid-template-columns:1fr 1fr}
 }
+</style>
+
+
+<style id="hn25Styles">
+.hn25-inline{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hn25-precision-note{background:#edf5f7;border:1px solid #cfe0e5;border-radius:13px;padding:12px 14px;font-size:12px;color:#49606e;margin-top:14px}
+@media(max-width:560px){.hn25-inline{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -1448,7 +1455,13 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
   }
   function annualSpendingBreakdown(plan,year,startYear,inflationRate){
     const factor=Math.pow(1+n(inflationRate)/100,Math.max(0,year-startYear));
-    const details=(plan.expenses||[]).map(x=>({name:x.name||x.category||'Spending',category:x.category||'Other',amount:n(x.amount)*(x.frequency==='Monthly'?12:1)*factor}));
+    const primary=plan.people?.[0],birthYear=primary?.birthDate?new Date(primary.birthDate+'T00:00:00').getFullYear():null;
+    const age=birthYear?year-birthYear:null;
+    const details=(plan.expenses||[]).filter(x=>{
+      if(age==null)return true;
+      const start=n(x.startAge),end=n(x.endAge);
+      return(!start||age>=start)&&(!end||age<=end);
+    }).map(x=>({name:x.name||x.category||'Spending',category:x.category||'Other',amount:n(x.amount)*(x.frequency==='Monthly'?12:1)*factor}));
     const categories={};for(const x of details)categories[x.category]=(categories[x.category]||0)+x.amount;
     return{total:details.reduce((sum,x)=>sum+x.amount,0),details,categories};
   }
@@ -1458,7 +1471,15 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
     for(const e of plan.events||[]){if(Math.trunc(n(e.year))!==year)continue;if(['Income','Inheritance','Gift','Asset sale'].includes(e.type)){income+=n(e.amount);if(e.type==='Income')taxableIncome+=n(e.amount)}else expense+=n(e.amount)}
     return{income,expense,taxableIncome};
   }
-  function ownerWorking(account,row,people){if(account.owner==='Household')return row.people.some(p=>p.status==='Working');const i=Math.max(0,people.findIndex(p=>p.name===account.owner));return row.people[i]?.status==='Working'}
+  function ownerWorking(account,row,people){
+    const ownerIndex=account.owner==='Household'?-1:Math.max(0,people.findIndex(p=>p.name===account.owner));
+    const working=ownerIndex<0?row.people.some(p=>p.status==='Working'):row.people[ownerIndex]?.status==='Working';
+    if(!working)return false;
+    const endAge=n(account.contributionEndAge);
+    if(!endAge)return true;
+    if(ownerIndex<0)return row.people.some(p=>p.status==='Working'&&n(p.age)<=endAge);
+    return n(row.people[ownerIndex]?.age)<=endAge;
+  }
   function taxableIncomeByPerson(row,people,eventTaxable=0){
     const result={};people.forEach(p=>result[p.name||'Household member']=0);
     for(const x of row.income.details||[]){if(!x.active||!x.taxable)continue;const key=result[x.owner]!==undefined?x.owner:(people[0]?.name||'Household member');result[key]=(result[key]||0)+x.amount}
@@ -3188,7 +3209,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     <main class="hn20-wizard-main">
       <section class="hn20-step hn20-welcome active" data-step="0">
         <div class="hn20-welcome-mark">⌁</div>
-        <div class="hn20-kicker">Welcome to Harbour North 2.1</div>
+        <div class="hn20-kicker">Welcome to Harbour North 2.5</div>
         <h2>Let’s build your retirement plan together.</h2>
         <p class="hn20-lead">We’ll guide you through the information needed to create the clearest possible picture of your retirement. Most people finish in about 15 minutes, and your progress is saved automatically.</p>
         <div class="hn20-welcome-actions">
@@ -3218,17 +3239,28 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
       <section class="hn20-step" data-step="2">
         <div class="hn20-kicker">Income and benefits</div>
         <h2>What income will support your household?</h2>
-        <p class="hn20-lead">Enter annual amounts before tax. Estimates are fine—you can update them later.</p>
+        <p class="hn20-lead">Enter monthly amounts before tax, then choose when benefits and pensions begin.</p>
         <div class="hn20-form-grid">
           <div class="hn20-field"><label>Your employment income</label><input id="wPrimarySalary" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per month"><small>Enter your typical gross monthly income.</small></div>
           <div class="hn20-field partner-field"><label>Partner’s employment income</label><input id="wPartnerSalary" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per month"><small>Enter typical gross monthly income.</small></div>
-          <div class="hn20-field"><label>Your CPP estimate at 65</label><input id="wPrimaryCpp" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"></div>
-          <div class="hn20-field partner-field"><label>Partner’s CPP estimate at 65</label><input id="wPartnerCpp" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"></div>
+          <div class="hn20-field"><label>Your CPP estimate</label><input id="wPrimaryCpp" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"></div>
+          <div class="hn20-field"><label>Your CPP start age</label><select id="wPrimaryCppAge"><option>60</option><option>61</option><option>62</option><option>63</option><option>64</option><option selected>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></div>
+          <div class="hn20-field partner-field"><label>Partner’s CPP estimate</label><input id="wPartnerCpp" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"></div>
+          <div class="hn20-field partner-field"><label>Partner’s CPP start age</label><select id="wPartnerCppAge"><option>60</option><option>61</option><option>62</option><option>63</option><option>64</option><option selected>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></div>
           <div class="hn20-field"><label>Your OAS estimate</label><input id="wPrimaryOas" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"><small>Leave blank to use Harbour North’s estimate.</small></div>
+          <div class="hn20-field"><label>Your OAS start age</label><select id="wPrimaryOasAge"><option selected>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></div>
           <div class="hn20-field partner-field"><label>Partner’s OAS estimate</label><input id="wPartnerOas" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"><small>Leave blank to use Harbour North’s estimate.</small></div>
-          <div class="hn20-field"><label>Your workplace pension</label><input id="wPrimaryPension" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month at retirement"></div>
-          <div class="hn20-field partner-field"><label>Partner’s workplace pension</label><input id="wPartnerPension" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month at retirement"></div>
-          <div class="hn20-field full"><label>Other ongoing household income</label><input id="wOtherIncome" type="number" min="0" step="10" inputmode="decimal" placeholder="WCB, rental or other income — CAD per month"><small>Combine ongoing monthly income here. You can separate each source later.</small></div>
+          <div class="hn20-field partner-field"><label>Partner’s OAS start age</label><select id="wPartnerOasAge"><option selected>65</option><option>66</option><option>67</option><option>68</option><option>69</option><option>70</option></select></div>
+          <div class="hn20-field"><label>Your workplace pension</label><input id="wPrimaryPension" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"></div>
+          <div class="hn20-field"><label>Your pension start age</label><input id="wPrimaryPensionAge" type="number" min="40" max="80" value="55"></div>
+          <div class="hn20-field partner-field"><label>Partner’s workplace pension</label><input id="wPartnerPension" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"></div>
+          <div class="hn20-field partner-field"><label>Partner’s pension start age</label><input id="wPartnerPensionAge" type="number" min="40" max="80" value="55"></div>
+          <div class="hn20-field"><label>Are pensions indexed?</label><select id="wPensionIndexed"><option value="true" selected>Yes, increase with inflation</option><option value="false">No, fixed payment</option></select></div>
+          <div class="hn20-field"><label>Other income owner</label><select id="wOtherIncomeOwner"><option>Household</option><option value="Primary">You</option><option class="partner-option" value="Partner">Partner</option></select></div>
+          <div class="hn20-field"><label>Other ongoing income</label><input id="wOtherIncome" type="number" min="0" step="10" inputmode="decimal" placeholder="WCB, rental or other — CAD per month"></div>
+          <div class="hn20-field"><label>Other income start age</label><input id="wOtherIncomeStartAge" type="number" min="0" max="110" value="0"><small>Use 0 when it is already being received.</small></div>
+          <div class="hn20-field"><label>Other income end age</label><input id="wOtherIncomeEndAge" type="number" min="1" max="110" value="110"></div>
+          <div class="hn20-field"><label>Is other income indexed?</label><select id="wOtherIncomeIndexed"><option value="true" selected>Yes</option><option value="false">No</option></select></div>
         </div>
         <div class="hn20-callout">All amounts on this page are monthly. Harbour North converts them to annual values for the retirement calculation.</div>
       </section>
@@ -3236,17 +3268,26 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
       <section class="hn20-step" data-step="3">
         <div class="hn20-kicker">Investments</div>
         <h2>Where is your retirement money today?</h2>
-        <p class="hn20-lead">Enter current balances. Keep household totals here; individual accounts can be separated later.</p>
+        <p class="hn20-lead">Enter balances, ownership and annual contributions. Contribution timing now feeds directly into the projection.</p>
         <div class="hn20-form-grid">
           <div class="hn20-field"><label>RRSP and RRIF balance</label><input id="wRrsp" type="number" min="0" step="1000" inputmode="decimal" placeholder="CAD"></div>
+          <div class="hn20-field"><label>RRSP owner</label><select id="wRrspOwner"><option value="Primary">You</option><option class="partner-option" value="Partner">Partner</option><option>Household</option></select></div>
           <div class="hn20-field"><label>Annual RRSP contribution</label><input id="wRrspContribution" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per year"></div>
+          <div class="hn20-field"><label>Contribute through age</label><input id="wRrspContributionEnd" type="number" min="0" max="80" placeholder="Defaults to retirement age"></div>
           <div class="hn20-field"><label>TFSA balance</label><input id="wTfsa" type="number" min="0" step="1000" inputmode="decimal" placeholder="CAD"></div>
+          <div class="hn20-field"><label>TFSA owner</label><select id="wTfsaOwner"><option value="Primary">You</option><option class="partner-option" value="Partner">Partner</option><option>Household</option></select></div>
           <div class="hn20-field"><label>Annual TFSA contribution</label><input id="wTfsaContribution" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per year"></div>
+          <div class="hn20-field"><label>Contribute through age</label><input id="wTfsaContributionEnd" type="number" min="0" max="80" placeholder="Defaults to retirement age"></div>
           <div class="hn20-field"><label>Non-registered balance</label><input id="wNonReg" type="number" min="0" step="1000" inputmode="decimal" placeholder="CAD"></div>
+          <div class="hn20-field"><label>Non-registered owner</label><select id="wNonRegOwner"><option>Household</option><option value="Primary">You</option><option class="partner-option" value="Partner">Partner</option></select></div>
           <div class="hn20-field"><label>Annual non-registered contribution</label><input id="wNonRegContribution" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per year"></div>
+          <div class="hn20-field"><label>Contribute through age</label><input id="wNonRegContributionEnd" type="number" min="0" max="80" placeholder="Defaults to retirement age"></div>
           <div class="hn20-field"><label>Cash savings balance</label><input id="wCash" type="number" min="0" step="1000" inputmode="decimal" placeholder="CAD"></div>
+          <div class="hn20-field"><label>Cash owner</label><select id="wCashOwner"><option>Household</option><option value="Primary">You</option><option class="partner-option" value="Partner">Partner</option></select></div>
           <div class="hn20-field"><label>Annual cash contribution</label><input id="wCashContribution" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per year"></div>
-          <div class="hn20-field full"><label>Emergency fund</label><input id="wEmergency" type="number" min="0" step="500" inputmode="decimal" placeholder="Cash kept specifically for emergencies"><small>Only enter this separately when it is not already included in the cash-savings balance.</small></div>
+          <div class="hn20-field"><label>Contribute through age</label><input id="wCashContributionEnd" type="number" min="0" max="80" placeholder="Defaults to retirement age"></div>
+          <div class="hn20-field"><label>Emergency fund</label><input id="wEmergency" type="number" min="0" step="500" inputmode="decimal" placeholder="Cash kept specifically for emergencies"></div>
+          <div class="hn20-field"><label>Is it already included in cash savings?</label><select id="wEmergencyIncluded"><option value="yes" selected>Yes — do not add it again</option><option value="no">No — it is held separately</option></select></div>
         </div>
       </section>
 
@@ -3266,26 +3307,34 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
       <section class="hn20-step" data-step="5">
         <div class="hn20-kicker">Debts</div>
         <h2>What do you currently owe?</h2>
-        <p class="hn20-lead">Current balances help Harbour North calculate net worth and identify obligations that may continue into retirement.</p>
+        <p class="hn20-lead">Add balances, interest rates and your intended payoff timing so debts are documented accurately.</p>
         <div class="hn20-form-grid">
           <div class="hn20-field"><label>Mortgage</label><input id="wMortgage" type="number" min="0" step="1000" placeholder="Current balance"></div>
+          <div class="hn20-field"><label>Mortgage interest rate</label><input id="wMortgageRate" type="number" min="0" max="30" step="0.1" placeholder="%"></div>
           <div class="hn20-field"><label>Line of credit</label><input id="wLoc" type="number" min="0" step="500" placeholder="Current balance"></div>
+          <div class="hn20-field"><label>Line-of-credit interest rate</label><input id="wLocRate" type="number" min="0" max="30" step="0.1" placeholder="%"></div>
           <div class="hn20-field"><label>Credit cards</label><input id="wCards" type="number" min="0" step="100" placeholder="Current balance"></div>
+          <div class="hn20-field"><label>Credit-card interest rate</label><input id="wCardsRate" type="number" min="0" max="40" step="0.1" placeholder="%"></div>
           <div class="hn20-field"><label>Vehicle and other loans</label><input id="wOtherDebt" type="number" min="0" step="500" placeholder="Current balance"></div>
-          <div class="hn20-field full"><label>Total monthly debt payments</label><input id="wDebtPayments" type="number" min="0" step="50" placeholder="CAD per month"></div>
+          <div class="hn20-field"><label>Other-loan interest rate</label><input id="wOtherDebtRate" type="number" min="0" max="30" step="0.1" placeholder="%"></div>
+          <div class="hn20-field"><label>Total monthly debt payments</label><input id="wDebtPayments" type="number" min="0" step="50" placeholder="CAD per month"></div>
+          <div class="hn20-field"><label>Target debt-free year</label><input id="wDebtFreeYear" type="number" min="2026" max="2100" placeholder="Optional"></div>
         </div>
       </section>
 
       <section class="hn20-step" data-step="6">
         <div class="hn20-kicker">Spending</div>
         <h2>What lifestyle should the plan support?</h2>
-        <p class="hn20-lead">Start with a practical monthly estimate. You can create a detailed budget after setup.</p>
+        <p class="hn20-lead">Start with a practical monthly estimate, then record later-life changes and recurring major costs.</p>
         <div class="hn20-form-grid">
           <div class="hn20-field"><label>Current household spending</label><input id="wCurrentSpend" type="number" min="0" step="100" placeholder="CAD per month"></div>
           <div class="hn20-field"><label>Desired retirement spending</label><input id="wRetirementSpend" type="number" min="0" step="100" placeholder="CAD per month"></div>
           <div class="hn20-field"><label>Annual retirement travel</label><input id="wTravel" type="number" min="0" step="500" placeholder="CAD per year"></div>
+          <div class="hn20-field"><label>Monthly spending after age 75</label><input id="wLaterSpend" type="number" min="0" step="100" placeholder="Leave blank to keep the same spending"></div>
           <div class="hn20-field"><label>Future one-time purchases</label><input id="wMajorPurchase" type="number" min="0" step="1000" placeholder="Total planned amount"></div>
           <div class="hn20-field"><label>Expected purchase year</label><input id="wMajorPurchaseYear" type="number" min="2026" max="2100" placeholder="Year"></div>
+          <div class="hn20-field"><label>Recurring major expense</label><input id="wRecurringExpense" type="number" min="0" step="500" placeholder="CAD per year"></div>
+          <div class="hn20-field"><label>Recurring expense years</label><div class="hn25-inline"><input id="wRecurringStartYear" type="number" min="2026" max="2100" placeholder="Start"><input id="wRecurringEndYear" type="number" min="2026" max="2100" placeholder="End"></div></div>
         </div>
       </section>
 
@@ -3300,6 +3349,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
           <div class="hn20-field"><label>Estate goal</label><input id="wEstateGoal" type="number" min="0" step="10000" placeholder="Desired estate in today’s dollars"></div>
           <div class="hn20-field"><label>Expected inheritance</label><input id="wInheritance" type="number" min="0" step="10000" placeholder="CAD"></div>
           <div class="hn20-field"><label>Expected inheritance year</label><input id="wInheritanceYear" type="number" min="2026" max="2100" placeholder="Year"></div>
+          <div class="hn20-field full"><label>How certain is the inheritance?</label><select id="wInheritanceCertainty"><option value="exclude">Uncertain — exclude from the core plan</option><option value="possible">Possible — save as a scenario only</option><option value="likely">Likely — include in the core plan</option></select><small>Conservative plans should not depend on uncertain inheritances.</small></div>
         </div>
       </section>
 
@@ -3344,6 +3394,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
   const q=id=>document.getElementById(id);
   const val=id=>q(id)?.value||'';
   const n=id=>Math.max(0,Number(val(id))||0);
+  const numeric=v=>Math.max(0,Number(v)||0);
   const fmt=v=>new Intl.NumberFormat('en-CA',{style:'currency',currency:'CAD',maximumFractionDigits:0}).format(Number(v)||0);
   const provinces=['Alberta','British Columbia','Manitoba','New Brunswick','Newfoundland and Labrador','Northwest Territories','Nova Scotia','Nunavut','Ontario','Prince Edward Island','Quebec','Saskatchewan','Yukon'];
   q('wProvince').innerHTML=provinces.map(p=>`<option${p==='British Columbia'?' selected':''}>${p}</option>`).join('');
@@ -3383,6 +3434,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
   function togglePartner(on){
     hasPartner=on;
     document.querySelectorAll('.partner-field').forEach(x=>x.style.display=on?'flex':'none');
+    document.querySelectorAll('.partner-option').forEach(x=>x.disabled=!on);
     document.querySelectorAll('[data-household]').forEach(x=>x.classList.toggle('selected',(x.dataset.household==='couple')===on));
   }
   document.querySelectorAll('[data-household]').forEach(b=>b.onclick=()=>togglePartner(b.dataset.household==='couple'));
@@ -3413,17 +3465,17 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     if(!x){x=income('Guided: '+kind,type,owner,amount,startAge,endAge,indexed,taxable);state.incomeSources.push(x)}
     Object.assign(x,{name:'Guided: '+kind,type,owner,annualAmount:amount,startAge,endAge,indexed,taxable});
   }
-  function upsertAccount(name,type,balance,contribution=0){
+  function upsertAccount(name,type,balance,contribution=0,owner='Household',contributionEndAge=0){
     let x=accountBy(name);
     if(balance<=0){if(x)state.accounts=state.accounts.filter(y=>y!==x);return}
-    if(!x){x=account('Guided: '+name,type,'Household',balance,contribution);state.accounts.push(x)}
-    Object.assign(x,{name:'Guided: '+name,type,owner:'Household',balance,annualContribution:contribution});
+    if(!x){x=account('Guided: '+name,type,owner,balance,contribution);state.accounts.push(x)}
+    Object.assign(x,{name:'Guided: '+name,type,owner,balance,annualContribution:contribution,contributionEndAge:numeric(contributionEndAge)});
   }
-  function upsertDebt(name,type,balance,payment=0){
+  function upsertDebt(name,type,balance,payment=0,rate=0,payoffYear=0){
     let x=debtBy(name);
     if(balance<=0){if(x)state.debts=state.debts.filter(y=>y!==x);return}
-    if(!x){x=debt('Guided: '+name,type,balance,payment,0);state.debts.push(x)}
-    Object.assign(x,{name:'Guided: '+name,type,balance,monthlyPayment:payment});
+    if(!x){x=debt('Guided: '+name,type,balance,payment,rate);state.debts.push(x)}
+    Object.assign(x,{name:'Guided: '+name,type,balance,monthlyPayment:payment,interestRate:rate,payoffYear:numeric(payoffYear)});
   }
   function upsertExpense(name,category,amount,frequency='Monthly'){
     let x=expenseBy(name);
@@ -3455,24 +3507,28 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     state.household.province=val('wProvince')||'British Columbia';
     state.household.planningAge=n('wPlanningAge')||95;
     state.household.estateTarget=n('wEstateGoal');
-    state.household.emergencyFundAmount=n('wEmergency');
+    state.household.emergencyFundAmount=val('wEmergencyIncluded')==='no'?n('wEmergency'):0;
+    state.household.emergencyFundRecorded=n('wEmergency');
+    state.household.emergencyFundIncludedInCash=val('wEmergencyIncluded')==='yes';
 
     const po=primary.name, pa=partner?.name||'Partner';
+    const ownerValue=id=>{const v=val(id);return v==='Primary'?po:v==='Partner'?pa:v||'Household'};
     const annual=id=>n(id)*12;
+    const pensionIndexed=val('wPensionIndexed')!=='false';
     upsertIncome('Primary employment','Salary',po,annual('wPrimarySalary'),0,primary.retirementAge,true,true);
     upsertIncome('Partner employment','Salary',pa,hasPartner?annual('wPartnerSalary'):0,0,partner?.retirementAge||65,true,true);
-    upsertIncome('Primary CPP','CPP',po,annual('wPrimaryCpp'),65,110,true,true);
-    upsertIncome('Partner CPP','CPP',pa,hasPartner?annual('wPartnerCpp'):0,65,110,true,true);
-    upsertIncome('Primary OAS','OAS',po,annual('wPrimaryOas'),65,110,true,true);
-    upsertIncome('Partner OAS','OAS',pa,hasPartner?annual('wPartnerOas'):0,65,110,true,true);
-    upsertIncome('Primary pension','Pension',po,annual('wPrimaryPension'),primary.retirementAge,110,true,true);
-    upsertIncome('Partner pension','Pension',pa,hasPartner?annual('wPartnerPension'):0,partner?.retirementAge||65,110,true,true);
-    upsertIncome('Other household income','Other','Household',annual('wOtherIncome'),0,110,true,true);
+    upsertIncome('Primary CPP','CPP',po,annual('wPrimaryCpp'),n('wPrimaryCppAge')||65,110,true,true);
+    upsertIncome('Partner CPP','CPP',pa,hasPartner?annual('wPartnerCpp'):0,n('wPartnerCppAge')||65,110,true,true);
+    upsertIncome('Primary OAS','OAS',po,annual('wPrimaryOas'),n('wPrimaryOasAge')||65,110,true,true);
+    upsertIncome('Partner OAS','OAS',pa,hasPartner?annual('wPartnerOas'):0,n('wPartnerOasAge')||65,110,true,true);
+    upsertIncome('Primary pension','Pension',po,annual('wPrimaryPension'),n('wPrimaryPensionAge')||primary.retirementAge,110,true,pensionIndexed);
+    upsertIncome('Partner pension','Pension',pa,hasPartner?annual('wPartnerPension'):0,n('wPartnerPensionAge')||partner?.retirementAge||65,110,true,pensionIndexed);
+    upsertIncome('Other household income','Other',ownerValue('wOtherIncomeOwner'),annual('wOtherIncome'),n('wOtherIncomeStartAge'),n('wOtherIncomeEndAge')||110,true,val('wOtherIncomeIndexed')!=='false');
 
-    upsertAccount('RRSP / RRIF','RRSP/RRIF',n('wRrsp'),n('wRrspContribution'));
-    upsertAccount('TFSA','TFSA',n('wTfsa'),n('wTfsaContribution'));
-    upsertAccount('Non-registered investments','Non-registered',n('wNonReg'),n('wNonRegContribution'));
-    upsertAccount('Cash savings','Cash',n('wCash'),n('wCashContribution'));
+    upsertAccount('RRSP / RRIF','RRSP/RRIF',n('wRrsp'),n('wRrspContribution'),ownerValue('wRrspOwner'),n('wRrspContributionEnd')||primary.retirementAge);
+    upsertAccount('TFSA','TFSA',n('wTfsa'),n('wTfsaContribution'),ownerValue('wTfsaOwner'),n('wTfsaContributionEnd')||primary.retirementAge);
+    upsertAccount('Non-registered investments','Non-registered',n('wNonReg'),n('wNonRegContribution'),ownerValue('wNonRegOwner'),n('wNonRegContributionEnd')||primary.retirementAge);
+    upsertAccount('Cash savings','Cash',n('wCash'),n('wCashContribution'),ownerValue('wCashOwner'),n('wCashContributionEnd')||primary.retirementAge);
     upsertAccount('Home','Real estate',n('wHome'));
     upsertAccount('Land and other real estate','Real estate',n('wLand'));
     upsertAccount('Vehicles','Other asset',n('wVehicles'));
@@ -3480,19 +3536,29 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     upsertAccount('Business and other assets','Other asset',n('wOtherAssets'));
 
     const dtotal=n('wMortgage')+n('wLoc')+n('wCards')+n('wOtherDebt'), pay=n('wDebtPayments');
-    upsertDebt('Mortgage','Mortgage',n('wMortgage'),distributePayment(n('wMortgage'),pay,dtotal));
-    upsertDebt('Line of credit','Line of credit',n('wLoc'),distributePayment(n('wLoc'),pay,dtotal));
-    upsertDebt('Credit cards','Credit card',n('wCards'),distributePayment(n('wCards'),pay,dtotal));
-    upsertDebt('Vehicle and other loans','Other',n('wOtherDebt'),distributePayment(n('wOtherDebt'),pay,dtotal));
+    const debtFreeYear=n('wDebtFreeYear');
+    upsertDebt('Mortgage','Mortgage',n('wMortgage'),distributePayment(n('wMortgage'),pay,dtotal),n('wMortgageRate'),debtFreeYear);
+    upsertDebt('Line of credit','Line of credit',n('wLoc'),distributePayment(n('wLoc'),pay,dtotal),n('wLocRate'),debtFreeYear);
+    upsertDebt('Credit cards','Credit card',n('wCards'),distributePayment(n('wCards'),pay,dtotal),n('wCardsRate'),debtFreeYear);
+    upsertDebt('Vehicle and other loans','Other',n('wOtherDebt'),distributePayment(n('wOtherDebt'),pay,dtotal),n('wOtherDebtRate'),debtFreeYear);
 
     const retireSpend=n('wRetirementSpend')||n('wCurrentSpend');
     upsertExpense('Retirement lifestyle','Essential',retireSpend,'Monthly');
+    const baseExpense=expenseBy('Retirement lifestyle');if(baseExpense)Object.assign(baseExpense,{startAge:0,endAge:n('wLaterSpend')>0?74:110});
+    upsertExpense('Later-life lifestyle','Essential',n('wLaterSpend'),'Monthly');
+    const laterExpense=expenseBy('Later-life lifestyle');if(laterExpense)Object.assign(laterExpense,{startAge:75,endAge:110});
     upsertExpense('Retirement travel','Travel',n('wTravel'),'Annual');
     upsertEvent('Major future purchase','Expense',n('wMajorPurchase'),n('wMajorPurchaseYear'));
-    upsertEvent('Expected inheritance','Inheritance',n('wInheritance'),n('wInheritanceYear'));
+    for(let y=2026;y<=2100;y++){const existing=eventBy('Recurring expense '+y);if(existing)state.events=state.events.filter(e=>e!==existing)}
+    if(n('wRecurringExpense')>0&&n('wRecurringStartYear')&&n('wRecurringEndYear')>=n('wRecurringStartYear')){
+      for(let y=n('wRecurringStartYear');y<=n('wRecurringEndYear');y++)upsertEvent('Recurring expense '+y,'Expense',n('wRecurringExpense'),y);
+    }
+    const inheritanceMode=val('wInheritanceCertainty');
+    upsertEvent('Expected inheritance','Inheritance',inheritanceMode==='likely'?n('wInheritance'):0,n('wInheritanceYear'));
+    state.household.inheritanceScenario={amount:n('wInheritance'),year:n('wInheritanceYear'),certainty:inheritanceMode};
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.4';
+    state.meta.appVersion='2.5';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
@@ -3509,7 +3575,28 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     set('wPrimaryName',primary.name);set('wPrimaryBirth',primary.birthDate);set('wPrimaryRetire',primary.retirementAge||55);
     set('wPartnerName',partner.name);set('wPartnerBirth',partner.birthDate);set('wPartnerRetire',partner.retirementAge||55);
     set('wProvince',state.household?.province||'British Columbia');set('wPlanningAge',state.household?.planningAge||95);
-    set('wEstateGoal',state.household?.estateTarget||'');set('wEmergency',state.household?.emergencyFundAmount||'');
+    set('wEstateGoal',state.household?.estateTarget||'');
+    set('wEmergency',state.household?.emergencyFundRecorded||state.household?.emergencyFundAmount||'');
+    set('wEmergencyIncluded',state.household?.emergencyFundIncludedInCash===false?'no':'yes');
+    const getIncome=name=>state.incomeSources?.find(x=>x.name==='Guided: '+name);
+    const getAccount=name=>state.accounts?.find(x=>x.name==='Guided: '+name);
+    const getDebt=name=>state.debts?.find(x=>x.name==='Guided: '+name);
+    const pcpp=getIncome('Primary CPP'),pcpp2=getIncome('Partner CPP'),poas=getIncome('Primary OAS'),poas2=getIncome('Partner OAS');
+    const pp=getIncome('Primary pension'),pp2=getIncome('Partner pension'),oi=getIncome('Other household income');
+    set('wPrimaryCppAge',pcpp?.startAge||65);set('wPartnerCppAge',pcpp2?.startAge||65);set('wPrimaryOasAge',poas?.startAge||65);set('wPartnerOasAge',poas2?.startAge||65);
+    set('wPrimaryPensionAge',pp?.startAge||primary.retirementAge||55);set('wPartnerPensionAge',pp2?.startAge||partner.retirementAge||55);
+    set('wPensionIndexed',(pp?.indexed??pp2?.indexed??true)?'true':'false');
+    set('wOtherIncomeStartAge',oi?.startAge||0);set('wOtherIncomeEndAge',oi?.endAge||110);set('wOtherIncomeIndexed',oi?.indexed===false?'false':'true');
+    for(const [prefix,name] of [['Rrsp','RRSP / RRIF'],['Tfsa','TFSA'],['NonReg','Non-registered investments'],['Cash','Cash savings']]){
+      const a=getAccount(name);if(!a)continue;
+      let owner=a.owner==='Household'?'Household':a.owner===partner.name?'Partner':'Primary';
+      set('w'+prefix+'Owner',owner);set('w'+prefix+'ContributionEnd',a.contributionEndAge||'');
+    }
+    const mortgage=getDebt('Mortgage'),loc=getDebt('Line of credit'),cards=getDebt('Credit cards'),other=getDebt('Vehicle and other loans');
+    set('wMortgageRate',mortgage?.interestRate||'');set('wLocRate',loc?.interestRate||'');set('wCardsRate',cards?.interestRate||'');set('wOtherDebtRate',other?.interestRate||'');
+    set('wDebtFreeYear',mortgage?.payoffYear||loc?.payoffYear||cards?.payoffYear||other?.payoffYear||'');
+    const later=state.expenses?.find(x=>x.name==='Guided: Later-life lifestyle');set('wLaterSpend',later?.amount||'');
+    const inherit=state.household?.inheritanceScenario||{};set('wInheritance',inherit.amount||'');set('wInheritanceYear',inherit.year||'');set('wInheritanceCertainty',inherit.certainty||'exclude');
   }
 
   function completeness(){
@@ -3535,11 +3622,11 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     const debts=n('wMortgage')+n('wLoc')+n('wCards')+n('wOtherDebt');
     const cards=[
       ['Household',hasPartner?`${val('wPrimaryName')||'You'} and ${val('wPartnerName')||'your partner'}`:(val('wPrimaryName')||'Individual plan'),`${val('wProvince')||'Province not entered'}`],
-      ['Income and benefits',fmt(monthlyIncomeTotal)+' entered per month',fmt(incomeTotal)+' annual equivalent'],
-      ['Investments',fmt(investments)+' investable assets',fmt(annualContributions)+' contributed annually'],
+      ['Income and benefits',fmt(monthlyIncomeTotal)+' entered per month',`CPP starts at ${n('wPrimaryCppAge')||65}${hasPartner?' / '+(n('wPartnerCppAge')||65):''}; OAS at ${n('wPrimaryOasAge')||65}${hasPartner?' / '+(n('wPartnerOasAge')||65):''}`],
+      ['Investments',fmt(investments)+' investable assets',fmt(annualContributions)+' contributed annually with account ownership recorded'],
       ['Property and assets',fmt(assets)+' non-investment assets','Included in complete net worth'],
-      ['Debts',fmt(debts)+' outstanding',fmt(n('wDebtPayments'))+' monthly payments'],
-      ['Retirement lifestyle',fmt((n('wRetirementSpend')||n('wCurrentSpend'))*12)+' annually',fmt(n('wTravel'))+' annual travel'],
+      ['Debts',fmt(debts)+' outstanding',fmt(n('wDebtPayments'))+' monthly payments'+(n('wDebtFreeYear')?' · target debt-free '+n('wDebtFreeYear'):'' )],
+      ['Retirement lifestyle',fmt((n('wRetirementSpend')||n('wCurrentSpend'))*12)+' annually',n('wLaterSpend')?fmt(n('wLaterSpend')*12)+' annually after age 75':fmt(n('wTravel'))+' annual travel'],
       ['Retirement timing',`Age ${n('wPrimaryRetire')||55}${hasPartner?` / ${n('wPartnerRetire')||55}`:''}`,`Plan through age ${n('wPlanningAge')||95}`],
       ['Plan completeness',completeness()+'% complete','Missing details can be added later']
     ];
