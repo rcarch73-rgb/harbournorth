@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.0.1</title>
+<title>Harbour North 2.1</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -270,9 +270,68 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
 }
 </style>
 
+
+<style id="hn21Styles">
+.hn21-snapshot{
+  display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px;
+  padding:34px;background:#fff;border:1px solid var(--line);border-radius:22px;
+  box-shadow:var(--shadow);margin-bottom:18px;align-items:stretch
+}
+.hn21-status-line{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:850;color:var(--muted);margin:12px 0 14px}
+.hn21-status-dot{width:10px;height:10px;border-radius:50%;background:#93a2ab;box-shadow:0 0 0 5px rgba(147,162,171,.12)}
+.hn21-status-dot.pass{background:var(--ok);box-shadow:0 0 0 5px rgba(46,125,98,.12)}
+.hn21-status-dot.attention{background:var(--warn);box-shadow:0 0 0 5px rgba(166,106,22,.12)}
+.hn21-status-dot.fail{background:var(--danger);box-shadow:0 0 0 5px rgba(177,75,75,.12)}
+.hn21-greeting{font-size:42px;line-height:1.08;letter-spacing:-.045em;color:var(--navy);margin:0 0 10px}
+.hn21-summary{font-size:18px;line-height:1.55;color:#435564;max-width:710px;margin:0}
+.hn21-analysis-note{font-size:13px;color:var(--muted);margin:12px 0 0}
+.hn21-primary-actions{margin-top:24px}
+.hn21-confidence-panel{
+  border-radius:18px;background:var(--navy);color:#fff;padding:25px;display:flex;
+  flex-direction:column;justify-content:center;min-height:210px
+}
+.hn21-confidence-label{font-size:13px;font-weight:800;opacity:.78}
+.hn21-confidence-panel>strong{font-size:58px;line-height:1;letter-spacing:-.055em;margin:11px 0 8px}
+.hn21-confidence-panel>span{font-size:12px;line-height:1.4;opacity:.7}
+.hn21-confidence-panel .badge{align-self:flex-start;margin-top:17px;background:rgba(255,255,255,.14);color:#fff;border:0}
+.hn21-key-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.hn21-key-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;min-width:0}
+.hn21-key-card.featured{background:#edf5f7;border-color:#cfe0e5}
+.hn21-key-card>span{display:block;font-size:12px;font-weight:800;color:var(--muted);margin-bottom:10px}
+.hn21-key-card>strong{display:block;font-size:27px;line-height:1.12;color:var(--navy);letter-spacing:-.035em;overflow-wrap:anywhere}
+.hn21-key-card>small{display:block;font-size:11px;line-height:1.35;color:var(--muted);margin-top:8px}
+.hn21-next-card{
+  display:grid;grid-template-columns:auto 1fr auto;gap:17px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin-bottom:18px
+}
+.hn21-next-icon{width:44px;height:44px;border-radius:14px;background:var(--blue2);color:var(--blue);display:grid;place-items:center;font-size:23px;font-weight:900}
+.hn21-next-card h3{margin:3px 0 3px;color:var(--navy);font-size:18px}
+.hn21-next-card p{margin:0;color:var(--muted);font-size:13px}
+.hn21-analysis-card{box-shadow:none}
+.hn21-details{margin:18px 0 0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.hn21-details>summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between}
+.hn21-details>summary::-webkit-details-marker{display:none}
+.hn21-details>summary div{display:flex;flex-direction:column;gap:4px}
+.hn21-details>summary strong{color:var(--navy)}
+.hn21-details>summary span{font-size:12px;color:var(--muted)}
+.hn21-chevron{font-size:22px!important;transition:transform .15s ease}
+.hn21-details[open] .hn21-chevron{transform:rotate(180deg)}
+.hn21-details-body{border-top:1px solid var(--line);padding:20px}
+#readinessBadge{font-size:20px;color:var(--navy)}
+@media(max-width:850px){
+ .hn21-snapshot{grid-template-columns:1fr}.hn21-confidence-panel{min-height:auto}
+ .hn21-key-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .hn21-snapshot{padding:22px}.hn21-greeting{font-size:34px}
+ .hn21-key-grid{grid-template-columns:1fr}.hn21-next-card{grid-template-columns:auto 1fr}
+ .hn21-next-card .btn{grid-column:1/-1;width:100%}
+}
+</style>
+
 </head>
 <body>
-<header><div><h1>Harbour North</h1><p>1.3.3 · Runtime Status Fix</p></div><div id="saveStatus" class="status">Ready</div></header>
+<header><div><h1>Harbour North</h1><p>Retirement planning, made clear.</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs streamlined-tabs">
 <button class="tab active" data-page="home">Overview</button>
@@ -282,23 +341,112 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
 <button class="tab" data-page="report">Report</button>
 </nav>
 <section id="home" class="page active">
-<div class="hero plan-banner"><div><div class="eyebrow">Your retirement plan</div><div id="greeting" class="plan-message">Welcome to Harbour North</div><p id="planSummary" class="muted">Complete your household and financial ledger to begin building your plan.</p><div class="actions"><button class="btn primary" data-goto="planhub">Review your plan</button><button class="btn" data-goto="ledger">Update finances</button></div></div><div class="health"><div id="homeScore" class="score">0</div><div><strong>Retirement readiness</strong><p id="scoreLabel" class="muted">Building your financial foundation.</p></div></div></div>
-<div class="summary-grid"><div class="metric">Investable assets<strong id="mInvestable">$0</strong><div class="submetric">Cash and investment accounts</div></div><div class="metric">Total net worth<strong id="mNetWorth">$0</strong><div class="submetric">Assets less recorded debt</div></div><div class="metric">Annual income<strong id="mIncome">$0</strong><div class="submetric">Current active income sources</div></div><div class="metric">Annual spending<strong id="mSpending">$0</strong><div class="submetric">All recorded spending needs</div></div></div>
-<div class="card background-status-card">
- <div class="row-head"><div><div class="eyebrow">Automatic analysis</div><h3 id="backgroundHeadline">Checking your plan…</h3><p id="backgroundMessage" class="muted">Audit, validation, setup, health and retirement-risk checks run automatically.</p></div><span id="backgroundBadge" class="badge warn">Checking</span></div>
- <div id="backgroundMetrics" class="background-metrics">
-  <div><span>Plan checks</span><strong id="bgChecks">—</strong></div>
-  <div><span>Retirement confidence</span><strong id="bgConfidence">—</strong></div>
-  <div><span>First shortfall</span><strong id="bgShortfall">—</strong></div>
- </div>
- <div id="backgroundIssues" class="vital-list"></div>
+<div class="hn21-snapshot">
+  <div class="hn21-snapshot-main">
+    <div class="eyebrow">Your retirement snapshot</div>
+    <div class="hn21-status-line">
+      <span id="hn21StatusDot" class="hn21-status-dot checking"></span>
+      <span id="backgroundHeadline">Checking your plan…</span>
+    </div>
+    <h2 id="greeting" class="hn21-greeting">Welcome to Harbour North</h2>
+    <p id="planSummary" class="hn21-summary">Complete your information to build your retirement picture.</p>
+    <p id="backgroundMessage" class="hn21-analysis-note">Your calculations and retirement-risk analysis run automatically.</p>
+    <div class="actions hn21-primary-actions">
+      <button class="btn primary" data-goto="planhub">Review your plan</button>
+      <button class="btn" data-goto="resulthub">See detailed results</button>
+    </div>
+  </div>
+  <div class="hn21-confidence-panel">
+    <div class="hn21-confidence-label">Retirement confidence</div>
+    <strong id="bgConfidence">—</strong>
+    <span>Automatic market-risk analysis</span>
+    <div id="backgroundBadge" class="badge warn">Checking</div>
+  </div>
 </div>
-<div class="dashboard-grid">
-<div class="card flush"><div class="card-head"><div class="row-head"><div><h3 style="margin:0">Readiness breakdown</h3><p class="muted" style="margin:5px 0 0">Each category shows how the score was earned.</p></div><span id="readinessBadge" class="badge warn">Getting started</span></div></div><div class="card-body"><div id="scoreBreakdown" class="score-breakdown"></div></div></div>
-<div class="card flush"><div class="card-head"><h3 style="margin:0">Smart recommendations</h3><p class="muted" style="margin:5px 0 0">Prioritized from your current information.</p></div><div id="recommendations" class="card-body"></div></div>
+
+<div class="hn21-key-grid">
+  <div class="hn21-key-card featured">
+    <span>Target retirement</span>
+    <strong id="hn21RetirementAge">—</strong>
+    <small id="hn21RetirementDetail">Based on your household plan</small>
+  </div>
+  <div class="hn21-key-card">
+    <span>Investable assets</span>
+    <strong id="mInvestable">$0</strong>
+    <small>Available to fund retirement</small>
+  </div>
+  <div class="hn21-key-card">
+    <span>Total net worth</span>
+    <strong id="mNetWorth">$0</strong>
+    <small>All assets less recorded debt</small>
+  </div>
+  <div class="hn21-key-card">
+    <span>Retirement lifestyle</span>
+    <strong id="mSpending">$0</strong>
+    <small>Recorded annual spending</small>
+  </div>
 </div>
-<div class="grid two"><div class="card"><h3>Plan strengths</h3><ul id="strengths" class="checklist"></ul></div><div class="card"><h3>Next actions</h3><ul id="actionsList" class="checklist"></ul></div></div>
-<div class="card"><div class="row-head"><div><h3>Financial timeline</h3><p class="muted">Major goals, income starts, and retirement milestones in chronological order.</p></div><span id="timelineCount" class="pill">0 events</span></div><div id="timeline" class="timeline"></div></div>
+
+<div class="hn21-next-card">
+  <div class="hn21-next-icon">→</div>
+  <div>
+    <div class="eyebrow">Recommended next step</div>
+    <h3 id="hn21NextAction">Complete your plan information</h3>
+    <p id="hn21NextDetail">Harbour North will identify the highest-value next action from your information.</p>
+  </div>
+  <button class="btn" data-goto="planhub">Improve my plan</button>
+</div>
+
+<div class="card background-status-card hn21-analysis-card">
+  <div class="row-head">
+    <div>
+      <div class="eyebrow">Plan health</div>
+      <h3>What needs your attention</h3>
+      <p class="muted">Only important planning or calculation issues appear here.</p>
+    </div>
+  </div>
+  <div id="backgroundMetrics" class="background-metrics">
+    <div><span>Plan checks</span><strong id="bgChecks">—</strong></div>
+    <div><span>First shortfall</span><strong id="bgShortfall">—</strong></div>
+    <div><span>Plan completeness</span><strong id="homeScore">0%</strong></div>
+  </div>
+  <div id="backgroundIssues" class="vital-list"></div>
+</div>
+
+<details class="hn21-details">
+  <summary>
+    <div>
+      <strong>Explore your planning details</strong>
+      <span>Income, readiness, recommendations and timeline</span>
+    </div>
+    <span class="hn21-chevron">⌄</span>
+  </summary>
+  <div class="hn21-details-body">
+    <div class="summary-grid">
+      <div class="metric">Annual income<strong id="mIncome">$0</strong><div class="submetric">Current active income sources</div></div>
+      <div class="metric">Plan completeness<strong id="hn21Completeness">0%</strong><div class="submetric" id="scoreLabel">Building your financial foundation</div></div>
+      <div class="metric">Readiness status<strong id="readinessBadge">Getting started</strong><div class="submetric">Quality of information entered</div></div>
+    </div>
+    <div class="dashboard-grid">
+      <div class="card flush">
+        <div class="card-head"><h3 style="margin:0">Plan completeness</h3><p class="muted" style="margin:5px 0 0">See where additional information would improve the plan.</p></div>
+        <div class="card-body"><div id="scoreBreakdown" class="score-breakdown"></div></div>
+      </div>
+      <div class="card flush">
+        <div class="card-head"><h3 style="margin:0">Recommendations</h3><p class="muted" style="margin:5px 0 0">Prioritized from your current information.</p></div>
+        <div id="recommendations" class="card-body"></div>
+      </div>
+    </div>
+    <div class="grid two">
+      <div class="card"><h3>Plan strengths</h3><ul id="strengths" class="checklist"></ul></div>
+      <div class="card"><h3>Next actions</h3><ul id="actionsList" class="checklist"></ul></div>
+    </div>
+    <div class="card">
+      <div class="row-head"><div><h3>Financial timeline</h3><p class="muted">Retirement, benefit and major financial milestones.</p></div><span id="timelineCount" class="pill">0 events</span></div>
+      <div id="timeline" class="timeline"></div>
+    </div>
+  </div>
+</details>
 </section>
 <section id="planhub" class="page">
 <div class="hero"><div class="eyebrow">Your information</div><h2>Build and maintain your plan</h2><p class="muted">Keep the information below current. Harbour North automatically recalculates projections and plan checks as your information changes.</p></div>
@@ -1320,21 +1468,42 @@ function timelineItems(){
 }
 function renderHome(){
  const t=totals(),r=readiness(),name=state.people[0].name?.trim();
- document.getElementById('greeting').textContent=name?`Good ${daypart()}, ${name.split(' ')[0]}`:'Welcome to Harbour North';
- const retirement=state.people[0].retirementAge;
- let status='Build your financial foundation to prepare for a retirement projection.';
- if(r.score>=85)status=`Your financial foundation is strong and ready for projection testing at retirement age ${retirement}.`;
- else if(r.score>=65)status=`Your plan is taking shape. Complete the priority items below before projection testing.`;
+ document.getElementById('greeting').textContent=name?`Good ${daypart()}, ${name.split(' ')[0]}`:'Your retirement picture';
+ const primary=state.people[0],partner=state.hasPartner?state.people[1]:null;
+ const primaryAge=num(primary?.retirementAge)||0,partnerAge=num(partner?.retirementAge)||0;
+ const retirementText=partner&&partnerAge?`Ages ${primaryAge} and ${partnerAge}`:`Age ${primaryAge||'—'}`;
+ document.getElementById('hn21RetirementAge').textContent=retirementText;
+ document.getElementById('hn21RetirementDetail').textContent=partner&&partnerAge?'Your planned household retirement ages':'Your planned retirement age';
+
+ let status='Add the remaining information so Harbour North can create a dependable retirement picture.';
+ if(r.score>=85)status=`Your core financial information is ready. Harbour North is testing whether the plan can support retirement at ${retirementText.toLowerCase()}.`;
+ else if(r.score>=65)status='Your plan is taking shape. A few important details will make the result more dependable.';
  document.getElementById('planSummary').textContent=status;
- document.getElementById('mInvestable').textContent=money(t.invest);document.getElementById('mNetWorth').textContent=money(t.netWorth);document.getElementById('mIncome').textContent=money(t.annualIncome);document.getElementById('mSpending').textContent=money(t.annualSpend);
- const score=document.getElementById('homeScore');score.textContent=r.score;score.classList.toggle('warn',r.score<70);
- document.getElementById('scoreLabel').textContent=r.score>=85?'Strong financial foundation':r.score>=65?'Plan is taking shape':'More information is needed';
- const badge=document.getElementById('readinessBadge');badge.textContent=r.score>=85?'Strong':r.score>=65?'Developing':'Getting started';badge.className='badge '+(r.score>=70?'good':'warn');
+
+ document.getElementById('mInvestable').textContent=money(t.invest);
+ document.getElementById('mNetWorth').textContent=money(t.netWorth);
+ document.getElementById('mIncome').textContent=money(t.annualIncome);
+ document.getElementById('mSpending').textContent=money(t.annualSpend);
+
+ const scorePct=Math.max(0,Math.min(100,r.score));
+ document.getElementById('homeScore').textContent=scorePct+'%';
+ document.getElementById('hn21Completeness').textContent=scorePct+'%';
+ document.getElementById('scoreLabel').textContent=r.score>=85?'Strong information foundation':r.score>=65?'Plan is taking shape':'More information is needed';
+ const badge=document.getElementById('readinessBadge');
+ badge.textContent=r.score>=85?'Strong':r.score>=65?'Developing':'Getting started';
+
  document.getElementById('scoreBreakdown').innerHTML=r.categories.map(c=>{const pct=Math.round(c.score/c.max*100);return `<div class="score-row"><strong>${esc(c.label)}</strong><div class="score-track"><div class="score-fill ${pct>=80?'goodfill':pct<55?'warnfill':''}" style="width:${pct}%"></div></div><div class="score-value">${c.score}/${c.max}</div></div>`}).join('');
- const recs=recommendations(r,t);document.getElementById('recommendations').innerHTML=recs.map((x,i)=>`<div class="recommendation"><strong>${i+1}. ${esc(x[0])}</strong><span class="muted">${esc(x[1])}</span></div>`).join('');
+ const recs=recommendations(r,t);
+ document.getElementById('recommendations').innerHTML=recs.map((x,i)=>`<div class="recommendation"><strong>${i+1}. ${esc(x[0])}</strong><span class="muted">${esc(x[1])}</span></div>`).join('');
+ const topRec=recs[0]||['Review your retirement picture','Your core information is ready.'];
+ document.getElementById('hn21NextAction').textContent=topRec[0];
+ document.getElementById('hn21NextDetail').textContent=topRec[1];
+
  document.getElementById('strengths').innerHTML=(r.flags.filter(x=>x[0]==='good').slice(0,5).map(x=>`<li>${esc(x[1])}</li>`).join('')||'<li>Complete more of your profile to identify strengths.</li>');
  document.getElementById('actionsList').innerHTML=(r.flags.filter(x=>x[0]==='action').slice(0,5).map(x=>`<li>${esc(x[1])}</li>`).join('')||'<li>Your financial foundation is ready for projection testing.</li>');
- const items=timelineItems();document.getElementById('timelineCount').textContent=`${items.length} event${items.length===1?'':'s'}`;document.getElementById('timeline').innerHTML=items.length?items.slice(0,12).map(x=>`<div class="timeline-item"><div class="timeline-year">${x.year}</div><div class="timeline-name"><strong>${esc(x.name)}</strong></div><div class="muted">${esc(x.detail)}</div></div>`).join(''):'<div class="empty">Add retirement ages, future income, or timeline events to build your financial timeline.</div>';
+ const items=timelineItems();
+ document.getElementById('timelineCount').textContent=`${items.length} event${items.length===1?'':'s'}`;
+ document.getElementById('timeline').innerHTML=items.length?items.slice(0,12).map(x=>`<div class="timeline-item"><div class="timeline-year">${x.year}</div><div class="timeline-name"><strong>${esc(x.name)}</strong></div><div class="muted">${esc(x.detail)}</div></div>`).join(''):'<div class="empty">Add retirement ages, future income, or timeline events to build your financial timeline.</div>';
  if(typeof scheduleBackgroundAnalysis==='function')scheduleBackgroundAnalysis();
 }
 
@@ -2330,6 +2499,8 @@ function renderBackgroundAnalysis(){
  const failures=r.checks.filter(x=>!x.ok&&x.level==='fail'),warnings=r.checks.filter(x=>!x.ok&&x.level==='warn');
  const status=failures.length?'fail':warnings.length||r.firstShort||(r.mc&&r.mc.successRate<.9)?'attention':'pass';
  card.classList.remove('pass','attention','fail');card.classList.add(status);
+ const statusDot=document.getElementById('hn21StatusDot');
+ if(statusDot){statusDot.className='hn21-status-dot '+status}
  const badge=document.getElementById('backgroundBadge');
  badge.textContent=status==='pass'?'Passed':status==='attention'?'Attention':'Failed';
  badge.className='badge '+(status==='pass'?'good':'warn');
@@ -2348,6 +2519,13 @@ function renderBackgroundAnalysis(){
  if(r.firstShort)vital.push({level:'fail',text:`The deterministic projection first becomes unfunded in ${r.firstShort}.`});
  if(!vital.length)vital.push({level:'good',text:'No vital issues require action.'});
  document.getElementById('backgroundIssues').innerHTML=vital.slice(0,5).map(x=>`<div class="vital-item ${x.level}">${esc(x.text)}</div>`).join('');
+ const actionTitle=document.getElementById('hn21NextAction'),actionDetail=document.getElementById('hn21NextDetail');
+ if(actionTitle&&actionDetail){
+  if(failures.length){actionTitle.textContent='Review a calculation issue';actionDetail.textContent=failures[0].detail}
+  else if(r.firstShort){actionTitle.textContent='Address the projected shortfall';actionDetail.textContent=`The current plan first becomes unfunded in ${r.firstShort}.`}
+  else if(r.mc&&r.mc.successRate<.8){actionTitle.textContent='Strengthen retirement resilience';actionDetail.textContent='Review retirement timing, spending or savings to improve confidence.'}
+  else if(r.mc&&r.mc.successRate<.9){actionTitle.textContent='Review downside scenarios';actionDetail.textContent='The plan is funded in the standard projection, but market risk deserves attention.'}
+ }
 }
 async function runBackgroundAnalysis(){
  if(backgroundAnalysis.running)return;
@@ -2462,7 +2640,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     <main class="hn20-wizard-main">
       <section class="hn20-step hn20-welcome active" data-step="0">
         <div class="hn20-welcome-mark">⌁</div>
-        <div class="hn20-kicker">Welcome to Harbour North 2.0.1</div>
+        <div class="hn20-kicker">Welcome to Harbour North 2.1</div>
         <h2>Let’s build your retirement plan together.</h2>
         <p class="hn20-lead">We’ll guide you through the information needed to create the clearest possible picture of your retirement. Most people finish in about 15 minutes, and your progress is saved automatically.</p>
         <div class="hn20-welcome-actions">
@@ -2766,7 +2944,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     upsertEvent('Expected inheritance','Inheritance',n('wInheritance'),n('wInheritanceYear'));
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.0.1';
+    state.meta.appVersion='2.1';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
