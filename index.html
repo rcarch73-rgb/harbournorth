@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.0</title>
+<title>Harbour North 2.0.1</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -2462,7 +2462,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     <main class="hn20-wizard-main">
       <section class="hn20-step hn20-welcome active" data-step="0">
         <div class="hn20-welcome-mark">⌁</div>
-        <div class="hn20-kicker">Welcome to Harbour North 2.0</div>
+        <div class="hn20-kicker">Welcome to Harbour North 2.0.1</div>
         <h2>Let’s build your retirement plan together.</h2>
         <p class="hn20-lead">We’ll guide you through the information needed to create the clearest possible picture of your retirement. Most people finish in about 15 minutes, and your progress is saved automatically.</p>
         <div class="hn20-welcome-actions">
@@ -2494,15 +2494,17 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
         <h2>What income will support your household?</h2>
         <p class="hn20-lead">Enter annual amounts before tax. Estimates are fine—you can update them later.</p>
         <div class="hn20-form-grid">
-          <div class="hn20-field"><label>Your employment income</label><input id="wPrimarySalary" type="number" min="0" step="1000" placeholder="CAD per year"></div>
-          <div class="hn20-field partner-field"><label>Partner’s employment income</label><input id="wPartnerSalary" type="number" min="0" step="1000" placeholder="CAD per year"></div>
-          <div class="hn20-field"><label>Your CPP estimate at 65</label><input id="wPrimaryCpp" type="number" min="0" step="100" placeholder="CAD per year"></div>
-          <div class="hn20-field partner-field"><label>Partner’s CPP estimate at 65</label><input id="wPartnerCpp" type="number" min="0" step="100" placeholder="CAD per year"></div>
-          <div class="hn20-field"><label>Your workplace pension</label><input id="wPrimaryPension" type="number" min="0" step="100" placeholder="Annual pension at retirement"></div>
-          <div class="hn20-field partner-field"><label>Partner’s workplace pension</label><input id="wPartnerPension" type="number" min="0" step="100" placeholder="Annual pension at retirement"></div>
-          <div class="hn20-field"><label>Other ongoing household income</label><input id="wOtherIncome" type="number" min="0" step="100" placeholder="WCB, rental or other annual income"></div>
+          <div class="hn20-field"><label>Your employment income</label><input id="wPrimarySalary" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per month"><small>Enter your typical gross monthly income.</small></div>
+          <div class="hn20-field partner-field"><label>Partner’s employment income</label><input id="wPartnerSalary" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per month"><small>Enter typical gross monthly income.</small></div>
+          <div class="hn20-field"><label>Your CPP estimate at 65</label><input id="wPrimaryCpp" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"></div>
+          <div class="hn20-field partner-field"><label>Partner’s CPP estimate at 65</label><input id="wPartnerCpp" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"></div>
+          <div class="hn20-field"><label>Your OAS estimate</label><input id="wPrimaryOas" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"><small>Leave blank to use Harbour North’s estimate.</small></div>
+          <div class="hn20-field partner-field"><label>Partner’s OAS estimate</label><input id="wPartnerOas" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month"><small>Leave blank to use Harbour North’s estimate.</small></div>
+          <div class="hn20-field"><label>Your workplace pension</label><input id="wPrimaryPension" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month at retirement"></div>
+          <div class="hn20-field partner-field"><label>Partner’s workplace pension</label><input id="wPartnerPension" type="number" min="0" step="10" inputmode="decimal" placeholder="CAD per month at retirement"></div>
+          <div class="hn20-field full"><label>Other ongoing household income</label><input id="wOtherIncome" type="number" min="0" step="10" inputmode="decimal" placeholder="WCB, rental or other income — CAD per month"><small>Combine ongoing monthly income here. You can separate each source later.</small></div>
         </div>
-        <div class="hn20-callout">OAS can be estimated automatically. Add exact benefit details later for a more precise result.</div>
+        <div class="hn20-callout">All amounts on this page are monthly. Harbour North converts them to annual values for the retirement calculation.</div>
       </section>
 
       <section class="hn20-step" data-step="3">
@@ -2510,12 +2512,15 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
         <h2>Where is your retirement money today?</h2>
         <p class="hn20-lead">Enter current balances. Keep household totals here; individual accounts can be separated later.</p>
         <div class="hn20-form-grid">
-          <div class="hn20-field"><label>RRSP and RRIF</label><input id="wRrsp" type="number" min="0" step="1000" placeholder="CAD"></div>
-          <div class="hn20-field"><label>TFSA</label><input id="wTfsa" type="number" min="0" step="1000" placeholder="CAD"></div>
-          <div class="hn20-field"><label>Non-registered investments</label><input id="wNonReg" type="number" min="0" step="1000" placeholder="CAD"></div>
-          <div class="hn20-field"><label>Cash savings</label><input id="wCash" type="number" min="0" step="1000" placeholder="CAD"></div>
-          <div class="hn20-field"><label>Annual investment contributions</label><input id="wContributions" type="number" min="0" step="500" placeholder="CAD per year"></div>
-          <div class="hn20-field"><label>Emergency fund</label><input id="wEmergency" type="number" min="0" step="500" placeholder="Cash kept specifically for emergencies"></div>
+          <div class="hn20-field"><label>RRSP and RRIF balance</label><input id="wRrsp" type="number" min="0" step="1000" inputmode="decimal" placeholder="CAD"></div>
+          <div class="hn20-field"><label>Annual RRSP contribution</label><input id="wRrspContribution" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per year"></div>
+          <div class="hn20-field"><label>TFSA balance</label><input id="wTfsa" type="number" min="0" step="1000" inputmode="decimal" placeholder="CAD"></div>
+          <div class="hn20-field"><label>Annual TFSA contribution</label><input id="wTfsaContribution" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per year"></div>
+          <div class="hn20-field"><label>Non-registered balance</label><input id="wNonReg" type="number" min="0" step="1000" inputmode="decimal" placeholder="CAD"></div>
+          <div class="hn20-field"><label>Annual non-registered contribution</label><input id="wNonRegContribution" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per year"></div>
+          <div class="hn20-field"><label>Cash savings balance</label><input id="wCash" type="number" min="0" step="1000" inputmode="decimal" placeholder="CAD"></div>
+          <div class="hn20-field"><label>Annual cash contribution</label><input id="wCashContribution" type="number" min="0" step="100" inputmode="decimal" placeholder="CAD per year"></div>
+          <div class="hn20-field full"><label>Emergency fund</label><input id="wEmergency" type="number" min="0" step="500" inputmode="decimal" placeholder="Cash kept specifically for emergencies"><small>Only enter this separately when it is not already included in the cash-savings balance.</small></div>
         </div>
       </section>
 
@@ -2727,21 +2732,21 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     state.household.emergencyFundAmount=n('wEmergency');
 
     const po=primary.name, pa=partner?.name||'Partner';
-    upsertIncome('Primary employment','Salary',po,n('wPrimarySalary'),0,primary.retirementAge,true,true);
-    upsertIncome('Partner employment','Salary',pa,hasPartner?n('wPartnerSalary'):0,0,partner?.retirementAge||65,true,true);
-    upsertIncome('Primary CPP','CPP',po,n('wPrimaryCpp'),65,110,true,true);
-    upsertIncome('Partner CPP','CPP',pa,hasPartner?n('wPartnerCpp'):0,65,110,true,true);
-    upsertIncome('Primary pension','Pension',po,n('wPrimaryPension'),primary.retirementAge,110,true,true);
-    upsertIncome('Partner pension','Pension',pa,hasPartner?n('wPartnerPension'):0,partner?.retirementAge||65,110,true,true);
-    upsertIncome('Other household income','Other','Household',n('wOtherIncome'),0,110,true,true);
+    const annual=id=>n(id)*12;
+    upsertIncome('Primary employment','Salary',po,annual('wPrimarySalary'),0,primary.retirementAge,true,true);
+    upsertIncome('Partner employment','Salary',pa,hasPartner?annual('wPartnerSalary'):0,0,partner?.retirementAge||65,true,true);
+    upsertIncome('Primary CPP','CPP',po,annual('wPrimaryCpp'),65,110,true,true);
+    upsertIncome('Partner CPP','CPP',pa,hasPartner?annual('wPartnerCpp'):0,65,110,true,true);
+    upsertIncome('Primary OAS','OAS',po,annual('wPrimaryOas'),65,110,true,true);
+    upsertIncome('Partner OAS','OAS',pa,hasPartner?annual('wPartnerOas'):0,65,110,true,true);
+    upsertIncome('Primary pension','Pension',po,annual('wPrimaryPension'),primary.retirementAge,110,true,true);
+    upsertIncome('Partner pension','Pension',pa,hasPartner?annual('wPartnerPension'):0,partner?.retirementAge||65,110,true,true);
+    upsertIncome('Other household income','Other','Household',annual('wOtherIncome'),0,110,true,true);
 
-    const contrib=n('wContributions');
-    const invTotal=n('wRrsp')+n('wTfsa')+n('wNonReg')+n('wCash');
-    const share=v=>invTotal>0?Math.round(contrib*v/invTotal):0;
-    upsertAccount('RRSP / RRIF','RRSP/RRIF',n('wRrsp'),share(n('wRrsp')));
-    upsertAccount('TFSA','TFSA',n('wTfsa'),share(n('wTfsa')));
-    upsertAccount('Non-registered investments','Non-registered',n('wNonReg'),share(n('wNonReg')));
-    upsertAccount('Cash savings','Cash',n('wCash'),share(n('wCash')));
+    upsertAccount('RRSP / RRIF','RRSP/RRIF',n('wRrsp'),n('wRrspContribution'));
+    upsertAccount('TFSA','TFSA',n('wTfsa'),n('wTfsaContribution'));
+    upsertAccount('Non-registered investments','Non-registered',n('wNonReg'),n('wNonRegContribution'));
+    upsertAccount('Cash savings','Cash',n('wCash'),n('wCashContribution'));
     upsertAccount('Home','Real estate',n('wHome'));
     upsertAccount('Land and other real estate','Real estate',n('wLand'));
     upsertAccount('Vehicles','Other asset',n('wVehicles'));
@@ -2761,7 +2766,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     upsertEvent('Expected inheritance','Inheritance',n('wInheritance'),n('wInheritanceYear'));
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.0';
+    state.meta.appVersion='2.0.1';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
@@ -2784,7 +2789,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
   function completeness(){
     const groups=[
       [val('wPrimaryName'),val('wPrimaryBirth'),val('wProvince')],
-      [n('wPrimarySalary')+n('wPartnerSalary')+n('wPrimaryCpp')+n('wPartnerCpp')+n('wPrimaryPension')+n('wPartnerPension')+n('wOtherIncome')],
+      [n('wPrimarySalary')+n('wPartnerSalary')+n('wPrimaryCpp')+n('wPartnerCpp')+n('wPrimaryOas')+n('wPartnerOas')+n('wPrimaryPension')+n('wPartnerPension')+n('wOtherIncome')],
       [n('wRrsp')+n('wTfsa')+n('wNonReg')+n('wCash')],
       [n('wHome')+n('wLand')+n('wVehicles')+n('wRecreation')+n('wOtherAssets')],
       [String(n('wMortgage')+n('wLoc')+n('wCards')+n('wOtherDebt'))],
@@ -2796,14 +2801,16 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
   }
 
   function renderReview(){
-    const incomeTotal=n('wPrimarySalary')+n('wPartnerSalary')+n('wPrimaryCpp')+n('wPartnerCpp')+n('wPrimaryPension')+n('wPartnerPension')+n('wOtherIncome');
+    const monthlyIncomeTotal=n('wPrimarySalary')+n('wPartnerSalary')+n('wPrimaryCpp')+n('wPartnerCpp')+n('wPrimaryOas')+n('wPartnerOas')+n('wPrimaryPension')+n('wPartnerPension')+n('wOtherIncome');
+    const incomeTotal=monthlyIncomeTotal*12;
     const investments=n('wRrsp')+n('wTfsa')+n('wNonReg')+n('wCash');
+    const annualContributions=n('wRrspContribution')+n('wTfsaContribution')+n('wNonRegContribution')+n('wCashContribution');
     const assets=n('wHome')+n('wLand')+n('wVehicles')+n('wRecreation')+n('wOtherAssets');
     const debts=n('wMortgage')+n('wLoc')+n('wCards')+n('wOtherDebt');
     const cards=[
       ['Household',hasPartner?`${val('wPrimaryName')||'You'} and ${val('wPartnerName')||'your partner'}`:(val('wPrimaryName')||'Individual plan'),`${val('wProvince')||'Province not entered'}`],
-      ['Income and benefits',fmt(incomeTotal)+' entered annually','Exact timing can be refined later'],
-      ['Investments',fmt(investments)+' investable assets',fmt(n('wEmergency'))+' emergency fund'],
+      ['Income and benefits',fmt(monthlyIncomeTotal)+' entered per month',fmt(incomeTotal)+' annual equivalent'],
+      ['Investments',fmt(investments)+' investable assets',fmt(annualContributions)+' contributed annually'],
       ['Property and assets',fmt(assets)+' non-investment assets','Included in complete net worth'],
       ['Debts',fmt(debts)+' outstanding',fmt(n('wDebtPayments'))+' monthly payments'],
       ['Retirement lifestyle',fmt((n('wRetirementSpend')||n('wCurrentSpend'))*12)+' annually',fmt(n('wTravel'))+' annual travel'],
