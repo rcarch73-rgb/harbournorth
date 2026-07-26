@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.6.2</title>
+<title>Harbour North 2.6.3</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -684,13 +684,16 @@ button{touch-action:manipulation}
 </style>
 
 
-<style id="hn262ScenarioStyles">
-.scenario-name-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
-.scenario-name-row input{min-width:0}
-#scenarioManagerMessage{min-height:18px}
-@media(max-width:650px){
- .scenario-name-row{grid-template-columns:1fr}
- .scenario-name-row .btn,.scenario-toolbar .btn{width:100%}
+<style id="hn263Styles">
+#scenarioEditorCard{scroll-margin-top:18px}
+.scenario-row{grid-template-columns:minmax(240px,1.2fr) minmax(170px,.7fr) auto}
+.scenario-row.active{border-left:4px solid var(--ok)}
+#scenarioEditorValidation{margin-top:14px}
+.report-chart svg{min-height:250px}
+@media(max-width:760px){
+ .scenario-row{grid-template-columns:1fr}
+ .scenario-row .actions{justify-content:flex-start}
+ #scenarioEditorCard .grid{grid-template-columns:1fr}
 }
 </style>
 
@@ -1067,33 +1070,59 @@ button{touch-action:manipulation}
 </section>
 
 <section id="scenarios" class="page">
-<div class="hero"><div class="eyebrow">Harbour North 0.5 · Planning workspace</div><h2>Scenario Manager</h2><p class="muted">Create separate retirement plans without overwriting your base plan. Each scenario stores its own household timing, accounts, income, spending, events, and assumptions.</p></div>
-<div class="card"><div class="scenario-toolbar">
-<div class="field" style="min-width:240px"><label>New scenario name</label><input id="newScenarioName" placeholder="Example: Retire at 56" autocomplete="off"></div>
-<button id="createScenarioButton" class="btn primary">Create from active plan</button>
-<button id="createBlankScenarioButton" class="btn">Create blank scenario</button>
-<button id="duplicateScenarioButton" class="btn">Duplicate active scenario</button>
-</div><p id="scenarioManagerMessage" class="muted" style="margin:12px 0 0">Create a copy of the active plan, or start with a blank planning workspace.</p></div>
-<div class="card"><div class="row-head"><div><h3>Saved scenarios</h3><p class="muted">Switching scenarios saves the current plan first, then loads the selected workspace.</p></div><span id="scenarioWorkspaceBadge" class="badge good">Base plan active</span></div><div id="scenarioManagerList" class="scenario-list"></div></div>
-<div class="card"><h3>Foundation modules</h3><p class="muted">Version 0.5 keeps one-file deployment while separating the planning responsibilities internally.</p><div class="architecture-grid"><div class="module-chip">Planning model</div><div class="module-chip">Timeline engine</div><div class="module-chip">Income engine</div><div class="module-chip">Canada tax engine</div><div class="module-chip">Projection engine</div><div class="module-chip">Optimization engine</div><div class="module-chip">Scenario workspace</div><div class="module-chip">Persistence & migration</div><div class="module-chip">Results dashboard</div></div></div>
-</section>
-<section id="projection" class="page">
-<div class="hero"><div class="row-head"><div><div class="eyebrow">Phase 3 · Integrated projection</div><h2>Canadian retirement projection</h2><p class="muted">Harbour North now estimates federal and provincial or territorial income tax for every Canadian jurisdiction, then uses after-tax cash flow to determine contributions and withdrawals.</p></div><span id="timelineEngineStatus" class="badge warn">Waiting for profile</span></div></div>
-<div id="projectionCompletenessWarning" class="notice hidden"></div>
-<div class="summary-grid"><div class="metric">Starting investments<strong id="pStartingInvestments">$0</strong><div class="submetric">Cash and investment accounts</div></div><div class="metric">Retirement-year balance<strong id="pRetirementBalance">$0</strong><div class="submetric" id="pRetirementYear">Primary retirement year</div></div><div class="metric">Ending investments<strong id="pEndingInvestments">$0</strong><div class="submetric" id="pEndingYear">Planning horizon</div></div><div class="metric">First shortfall year<strong id="pShortfallYear">None</strong><div class="submetric">Before investment withdrawals</div></div></div>
-<div class="card"><div class="row-head"><div><h3>Projection controls</h3><p class="muted">Income and spending are entered in current-year dollars. Tax brackets, personal amounts, income, and spending are indexed using the projection inflation assumption.</p></div><button id="runTimelineTests" class="btn">Run engine tests</button></div><div class="grid"><div class="field"><label>Projection start year</label><input id="projectionStartYear" type="number" min="2020" max="2200"></div><div class="field"><label>Planning horizon age</label><input id="projectionPlanningAge" type="number" min="75" max="110"></div><div class="field"><label>Inflation / income indexing (%)</label><input id="projectionInflationRate" type="number" min="0" max="10" step="0.1"></div></div><p id="timelineTestMessage" class="muted"></p></div>
-<div class="card"><div class="row-head"><div><h3>Calculation integrity</h3><p class="muted">Harbour North verifies every projection row and reconciles the Projection, Audit, and Optimizer views.</p></div><button id="runIntegrityCheck" class="btn">Run integrity check</button></div><div id="integritySummary" class="reconcile-grid"></div><div id="integrityDetails" class="validation-list" style="margin-top:14px"></div></div>
-
 <div class="card">
-<div class="row-head"><div><h3>Portfolio reconciliation</h3><p class="muted">Verify the selected year's opening balances, growth, contributions, withdrawals, retained cash, and closing account totals.</p></div><button id="runProjectionDiagnostics" class="btn">Refresh diagnostics</button></div>
-<div id="projectionDiagnosticSummary" class="diagnostic-grid"></div>
-<div id="projectionAnomalies" class="anomaly-list" style="margin-top:14px"></div>
+  <div class="row-head">
+    <div>
+      <div class="eyebrow">What-if planning</div>
+      <h2 style="margin:4px 0 6px">Scenario Manager</h2>
+      <p class="muted" style="margin:0">Create separate copies of your plan, edit their major assumptions, then activate the one you want Harbour North to analyse.</p>
+    </div>
+    <span id="scenarioWorkspaceBadge" class="badge good">Base plan active</span>
+  </div>
 </div>
 
-<div class="card"><div class="row-head"><div><h3>Account ledger</h3><p class="muted">Every account now reconciles independently from opening balance to closing balance.</p></div><select id="ledgerYear" class="select"></select></div><div id="ledgerSummary" class="notice">Choose a year to review the account ledger.</div><div id="accountLedgerTable" class="ledger-table-wrap" style="margin-top:12px"></div></div>
-<div class="card"><div class="row-head"><div><h3>Year-by-year retirement projection</h3><p class="muted">Taxes are estimated separately for each person. Withdrawals cover the remaining after-tax cash-flow deficit, and taxable RRSP/RRIF withdrawals are included in the tax estimate.</p></div><button id="downloadTimelineCsv" class="btn primary">Download projection CSV</button></div><div class="table-wrap"><table class="projection-table"><thead id="projectionHead"></thead><tbody id="projectionBody"></tbody></table></div></div>
-<div class="card"><div class="row-head"><div><h3>Explain this year</h3><p class="muted">Choose a year to see the main reasons behind its result.</p></div><div class="field" style="min-width:150px"><label>Year</label><select id="explainYear"></select></div></div><div id="explainYearBody" class="explain-box"></div></div>
-<div class="card"><h3>Current tax-engine rules</h3><ul class="checklist"><li>Federal and 2026 tax brackets for all 10 provinces and three territories are used as the base and indexed into future years using the projection inflation assumption.</li><li>Tax is estimated separately for each person using taxable recurring income and taxable RRSP/RRIF withdrawals.</li><li>Income sources marked non-taxable are excluded from taxable income. TFSA and cash withdrawals are not taxable.</li><li>The estimate includes federal and provincial or territorial basic personal credits, the Quebec federal abatement, B.C. tax reduction, and Ontario surtax, tax reduction, and health premium. It does not yet include CPP/EI/QPP payroll deductions, age and pension credits, OAS recovery tax, dividend gross-up, capital gains, medical credits, or income splitting.</li><li>Inheritance and gifts are treated as non-taxable cash flow. A generic one-time “Income” event is treated as taxable income for the primary person.</li><li>Deficits are funded in this order: non-registered, cash, TFSA, RRSP/RRIF, FHSA. RRSP/RRIF tax is recalculated until the after-tax shortfall stabilizes.</li><li>This is a planning estimate, not a tax return or professional tax advice. Use the Audit page to inspect yearly income, taxes, withdrawals, and account balances.</li></ul></div>
+<div class="card">
+  <div class="scenario-toolbar">
+    <div class="field" style="min-width:260px">
+      <label>New scenario name</label>
+      <input id="scenarioNewName" placeholder="Example: Retire at 56" autocomplete="off">
+    </div>
+    <button id="scenarioCreateCopyButton" class="btn primary">Create from active plan</button>
+    <button id="scenarioCreateBlankButton" class="btn">Create blank scenario</button>
+  </div>
+  <p id="scenarioManagerMessage" class="muted" style="margin:12px 0 0">Editing a saved scenario does not change the active plan until you select Save and activate.</p>
+</div>
+
+<div class="card">
+  <div class="row-head">
+    <div><h3>Saved scenarios</h3><p class="muted">Edit, activate or delete a scenario.</p></div>
+    <span id="scenarioCountBadge" class="pill">0 scenarios</span>
+  </div>
+  <div id="scenarioManagerList" class="scenario-list"></div>
+</div>
+
+<div id="scenarioEditorCard" class="card hidden">
+  <div class="row-head">
+    <div><div class="eyebrow">Scenario editor</div><h3 id="scenarioEditorHeading" style="margin:4px 0 0">Edit scenario</h3></div>
+    <button id="scenarioEditorClose" class="btn">Close</button>
+  </div>
+  <input id="scenarioEditorId" type="hidden">
+  <div class="grid">
+    <div class="field"><label>Scenario name</label><input id="scenarioEditName"></div>
+    <div class="field"><label>Primary retirement age</label><input id="scenarioEditPrimaryAge" type="number" min="40" max="80" step="0.5"></div>
+    <div class="field scenario-partner-field"><label>Partner retirement age</label><input id="scenarioEditPartnerAge" type="number" min="40" max="80" step="0.5"></div>
+    <div class="field"><label>Inflation assumption (%)</label><input id="scenarioEditInflation" type="number" min="0" max="10" step="0.1"></div>
+    <div class="field"><label>Investment return (%)</label><input id="scenarioEditReturn" type="number" min="-5" max="20" step="0.1"></div>
+    <div class="field"><label>Planning horizon age</label><input id="scenarioEditPlanningAge" type="number" min="75" max="110"></div>
+    <div class="field"><label>Monthly retirement spending</label><input id="scenarioEditMonthlySpend" type="number" min="0" step="100" inputmode="decimal"></div>
+    <div class="field"><label>Estate target</label><input id="scenarioEditEstateTarget" type="number" min="0" step="1000" inputmode="decimal"></div>
+  </div>
+  <div id="scenarioEditorValidation" class="notice warn hidden"></div>
+  <div class="actions" style="margin-top:18px">
+    <button id="scenarioSaveChanges" class="btn primary">Save changes</button>
+    <button id="scenarioSaveAndActivate" class="btn">Save and activate</button>
+  </div>
+</div>
 </section>
 
 <section id="stability" class="page">
@@ -1749,49 +1778,112 @@ function persistOptimizerResults(){
 function restoreOptimizerResults(){const o=state.planningModel?.optimizer||{};optimizerState={results:Array.isArray(o.topResults)?clone(o.topResults):[],recommended:clone(o.recommended||null),current:clone(o.current||null)}}
 
 function activeScenario(){return state.planningModel?.scenarios?.find(x=>x.id===state.planningModel.activeScenarioId)||null}
-function loadScenarioSnapshot(snapshot){if(!snapshot)return;for(const key of ['hasPartner','people','household','accounts','incomeSources','debts','expenses','events'])state[key]=clone(snapshot[key]);normalizePlan(state);repairGovernmentBenefitAmounts(state)}
-function createPlanningScenario(name,duplicate=true){
+function scenarioById(sid){return state.planningModel?.scenarios?.find(x=>x.id===sid)||null}
+function loadScenarioSnapshot(snapshot){
+ if(!snapshot)return;
+ for(const key of ['hasPartner','people','household','accounts','incomeSources','debts','expenses','events'])state[key]=clone(snapshot[key]);
+ normalizePlan(state);repairGovernmentBenefitAmounts(state);projectionRows=[];
+}
+function createScenarioSnapshot(name,blank=false){
  syncPlanningModel();
  const pm=state.planningModel,now=new Date().toISOString(),sid='scenario-'+id();
- const cleanName=(name||'New scenario').trim()||'New scenario';
- const sourceSnapshot=duplicate?corePlanSnapshot(state):corePlanSnapshot(defaults());
- const scenario={id:sid,name:cleanName,createdAt:now,updatedAt:now,snapshot:clone(sourceSnapshot)};
- pm.scenarios.push(scenario);
- pm.activeScenarioId=sid;
- loadScenarioSnapshot(scenario.snapshot);
- const saved=save(false);
- refreshAfterScenarioChange();
+ const snapshot=blank?corePlanSnapshot(defaults()):corePlanSnapshot(state);
+ const scenario={id:sid,name:(name||'New scenario').trim()||'New scenario',createdAt:now,updatedAt:now,snapshot:clone(snapshot)};
+ pm.scenarios.push(scenario);save(false);renderScenarioManager();openScenarioEditor(sid);
  const message=document.getElementById('scenarioManagerMessage');
- if(message)message.textContent=saved?`“${cleanName}” was created and opened.`:`“${cleanName}” was created but could not be saved to browser storage.`;
- toast(saved?'Scenario created':'Scenario save failed');
- return scenario;
+ if(message)message.textContent=`“${scenario.name}” was created. Edit it below, then save or activate it.`;
 }
-function switchScenario(sid){if(sid===state.planningModel?.activeScenarioId)return;syncPlanningModel();const target=state.planningModel.scenarios.find(x=>x.id===sid);if(!target)return;state.planningModel.activeScenarioId=sid;loadScenarioSnapshot(target.snapshot);restoreOptimizerResults();save(false);refreshAfterScenarioChange();toast('Scenario loaded')}
-function renamePlanningScenario(sid,name){
- const x=state.planningModel?.scenarios?.find(y=>y.id===sid);if(!x)return false;
- const clean=(name||'Scenario').trim()||'Scenario';
- x.name=clean;x.updatedAt=new Date().toISOString();
- const saved=save(false);
+function activateScenario(sid){
+ syncPlanningModel();
+ const scenario=scenarioById(sid);if(!scenario)return;
+ state.planningModel.activeScenarioId=sid;loadScenarioSnapshot(scenario.snapshot);restoreOptimizerResults();projectionRows=[];
+ save(false);refreshAfterScenarioChange();
+ const message=document.getElementById('scenarioManagerMessage');if(message)message.textContent=`“${scenario.name}” is now active.`;
+ toast('Scenario activated');
+}
+function deleteScenario(sid){
+ const pm=state.planningModel;if(!pm||pm.scenarios.length<=1){toast('At least one scenario is required');return}
+ const scenario=scenarioById(sid);if(!scenario||!confirm(`Delete scenario “${scenario.name}”?`))return;
+ pm.scenarios=pm.scenarios.filter(x=>x.id!==sid);
+ if(pm.activeScenarioId===sid){pm.activeScenarioId=pm.scenarios[0].id;loadScenarioSnapshot(pm.scenarios[0].snapshot)}
+ projectionRows=[];save(false);refreshAfterScenarioChange();toast('Scenario deleted');
+}
+function scenarioMonthlySpend(snapshot){
+ const item=(snapshot.expenses||[]).find(x=>x.name==='Guided: Retirement lifestyle')||(snapshot.expenses||[]).find(x=>x.category==='Essential')||snapshot.expenses?.[0];
+ return item?num(item.amount)*(item.frequency==='Annual'?1/12:1):0;
+}
+function setScenarioMonthlySpend(snapshot,monthly){
+ let item=(snapshot.expenses||[]).find(x=>x.name==='Guided: Retirement lifestyle')||(snapshot.expenses||[]).find(x=>x.category==='Essential');
+ if(!item){item=expense('Scenario retirement lifestyle','Essential',monthly,'Monthly');snapshot.expenses.push(item)}
+ item.amount=num(monthly);item.frequency='Monthly';
+}
+function openScenarioEditor(sid){
+ const scenario=scenarioById(sid);if(!scenario)return;
+ const snap=clone(scenario.snapshot||corePlanSnapshot(state));
+ document.getElementById('scenarioEditorId').value=sid;
+ document.getElementById('scenarioEditorHeading').textContent=`Edit “${scenario.name}”`;
+ document.getElementById('scenarioEditName').value=scenario.name||'Scenario';
+ document.getElementById('scenarioEditPrimaryAge').value=snap.people?.[0]?.retirementAge??'';
+ document.getElementById('scenarioEditPartnerAge').value=snap.people?.[1]?.retirementAge??'';
+ document.getElementById('scenarioEditInflation').value=snap.household?.inflationRate??2;
+ document.getElementById('scenarioEditReturn').value=snap.household?.returnRate??5;
+ document.getElementById('scenarioEditPlanningAge').value=snap.household?.planningAge??95;
+ document.getElementById('scenarioEditMonthlySpend').value=scenarioMonthlySpend(snap)||'';
+ document.getElementById('scenarioEditEstateTarget').value=snap.household?.estateTarget??0;
+ document.querySelectorAll('.scenario-partner-field').forEach(x=>x.style.display=snap.hasPartner===false?'none':'flex');
+ document.getElementById('scenarioEditorValidation').classList.add('hidden');
+ document.getElementById('scenarioEditorCard').classList.remove('hidden');
+ document.getElementById('scenarioEditorCard').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function validateScenarioEditor(){
+ const issues=[],n=id=>Number(document.getElementById(id).value)||0;
+ const scenario=scenarioById(document.getElementById('scenarioEditorId').value);
+ if(!scenario)issues.push('The selected scenario could not be found.');
+ if(!document.getElementById('scenarioEditName').value.trim())issues.push('Enter a scenario name.');
+ if(n('scenarioEditPrimaryAge')<40||n('scenarioEditPrimaryAge')>80)issues.push('Primary retirement age must be between 40 and 80.');
+ if(scenario?.snapshot?.hasPartner!==false&&(n('scenarioEditPartnerAge')<40||n('scenarioEditPartnerAge')>80))issues.push('Partner retirement age must be between 40 and 80.');
+ if(n('scenarioEditPlanningAge')<75||n('scenarioEditPlanningAge')>110)issues.push('Planning horizon must be between age 75 and 110.');
+ const box=document.getElementById('scenarioEditorValidation');
+ box.innerHTML=issues.join('<br>');box.classList.toggle('hidden',!issues.length);
+ return issues.length===0;
+}
+function saveScenarioEditor(activate=false){
+ if(!validateScenarioEditor())return;
+ const sid=document.getElementById('scenarioEditorId').value,scenario=scenarioById(sid);if(!scenario)return;
+ const snap=clone(scenario.snapshot||corePlanSnapshot(state));
+ scenario.name=document.getElementById('scenarioEditName').value.trim();
+ snap.people[0].retirementAge=num(document.getElementById('scenarioEditPrimaryAge').value);
+ if(snap.hasPartner!==false&&snap.people[1])snap.people[1].retirementAge=num(document.getElementById('scenarioEditPartnerAge').value);
+ snap.household.inflationRate=num(document.getElementById('scenarioEditInflation').value);
+ snap.household.returnRate=num(document.getElementById('scenarioEditReturn').value);
+ snap.household.planningAge=num(document.getElementById('scenarioEditPlanningAge').value);
+ snap.household.estateTarget=num(document.getElementById('scenarioEditEstateTarget').value);
+ setScenarioMonthlySpend(snap,num(document.getElementById('scenarioEditMonthlySpend').value));
+ scenario.snapshot=normalizePlan(snap);scenario.updatedAt=new Date().toISOString();
+ if(activate){syncPlanningModel();state.planningModel.activeScenarioId=sid;loadScenarioSnapshot(scenario.snapshot);projectionRows=[]}
+ save(false);renderScenarioManager();
+ document.getElementById('scenarioEditorHeading').textContent=`Edit “${scenario.name}”`;
  const message=document.getElementById('scenarioManagerMessage');
- if(message)message.textContent=saved?`Scenario renamed to “${clean}”.`:'The scenario name changed but could not be saved.';
- renderScenarioManager();
- return saved;
+ if(message)message.textContent=activate?`“${scenario.name}” was saved and activated.`:`Changes to “${scenario.name}” were saved without changing the active plan.`;
+ if(activate)refreshAfterScenarioChange();
+ toast(activate?'Scenario saved and activated':'Scenario changes saved');
 }
-function deleteScenario(sid){const pm=state.planningModel;if(!pm||pm.scenarios.length<=1){toast('At least one scenario is required');return}const x=pm.scenarios.find(y=>y.id===sid);if(!x||!confirm(`Delete scenario “${x.name}”?`))return;pm.scenarios=pm.scenarios.filter(y=>y.id!==sid);if(pm.activeScenarioId===sid){pm.activeScenarioId=pm.scenarios[0].id;loadScenarioSnapshot(pm.scenarios[0].snapshot)}save(false);refreshAfterScenarioChange();toast('Scenario deleted')}
-function refreshAfterScenarioChange(){bindStaticValues();renderAllLists();syncAssumptionInputs();renderHome();renderProjection();renderOptimizer();renderModelStatus();renderScenarioManager()}
-function bindStaticValues(){document.querySelectorAll('[data-bind]').forEach(el=>{el.value=pathGet(state,el.dataset.bind)??''});const hp=document.getElementById('hasPartner');if(hp){hp.checked=state.hasPartner;document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner)}}
+function refreshAfterScenarioChange(){
+ bindStaticValues();renderAllLists();syncAssumptionInputs();renderHome();renderProjection();renderOptimizer();renderModelStatus();renderScenarioManager();renderProfessionalReport();
+}
+function bindStaticValues(){
+ document.querySelectorAll('[data-bind]').forEach(el=>{el.value=pathGet(state,el.dataset.bind)??''});
+ const hp=document.getElementById('hasPartner');if(hp){hp.checked=state.hasPartner;document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner)}
+}
 function renderScenarioManager(){
  const root=document.getElementById('scenarioManagerList');if(!root)return;
- syncPlanningModel();
- const pm=state.planningModel,active=activeScenario();
+ syncPlanningModel();const pm=state.planningModel,active=activeScenario();
  document.getElementById('scenarioWorkspaceBadge').textContent=(active?.name||'Base plan')+' active';
+ document.getElementById('scenarioCountBadge').textContent=`${pm.scenarios.length} scenario${pm.scenarios.length===1?'':'s'}`;
  root.innerHTML=pm.scenarios.map(x=>`<div class="scenario-row ${x.id===pm.activeScenarioId?'active':''}" data-scenario-id="${esc(x.id)}">
-  <div>
-   <div class="scenario-name-row"><input class="scenario-name" value="${esc(x.name)}" aria-label="Scenario name"><button class="btn small scenario-save-name">Save name</button></div>
-   <div class="scenario-meta">Updated ${new Date(x.updatedAt||x.createdAt).toLocaleString('en-CA')}${x.id===pm.activeScenarioId?' · Active workspace':''}</div>
-  </div>
-  <div><strong>${x.snapshot?.people?.[0]?.retirementAge??state.people[0]?.retirementAge??'—'}</strong><div class="scenario-meta">Primary retirement age</div></div>
-  <div class="actions"><button class="btn small scenario-switch" ${x.id===pm.activeScenarioId?'disabled':''}>${x.id===pm.activeScenarioId?'Editing now':'Open and edit'}</button><button class="btn danger small scenario-delete">Delete</button></div>
+  <div><strong>${esc(x.name)}</strong><div class="scenario-meta">Updated ${new Date(x.updatedAt||x.createdAt).toLocaleString('en-CA')}${x.id===pm.activeScenarioId?' · Active plan':''}</div></div>
+  <div><strong>Age ${x.snapshot?.people?.[0]?.retirementAge??'—'}</strong><div class="scenario-meta">${money(scenarioMonthlySpend(x.snapshot)*12)} annual spending</div></div>
+  <div class="actions"><button class="btn small scenario-edit">Edit</button><button class="btn small scenario-activate" ${x.id===pm.activeScenarioId?'disabled':''}>${x.id===pm.activeScenarioId?'Active':'Activate'}</button><button class="btn danger small scenario-delete">Delete</button></div>
  </div>`).join('');
 }
 function renderModelStatus(){
@@ -1903,7 +1995,7 @@ function save(msg=true){
  renderHome();renderModelStatus();
  return result.ok;
 }
-function bindStatic(){document.querySelectorAll('[data-bind]').forEach(el=>{el.value=pathGet(state,el.dataset.bind)??'';const handler=()=>{pathSet(state,el.dataset.bind,el.type==='number'?num(el.value):el.value);save()};el.addEventListener('input',handler);el.addEventListener('change',handler)});const hp=document.getElementById('hasPartner');hp.checked=state.hasPartner;hp.onchange=()=>{state.hasPartner=hp.checked;document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner);save()};document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner)}
+function bindStatic(){document.querySelectorAll('[data-bind]').forEach(el=>{el.value=pathGet(state,el.dataset.bind)??'';const handler=()=>{pathSet(state,el.dataset.bind,el.type==='number'?num(el.value):el.value);projectionRows=[];save()};el.addEventListener('input',handler);el.addEventListener('change',handler)});const hp=document.getElementById('hasPartner');hp.checked=state.hasPartner;hp.onchange=()=>{state.hasPartner=hp.checked;document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner);save()};document.getElementById('partnerFields').classList.toggle('hidden',!state.hasPartner)}
 function ownerOptions(selected){const opts=['Household',state.people[0].name||'Primary'];if(state.hasPartner)opts.push(state.people[1].name||'Partner');return [...new Set(opts)].map(x=>`<option ${x===selected?'selected':''}>${esc(x)}</option>`).join('')}
 function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 function field(label,value,key,type='text',options=''){return`<div class="field"><label>${label}</label>${options?`<select data-key="${key}">${options}</select>`:`<input data-key="${key}" type="${type}" value="${esc(value)}">`}</div>`}
@@ -2441,18 +2533,11 @@ function runStabilityCheck(){
  try{
   checks.push(checkResult('Planning model',!!state.planningModel&&Array.isArray(state.planningModel.scenarios),'Structured planning model is available.','fail'));
   try{
-   syncPlanningModel();
-   const pm=state.planningModel,activeId=pm.activeScenarioId,before=pm.scenarios.length,testId='health-scenario-'+id();
-   const test={id:testId,name:'Health check scenario',createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),snapshot:corePlanSnapshot(state)};
-   pm.scenarios.push(test);
-   const created=pm.scenarios.some(x=>x.id===testId);
-   test.name='Health check renamed';
-   const renamed=pm.scenarios.find(x=>x.id===testId)?.name==='Health check renamed';
-   pm.scenarios=pm.scenarios.filter(x=>x.id!==testId);pm.activeScenarioId=activeId;
-   checks.push(checkResult('Scenario manager',created&&renamed&&pm.scenarios.length===before,'Create, rename and delete operations passed in memory.','fail'));
-  }catch(error){
-   checks.push(checkResult('Scenario manager',false,error.message,'fail'));
-  }
+   const original=corePlanSnapshot(state),copy=clone(original);
+   copy.people[0].retirementAge=num(copy.people[0].retirementAge)+1;
+   const isolated=copy.people[0].retirementAge!==original.people[0].retirementAge&&state.people[0].retirementAge===original.people[0].retirementAge;
+   checks.push(checkResult('Scenario isolation',isolated,'Editing a saved scenario snapshot does not alter the active plan.','fail'));
+  }catch(error){checks.push(checkResult('Scenario isolation',false,error.message,'fail'))}
   checks.push(checkResult('Household records',global.HNTimeline.includedPeople(state).length>0,`${global.HNTimeline.includedPeople(state).length} included person record(s).`,'fail'));
   const timelineTest=global.HNTimeline.runSelfTests();checks.push(checkResult('Timeline engine',timelineTest.ok,`${timelineTest.total-timelineTest.failed.length}/${timelineTest.total} tests passed${timelineTest.failed.length?': '+timelineTest.failed.join(', '):''}.`,'fail'));
   const incomeTest=global.HNIncome.runSelfTests();checks.push(checkResult('Income engine',incomeTest.ok,`${incomeTest.total-incomeTest.failed.length}/${incomeTest.total} tests passed${incomeTest.failed.length?': '+incomeTest.failed.join(', '):''}.`,'fail'));
@@ -3014,8 +3099,8 @@ async function runMonteCarloDeterministicTest(){
 }
 
 function reportLineChart(rows,valueFn,label){
- const data=rows.map(r=>({year:r.year,value:num(valueFn(r))})).filter(x=>Number.isFinite(x.value));
- if(!data.length)return'<div class="empty">No chart data available.</div>';
+ const data=(Array.isArray(rows)?rows:[]).map(r=>({year:Number(r.year),value:Number(valueFn(r))})).filter(x=>Number.isFinite(x.year)&&Number.isFinite(x.value));
+ if(data.length<2)return'<div class="empty">At least two projection years are required to draw this chart.</div>';
  const w=760,h=250,left=88,right=34,top=34,bottom=42;
  const min=Math.min(...data.map(x=>x.value),0),max=Math.max(...data.map(x=>x.value),1),span=Math.max(1,max-min);
  const plotW=w-left-right,plotH=h-top-bottom;
@@ -3024,7 +3109,7 @@ function reportLineChart(rows,valueFn,label){
   const y=top+(1-t)*plotH,v=min+t*span;
   return`<line x1="${left}" y1="${y}" x2="${w-right}" y2="${y}" stroke="#dce6ef"/><text x="${left-10}" y="${y+4}" text-anchor="end" font-size="11" fill="#61758a">${money(v)}</text>`;
  }).join('');
- return`<div class="report-chart"><strong>${esc(label)}</strong><svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(label)}">${ticks}<polyline points="${pts}" fill="none" stroke="#244b76" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><text x="${left}" y="${h-10}" font-size="11" fill="#61758a">${data[0].year}</text><text x="${w-right}" y="${h-10}" text-anchor="end" font-size="11" fill="#61758a">${data[data.length-1].year}</text></svg></div>`;
+ return`<div class="report-chart"><strong>${esc(label)}</strong><svg viewBox="0 0 ${w} ${h}" width="760" height="250" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${esc(label)}">${ticks}<polyline points="${pts}" fill="none" stroke="#244b76" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><text x="${left}" y="${h-10}" font-size="11" fill="#61758a">${data[0].year}</text><text x="${w-right}" y="${h-10}" text-anchor="end" font-size="11" fill="#61758a">${data[data.length-1].year}</text></svg></div>`;
 }
 function reportIncomeTimeline(){
  const people=global.HNTimeline.includedPeople(state),sources=state.incomeSources||[];
@@ -3050,7 +3135,10 @@ function reportRiskItems(rows){
 }
 function renderProfessionalReport(){
  const root=document.getElementById('retirementReport');if(!root)return;
- const rows=buildProjectionTimeline();projectionRows=rows;
+ let rows=[];
+ try{rows=buildProjectionTimeline();projectionRows=rows}
+ catch(error){projectionRows=[];root.innerHTML=`<div class="notice warn"><strong>Report unavailable</strong><br>${esc(error.message||'The active scenario could not be projected.')}</div>`;return}
+ if(!rows.length){root.innerHTML='<div class="empty">No projection data is available for the active scenario.</div>';return}
  const totalsNow=totals(),ready=readiness(),first=rows[0]?.projection||{},last=rows[rows.length-1]?.projection||{};
  const active=activeScenario(),people=global.HNTimeline.includedPeople(state),primary=people[0],partner=people[1];
  const retirementLabels=people.map(p=>`${p.name||'Household member'} at age ${num(p.retirementAge)}`).join(' · ');
@@ -3320,39 +3408,13 @@ document.getElementById('projectionBody').addEventListener('click',e=>{const tr=
 
 
 
-document.getElementById('createScenarioButton').onclick=()=>{
- const input=document.getElementById('newScenarioName');
- createPlanningScenario(input.value||'New scenario',true);
- input.value='';
-};
-document.getElementById('createBlankScenarioButton').onclick=()=>{
- const input=document.getElementById('newScenarioName');
- createPlanningScenario(input.value||'Blank scenario',false);
- input.value='';
-};
-document.getElementById('duplicateScenarioButton').onclick=()=>{
- const current=activeScenario();
- createPlanningScenario((current?.name||'Scenario')+' copy',true);
-};
-document.getElementById('newScenarioName').addEventListener('keydown',e=>{
- if(e.key==='Enter'){e.preventDefault();document.getElementById('createScenarioButton').click()}
-});
-document.getElementById('scenarioManagerList').addEventListener('click',e=>{
- const row=e.target.closest('[data-scenario-id]');if(!row)return;
- const sid=row.dataset.scenarioId;
- if(e.target.closest('.scenario-switch'))switchScenario(sid);
- if(e.target.closest('.scenario-delete'))deleteScenario(sid);
- if(e.target.closest('.scenario-save-name')){
-  const input=row.querySelector('.scenario-name');
-  renamePlanningScenario(sid,input?.value);
- }
-});
-document.getElementById('scenarioManagerList').addEventListener('keydown',e=>{
- if(e.key!=='Enter'||!e.target.classList.contains('scenario-name'))return;
- e.preventDefault();
- const row=e.target.closest('[data-scenario-id]');
- renamePlanningScenario(row.dataset.scenarioId,e.target.value);
-});
+document.getElementById('scenarioCreateCopyButton').onclick=()=>{const input=document.getElementById('scenarioNewName');createScenarioSnapshot(input.value||'New scenario',false);input.value=''};
+document.getElementById('scenarioCreateBlankButton').onclick=()=>{const input=document.getElementById('scenarioNewName');createScenarioSnapshot(input.value||'Blank scenario',true);input.value=''};
+document.getElementById('scenarioNewName').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();document.getElementById('scenarioCreateCopyButton').click()}});
+document.getElementById('scenarioManagerList').addEventListener('click',e=>{const row=e.target.closest('[data-scenario-id]');if(!row)return;const sid=row.dataset.scenarioId;if(e.target.closest('.scenario-edit'))openScenarioEditor(sid);if(e.target.closest('.scenario-activate'))activateScenario(sid);if(e.target.closest('.scenario-delete'))deleteScenario(sid)});
+document.getElementById('scenarioEditorClose').onclick=()=>document.getElementById('scenarioEditorCard').classList.add('hidden');
+document.getElementById('scenarioSaveChanges').onclick=()=>saveScenarioEditor(false);
+document.getElementById('scenarioSaveAndActivate').onclick=()=>saveScenarioEditor(true);
 const benefitRoot=document.getElementById('benefitPeople');
 if(benefitRoot){
  benefitRoot.addEventListener('change',e=>handleBenefitChange(e,{rerender:true}));
@@ -3741,7 +3803,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     state.household.inheritanceScenario={amount:n('wInheritance'),year:n('wInheritanceYear'),certainty:inheritanceMode};
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.6.2';
+    state.meta.appVersion='2.6.3';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
