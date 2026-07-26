@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.1</title>
+<title>Harbour North 2.1.1</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -326,6 +326,70 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
  .hn21-snapshot{padding:22px}.hn21-greeting{font-size:34px}
  .hn21-key-grid{grid-template-columns:1fr}.hn21-next-card{grid-template-columns:auto 1fr}
  .hn21-next-card .btn{grid-column:1/-1;width:100%}
+}
+</style>
+
+
+<style id="hn211WelcomeStyles">
+.hn211-welcome-screen{
+  position:fixed;inset:0;z-index:2000;background:
+  radial-gradient(circle at top right,rgba(47,111,137,.12),transparent 36%),
+  linear-gradient(180deg,#f7f9f9 0%,#eef3f4 100%);
+  display:none;overflow:auto
+}
+.hn211-welcome-screen.open{display:block}
+.hn211-welcome-shell{
+  min-height:100vh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);
+  align-items:stretch
+}
+.hn211-welcome-copy{
+  padding:68px clamp(34px,6vw,88px);display:flex;flex-direction:column;justify-content:center
+}
+.hn211-brand{font-size:22px;font-weight:900;color:var(--navy);margin-bottom:70px}
+.hn211-kicker{text-transform:uppercase;letter-spacing:.14em;font-size:11px;font-weight:900;color:var(--blue);margin-bottom:15px}
+.hn211-welcome-copy h1{
+  font-size:clamp(46px,6vw,78px);line-height:.98;letter-spacing:-.06em;
+  color:var(--navy);max-width:760px;margin:0 0 24px
+}
+.hn211-welcome-copy>p{
+  font-size:20px;line-height:1.55;color:#536574;max-width:650px;margin:0 0 34px
+}
+.hn211-welcome-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hn211-welcome-actions button{
+  border:0;border-radius:13px;padding:15px 22px;font-size:16px;font-weight:850;cursor:pointer
+}
+.hn211-new{background:var(--navy);color:#fff;box-shadow:0 10px 22px rgba(24,53,82,.18)}
+.hn211-returning{background:#e2eaed;color:var(--navy)}
+.hn211-welcome-note{font-size:12px!important;color:var(--muted)!important;margin-top:18px!important}
+.hn211-welcome-panel{
+  background:var(--navy);color:#fff;padding:55px clamp(30px,5vw,70px);
+  display:flex;flex-direction:column;justify-content:center
+}
+.hn211-panel-card{
+  border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);
+  border-radius:24px;padding:32px;backdrop-filter:blur(10px)
+}
+.hn211-panel-card h2{font-size:30px;line-height:1.15;margin:0 0 12px;letter-spacing:-.035em}
+.hn211-panel-card>p{opacity:.74;line-height:1.55;margin:0 0 25px}
+.hn211-benefits{display:grid;gap:16px}
+.hn211-benefit{display:grid;grid-template-columns:38px 1fr;gap:13px;align-items:start}
+.hn211-benefit span{
+  width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.12);
+  display:grid;place-items:center;font-weight:900
+}
+.hn211-benefit strong{display:block;margin-bottom:4px}
+.hn211-benefit p{margin:0;font-size:13px;line-height:1.45;opacity:.68}
+@media(max-width:900px){
+  .hn211-welcome-shell{grid-template-columns:1fr}
+  .hn211-welcome-panel{display:none}
+  .hn211-welcome-copy{min-height:100vh;padding:44px 28px}
+  .hn211-brand{margin-bottom:70px}
+}
+@media(max-width:560px){
+  .hn211-welcome-copy h1{font-size:46px}
+  .hn211-welcome-copy>p{font-size:18px}
+  .hn211-welcome-actions{flex-direction:column}
+  .hn211-welcome-actions button{width:100%}
 }
 </style>
 
@@ -2821,7 +2885,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     saveDraft();
     window.scrollTo(0,0);
   }
-  function openSetup(startAt=0){
+  window.openSetup=function openSetup(startAt=0){
     preload();
     overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');
     document.body.style.overflow='hidden';
@@ -2944,7 +3008,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     upsertEvent('Expected inheritance','Inheritance',n('wInheritance'),n('wInheritanceYear'));
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.1';
+    state.meta.appVersion='2.1.1';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
@@ -3037,7 +3101,109 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
   });
 
   let done=false;try{done=JSON.parse(localStorage.getItem(SETUP_KEY)||'null')?.completed===true}catch(e){}
-  if(!done && !meaningfulPlan())setTimeout(()=>openSetup(0),250);
+  if(!done && !meaningfulPlan() && localStorage.getItem('harbourNorth2.welcome.seen.v1')==='true')setTimeout(()=>openSetup(0),250);
+})();
+</script>
+
+
+<div id="hn211Welcome" class="hn211-welcome-screen" aria-hidden="true">
+  <div class="hn211-welcome-shell">
+    <section class="hn211-welcome-copy">
+      <div class="hn211-brand">Harbour North</div>
+      <div class="hn211-kicker">Retirement planning, made clear</div>
+      <h1>See your complete retirement picture.</h1>
+      <p>Harbour North guides you through the information that matters, then turns it into a clear plan you can understand and improve.</p>
+      <div class="hn211-welcome-actions">
+        <button id="hn211NewPlan" class="hn211-new">I’m new — start guided setup</button>
+        <button id="hn211Returning" class="hn211-returning">I already have a plan</button>
+      </div>
+      <p class="hn211-welcome-note">Your information stays in your browser unless you choose to export it.</p>
+    </section>
+    <aside class="hn211-welcome-panel">
+      <div class="hn211-panel-card">
+        <h2>Build the plan one step at a time.</h2>
+        <p>The guided setup helps new users enter enough information to create a useful retirement picture without facing a complicated form.</p>
+        <div class="hn211-benefits">
+          <div class="hn211-benefit"><span>1</span><div><strong>Tell us about your household</strong><p>Ages, retirement dates and who the plan is for.</p></div></div>
+          <div class="hn211-benefit"><span>2</span><div><strong>Add income, savings and assets</strong><p>Monthly income, investments, property, emergency savings and debt.</p></div></div>
+          <div class="hn211-benefit"><span>3</span><div><strong>See the answer first</strong><p>Retirement confidence, net worth, spending and the next action to consider.</p></div></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+
+<script id="hn211WelcomeScript">
+(function(){
+  const FIRST_VISIT_KEY='harbourNorth2.welcome.seen.v1';
+  const SETUP_KEY='harbourNorth2.onboarding.v2';
+  const welcome=document.getElementById('hn211Welcome');
+  const newPlan=document.getElementById('hn211NewPlan');
+  const returning=document.getElementById('hn211Returning');
+
+  function existingPlanPresent(){
+    try{
+      const hasMeaningfulState =
+        (state.accounts?.length||0)>0 ||
+        (state.incomeSources?.length||0)>0 ||
+        (state.debts?.length||0)>0 ||
+        (state.expenses?.length||0)>0 ||
+        (state.events?.length||0)>0 ||
+        state.people?.some(p=>p?.name||p?.birthDate);
+      const completed=JSON.parse(localStorage.getItem(SETUP_KEY)||'null')?.completed===true;
+      return hasMeaningfulState || completed;
+    }catch(e){
+      return false;
+    }
+  }
+
+  function openWelcome(){
+    welcome.classList.add('open');
+    welcome.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+
+  function closeWelcome(){
+    welcome.classList.remove('open');
+    welcome.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    try{localStorage.setItem(FIRST_VISIT_KEY,'true')}catch(e){}
+  }
+
+  newPlan.addEventListener('click',function(){
+    closeWelcome();
+    try{
+      localStorage.removeItem('harbourNorth2.onboarding.draft.v2');
+      localStorage.removeItem(SETUP_KEY);
+    }catch(e){}
+    if(typeof openSetup==='function'){
+      openSetup(0);
+    }else{
+      const setup=document.getElementById('hn20Setup');
+      setup?.classList.add('open');
+    }
+  });
+
+  returning.addEventListener('click',function(){
+    closeWelcome();
+    if(existingPlanPresent()){
+      if(typeof showPage==='function')showPage('home');
+    }else{
+      if(typeof openSetup==='function')openSetup(0);
+    }
+  });
+
+  const seen=localStorage.getItem(FIRST_VISIT_KEY)==='true';
+  const existing=existingPlanPresent();
+
+  if(!existing && !seen){
+    setTimeout(openWelcome,180);
+  }else if(!existing && seen){
+    setTimeout(function(){
+      if(typeof openSetup==='function')openSetup(0);
+    },220);
+  }
 })();
 </script>
 
