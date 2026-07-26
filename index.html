@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.5</title>
+<title>Harbour North 2.6</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -635,6 +635,45 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
 @media(max-width:560px){.hn25-inline{grid-template-columns:1fr}}
 </style>
 
+
+<style id="hn26Styles">
+*:focus-visible{outline:3px solid rgba(47,111,137,.34)!important;outline-offset:2px}
+button{touch-action:manipulation}
+.hn26-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);z-index:5000;background:#183552;color:#fff;padding:12px 16px;border-radius:12px;box-shadow:0 14px 38px rgba(18,35,48,.28);opacity:0;pointer-events:none;transition:.2s ease;max-width:min(92vw,560px);font-weight:800;font-size:13px}
+.hn26-toast.show{opacity:1;transform:translate(-50%,0)}
+.hn26-validation{display:none;background:#fff4e2;border:1px solid #ead7b8;color:#754d17;border-radius:14px;padding:14px 16px;margin:0 0 16px;font-size:13px;line-height:1.45}
+.hn26-validation.show{display:block}.hn26-validation strong{display:block;margin-bottom:5px}.hn26-validation ul{margin:7px 0 0;padding-left:18px}
+.hn26-safe-tools{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.hn26-safe-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px}
+.hn26-safe-card h3{margin:0 0 6px;color:var(--navy)}.hn26-safe-card p{margin:0 0 14px;color:var(--muted);font-size:13px;line-height:1.5}
+.hn26-danger{border-color:#e2c5c5;background:#fffafa}.hn26-danger .btn{background:#fff;border-color:#d9b1b1;color:#9b3d3d}
+.hn26-mobile-tabs{display:none}
+.hn26-report-banner{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:#edf5f7;border:1px solid #cfe0e5;border-radius:17px;padding:18px 20px;margin-bottom:16px}
+.hn26-report-banner h3{margin:3px 0 4px;color:var(--navy)}.hn26-report-banner p{margin:0;color:var(--muted);font-size:13px}
+.hn26-print-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.hn26-print-summary>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px}
+.hn26-print-summary span{display:block;font-size:10px;font-weight:850;color:var(--muted);margin-bottom:6px}.hn26-print-summary strong{font-size:18px;color:var(--navy)}
+.hn26-confirm-overlay{position:fixed;inset:0;z-index:4200;background:rgba(18,35,48,.56);display:none;align-items:center;justify-content:center;padding:20px}
+.hn26-confirm-overlay.open{display:flex}.hn26-confirm-card{width:min(500px,100%);background:#fff;border-radius:20px;padding:24px;box-shadow:0 30px 90px rgba(15,35,50,.32)}
+.hn26-confirm-card h2{margin:0 0 8px;color:var(--navy)}.hn26-confirm-card p{margin:0;color:var(--muted);line-height:1.5}
+.hn26-confirm-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}.hn26-confirm-actions button{border-radius:11px;padding:11px 15px;font-weight:850;cursor:pointer}
+.hn26-cancel{background:#edf1f2;border:0;color:var(--navy)}.hn26-proceed{background:#9b3d3d;border:0;color:#fff}
+@media(max-width:800px){.hn26-safe-tools{grid-template-columns:1fr}.hn26-print-summary{grid-template-columns:1fr 1fr}}
+@media(max-width:720px){
+ body{padding-bottom:72px}
+ .streamlined-tabs{position:fixed!important;left:8px;right:8px;bottom:8px;z-index:1200;display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:4px!important;padding:6px!important;border-radius:18px!important;box-shadow:0 10px 30px rgba(18,35,48,.2)!important;overflow:visible!important;background:rgba(255,255,255,.97)!important;backdrop-filter:blur(12px)}
+ .streamlined-tabs .tab{min-width:0!important;padding:10px 4px!important;font-size:10px!important;border-radius:12px!important;white-space:normal!important;line-height:1.15!important}
+ .streamlined-tabs .tab:nth-of-type(n+6){display:none!important}.hn22-nav-button{display:none!important}
+ .hn26-mobile-tabs{display:block;position:fixed;right:14px;bottom:82px;z-index:1250}.hn26-mobile-tabs button{width:48px;height:48px;border:0;border-radius:50%;background:var(--navy);color:#fff;font-size:22px;box-shadow:0 8px 24px rgba(18,35,48,.28)}
+}
+@media(max-width:520px){.hn26-print-summary{grid-template-columns:1fr}.hn26-report-banner{grid-template-columns:1fr}.hn26-report-banner .btn{width:100%}}
+@media print{
+ header,.streamlined-tabs,.hn26-mobile-tabs,.btn,button,.hn21-primary-actions,.hn22-prompt-card,.hn23-plan-notice,.hn23-maintenance,.hn24-action-panel,.hn24-result-details,.hn24-strategy-details,details:not([open]),.background-status-card{display:none!important}
+ body{background:#fff!important;padding:0!important}.page{display:none!important}#report.page{display:block!important}#report{padding:0!important}
+ .card,.report-chart,.hn26-report-banner,.hn26-print-summary>div{box-shadow:none!important;border:1px solid #cfd8dc!important;break-inside:avoid}.hn26-report-banner{background:#fff!important}
+}
+</style>
+
 </head>
 <body>
 <header><div><h1>Harbour North</h1><p>Retirement planning, made clear.</p></div><div id="saveStatus" class="status">Ready</div></header>
@@ -1206,7 +1245,13 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
 </div>
 </section>
 
-<section id="report" class="page">
+<section id="report" class="page" aria-label="Retirement report">
+<div class="hn26-report-banner">
+  <div><div class="eyebrow">Shareable retirement summary</div><h3>Review or print your Harbour North report</h3><p>The printed version removes navigation and technical controls for a cleaner adviser or household review.</p></div>
+  <button id="hn26PrintReport" class="btn primary">Print report</button>
+</div>
+<div id="hn26PrintSummary" class="hn26-print-summary"></div>
+
 <div class="hero">
  <div class="report-toolbar">
   <div><h2>Professional Retirement Report</h2><p class="muted">A printable summary of the active Harbour North scenario.</p></div>
@@ -1216,7 +1261,12 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
 <div id="retirementReport" class="report-sheet"></div>
 </section>
 
-<section id="backup" class="page"><div class="hero"><h2>Backup and recovery</h2><p class="muted">Export your full Harbour North plan before major updates.</p></div><div class="card"><div class="actions"><button id="exportBtn" class="btn primary">Export backup</button><label class="btn">Import backup<input id="importFile" class="hidden" type="file" accept="application/json,.json"></label><button id="healthBtn" class="btn">Run data health check</button><button id="resetBtn" class="btn danger">Reset plan</button></div><p id="backupMessage" class="muted"></p></div><div class="card"><div class="row-head"><div><h3>Professional planning foundation</h3><p class="muted">The app now stores household data, assumptions, tax profile, scenarios, and optimizer results in a structured planning model while retaining compatibility with earlier backups.</p></div><span id="modelStatus" class="badge good">Ready</span></div><div class="summary-grid"><div class="metric">Model version<strong id="modelVersion">1</strong><div class="submetric">Professional planning schema</div></div><div class="metric">Active scenario<strong id="activeScenarioName">Base plan</strong><div class="submetric">Scenario workspace</div></div><div class="metric">Saved scenarios<strong id="scenarioCount">1</strong><div class="submetric">Ready for comparison tools</div></div><div class="metric">Last optimizer run<strong id="lastOptimizerRun">Never</strong><div class="submetric">Stored with the plan</div></div></div></div></section>
+<section id="backup" class="page"><div class="hero"><h2>Backup and recovery</h2><p class="muted">Export your full Harbour North plan before major updates.</p></div><div class="card"><div class="actions"><button id="exportBtn" class="btn primary">Export backup</button><label class="btn">Import backup<input id="importFile" class="hidden" type="file" accept="application/json,.json"></label><button id="healthBtn" class="btn">Run data health check</button><button id="resetBtn" class="btn danger">Reset plan</button></div><p id="backupMessage" class="muted"></p></div><div class="card"><div class="row-head"><div><h3>Professional planning foundation</h3><p class="muted">The app now stores household data, assumptions, tax profile, scenarios, and optimizer results in a structured planning model while retaining compatibility with earlier backups.</p></div><span id="modelStatus" class="badge good">Ready</span></div><div class="summary-grid"><div class="metric">Model version<strong id="modelVersion">1</strong><div class="submetric">Professional planning schema</div></div><div class="metric">Active scenario<strong id="activeScenarioName">Base plan</strong><div class="submetric">Scenario workspace</div></div><div class="metric">Saved scenarios<strong id="scenarioCount">1</strong><div class="submetric">Ready for comparison tools</div></div><div class="metric">Last optimizer run<strong id="lastOptimizerRun">Never</strong><div class="submetric">Stored with the plan</div></div></div></div>
+<div class="hn26-safe-tools">
+  <div class="hn26-safe-card"><h3>Create a fresh plan</h3><p>Start a new plan after confirming that the current browser plan can be replaced.</p><button id="hn26NewPlan" class="btn">Start new plan</button></div>
+  <div class="hn26-safe-card hn26-danger"><h3>Reset this browser</h3><p>Delete the saved plan and onboarding progress from this browser. Export a backup first.</p><button id="hn26ResetBrowser" class="btn">Reset saved plan</button></div>
+</div>
+</section>
 </main><div id="toast" class="toast"></div>
 <script>
 (function(global){
@@ -3209,7 +3259,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     <main class="hn20-wizard-main">
       <section class="hn20-step hn20-welcome active" data-step="0">
         <div class="hn20-welcome-mark">⌁</div>
-        <div class="hn20-kicker">Welcome to Harbour North 2.5</div>
+        <div class="hn20-kicker">Welcome to Harbour North 2.6</div>
         <h2>Let’s build your retirement plan together.</h2>
         <p class="hn20-lead">We’ll guide you through the information needed to create the clearest possible picture of your retirement. Most people finish in about 15 minutes, and your progress is saved automatically.</p>
         <div class="hn20-welcome-actions">
@@ -3558,7 +3608,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     state.household.inheritanceScenario={amount:n('wInheritance'),year:n('wInheritanceYear'),certainty:inheritanceMode};
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.5';
+    state.meta.appVersion='2.6';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
@@ -4192,6 +4242,52 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
   observer.observe(document.getElementById('planhub'),{attributes:true,attributeFilter:['class']});
 
   setTimeout(window.renderPlanHub,100);
+})();
+</script>
+
+
+<div id="hn26Toast" class="hn26-toast" role="status" aria-live="polite"></div>
+<div class="hn26-mobile-tabs"><button id="hn26MoreNav" aria-label="More navigation options">☰</button></div>
+<div id="hn26Confirm" class="hn26-confirm-overlay" aria-hidden="true">
+ <div class="hn26-confirm-card" role="dialog" aria-modal="true" aria-labelledby="hn26ConfirmTitle">
+  <h2 id="hn26ConfirmTitle">Confirm action</h2><p id="hn26ConfirmText"></p>
+  <div class="hn26-confirm-actions"><button id="hn26ConfirmCancel" class="hn26-cancel">Cancel</button><button id="hn26ConfirmProceed" class="hn26-proceed">Continue</button></div>
+ </div>
+</div>
+
+
+<script id="hn26Script">
+(function(){
+ const q=id=>document.getElementById(id), toast=q('hn26Toast'); let pending=null;
+ function notify(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(notify.t);notify.t=setTimeout(()=>toast.classList.remove('show'),2400)}
+ function ask(title,text,action){q('hn26ConfirmTitle').textContent=title;q('hn26ConfirmText').textContent=text;pending=action;q('hn26Confirm').classList.add('open');q('hn26Confirm').setAttribute('aria-hidden','false')}
+ function close(){q('hn26Confirm').classList.remove('open');q('hn26Confirm').setAttribute('aria-hidden','true');pending=null}
+ q('hn26ConfirmCancel').onclick=close;q('hn26ConfirmProceed').onclick=()=>{const fn=pending;close();if(fn)fn()};q('hn26Confirm').onclick=e=>{if(e.target===q('hn26Confirm'))close()};
+ function validate(){
+  const issues=[],v=id=>q(id)?.value,n=id=>Number(v(id))||0,partner=state.hasPartner!==false;
+  if(!v('wPrimaryBirth'))issues.push('Enter your date of birth.');
+  if(partner&&!v('wPartnerBirth'))issues.push('Enter your partner’s date of birth.');
+  if(n('wPrimaryRetirementAge')&&(n('wPrimaryRetirementAge')<40||n('wPrimaryRetirementAge')>80))issues.push('Your retirement age must be between 40 and 80.');
+  if(partner&&n('wPartnerRetirementAge')&&(n('wPartnerRetirementAge')<40||n('wPartnerRetirementAge')>80))issues.push('Your partner’s retirement age must be between 40 and 80.');
+  if(n('wOtherIncomeEndAge')&&n('wOtherIncomeStartAge')>n('wOtherIncomeEndAge'))issues.push('Other income cannot end before it begins.');
+  if(n('wRecurringStartYear')&&n('wRecurringEndYear')&&n('wRecurringStartYear')>n('wRecurringEndYear'))issues.push('The recurring-expense end year must be after the start year.');
+  if(n('wMajorPurchase')>0&&!n('wMajorPurchaseYear'))issues.push('Add a year for the major future purchase.');
+  if(n('wInheritance')>0&&!n('wInheritanceYear'))issues.push('Add an expected year for the inheritance.');
+  if(n('wEmergency')>n('wCash')&&v('wEmergencyIncluded')==='yes')issues.push('The emergency fund cannot exceed cash savings when marked as already included.');
+  const box=q('hn26SetupValidation');if(box){box.innerHTML=issues.length?`<strong>Please review:</strong><ul>${issues.map(x=>`<li>${x}</li>`).join('')}</ul>`:'';box.classList.toggle('show',issues.length>0);if(issues.length)box.scrollIntoView({behavior:'smooth',block:'center'})}
+  return !issues.length;
+ }
+ const finish=q('hn20Finish');if(finish){const old=finish.onclick;finish.onclick=function(e){if(!validate())return;if(typeof old==='function')old.call(this,e);notify('Your guided setup information has been saved.')}} 
+ q('hn26MoreNav').onclick=()=>{const t=(prompt('Open: Guided setup, Improve My Plan, Report, Backup, or Strategy')||'').trim().toLowerCase();if(!t)return;if(t.includes('guided'))window.openSetup?.(0);else if(t.includes('improve'))window.openImproveMyPlan?.();else if(t.includes('report'))showPage('report');else if(t.includes('backup'))showPage('backup');else if(t.includes('strategy'))showPage('withdrawal');else notify('Navigation option not recognized.')};
+ function clearData(){const keys=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&/harbour|hn/i.test(k))keys.push(k)}keys.forEach(k=>localStorage.removeItem(k))}
+ q('hn26NewPlan')?.addEventListener('click',()=>ask('Start a new plan?','Your current browser plan will be replaced. Export a backup first if you may need it later.',()=>{clearData();location.reload()}));
+ q('hn26ResetBrowser')?.addEventListener('click',()=>ask('Reset saved Harbour North data?','This removes the saved plan and setup progress from this browser.',()=>{clearData();location.reload()}));
+ q('hn26PrintReport')?.addEventListener('click',()=>window.print());
+ function summary(){const h=q('hn26PrintSummary');if(!h)return;let t={invest:0,annualSpend:0};try{t=totals()}catch(e){}const mc=backgroundAnalysis?.result?.mc,rows=backgroundAnalysis?.result?.rows||[],short=rows.find(r=>(Number(r.projection?.unfunded)||0)>0)?.year;h.innerHTML=`<div><span>Plan status</span><strong>${short?'Shortfall '+short:(rows.length?'Funded':'Pending')}</strong></div><div><span>Retirement confidence</span><strong>${mc?.successRate!=null?Math.round(mc.successRate*100)+'%':'—'}</strong></div><div><span>Investable assets</span><strong>${money(t.invest||0)}</strong></div><div><span>Annual spending</span><strong>${money(t.annualSpend||0)}</strong></div>`}
+ document.querySelectorAll('input[type="number"]').forEach(x=>{x.setAttribute('autocomplete','off');if(!x.getAttribute('inputmode'))x.setAttribute('inputmode','decimal')});
+ document.querySelectorAll('input[type="file"]').forEach(input=>input.addEventListener('click',e=>{const meaningful=(state.accounts?.length||0)+(state.incomeSources?.length||0)+(state.expenses?.length||0)+(state.debts?.length||0)>0;if(meaningful&&!input.dataset.ok){e.preventDefault();ask('Import and replace this plan?','Importing a backup may replace current saved information. Export the current plan first if needed.',()=>{input.dataset.ok='1';input.click();setTimeout(()=>delete input.dataset.ok,1000)})}}));
+ const original=window.showPage||showPage;window.showPage=function(id){original(id);if(id==='report')setTimeout(summary,0)};setTimeout(summary,250);
+ window.hn26ValidateSetup=validate;window.hn26Toast=notify;
 })();
 </script>
 
