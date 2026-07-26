@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.3.1</title>
+<title>Harbour North 2.4</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -545,6 +545,89 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
 }
 </style>
 
+
+<style id="hn24Styles">
+.hn24-results-hero,.hn24-strategy-hero{
+ display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:28px;align-items:center;
+ background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px;box-shadow:var(--shadow);margin-bottom:16px
+}
+.hn24-results-hero h2,.hn24-strategy-hero h2{font-size:42px;letter-spacing:-.045em;color:var(--navy);margin:5px 0 9px}
+.hn24-results-hero p,.hn24-strategy-hero p{font-size:16px;line-height:1.55;color:var(--muted);margin:0;max-width:700px}
+.hn24-result-status{border-radius:17px;padding:20px;background:#edf1f2;border:1px solid var(--line)}
+.hn24-result-status.good{background:#e8f3ee;border-color:#cce2d7}
+.hn24-result-status.warn{background:#fff4e2;border-color:#ead7b8}
+.hn24-result-status.fail{background:#faeaea;border-color:#e7caca}
+.hn24-result-status span,.hn24-result-status small{display:block;font-size:11px;font-weight:800;color:var(--muted)}
+.hn24-result-status strong{display:block;font-size:27px;color:var(--navy);margin:7px 0 4px}
+.hn24-result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:16px}
+.hn24-result-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;min-width:0}
+.hn24-result-card.primary{background:#edf5f7;border-color:#cfe0e5}
+.hn24-result-card span{display:block;font-size:11px;font-weight:850;color:var(--muted);margin-bottom:8px}
+.hn24-result-card strong{display:block;font-size:28px;color:var(--navy);letter-spacing:-.035em;overflow-wrap:anywhere}
+.hn24-result-card p{font-size:12px;line-height:1.4;color:var(--muted);margin:8px 0 0}
+.hn24-explanation-card{
+ display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;background:#fff;border:1px solid var(--line);
+ border-radius:18px;padding:22px;margin-bottom:16px
+}
+.hn24-explanation-icon{width:44px;height:44px;border-radius:14px;background:var(--blue2);color:var(--blue);display:grid;place-items:center;font-size:22px;font-weight:900}
+.hn24-explanation-card h3,.hn24-action-panel h3{margin:4px 0 5px;color:var(--navy)}
+.hn24-explanation-card p,.hn24-action-panel p{margin:0;color:var(--muted);line-height:1.5}
+.hn24-action-panel{
+ display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:var(--navy);color:#fff;
+ border-radius:18px;padding:23px;margin-bottom:16px
+}
+.hn24-action-panel .eyebrow{color:#a9d2df}.hn24-action-panel h3{color:#fff}.hn24-action-panel p{color:rgba(255,255,255,.72)}
+.hn24-action-panel .btn{background:#fff;color:var(--navy);border:0}
+.hn24-result-details,.hn24-strategy-details{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.hn24-result-details>summary,.hn24-strategy-details>summary{
+ list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between
+}
+.hn24-result-details>summary::-webkit-details-marker,.hn24-strategy-details>summary::-webkit-details-marker{display:none}
+.hn24-result-details>summary div,.hn24-strategy-details>summary div{display:flex;flex-direction:column;gap:4px}
+.hn24-result-details>summary strong,.hn24-strategy-details>summary strong{color:var(--navy)}
+.hn24-result-details>summary span,.hn24-strategy-details>summary span{font-size:12px;color:var(--muted)}
+.hn24-chevron{font-size:22px!important;transition:transform .15s}.hn24-result-details[open] .hn24-chevron,.hn24-strategy-details[open] .hn24-chevron{transform:rotate(180deg)}
+.hn24-detail-links{border-top:1px solid var(--line);padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.hn24-detail-card{display:grid;grid-template-columns:38px 1fr;gap:12px;text-align:left;border:1px solid var(--line);background:#fff;border-radius:14px;padding:16px;cursor:pointer}
+.hn24-detail-card>span{width:38px;height:38px;border-radius:11px;background:#edf5f7;color:var(--blue);display:grid;place-items:center;font-weight:900}
+.hn24-detail-card strong{color:var(--navy)}.hn24-detail-card p{margin:4px 0 0;color:var(--muted);font-size:12px}
+.hn24-strategy-hero{grid-template-columns:minmax(0,1fr) auto}
+.hn24-recommendation{
+ display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;background:linear-gradient(135deg,#183552,#254c6e);
+ color:#fff;border-radius:20px;padding:24px;margin-bottom:16px
+}
+.hn24-recommendation-mark{width:48px;height:48px;border-radius:15px;background:rgba(255,255,255,.13);display:grid;place-items:center;font-size:23px}
+.hn24-recommendation .eyebrow{color:#add1dc}.hn24-recommendation h3{font-size:24px;margin:4px 0;color:#fff}
+.hn24-recommendation p{margin:0;color:rgba(255,255,255,.73);line-height:1.5}
+.hn24-recommendation .btn{background:#fff;color:var(--navy);border:0}
+.hn24-active-strategy{display:grid;grid-template-columns:minmax(220px,.75fr) 1.25fr;gap:16px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin-bottom:16px}
+.hn24-active-strategy>div:first-child>span{font-size:11px;font-weight:850;color:var(--muted)}
+.hn24-active-strategy>div:first-child>strong{display:block;font-size:25px;color:var(--navy);margin:6px 0}
+.hn24-active-strategy>div:first-child>p{margin:0;color:var(--muted);font-size:13px}
+.hn24-active-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.hn24-active-metrics>div{background:#f4f7f8;border-radius:13px;padding:13px}
+.hn24-active-metrics span{display:block;font-size:10px;font-weight:850;color:var(--muted);margin-bottom:6px}
+.hn24-active-metrics strong{font-size:17px;color:var(--navy)}
+.hn24-comparison-card{box-shadow:none}
+.hn24-comparison-table table{min-width:740px}
+.hn24-comparison-table tr.recommended-row{background:#edf5f7}
+.hn24-comparison-table tr.selected-row{outline:2px solid #b8ced7;outline-offset:-2px}
+.hn24-strategy-name small{display:block;color:var(--blue);font-weight:900;margin-top:4px}
+.hn24-funding-good{color:var(--ok);font-weight:850}.hn24-funding-bad{color:var(--danger);font-weight:850}
+.hn24-advice-note{font-size:11px;color:var(--muted);margin:12px 0 0}
+.hn24-strategy-body{border-top:1px solid var(--line);padding:16px}
+@media(max-width:850px){
+ .hn24-results-hero{grid-template-columns:1fr}.hn24-result-grid{grid-template-columns:1fr 1fr}
+ .hn24-active-strategy{grid-template-columns:1fr}.hn24-active-metrics{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+ .hn24-results-hero,.hn24-strategy-hero{padding:22px}.hn24-results-hero h2,.hn24-strategy-hero h2{font-size:34px}
+ .hn24-result-grid{grid-template-columns:1fr}.hn24-action-panel,.hn24-recommendation{grid-template-columns:1fr}
+ .hn24-action-panel .btn,.hn24-recommendation .btn{width:100%}.hn24-recommendation-mark{display:none}
+ .hn24-detail-links{grid-template-columns:1fr}.hn24-active-metrics{grid-template-columns:1fr 1fr}
+}
+</style>
+
 </head>
 <body>
 <header><div><h1>Harbour North</h1><p>Retirement planning, made clear.</p></div><div id="saveStatus" class="status">Ready</div></header>
@@ -795,15 +878,51 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
 </section>
 
 <section id="resulthub" class="page">
-<div class="hero"><div class="eyebrow">Retirement outlook</div><h2>Your results</h2><p class="muted">Start with the key answers, then open detailed projections only when you need them.</p></div>
-<div id="resultHubSummary" class="summary-grid"></div>
-<div id="resultHubMessage" class="card"></div>
-<div class="stream-grid compact">
- <button class="stream-card" data-goto="projection"><span>↗</span><div><strong>Year-by-year projection</strong><p>Income, tax, withdrawals, balances and estate.</p></div></button>
- <button class="stream-card" data-goto="optimizer"><span>★</span><div><strong>Retirement optimizer</strong><p>Compare retirement and benefit-start ages.</p></div></button>
- <button class="stream-card" data-goto="montecarlo"><span>%</span><div><strong>Risk details</strong><p>Review the automatic Monte Carlo analysis.</p></div></button>
- <button class="stream-card" data-goto="audit"><span>✓</span><div><strong>Calculation details</strong><p>Open audit and validation information.</p></div></button>
+<div class="hn24-results-hero">
+  <div>
+    <div class="eyebrow">Your retirement outlook</div>
+    <h2>Results you can act on</h2>
+    <p>Start with what the plan means. Detailed calculations remain available when you need to inspect them.</p>
+  </div>
+  <div id="hn24ResultStatus" class="hn24-result-status checking">
+    <span>Overall outlook</span>
+    <strong id="hn24OutlookLabel">Checking…</strong>
+    <small id="hn24OutlookNote">Automatic analysis is running</small>
+  </div>
 </div>
+
+<div id="hn24ResultCards" class="hn24-result-grid"></div>
+
+<div id="hn24ResultExplanation" class="hn24-explanation-card">
+  <div class="hn24-explanation-icon">→</div>
+  <div>
+    <div class="eyebrow">What this means</div>
+    <h3 id="hn24MeaningTitle">Harbour North is analysing your plan.</h3>
+    <p id="hn24MeaningText">The explanation will update when the retirement and market-risk calculations are complete.</p>
+  </div>
+</div>
+
+<div class="hn24-action-panel">
+  <div>
+    <div class="eyebrow">Recommended action</div>
+    <h3 id="hn24ActionTitle">Review your plan information</h3>
+    <p id="hn24ActionText">Complete the highest-value missing information before relying on detailed results.</p>
+  </div>
+  <button id="hn24ActionButton" class="btn primary">Improve My Plan</button>
+</div>
+
+<details class="hn24-result-details">
+  <summary>
+    <div><strong>Open detailed results</strong><span>Projection, optimizer, risk analysis and calculation audit</span></div>
+    <span class="hn24-chevron">⌄</span>
+  </summary>
+  <div class="hn24-detail-links">
+    <button class="hn24-detail-card" data-goto="projection"><span>↗</span><div><strong>Year-by-year projection</strong><p>Income, taxes, withdrawals, balances and estate.</p></div></button>
+    <button class="hn24-detail-card" data-goto="optimizer"><span>★</span><div><strong>Retirement optimizer</strong><p>Compare retirement and government-benefit start ages.</p></div></button>
+    <button class="hn24-detail-card" data-goto="montecarlo"><span>%</span><div><strong>Market-risk analysis</strong><p>Review simulations, downside cases and plan resilience.</p></div></button>
+    <button class="hn24-detail-card" data-goto="audit"><span>✓</span><div><strong>Calculation audit</strong><p>Inspect equations, validation and supporting detail.</p></div></button>
+  </div>
+</details>
 </section>
 
 <section id="profile" class="page">
@@ -970,44 +1089,69 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
 
 
 <section id="withdrawal" class="page">
-<div class="hero">
- <div class="row-head">
-  <div><h2>Intelligent Withdrawal Strategy</h2><p class="muted">Choose how retirement cash is funded. The tax-bracket optimized strategy can also make planned RRSP/RRIF withdrawals during low-income retirement years.</p></div>
+<div class="hn24-strategy-hero">
+  <div>
+    <div class="eyebrow">How retirement spending is funded</div>
+    <h2>Your withdrawal strategy</h2>
+    <p>Harbour North compares the available account-order strategies using the same plan, assumptions, income and spending.</p>
+  </div>
   <span id="wsActiveBadge" class="badge good">Balanced</span>
- </div>
 </div>
 
-<div class="card">
- <h3>Choose a strategy</h3>
- <div id="wsChoices" class="ws-choice"></div>
+<div id="hn24Recommendation" class="hn24-recommendation">
+  <div class="hn24-recommendation-mark">★</div>
+  <div>
+    <div class="eyebrow">Recommended strategy</div>
+    <h3 id="hn24RecommendedName">Calculating…</h3>
+    <p id="hn24RecommendedExplanation">Harbour North is comparing the standard withdrawal approaches.</p>
+  </div>
+  <button id="hn24UseRecommended" class="btn primary" disabled>Use recommendation</button>
 </div>
 
-<div id="wsCustomCard" class="card hidden">
- <h3>Custom account order</h3>
- <p class="muted">Accounts are used from left to right. Each account type may appear once.</p>
- <div id="wsCustomOrder" class="ws-order"></div>
+<div class="hn24-active-strategy">
+  <div>
+    <span>Currently selected</span>
+    <strong id="hn24ActiveName">Balanced</strong>
+    <p id="hn24ActiveDescription">Your current withdrawal approach.</p>
+  </div>
+  <div id="wsSelectedSummary" class="hn24-active-metrics"></div>
 </div>
 
-<div class="card">
- <div class="row-head"><div><h3>Selected-strategy projection</h3><p class="muted">Calculated with the active scenario and current assumptions.</p></div><button id="wsRefresh" class="btn">Refresh comparison</button></div>
- <div id="wsSelectedSummary" class="ws-summary"></div>
+<div class="card hn24-comparison-card">
+  <div class="row-head">
+    <div><h3>Compare the main strategies</h3><p class="muted">A funded plan is prioritized first, followed by ending estate and lifetime tax.</p></div>
+    <button id="wsRefresh" class="btn">Refresh comparison</button>
+  </div>
+  <div id="wsComparison" class="table-wrap hn24-comparison-table"></div>
+  <p class="hn24-advice-note">This is a planning-model comparison, not individualized tax or investment advice.</p>
 </div>
 
-<div class="card">
- <div class="row-head"><div><h3>Strategy comparison</h3><p class="muted">Each strategy uses the same income, spending, tax, return, and benefit assumptions.</p></div><span class="badge">Deterministic projection</span></div>
- <div id="wsRecommendation"></div>
- <div id="wsComparison" class="table-wrap" style="margin-top:14px"></div>
-</div>
-
-<div class="card">
- <h3>First 15 retirement withdrawal years</h3>
- <div id="wsTimeline" class="table-wrap"></div>
-</div>
-
-<div class="card">
- <h3>How tax-bracket optimization works</h3>
- <p class="muted">Version 1.2.3 targets the indexed ceiling of the first federal tax bracket for each retired account owner. Available RRSP/RRIF funds are drawn into low-income years, tax is recalculated, required spending is funded, and any after-tax excess is retained in cash. The model does not yet optimize capital-gain lots, pension-income splitting, or explicitly calculate OAS recovery tax.</p>
-</div>
+<details class="hn24-strategy-details">
+  <summary>
+    <div><strong>Choose a different strategy or inspect the withdrawal order</strong><span>Advanced controls and the first 15 retirement withdrawal years</span></div>
+    <span class="hn24-chevron">⌄</span>
+  </summary>
+  <div class="hn24-strategy-body">
+    <div class="card">
+      <h3>All available strategies</h3>
+      <div id="wsChoices" class="ws-choice"></div>
+    </div>
+    <div id="wsCustomCard" class="card hidden">
+      <h3>Custom account order</h3>
+      <p class="muted">Accounts are used from left to right. Each account type may appear once.</p>
+      <div id="wsCustomOrder" class="ws-order"></div>
+    </div>
+    <div class="card">
+      <h3>First 15 retirement withdrawal years</h3>
+      <div id="wsTimeline" class="table-wrap"></div>
+    </div>
+    <div class="card">
+      <h3>How tax-bracket optimization works</h3>
+      <p class="muted">The model targets the indexed ceiling of the first federal tax bracket for each retired account owner. Available RRSP or RRIF funds may be drawn during low-income years, taxes are recalculated, required spending is funded, and after-tax excess is retained in cash. The model does not currently optimize individual capital-gain lots, pension-income splitting or explicitly calculate OAS recovery tax.</p>
+    </div>
+  </div>
+</details>
+<div id="wsRecommendation" class="hidden"></div>
 </section>
 
 <section id="montecarlo" class="page">
@@ -2525,6 +2669,8 @@ function retirementStartYear(plan=state){
 function renderWithdrawalStrategy(){
  const ws=ensureWithdrawalStrategy(),def=strategyDefinition(ws.mode);
  document.getElementById('wsActiveBadge').textContent=def.label;
+ document.getElementById('hn24ActiveName').textContent=def.label;
+ document.getElementById('hn24ActiveDescription').textContent=def.description;
  document.getElementById('wsChoices').innerHTML=withdrawalStrategyModes.map(mode=>{
   const d=strategyDefinition(mode);
   return`<label class="ws-option ${ws.mode===mode?'active':''}"><div><input type="radio" name="wsMode" value="${mode}" ${ws.mode===mode?'checked':''}><strong>${esc(d.label)}</strong></div><p>${esc(d.description)}</p></label>`;
@@ -2537,15 +2683,23 @@ function renderWithdrawalStrategy(){
   document.querySelectorAll('#wsCustomOrder select').forEach(x=>x.onchange=customOrderChanged);
  }
  const selected=withdrawalStrategyMetrics(buildPlanProjectionForStrategy(ws.mode));
+ const lowestPortfolio=Math.min(...selected.rows.map(r=>num(r.projection.endingInvestments)),0);
  document.getElementById('wsSelectedSummary').innerHTML=`
+  <div><span>Funding status</span><strong>${selected.firstShort?'Shortfall '+selected.firstShort:'Fully funded'}</strong></div>
   <div><span>Lifetime tax</span><strong>${money(selected.lifetimeTax)}</strong></div>
-  <div><span>Ending portfolio</span><strong>${money(selected.endingPortfolio)}</strong></div>
   <div><span>Ending estate</span><strong>${money(selected.endingEstate)}</strong></div>
-  <div><span>First unfunded year</span><strong>${selected.firstShort||'None'}</strong></div>
-  <div><span>Planned RRSP/RRIF drawdown</span><strong>${money(selected.rows.reduce((s,r)=>s+num(r.projection.plannedRegisteredDrawdown),0))}</strong></div>`;
+  <div><span>Lowest portfolio</span><strong>${money(lowestPortfolio)}</strong></div>`;
  const comparisons=compareWithdrawalStrategies(),recommended=chooseRecommendedStrategy(comparisons);
- document.getElementById('wsRecommendation').innerHTML=`<div class="ws-recommended"><strong>Best deterministic result: ${esc(recommended.label)}</strong><br><span class="muted">Among the standard account-order strategies, this produced ${recommended.firstShort?'the strongest available result despite a shortfall in '+recommended.firstShort:'a fully funded projection'} and an ending estate of ${money(recommended.endingEstate)}. This is a model comparison, not individualized tax advice.</span></div>`;
- document.getElementById('wsComparison').innerHTML=`<table><thead><tr><th>Strategy</th><th>Lifetime tax</th><th>Total withdrawals</th><th>Ending portfolio</th><th>Ending estate</th><th>First shortfall</th><th></th></tr></thead><tbody>${comparisons.map(x=>`<tr class="${x.mode===ws.mode?'selected-row':''}"><td><strong>${esc(x.label)}</strong><br><span class="muted">${esc(x.description)}</span></td><td>${money(x.lifetimeTax)}</td><td>${money(x.totalWithdrawals)}</td><td>${money(x.endingPortfolio)}</td><td>${money(x.endingEstate)}</td><td>${x.firstShort||'None'}</td><td><button class="btn small ws-use" data-mode="${x.mode}">${x.mode===ws.mode?'Active':'Use'}</button></td></tr>`).join('')}</tbody></table>`;
+ window.hn24RecommendedMode=recommended.mode;
+ document.getElementById('hn24RecommendedName').textContent=recommended.label;
+ document.getElementById('hn24RecommendedExplanation').textContent=
+  `${recommended.description} In the current deterministic comparison, it ${recommended.firstShort?'produces the strongest available result, although spending becomes unfunded in '+recommended.firstShort:'keeps the plan funded through the planning horizon'}, with lifetime tax of ${money(recommended.lifetimeTax)} and an ending estate of ${money(recommended.endingEstate)}.`;
+ const useButton=document.getElementById('hn24UseRecommended');
+ useButton.disabled=recommended.mode===ws.mode;
+ useButton.textContent=recommended.mode===ws.mode?'Recommendation active':'Use recommendation';
+ useButton.onclick=()=>setWithdrawalStrategy(recommended.mode);
+ document.getElementById('wsRecommendation').innerHTML='';
+ document.getElementById('wsComparison').innerHTML=`<table><thead><tr><th>Strategy</th><th>Plan funding</th><th>Lifetime tax</th><th>Ending estate</th><th>Ending portfolio</th><th></th></tr></thead><tbody>${comparisons.map(x=>`<tr class="${x.mode===recommended.mode?'recommended-row ':''}${x.mode===ws.mode?'selected-row':''}"><td class="hn24-strategy-name"><strong>${esc(x.label)}</strong>${x.mode===recommended.mode?'<small>Recommended</small>':''}</td><td class="${x.firstShort?'hn24-funding-bad':'hn24-funding-good'}">${x.firstShort?'Shortfall '+x.firstShort:'Funded'}</td><td>${money(x.lifetimeTax)}</td><td>${money(x.endingEstate)}</td><td>${money(x.endingPortfolio)}</td><td><button class="btn small ws-use" data-mode="${x.mode}">${x.mode===ws.mode?'Active':'Use'}</button></td></tr>`).join('')}</tbody></table>`;
  document.querySelectorAll('.ws-use').forEach(x=>x.onclick=()=>setWithdrawalStrategy(x.dataset.mode));
  const start=retirementStartYear(),sample=selected.rows.filter(r=>r.year>=start&&(r.projection.withdrawals>0||r.year===start)).slice(0,15);
  document.getElementById('wsTimeline').innerHTML=sample.length?`<table><thead><tr><th>Year</th><th>Tax</th><th>Spending</th><th>Cash</th><th>TFSA</th><th>RRSP/RRIF</th><th>Non-registered</th><th>Total</th></tr></thead><tbody>${sample.map(r=>{const sums={};for(const w of r.projection.withdrawalsByAccount||[])sums[w.type]=(sums[w.type]||0)+num(w.amount);return`<tr><td>${r.year}</td><td>${money(r.projection.tax)}</td><td>${money(r.projection.spending)}</td><td>${money(sums.Cash)}</td><td>${money(sums.TFSA)}</td><td>${money(sums['RRSP/RRIF'])}</td><td>${money(sums['Non-registered'])}</td><td><strong>${money(r.projection.withdrawals)}</strong></td></tr>`}).join('')}</tbody></table>`:'<div class="empty">No retirement withdrawals are required in the first 15 displayed years.</div>';
@@ -2891,20 +3045,74 @@ function scheduleBackgroundAnalysis(){
  backgroundAnalysis.timer=setTimeout(runBackgroundAnalysis,500);
 }
 function renderResultHub(){
- const root=document.getElementById('resultHubSummary'),message=document.getElementById('resultHubMessage');if(!root||!message)return;
+ const cards=document.getElementById('hn24ResultCards');if(!cards)return;
  let rows;
  try{rows=backgroundAnalysis.result?.rows||buildCurrentProjection()}catch{rows=[]}
- const last=rows.at(-1)?.projection||{},firstShort=rows.find(r=>num(r.projection.unfunded)>0)?.year||null;
+ const projections=rows.map(r=>r.projection||{});
+ const last=projections.at(-1)||{};
+ const firstShortRow=rows.find(r=>num(r.projection?.unfunded)>0);
+ const firstShort=firstShortRow?.year||null;
  const confidence=backgroundAnalysis.result?.mc?.successRate;
+ const lifetimeTax=projections.reduce((s,p)=>s+num(p.tax),0);
+ const lowestPortfolio=projections.length?Math.min(...projections.map(p=>num(p.endingInvestments))):0;
+ const endingEstate=num(last.netWorth),endingPortfolio=num(last.endingInvestments);
  const strategy=strategyDefinition(ensureWithdrawalStrategy().mode).label;
- root.innerHTML=`
-  <div class="metric">Retirement confidence<strong>${confidence==null?'Checking…':Math.round(confidence*100)+'%'}</strong><div class="submetric">Automatic market-risk analysis</div></div>
-  <div class="metric">Ending portfolio<strong>${money(last.endingInvestments||0)}</strong><div class="submetric">At the planning horizon</div></div>
-  <div class="metric">Ending estate<strong>${money(last.netWorth||0)}</strong><div class="submetric">Assets less recorded debt</div></div>
-  <div class="metric">Active strategy<strong>${esc(strategy)}</strong><div class="submetric">Current withdrawal approach</div></div>`;
- message.innerHTML=firstShort
-  ?`<h3>Action required</h3><p>The current deterministic plan first shows unfunded spending in <strong>${firstShort}</strong>. Review spending, retirement timing, contributions or benefit timing.</p>`
-  :`<h3>Your deterministic plan is funded</h3><p>No unfunded year appears within the current planning horizon. Use the confidence result above to understand market risk.</p>`;
+ const pct=confidence==null?null:Math.round(confidence*100);
+ let outlook='Checking…',kind='checking',note='Automatic analysis is running';
+ if(firstShort){outlook='Action needed';kind='fail';note=`First projected shortfall: ${firstShort}`}
+ else if(pct!=null&&pct<80){outlook='Needs strengthening';kind='fail';note=`${pct}% market-risk confidence`}
+ else if(pct!=null&&pct<90){outlook='Funded with risk';kind='warn';note=`${pct}% market-risk confidence`}
+ else if(pct!=null){outlook='Strong outlook';kind='good';note=`${pct}% market-risk confidence`}
+ else if(rows.length){outlook='Deterministically funded';kind='good';note='Market-risk confidence is still calculating'}
+ const status=document.getElementById('hn24ResultStatus');
+ status.className='hn24-result-status '+kind;
+ document.getElementById('hn24OutlookLabel').textContent=outlook;
+ document.getElementById('hn24OutlookNote').textContent=note;
+ cards.innerHTML=`
+  <div class="hn24-result-card primary"><span>Retirement confidence</span><strong>${pct==null?'Checking…':pct+'%'}</strong><p>${pct==null?'Automatic market simulation is running.':pct>=90?'The plan succeeded in most simulated market paths.':pct>=80?'The plan is generally resilient but downside risk remains.':'The plan is vulnerable to weaker market outcomes.'}</p></div>
+  <div class="hn24-result-card"><span>First projected shortfall</span><strong>${firstShort||'None'}</strong><p>${firstShort?'Spending first exceeds available income and withdrawals in this year.':'No unfunded spending appears in the standard projection.'}</p></div>
+  <div class="hn24-result-card"><span>Lifetime tax</span><strong>${money(lifetimeTax)}</strong><p>Estimated total household income tax across the planning horizon.</p></div>
+  <div class="hn24-result-card"><span>Ending estate</span><strong>${money(endingEstate)}</strong><p>Projected net worth at the end of the planning horizon.</p></div>
+  <div class="hn24-result-card"><span>Lowest portfolio balance</span><strong>${money(lowestPortfolio)}</strong><p>The lowest projected investment balance during the plan.</p></div>
+  <div class="hn24-result-card"><span>Active strategy</span><strong>${esc(strategy)}</strong><p>The account-withdrawal approach currently used by the projection.</p></div>`;
+
+ let meaningTitle,meaningText,actionTitle,actionText,actionMode='improve';
+ if(firstShort){
+  meaningTitle='The current plan does not fully fund the selected lifestyle.';
+  meaningText=`The standard projection first shows unfunded spending in ${firstShort}. This is usually driven by the combination of retirement timing, spending, available savings and benefit income.`;
+  actionTitle='Address the projected shortfall';
+  actionText='Review retirement spending, retirement age, savings contributions or benefit timing, then recalculate the plan.';
+ }else if(pct!=null&&pct<80){
+  meaningTitle='The standard projection is funded, but market risk is too high.';
+  meaningText=`The plan works using the expected return, but succeeds in only ${pct}% of simulated market paths. Poor returns early in retirement are the main concern.`;
+  actionTitle='Strengthen retirement resilience';
+  actionText='Test retiring later, reducing spending, saving more or changing benefit timing.';
+ }else if(pct!=null&&pct<90){
+  meaningTitle='The plan is funded, with some downside risk.';
+  meaningText=`No deterministic shortfall appears, and the plan succeeds in ${pct}% of simulated market paths. The result is workable, but weaker early returns could still require adjustments.`;
+  actionTitle='Review the downside scenarios';
+  actionText='Open the market-risk analysis and compare the effect of a later retirement or modest spending reduction.';
+  actionMode='risk';
+ }else if(pct!=null){
+  meaningTitle='Your retirement outlook is strong under the current assumptions.';
+  meaningText=`The standard projection remains funded and the plan succeeds in ${pct}% of simulated market paths. The ending estate is ${money(endingEstate)}, but results still depend on the accuracy of your spending, income and return assumptions.`;
+  actionTitle='Confirm the assumptions behind the result';
+  actionText='Review spending, pensions, CPP, OAS and investment returns whenever your circumstances change.';
+  actionMode='plan';
+ }else{
+  meaningTitle='The standard projection is currently funded.';
+  meaningText=`No unfunded year appears in the deterministic plan. Market-risk confidence is still calculating, so the result is not yet a complete risk assessment.`;
+  actionTitle='Wait for the risk analysis to finish';
+  actionText='The results page will update automatically when the simulation is complete.';
+  actionMode='risk';
+ }
+ document.getElementById('hn24MeaningTitle').textContent=meaningTitle;
+ document.getElementById('hn24MeaningText').textContent=meaningText;
+ document.getElementById('hn24ActionTitle').textContent=actionTitle;
+ document.getElementById('hn24ActionText').textContent=actionText;
+ const btn=document.getElementById('hn24ActionButton');
+ btn.textContent=actionMode==='risk'?'Open risk analysis':actionMode==='plan'?'Review Your Plan':'Improve My Plan';
+ btn.onclick=()=>actionMode==='risk'?showPage('montecarlo'):actionMode==='plan'?showPage('planhub'):window.openImproveMyPlan?.();
 }
 function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home'){renderHome();scheduleBackgroundAnalysis()}if(id==='planhub')renderSetupSteps();if(id==='resulthub'){renderResultHub();scheduleBackgroundAnalysis()}if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();if(id==='withdrawal')renderWithdrawalStrategy();if(id==='montecarlo'&&monteCarloState.results)renderMonteCarloResults();window.scrollTo({top:0,behavior:'smooth'})}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
@@ -3284,7 +3492,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     upsertEvent('Expected inheritance','Inheritance',n('wInheritance'),n('wInheritanceYear'));
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.3.1';
+    state.meta.appVersion='2.4';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
