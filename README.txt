@@ -1,23 +1,21 @@
-Harbour North 4.0 RC2 Financial Audit
+Harbour North 4.0 RC2 — Strategy & Tax Audit
 
-Ending-estate audit
--------------------
-The previous Results card displayed the final net-worth value entirely in future nominal
-dollars. Over a planning horizon of several decades, this can look dramatically larger
-than the equivalent value in today's purchasing power.
+Changes
+-------
+- Strategy-page ending estate now uses the same today's-dollar calculation as Results.
+- Ending portfolio is also shown in today's dollars.
+- Lifetime tax is shown in today's dollars for fair comparison across a multi-decade horizon.
+- Nominal lifetime tax, federal tax, provincial tax, taxable income and effective tax rate remain visible in expandable audits.
+- Each strategy audit shows total RRSP/RRIF, TFSA and non-registered withdrawals.
+- Each strategy audit shows ending RRSP/RRIF and TFSA balances.
+- Highest-tax year and amount are shown.
+- Corrected a separate lowest-portfolio bug: Math.min included a literal zero, forcing the result to display $0.
 
-This build:
-- Uses ending estate in today's dollars as the primary Results-page figure.
-- Shows the corresponding future-dollar amount and final planning year.
-- Displays the inflation rate and calculated deflator.
-- Reconciles final investment accounts + recorded non-investment assets - recorded debts.
-- Lists every final account balance in an expandable audit panel.
-- Flags the current limitation that non-investment assets and debts remain at their
-  recorded values unless separate future events are entered.
-- Keeps the lowest-portfolio figure clearly labelled as nominal dollars for the year
-  in which it occurs.
+Tax calculation review
+----------------------
+The projection recalculates household tax after taxable RRSP/RRIF withdrawals are added to each owner's taxable income.
+TFSA withdrawals are excluded from taxable income. Higher lifetime tax under RRSP/RRIF drawdown can therefore be legitimate
+when the strategy accelerates registered withdrawals. The new audit panel exposes the withdrawal and taxable-income totals
+needed to confirm whether that result is reasonable for the current plan.
 
-Important:
-This audit does not conceal or cap the projection. It makes the calculation traceable
-and separates future dollars from today's dollars. No investment growth, spending,
-income, withdrawal or tax formulas were changed in this build.
+No tax brackets, federal/provincial rates, investment returns or withdrawal-order rules were changed.
