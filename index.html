@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 3.6</title>
+<title>Harbour North 4.0 RC1</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -953,8 +953,32 @@ button,.btn,input,select,textarea{touch-action:manipulation}
 @media print{.hn36-modal,.hn36-busy,.hn36-beta-grid,#hn36ValidationFindings{display:none!important}}
 </style>
 
+
+<style id="hn40rc1">
+:root{--hn-sidebar:250px;--hn-bg:#f4f7f9;--hn-navy:#12344a;--hn-blue:#2b6f8f;}
+body{background:var(--hn-bg)!important;}
+.hn-shell{display:grid;grid-template-columns:var(--hn-sidebar) 1fr;min-height:100vh}
+.hn-sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--hn-sidebar);background:linear-gradient(180deg,#12344a,#1d4e68);color:#fff;padding:22px 18px;overflow:auto;z-index:1000}
+.hn-brand{font-size:26px;font-weight:900}.hn-tag{opacity:.8;font-size:12px;margin-bottom:24px}
+.hn-nav h4{font-size:11px;text-transform:uppercase;opacity:.7;margin:18px 0 8px}
+.hn-nav a{display:block;color:#fff;text-decoration:none;padding:8px 10px;border-radius:8px}
+.hn-nav a:hover{background:rgba(255,255,255,.1)}
+.hn-main{margin-left:var(--hn-sidebar)}
+.hn-hero{margin:16px;border-radius:18px;padding:24px;background:linear-gradient(135deg,#12344a,#2b6f8f);color:#fff}
+@media(max-width:900px){.hn-sidebar{display:none}.hn-main{margin-left:0}}
+</style>
 </head>
 <body>
+<div class="hn-sidebar">
+<div class="hn-brand">🧭 Harbour North</div>
+<div class="hn-tag">Retirement Planning, Simplified</div>
+<div class="hn-nav">
+<h4>Dashboard</h4><a href="#">Home</a>
+<h4>Planning</h4><a href="#">Household</a><a href="#">Investments</a><a href="#">Income</a><a href="#">Spending</a>
+<h4>Analysis</h4><a href="#">Projection</a><a href="#">Taxes</a><a href="#">Reports</a>
+<h4>Tools</h4><a href="#">Smart Coach</a><a href="#">Scenarios</a><a href="#">Setup & Health</a>
+</div></div><div class="hn-main"><div class="hn-hero"><h1>Harbour North 4.0 RC1</h1><p>Welcome to the new commercial interface. Existing planning engine preserved.</p></div>
+
 <header><div><h1>Harbour North</h1><p>Your retirement picture—and what to do next.</p></div><div id="saveStatus" class="status">Ready</div></header>
 <main class="shell">
 <nav class="tabs streamlined-tabs">
@@ -1138,7 +1162,7 @@ button,.btn,input,select,textarea{touch-action:manipulation}
 <section id="coach" class="page">
   <div class="hn30-coach-hero">
     <div>
-      <div class="eyebrow">Harbour North 3.6 · Beta Readiness</div>
+      <div class="eyebrow">Harbour North 4.0 RC1 · Beta Readiness</div>
       <h2>What should you do next?</h2>
       <p>Harbour North reviews your current projection, tests practical alternatives and ranks the changes that have the greatest effect on your retirement plan.</p>
     </div>
@@ -1854,7 +1878,7 @@ button,.btn,input,select,textarea{touch-action:manipulation}
 
 <section id="report" class="page" aria-label="Retirement report">
 <div class="hn26-report-banner hn32-report-banner">
-  <div><div class="eyebrow">Harbour North 3.6 · Beta Readiness</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
+  <div><div class="eyebrow">Harbour North 4.0 RC1 · Beta Readiness</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
   <button id="hn26PrintReport" type="button" class="btn primary">Print / Save as PDF</button>
 </div>
 <div class="hn32-report-controls card">
@@ -4225,7 +4249,7 @@ function renderProfessionalReport(){
   </div>
  </section>
 
- <div class="report-footer">Generated by Harbour North 3.6 · Beta Readiness · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
+ <div class="report-footer">Generated by Harbour North 4.0 RC1 · Beta Readiness · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
 }
 
 let backgroundAnalysis={fingerprint:'',running:false,timer:null,result:null};
@@ -6712,4 +6736,4 @@ window.addEventListener('load',()=>setTimeout(hn342InitializePolish,120),{once:t
   </div>
 </div>
 
-</body></html>
+</div></body></html>
