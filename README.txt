@@ -1,3 +1,12 @@
+Harbour North 4.0 RC2 Final — Single Welcome
+
+Change:
+- Removed the duplicate time-of-day greeting from the dark retirement snapshot.
+- The personal greeting with both partners remains in the welcome box at the top.
+- The dark snapshot now uses the heading “Your retirement plan.”
+
+No calculations, saved data, backup behaviour, or tax logic were changed.
+
 Harbour North 4.0 RC2 Final — Both Partners Welcome
 
 Change:
