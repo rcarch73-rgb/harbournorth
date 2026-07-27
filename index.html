@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 3.5.1</title>
+<title>Harbour North 3.6</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -914,6 +914,45 @@ button{touch-action:manipulation}
 @media print{.hn351-ask-callout{display:none!important}}
 </style>
 
+
+<style id="hn36Styles">
+.hn36-beta-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:18px;margin-bottom:18px}
+.hn36-readiness-card{background:linear-gradient(135deg,#f6fbfa,#eef5f8)}
+.hn36-ring{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--navy) 0deg,#dce7ea 0);position:relative;flex:0 0 auto}
+.hn36-ring:after{content:"";position:absolute;inset:9px;border-radius:50%;background:#fff}
+.hn36-ring span{position:relative;z-index:1;font-size:22px;font-weight:950;color:var(--navy)}
+.hn36-gates{display:grid;gap:9px;margin-top:13px}
+.hn36-gate{display:grid;grid-template-columns:24px 1fr auto;gap:9px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}
+.hn36-gate:last-child{border-bottom:0}.hn36-gate i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:900}
+.hn36-gate.pass i{background:#dff3e7;color:#16613a}.hn36-gate.warn i{background:#fff1cc;color:#7a5200}.hn36-gate.fail i{background:#fde5e2;color:#8c2d23}
+.hn36-findings{display:grid;gap:10px;margin-top:14px}
+.hn36-finding{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:13px;padding:13px;background:#fff}
+.hn36-finding .hn36-severity{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-weight:950}
+.hn36-finding.critical .hn36-severity{background:#fde5e2;color:#8c2d23}.hn36-finding.warning .hn36-severity{background:#fff1cc;color:#7a5200}.hn36-finding.info .hn36-severity{background:#e8f1f5;color:#24556d}.hn36-finding.pass .hn36-severity{background:#dff3e7;color:#16613a}
+.hn36-finding strong{display:block;color:var(--navy);margin-bottom:2px}.hn36-finding p{margin:0;color:var(--muted);font-size:13px}
+.hn36-modal{position:fixed;inset:0;background:rgba(14,35,48,.62);z-index:9999;display:grid;place-items:center;padding:18px}
+.hn36-modal.hidden,.hn36-busy.hidden{display:none}
+.hn36-modal-panel{position:relative;background:#fff;border-radius:22px;box-shadow:0 24px 80px rgba(0,0,0,.28);width:min(720px,100%);padding:30px}
+.hn36-modal-panel h2{margin:6px 0 8px;color:var(--navy)}
+.hn36-modal-close{position:absolute;top:14px;right:16px;border:0;background:transparent;font-size:28px;color:var(--muted);cursor:pointer}
+.hn36-welcome-steps{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
+.hn36-welcome-steps article{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:start;padding:14px;border:1px solid var(--line);border-radius:14px;background:#f8fafb}
+.hn36-welcome-steps article>span{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:950}
+.hn36-welcome-steps strong,.hn36-welcome-steps small{display:block}.hn36-welcome-steps small{color:var(--muted);margin-top:3px}
+.hn36-modal-actions{display:flex;gap:10px;flex-wrap:wrap}.hn36-welcome-note{font-size:12px;color:var(--muted);margin:16px 0 0}
+.hn36-busy{position:fixed;right:18px;bottom:18px;z-index:9998;background:var(--navy);color:#fff;border-radius:14px;padding:12px 16px;display:flex;gap:10px;align-items:center;box-shadow:0 12px 35px rgba(0,0,0,.22)}
+.hn36-spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:hn36Spin .8s linear infinite}
+@keyframes hn36Spin{to{transform:rotate(360deg)}}
+button,.btn,input,select,textarea{touch-action:manipulation}
+@media(max-width:850px){.hn36-beta-grid{grid-template-columns:1fr}.hn36-welcome-steps{grid-template-columns:1fr}}
+@media(max-width:620px){
+ .shell{padding-left:10px;padding-right:10px}.tabs{gap:5px}.tab{min-height:42px}
+ .hn36-finding{grid-template-columns:34px 1fr}.hn36-finding .btn{grid-column:1/-1;width:100%}
+ .hn36-modal-panel{padding:25px 18px}.hn36-modal-actions .btn{width:100%}
+}
+@media print{.hn36-modal,.hn36-busy,.hn36-beta-grid,#hn36ValidationFindings{display:none!important}}
+</style>
+
 </head>
 <body>
 <header><div><h1>Harbour North</h1><p>Your retirement picture—and what to do next.</p></div><div id="saveStatus" class="status">Ready</div></header>
@@ -1099,7 +1138,7 @@ button{touch-action:manipulation}
 <section id="coach" class="page">
   <div class="hn30-coach-hero">
     <div>
-      <div class="eyebrow">Harbour North 3.5.1 · Overview Coach Access</div>
+      <div class="eyebrow">Harbour North 3.6 · Beta Readiness</div>
       <h2>What should you do next?</h2>
       <p>Harbour North reviews your current projection, tests practical alternatives and ranks the changes that have the greatest effect on your retirement plan.</p>
     </div>
@@ -1459,7 +1498,7 @@ button{touch-action:manipulation}
 </section>
 
 <section id="stability" class="page">
-<div class="hero"><div class="eyebrow">3.5.1 · Overview Coach Access</div>
+<div class="hero"><div class="eyebrow">3.6 · Beta Readiness</div>
 
 <div id="hn341Guided" class="card hn341-guided">
   <div class="row-head">
@@ -1473,7 +1512,47 @@ button{touch-action:manipulation}
   <div class="hn341-progress large"><span id="hn341GuidedBar"></span></div>
   <div id="hn341GuidedChecklist" class="hn341-checklist"></div>
 </div>
-<h2>Setup &amp; Health</h2><p class="muted">Harbour North 2.7 freezes new features and verifies the complete planning system before Version 3.0 work begins.</p></div>
+<h2>Setup &amp; Health</h2><p class="muted">Beta Readiness brings setup, validation, first-run guidance and release checks into one dependable workflow.</p></div>
+
+
+<div class="hn36-beta-grid">
+  <section class="card hn36-readiness-card">
+    <div class="row-head">
+      <div>
+        <div class="eyebrow">Beta Readiness Centre</div>
+        <h3>Is this plan ready to rely on?</h3>
+        <p class="muted">Harbour North checks setup quality, assumptions, calculation readiness, backup protection and browser health.</p>
+      </div>
+      <div id="hn36ReadinessRing" class="hn36-ring"><span>—</span></div>
+    </div>
+    <div id="hn36ReadinessSummary" class="notice">Run the readiness scan to review this plan.</div>
+    <div class="actions">
+      <button id="hn36RunReadiness" type="button" class="btn primary">Run readiness scan</button>
+      <button id="hn36PreviewWelcome" type="button" class="btn">Preview first-run guide</button>
+      <button type="button" class="btn hn36-goto" data-page="backup">Backup &amp; recovery</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="eyebrow">Release gates</div>
+    <h3>Five checks before beta testing</h3>
+    <div id="hn36ReleaseGates" class="hn36-gates"></div>
+  </section>
+</div>
+
+<section class="card">
+  <div class="row-head">
+    <div>
+      <div class="eyebrow">Automatic plan review</div>
+      <h3>Validation findings</h3>
+      <p class="muted">Issues are ranked by importance and linked to the page where they can be corrected.</p>
+    </div>
+    <span id="hn36IssueCount" class="badge">Not scanned</span>
+  </div>
+  <div id="hn36ValidationFindings" class="hn36-findings">
+    <div class="notice">Select “Run readiness scan” to check the active plan.</div>
+  </div>
+</section>
 
 <div class="card">
 <div class="row-head"><div><h3>Guided setup</h3><p class="muted">Work through these steps in order. Completed steps update automatically.</p></div><span id="setupProgressBadge" class="badge warn">Checking</span></div>
@@ -1775,7 +1854,7 @@ button{touch-action:manipulation}
 
 <section id="report" class="page" aria-label="Retirement report">
 <div class="hn26-report-banner hn32-report-banner">
-  <div><div class="eyebrow">Harbour North 3.5.1 · Overview Coach Access</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
+  <div><div class="eyebrow">Harbour North 3.6 · Beta Readiness</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
   <button id="hn26PrintReport" type="button" class="btn primary">Print / Save as PDF</button>
 </div>
 <div class="hn32-report-controls card">
@@ -1801,7 +1880,34 @@ button{touch-action:manipulation}
   <div class="hn26-safe-card hn26-danger"><h3>Reset this browser</h3><p>Delete the saved plan and onboarding progress from this browser. Export a backup first.</p><button id="hn26ResetBrowser" class="btn">Reset saved plan</button></div>
 </div>
 </section>
-</main><div id="toast" class="toast"></div>
+
+</main>
+
+<div id="hn36WelcomeModal" class="hn36-modal hidden" role="dialog" aria-modal="true" aria-labelledby="hn36WelcomeTitle">
+  <div class="hn36-modal-panel">
+    <button id="hn36CloseWelcome" type="button" class="hn36-modal-close" aria-label="Close">×</button>
+    <div class="eyebrow">Welcome to Harbour North</div>
+    <h2 id="hn36WelcomeTitle">Build your retirement picture in four steps</h2>
+    <p class="muted">Harbour North guides you through the essentials first. Detailed tax, scenario and risk analysis runs quietly in the background.</p>
+    <div class="hn36-welcome-steps">
+      <article><span>1</span><div><strong>Tell us about your household</strong><small>Names, ages and retirement timing.</small></div></article>
+      <article><span>2</span><div><strong>Add investments and property</strong><small>Record the assets available to support retirement.</small></div></article>
+      <article><span>3</span><div><strong>Add retirement income and spending</strong><small>Include CPP, OAS, pensions and lifestyle costs.</small></div></article>
+      <article><span>4</span><div><strong>Review your retirement outlook</strong><small>See funding status, priorities and practical next steps.</small></div></article>
+    </div>
+    <div class="hn36-modal-actions">
+      <button id="hn36StartSetup" type="button" class="btn primary">Start guided setup</button>
+      <button id="hn36ExploreOverview" type="button" class="btn">Explore Overview</button>
+    </div>
+    <p class="hn36-welcome-note">Your plan is stored only in this browser unless you export a backup.</p>
+  </div>
+</div>
+
+<div id="hn36Busy" class="hn36-busy hidden" aria-live="polite">
+  <div class="hn36-spinner"></div><span>Reviewing your plan…</span>
+</div>
+
+<div id="toast" class="toast"></div>
 <script>
 (function(global){
   'use strict';
@@ -2162,7 +2268,7 @@ button{touch-action:manipulation}
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='3.5.1-overview-coach-access', SCHEMA=51, MODEL_VERSION=41;
+const KEY='harbourNorth2.plan', APP='3.6-beta-readiness', SCHEMA=52, MODEL_VERSION=42;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,emergencyFundAmount:0,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -3206,6 +3312,27 @@ async function runStabilityCheck(){
    }else detail='Professional Client Report functions are unavailable.';
    add('Professional Client Report',available&&valid,detail);
   });
+  test('Beta Readiness Centre',()=>{
+   const ids=['hn36RunReadiness','hn36ReadinessRing','hn36ValidationFindings','hn36ReleaseGates','hn36WelcomeModal'];
+   const missing=ids.filter(id=>!document.getElementById(id));
+   const functions=typeof hn36ValidationScan==='function'&&typeof hn36RenderScan==='function'&&typeof hn36ShowWelcome==='function';
+   add('Beta Readiness Centre',missing.length===0&&functions,missing.length===0&&functions?'Readiness scan, release gates and first-run guide are available.':`Missing readiness components: ${missing.join(', ')}`);
+  });
+
+  test('Readiness Scan Isolation',()=>{
+   const before=JSON.stringify(corePlanSnapshot(state));
+   const scan=hn36ValidationScan();
+   const after=JSON.stringify(corePlanSnapshot(state));
+   const valid=before===after&&Array.isArray(scan.findings)&&Number.isFinite(scan.score);
+   add('Readiness Scan Isolation',valid,valid?'Readiness checks inspect protected data without changing the active plan.':'The readiness scan changed active plan data or returned an invalid result.');
+  });
+
+  test('First-run Guide Controls',()=>{
+   const modal=document.getElementById('hn36WelcomeModal');
+   const controls=['hn36StartSetup','hn36ExploreOverview','hn36CloseWelcome'].every(id=>!!document.getElementById(id));
+   add('First-run Guide Controls',!!modal&&controls,!!modal&&controls?'Welcome guide and navigation controls are present.':'The first-run guide is incomplete.');
+  });
+
   test('Smart Coach Overview Access',()=>{
    const topTab=document.querySelector('nav.tabs .tab[data-page="smartcoach"]');
    const overviewButtons=[...document.querySelectorAll('#home [data-page="smartcoach"]')];
@@ -4098,7 +4225,7 @@ function renderProfessionalReport(){
   </div>
  </section>
 
- <div class="report-footer">Generated by Harbour North 3.5.1 · Overview Coach Access · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
+ <div class="report-footer">Generated by Harbour North 3.6 · Beta Readiness · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
 }
 
 let backgroundAnalysis={fingerprint:'',running:false,timer:null,result:null};
@@ -5111,6 +5238,141 @@ function renderHN35Coach(){
  hn35Welcome();
 }
 
+
+const HN36_WELCOME_KEY='hn36.welcomeSeen';
+
+function hn36ValidBirthDate(value){
+ return typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&!Number.isNaN(new Date(value+'T00:00:00').getTime());
+}
+function hn36PageFor(kind){
+ return ({person:'planhub',account:'planhub',income:'planhub',expense:'planhub',assumption:'planhub',backup:'backup',system:'stability'})[kind]||'planhub';
+}
+function hn36ValidationScan(){
+ const findings=[];
+ const people=(state.people||[]).filter((_,i)=>i===0||state.hasPartner!==false);
+ const accounts=state.accounts||[], incomes=state.incomeSources||[], expenses=state.expenses||[];
+ const primary=people[0];
+ const add=(severity,title,text,kind='planhub')=>findings.push({severity,title,text,page:hn36PageFor(kind)});
+
+ if(!primary||!primary.name||String(primary.name).trim().length<2)add('warning','Add the primary person’s name','A clear household record makes reports and ownership easier to understand.','person');
+ if(!primary||!hn36ValidBirthDate(primary.birthDate))add('critical','Add a valid birth date','Retirement ages, CPP timing and projection years depend on a valid birth date.','person');
+ if(primary&&(!Number.isFinite(num(primary.retirementAge))||num(primary.retirementAge)<40||num(primary.retirementAge)>80))add('critical','Review the retirement age','Enter a realistic retirement age between 40 and 80.','person');
+ if(state.hasPartner!==false&&people.length<2)add('warning','Complete the partner record','The plan is set to a couple, but the partner information is incomplete.','person');
+
+ const investmentAccounts=accounts.filter(a=>['RRSP/RRIF','TFSA','FHSA','Non-registered','Cash'].includes(a.type));
+ if(!investmentAccounts.length)add('critical','Add retirement accounts','No investable account has been recorded, so funding results may be misleading.','account');
+ if(accounts.some(a=>num(a.balance)<0))add('critical','Correct negative account balances','Investment account balances cannot be negative.','account');
+ if(accounts.some(a=>!String(a.name||'').trim()))add('warning','Name every account','Account names make reports, withdrawals and scenario comparisons easier to audit.','account');
+
+ const hasCpp=incomes.some(x=>String(x.type||'').toUpperCase().includes('CPP'));
+ const hasOas=incomes.some(x=>String(x.type||'').toUpperCase().includes('OAS'));
+ if(!hasCpp)add('warning','Review CPP income','No CPP income source is recorded. Add an estimate or confirm that CPP is intentionally excluded.','income');
+ if(!hasOas)add('warning','Review OAS income','No OAS income source is recorded. Add an estimate or confirm that OAS is intentionally excluded.','income');
+ if(incomes.some(x=>num(x.annualAmount)<0))add('critical','Correct negative income amounts','Income amounts must be zero or greater.','income');
+
+ const annualSpend=expenses.reduce((sum,x)=>sum+Math.max(0,num(x.amount)),0);
+ if(!expenses.length||annualSpend<=0)add('critical','Add retirement spending','The projection needs a realistic retirement lifestyle budget.','expense');
+ else if(annualSpend<12000)add('warning','Review unusually low spending',`Recorded annual spending is ${money(annualSpend)}, which may omit major household costs.`,'expense');
+ if(expenses.some(x=>!String(x.name||'').trim()))add('warning','Name every spending item','Clear categories make the retirement report easier to review.','expense');
+
+ const inflation=num(state.household?.inflationRate);
+ const returns=num(state.household?.returnRate);
+ if(inflation<0||inflation>8)add('critical','Review the inflation assumption',`The current inflation assumption is ${inflation}%. A value between 0% and 8% is expected.`,'assumption');
+ else if(inflation<1||inflation>4.5)add('warning','Stress-test inflation',`The current inflation assumption is ${inflation}%. Consider comparing it with a moderate long-term case.`,'assumption');
+ if(returns<-5||returns>15)add('critical','Review the investment-return assumption',`The current return assumption is ${returns}%, which is outside the normal planning range.`,'assumption');
+ else if(returns>8)add('warning','Stress-test investment returns',`The current return assumption is ${returns}%. Compare the plan with a lower-return scenario.`,'assumption');
+
+ let projectionOkay=false;
+ try{
+  const copy=clone(state);normalizePlan(copy);
+  const rows=projectPlan(copy);
+  projectionOkay=Array.isArray(rows)&&rows.length>0&&rows.every(r=>Number.isFinite(num(r.endingInvest)));
+ }catch(e){
+  add('critical','Projection engine could not complete',e?.message||String(e),'system');
+ }
+ if(!localStorage.getItem('hn36.backupConfirmed'))add('info','Create a current backup','Export a backup before beta testing, importing data or making major changes.','backup');
+ if(localStorage.getItem('hn341.systemPassed')!=='true')add('warning','Run the complete system test','The current release has not yet passed its protected browser test suite on this device.','system');
+
+ if(!findings.length)add('pass','Plan readiness checks passed','No setup or assumption issues were found in the active plan. Continue with stress testing and professional review.','system');
+
+ const critical=findings.filter(x=>x.severity==='critical').length;
+ const warnings=findings.filter(x=>x.severity==='warning').length;
+ const infos=findings.filter(x=>x.severity==='info').length;
+ let score=Math.max(0,100-critical*22-warnings*8-infos*3);
+ if(!projectionOkay)score=Math.min(score,45);
+ return {findings,critical,warnings,infos,score,projectionOkay};
+}
+function hn36ReleaseGateData(scan){
+ const hasBackup=localStorage.getItem('hn36.backupConfirmed')==='true';
+ const systemPass=localStorage.getItem('hn341.systemPassed')==='true';
+ const setupPass=scan.critical===0;
+ const assumptionsPass=!scan.findings.some(x=>/assumption|inflation|return/.test((x.title+' '+x.text).toLowerCase())&&x.severity==='critical');
+ const projectionPass=scan.projectionOkay;
+ return [
+  {label:'Core household setup',pass:setupPass,state:scan.critical?'fail':'pass',detail:scan.critical?`${scan.critical} critical issue${scan.critical===1?'':'s'}`:'Complete'},
+  {label:'Planning assumptions',pass:assumptionsPass,state:assumptionsPass?'pass':'fail',detail:assumptionsPass?'Within range':'Review required'},
+  {label:'Projection engine',pass:projectionPass,state:projectionPass?'pass':'fail',detail:projectionPass?'Calculating':'Unable to calculate'},
+  {label:'Browser system test',pass:systemPass,state:systemPass?'pass':'warn',detail:systemPass?'Passed':'Not yet passed'},
+  {label:'Current backup',pass:hasBackup,state:hasBackup?'pass':'warn',detail:hasBackup?'Confirmed':'Recommended'}
+ ];
+}
+function hn36RenderScan(scan){
+ const ring=document.getElementById('hn36ReadinessRing');
+ if(ring){ring.style.background=`conic-gradient(var(--navy) ${scan.score*3.6}deg,#dce7ea 0)`;ring.querySelector('span').textContent=`${scan.score}%`}
+ const summary=document.getElementById('hn36ReadinessSummary');
+ if(summary){
+  summary.className=`notice ${scan.critical?'warn':scan.warnings?'':'good'}`;
+  summary.innerHTML=scan.critical
+   ? `<strong>Not ready for beta testing.</strong> Correct ${scan.critical} critical issue${scan.critical===1?'':'s'} before relying on the plan.`
+   : scan.warnings
+   ? `<strong>Usable with review.</strong> No critical issues were found, but ${scan.warnings} warning${scan.warnings===1?'':'s'} deserves attention.`
+   : `<strong>Ready for controlled beta testing.</strong> Core checks passed. Continue to use backups and professional review.`;
+ }
+ const count=document.getElementById('hn36IssueCount');
+ if(count){count.textContent=scan.critical?`${scan.critical} critical`:scan.warnings?`${scan.warnings} warning${scan.warnings===1?'':'s'}`:'Checks passed';count.className=`badge ${scan.critical||scan.warnings?'warn':'good'}`}
+ const findings=document.getElementById('hn36ValidationFindings');
+ if(findings)findings.innerHTML=scan.findings.map((f,i)=>`<article class="hn36-finding ${f.severity}">
+  <div class="hn36-severity">${f.severity==='critical'?'!':f.severity==='warning'?'△':f.severity==='pass'?'✓':'i'}</div>
+  <div><strong>${esc(f.title)}</strong><p>${esc(f.text)}</p></div>
+  ${f.severity==='pass'?'':`<button type="button" class="btn small hn36-fix" data-page="${esc(f.page)}">Review</button>`}
+ </article>`).join('');
+ const gates=document.getElementById('hn36ReleaseGates');
+ if(gates)gates.innerHTML=hn36ReleaseGateData(scan).map(g=>`<div class="hn36-gate ${g.state}"><i>${g.pass?'✓':g.state==='fail'?'!':'•'}</i><strong>${esc(g.label)}</strong><span class="muted">${esc(g.detail)}</span></div>`).join('');
+ localStorage.setItem('hn36.lastReadiness',JSON.stringify({score:scan.score,critical:scan.critical,warnings:scan.warnings,at:new Date().toISOString()}));
+}
+function hn36RunScan(){
+ const busy=document.getElementById('hn36Busy');busy?.classList.remove('hidden');
+ setTimeout(()=>{
+  try{hn36RenderScan(hn36ValidationScan())}
+  catch(error){recordRuntimeError(error?.message||String(error),'Beta Readiness',0,0,error);toast('Readiness scan could not complete')}
+  finally{busy?.classList.add('hidden')}
+ },80);
+}
+function hn36ShowWelcome(preview=false){
+ document.getElementById('hn36WelcomeModal')?.classList.remove('hidden');
+ if(!preview)localStorage.setItem(HN36_WELCOME_KEY,'true');
+}
+function hn36HideWelcome(){document.getElementById('hn36WelcomeModal')?.classList.add('hidden')}
+function hn36ShouldShowWelcome(){
+ if(localStorage.getItem(HN36_WELCOME_KEY)==='true')return false;
+ const assets=(state.accounts||[]).reduce((s,x)=>s+Math.max(0,num(x.balance)),0);
+ const spend=(state.expenses||[]).reduce((s,x)=>s+Math.max(0,num(x.amount)),0);
+ return assets===0||spend===0;
+}
+function renderHN36Readiness(){
+ const saved=localStorage.getItem('hn36.lastReadiness');
+ if(saved){
+  try{
+   const x=JSON.parse(saved),ring=document.getElementById('hn36ReadinessRing');
+   if(ring){ring.style.background=`conic-gradient(var(--navy) ${num(x.score)*3.6}deg,#dce7ea 0)`;ring.querySelector('span').textContent=`${num(x.score)}%`}
+  }catch(e){}
+ }
+ if(!document.getElementById('hn36ReleaseGates')?.children.length){
+  const placeholder={critical:1,warnings:0,projectionOkay:false,findings:[]};
+  document.getElementById('hn36ReleaseGates').innerHTML=hn36ReleaseGateData(placeholder).map(g=>`<div class="hn36-gate ${g.state}"><i>${g.pass?'✓':g.state==='fail'?'!':'•'}</i><strong>${esc(g.label)}</strong><span class="muted">${esc(g.detail)}</span></div>`).join('');
+ }
+}
+
 function showPage(id){
  const targetPage=document.getElementById(id);
  if(!targetPage){
@@ -5120,6 +5382,7 @@ function showPage(id){
  }
  document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));
  if(id==='smartcoach')setTimeout(renderHN35Coach,0);
+ if(id==='stability')setTimeout(renderHN36Readiness,0);
  if(id!=='home')localStorage.setItem(HN341_LAST_PAGE,id);
  hn341RenderEnhancements(id);
  if(id==='tax')setTimeout(renderTaxStrategyCoach,40);document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home'){renderHome();scheduleBackgroundAnalysis()}if(id==='coach')renderRetirementCoach();if(id==='planhub')renderSetupSteps();if(id==='resulthub'){renderResultHub();scheduleBackgroundAnalysis()}if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();if(id==='withdrawal')renderWithdrawalStrategy();if(id==='montecarlo'&&monteCarloState.results)renderMonteCarloResults();window.scrollTo({top:0,behavior:'smooth'})}
@@ -5176,7 +5439,7 @@ document.addEventListener('keydown',event=>{
 document.getElementById('addAccount').onclick=()=>{state.accounts.push(account('New investment account','RRSP/RRIF',state.people[0].name||'Primary',0));renderAccounts();save()};
 document.getElementById('addAsset').onclick=()=>{state.accounts.push(account('New asset','Real estate','Household',0));renderAccounts();save();toast('Asset added — enter its current estimated value below')};document.getElementById('addIncome').onclick=()=>{state.incomeSources.push(income('New income','Salary',state.people[0].name||'Primary',0,0,state.people[0].retirementAge||65,true,true));renderIncome();save()};document.getElementById('addDebt').onclick=()=>{state.debts.push(debt('New debt','Line of credit',0));renderDebts();save()};document.getElementById('addExpense').onclick=()=>{state.expenses.push(expense('New spending','Essential',0,'Monthly'));renderExpenses();save()};document.getElementById('addEvent').onclick=()=>{state.events.push(eventItem('New event','Expense',0,nowYear+3));renderEvents();save()};
 ['accountsList','incomeList','debtList','expenseList','eventList'].forEach(x=>{const el=document.getElementById(x);el.addEventListener('input',listHandler);el.addEventListener('change',listHandler);el.addEventListener('click',listHandler)});
-document.getElementById('exportBtn').onclick=()=>{const payload={product:'Harbour North',version:APP,schemaVersion:SCHEMA,modelVersion:MODEL_VERSION,exportedAt:new Date().toISOString(),plan:buildPersistedState()};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Harbour-North-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href);document.getElementById('backupMessage').textContent='Backup exported successfully.'};
+document.getElementById('exportBtn').onclick=()=>{localStorage.setItem('hn36.backupConfirmed','true');const payload={product:'Harbour North',version:APP,schemaVersion:SCHEMA,modelVersion:MODEL_VERSION,exportedAt:new Date().toISOString(),plan:buildPersistedState()};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`Harbour-North-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href);document.getElementById('backupMessage').textContent='Backup exported successfully.'};
 document.getElementById('importFile').onchange=async e=>{try{
  const f=e.target.files[0];if(!f)return;if(f.size>5_000_000)throw new Error('Backup file is too large.');
  const parsed=JSON.parse(await f.text()),imported=migrate(parsed);
@@ -5250,6 +5513,18 @@ function hn32LoadReportDetailControls(){
 
 
 bindOptional('hn351AskHarbourNorth','click',()=>showPage('smartcoach'));
+
+bindOptional('hn36RunReadiness','click',hn36RunScan);
+bindOptional('hn36PreviewWelcome','click',()=>hn36ShowWelcome(true));
+bindOptional('hn36CloseWelcome','click',hn36HideWelcome);
+bindOptional('hn36ExploreOverview','click',()=>{hn36HideWelcome();showPage('home')});
+bindOptional('hn36StartSetup','click',()=>{hn36HideWelcome();showPage('stability');setTimeout(()=>document.getElementById('hn341Guided')?.scrollIntoView({behavior:'smooth',block:'start'}),100)});
+document.addEventListener('click',event=>{
+ const fix=event.target.closest?.('.hn36-fix,.hn36-goto');
+ if(fix)showPage(fix.dataset.page);
+});
+setTimeout(()=>{if(hn36ShouldShowWelcome())hn36ShowWelcome(false)},450);
+
 bindOptional('hn35QuestionForm','submit',event=>{
  event.preventDefault();
  const input=document.getElementById('hn35QuestionInput');
@@ -5672,7 +5947,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     state.household.inheritanceScenario={amount:n('wInheritance'),year:n('wInheritanceYear'),certainty:inheritanceMode};
 
     state.meta=state.meta||{};
-    state.meta.appVersion='3.5.1';
+    state.meta.appVersion='3.6';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
