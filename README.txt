@@ -1,3 +1,13 @@
+Harbour North 4.0 RC2 Final — Both Partners Welcome
+
+Change:
+- The Overview welcome now includes the first names of both partners when two people are entered.
+- Example: “Good afternoon, Ryan and Sarah.”
+- The avatar displays both initials.
+- Single-person plans continue to show only one name.
+
+No calculations, plan data, tax logic, or backup behavior were changed.
+
 Harbour North 4.0 RC2 Final
 
 Final RC2 additions:
