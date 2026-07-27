@@ -1,34 +1,28 @@
-# Harbour North 4.0 RC3 Beta 1
+# Harbour North 4.0 RC3 Beta 2
 
-## Purpose
+## Changes in Beta 2
 
-RC3 Beta 1 establishes the feature-frozen baseline for structured beta testing.
+- Standardized the visible product version to **Harbour North 4.0 RC3 Beta 2**.
+- Removed obsolete module-development labels such as:
+  - 0.5.4
+  - 0.8.0
+  - Phase 3
+  - 3.6
+  - 0.7.0
+  - Harbour North 3.5
+  - Harbour North 3.3.2
+  - Harbour North 2.7
+  - 4.0 RC2 Final
+- Preserved descriptive module names such as Guided setup, Control centre,
+  Ask Harbour North, Tax Coach, and Audit & trust.
+- Verified that the primary Harbour North logo is embedded directly in the app.
+- Kept the existing Unicode icons for beta testing; these remain a release-polish
+  item if cross-platform rendering proves inconsistent.
 
-## Included
+## Validation
 
-- Commercial Harbour North interface and navigation
-- Personalized household overview
-- Backup, import, reset and leave-page protection
-- Audited age-71 registered asset display
-- Audited ending-estate reconciliation
-- Strategy and tax comparison audit panels
-- Consistent today's-dollar strategy results
-- Prominent Harbour North branding on printed and PDF reports
-- Setup & Health and background validation tools
-- Mobile and tablet layout improvements
+- JavaScript syntax checks passed: 11/11
+- Embedded Harbour North logo detected: Yes
+- Empty Harbour North logo sources detected: 0
 
-## RC3 rule
-
-No major new features should be added during RC3. Changes should be limited to:
-
-- calculation corrections
-- data-loss prevention
-- import compatibility
-- broken workflows
-- accessibility or layout defects
-- confusing language
-- report and printing defects
-
-## Calculations
-
-This packaging step did not alter financial, tax, investment or withdrawal calculations.
+No financial, tax, projection, withdrawal, or report calculations were changed.

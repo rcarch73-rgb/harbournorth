@@ -1,0 +1,24 @@
+Harbour North 4.0 RC3 Beta 2 — QA Notes
+
+Version consistency
+-------------------
+All known obsolete visible module versions were removed or replaced with the
+single public release label: Harbour North 4.0 RC3 Beta 2.
+
+Logo verification
+-----------------
+Embedded logo present: PASS
+Empty Harbour North logo sources: 0
+
+JavaScript validation
+---------------------
+Passed: 11/11
+
+Manual checks still required
+----------------------------
+- Safari desktop logo rendering
+- Chrome desktop logo rendering
+- iPad portrait and landscape
+- Saved PDF cover logo
+- Repeating print header logo
+- Unicode icon consistency across macOS, Windows and iPadOS
