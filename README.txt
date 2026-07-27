@@ -1,21 +1,18 @@
-Harbour North 4.0 RC2 — Strategy & Tax Audit
+Harbour North 4.0 RC2 — Branded Reports
 
-Changes
--------
-- Strategy-page ending estate now uses the same today's-dollar calculation as Results.
-- Ending portfolio is also shown in today's dollars.
-- Lifetime tax is shown in today's dollars for fair comparison across a multi-decade horizon.
-- Nominal lifetime tax, federal tax, provincial tax, taxable income and effective tax rate remain visible in expandable audits.
-- Each strategy audit shows total RRSP/RRIF, TFSA and non-registered withdrawals.
-- Each strategy audit shows ending RRSP/RRIF and TFSA balances.
-- Highest-tax year and amount are shown.
-- Corrected a separate lowest-portfolio bug: Math.min included a literal zero, forcing the result to display $0.
+Report branding upgrades
+------------------------
+- Adds a large Harbour North wordmark to the report cover.
+- Adds a repeating Harbour North header to printed/PDF pages.
+- Adds a consistent confidential report footer with generation date.
+- Uses the embedded logo already contained in index.html, so branding is not
+  dependent on external image files or GitHub Pages asset paths.
+- Preserves the professional Harbour North navy and sea-glass visual system.
+- Adds branded section markers throughout printed reports.
 
-Tax calculation review
-----------------------
-The projection recalculates household tax after taxable RRSP/RRIF withdrawals are added to each owner's taxable income.
-TFSA withdrawals are excluded from taxable income. Higher lifetime tax under RRSP/RRIF drawdown can therefore be legitimate
-when the strategy accelerates registered withdrawals. The new audit panel exposes the withdrawal and taxable-income totals
-needed to confirm whether that result is reasonable for the current plan.
+Printing note
+-------------
+For the strongest result in Safari or Chrome, enable “Print backgrounds” when
+saving as PDF. The logo, header and footer do not require background printing.
 
-No tax brackets, federal/provincial rates, investment returns or withdrawal-order rules were changed.
+No retirement, investment, withdrawal or tax calculations were changed.
