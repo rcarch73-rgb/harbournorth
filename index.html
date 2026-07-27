@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 3.1</title>
+<title>Harbour North 3.1.1</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -900,7 +900,7 @@ button{touch-action:manipulation}
 <section id="coach" class="page">
   <div class="hn30-coach-hero">
     <div>
-      <div class="eyebrow">Harbour North 3.1 · Recommendation Explorer</div>
+      <div class="eyebrow">Harbour North 3.1.1 · Explorer close fix</div>
       <h2>What should you do next?</h2>
       <p>Harbour North reviews your current projection, tests practical alternatives and ranks the changes that have the greatest effect on your retirement plan.</p>
     </div>
@@ -1260,7 +1260,7 @@ button{touch-action:manipulation}
 </section>
 
 <section id="stability" class="page">
-<div class="hero"><div class="eyebrow">3.1 · Recommendation Explorer</div><h2>Setup &amp; Health</h2><p class="muted">Harbour North 2.7 freezes new features and verifies the complete planning system before Version 3.0 work begins.</p></div>
+<div class="hero"><div class="eyebrow">3.1.1 · Explorer close fix</div><h2>Setup &amp; Health</h2><p class="muted">Harbour North 2.7 freezes new features and verifies the complete planning system before Version 3.0 work begins.</p></div>
 
 <div class="card">
 <div class="row-head"><div><h3>Guided setup</h3><p class="muted">Work through these steps in order. Completed steps update automatically.</p></div><span id="setupProgressBadge" class="badge warn">Checking</span></div>
@@ -1826,7 +1826,7 @@ button{touch-action:manipulation}
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='3.1-recommendation-explorer', SCHEMA=41, MODEL_VERSION=31;
+const KEY='harbourNorth2.plan', APP='3.1.1-explorer-close-fix', SCHEMA=42, MODEL_VERSION=32;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,emergencyFundAmount:0,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -2843,10 +2843,19 @@ async function runStabilityCheck(){
   });
 
   test('Recommendation Explorer',()=>{
-   const available=typeof hn31OpenExplorer==='function'&&typeof hn31CreateScenario==='function'&&typeof hn31ResilienceComparison==='function';
+   const available=typeof hn31OpenExplorer==='function'&&typeof hn31CreateScenario==='function'&&typeof hn31ResilienceComparison==='function'&&typeof hn311InstallExplorerBindings==='function';
    const analysis=available?hn30BuildAnalysis():null;
-   const valid=!!(analysis?.opportunities?.[0]?.plan&&analysis.opportunities[0].type);
-   add('Recommendation Explorer',available&&valid,available&&valid?'Detailed comparison and protected scenario creation are available.':'Recommendation Explorer is incomplete.');
+   const explorer=document.getElementById('hn31Explorer');
+   const closeButton=document.getElementById('hn31ExplorerClose');
+   let closeWorks=false;
+   if(available&&explorer&&closeButton){
+    hn311InstallExplorerBindings();
+    explorer.classList.remove('hidden');
+    closeButton.click();
+    closeWorks=explorer.classList.contains('hidden');
+   }
+   const valid=!!(analysis?.opportunities?.[0]?.plan&&analysis.opportunities[0].type&&closeWorks);
+   add('Recommendation Explorer',available&&valid,available&&valid?'Detailed comparison, protected scenario creation and modal close controls are available.':'Recommendation Explorer or its close controls are incomplete.');
   });
 
   test('Plan completeness',()=>{
@@ -4039,6 +4048,7 @@ function hn31ResilienceComparison(opportunity){
  });
 }
 function hn31OpenExplorer(index){
+ hn311InstallExplorerBindings();
  if(!hn30CoachCache)hn30CoachCache=hn30BuildAnalysis();
  const opportunity=hn30CoachCache?.opportunities?.[index];
  if(!opportunity)return;
@@ -4080,12 +4090,24 @@ function hn31OpenExplorer(index){
 
  const message=document.getElementById('hn31ScenarioMessage');
  message.className='notice hidden';message.textContent='';
- document.getElementById('hn31Explorer').classList.remove('hidden');
+ const explorer=document.getElementById('hn31Explorer');
+ explorer.classList.remove('hidden');
+ explorer.setAttribute('aria-hidden','false');
  document.body.style.overflow='hidden';
 }
-function hn31CloseExplorer(){
- document.getElementById('hn31Explorer')?.classList.add('hidden');
+function hn31CloseExplorer(event){
+ if(event){
+  event.preventDefault?.();
+  event.stopPropagation?.();
+ }
+ const explorer=document.getElementById('hn31Explorer');
+ if(explorer){
+  explorer.classList.add('hidden');
+  explorer.setAttribute('aria-hidden','true');
+ }
  document.body.style.overflow='';
+ hn31ActiveOpportunityIndex=null;
+ return false;
 }
 function hn31CreateScenario(){
  if(!hn30CoachCache||hn31ActiveOpportunityIndex===null)return;
@@ -4121,19 +4143,53 @@ function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
 bindOptional('hn30RefreshCoach','click',()=>{hn30CoachCache=null;renderRetirementCoach(true);toast('Retirement Coach refreshed')});
-bindOptional('hn31ExplorerClose','click',hn31CloseExplorer);
-bindOptional('hn31CreateScenario','click',hn31CreateScenario);
-bindOptional('hn31ReviewInputs','click',()=>{
- if(!hn30CoachCache||hn31ActiveOpportunityIndex===null)return;
- const page=hn30CoachCache.opportunities[hn31ActiveOpportunityIndex]?.page||'coach';
- hn31CloseExplorer();showPage(page);
-});
+function hn311InstallExplorerBindings(){
+ const closeButton=document.getElementById('hn31ExplorerClose');
+ const createButton=document.getElementById('hn31CreateScenario');
+ const reviewButton=document.getElementById('hn31ReviewInputs');
+ const explorer=document.getElementById('hn31Explorer');
+
+ if(closeButton&&!closeButton.dataset.hn311Bound){
+  closeButton.addEventListener('click',hn31CloseExplorer);
+  closeButton.dataset.hn311Bound='true';
+ }
+ if(createButton&&!createButton.dataset.hn311Bound){
+  createButton.addEventListener('click',hn31CreateScenario);
+  createButton.dataset.hn311Bound='true';
+ }
+ if(reviewButton&&!reviewButton.dataset.hn311Bound){
+  reviewButton.addEventListener('click',event=>{
+   event.preventDefault();
+   if(!hn30CoachCache||hn31ActiveOpportunityIndex===null)return;
+   const page=hn30CoachCache.opportunities[hn31ActiveOpportunityIndex]?.page||'coach';
+   hn31CloseExplorer();
+   showPage(page);
+  });
+  reviewButton.dataset.hn311Bound='true';
+ }
+ if(explorer&&!explorer.dataset.hn311Bound){
+  explorer.addEventListener('click',event=>{
+   if(event.target===explorer)hn31CloseExplorer(event);
+  });
+  explorer.dataset.hn311Bound='true';
+ }
+}
+if(document.readyState==='loading'){
+ document.addEventListener('DOMContentLoaded',hn311InstallExplorerBindings,{once:true});
+}else{
+ hn311InstallExplorerBindings();
+}
 document.addEventListener('click',event=>{
- const button=event.target.closest('.hn31-explore');
- if(button)hn31OpenExplorer(Number(button.dataset.opportunityIndex));
- if(event.target?.id==='hn31Explorer')hn31CloseExplorer();
+ const button=event.target.closest?.('.hn31-explore');
+ if(button){
+  hn311InstallExplorerBindings();
+  hn31OpenExplorer(Number(button.dataset.opportunityIndex));
+ }
 });
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!document.getElementById('hn31Explorer')?.classList.contains('hidden'))hn31CloseExplorer()});document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));document.addEventListener('click',e=>{const b=e.target.closest('[data-goto]');if(b){e.preventDefault();showPage(b.dataset.goto)}});
+document.addEventListener('keydown',event=>{
+ const explorer=document.getElementById('hn31Explorer');
+ if(event.key==='Escape'&&explorer&&!explorer.classList.contains('hidden'))hn31CloseExplorer(event);
+});document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));document.addEventListener('click',e=>{const b=e.target.closest('[data-goto]');if(b){e.preventDefault();showPage(b.dataset.goto)}});
 document.getElementById('addAccount').onclick=()=>{state.accounts.push(account('New investment account','RRSP/RRIF',state.people[0].name||'Primary',0));renderAccounts();save()};
 document.getElementById('addAsset').onclick=()=>{state.accounts.push(account('New asset','Real estate','Household',0));renderAccounts();save();toast('Asset added — enter its current estimated value below')};document.getElementById('addIncome').onclick=()=>{state.incomeSources.push(income('New income','Salary',state.people[0].name||'Primary',0,0,state.people[0].retirementAge||65,true,true));renderIncome();save()};document.getElementById('addDebt').onclick=()=>{state.debts.push(debt('New debt','Line of credit',0));renderDebts();save()};document.getElementById('addExpense').onclick=()=>{state.expenses.push(expense('New spending','Essential',0,'Monthly'));renderExpenses();save()};document.getElementById('addEvent').onclick=()=>{state.events.push(eventItem('New event','Expense',0,nowYear+3));renderEvents();save()};
 ['accountsList','incomeList','debtList','expenseList','eventList'].forEach(x=>{const el=document.getElementById(x);el.addEventListener('input',listHandler);el.addEventListener('change',listHandler);el.addEventListener('click',listHandler)});
@@ -4580,7 +4636,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     state.household.inheritanceScenario={amount:n('wInheritance'),year:n('wInheritanceYear'),certainty:inheritanceMode};
 
     state.meta=state.meta||{};
-    state.meta.appVersion='3.1';
+    state.meta.appVersion='3.1.1';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
@@ -5272,7 +5328,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
         <h2 id="hn31ExplorerTitle">Recommendation details</h2>
         <p id="hn31ExplorerSubtitle" class="muted"></p>
       </div>
-      <button id="hn31ExplorerClose" class="btn" aria-label="Close recommendation details">Close</button>
+      <button id="hn31ExplorerClose" type="button" class="btn" aria-label="Close recommendation details">Close</button>
     </div>
 
     <div class="hn31-confidence-row">
@@ -5323,8 +5379,8 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
 
     <div id="hn31ScenarioMessage" class="notice hidden"></div>
     <div class="hn31-modal-actions">
-      <button id="hn31ReviewInputs" class="btn">Review related inputs</button>
-      <button id="hn31CreateScenario" class="btn primary">Create scenario from recommendation</button>
+      <button id="hn31ReviewInputs" type="button" class="btn">Review related inputs</button>
+      <button id="hn31CreateScenario" type="button" class="btn primary">Create scenario from recommendation</button>
     </div>
   </div>
 </div>
