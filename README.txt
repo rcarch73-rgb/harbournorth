@@ -1,18 +1,10 @@
-Harbour North 4.0 RC2 — Branded Reports
+Harbour North 4.0 RC3 Beta 1
 
-Report branding upgrades
-------------------------
-- Adds a large Harbour North wordmark to the report cover.
-- Adds a repeating Harbour North header to printed/PDF pages.
-- Adds a consistent confidential report footer with generation date.
-- Uses the embedded logo already contained in index.html, so branding is not
-  dependent on external image files or GitHub Pages asset paths.
-- Preserves the professional Harbour North navy and sea-glass visual system.
-- Adds branded section markers throughout printed reports.
+Start by opening index.html.
 
-Printing note
--------------
-For the strongest result in Safari or Chrome, enable “Print backgrounds” when
-saving as PDF. The logo, header and footer do not require background printing.
+This package marks the beginning of the feature-frozen beta-readiness phase.
+It includes the app, release notes, known issues, automated static test results,
+and a structured hands-on beta checklist.
 
-No retirement, investment, withdrawal or tax calculations were changed.
+Recommended first test:
+Import Ryan and Liz's latest backup, then work through BETA-TEST-CHECKLIST.md.
