@@ -1,3 +1,13 @@
+Harbour North 4.0 RC2.4 — Overview Personalization and Controls
+
+Changes:
+- Corrected font colour on dark navy primary buttons for reliable white text.
+- Added Backup, Import and Reset controls directly to the Overview page.
+- Added a personal welcome panel using the primary household member's first name.
+- Added the current weekday and date using Canadian formatting.
+- Overview controls reuse the existing protected backup/import/reset workflows.
+- No retirement calculations, tax logic or saved-plan schema were changed.
+
 Harbour North 4.0 RC2.3 — Tax Strategy Engine Fix
 
 Corrected issue:
