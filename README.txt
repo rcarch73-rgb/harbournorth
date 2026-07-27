@@ -1,3 +1,19 @@
+Harbour North 4.0 RC2 Final
+
+Final RC2 additions:
+- Plan Protection status on the Overview page.
+- Tracks the date of the last exported backup.
+- Tracks whether the saved plan has changed since that backup.
+- Prompts before closing, refreshing or navigating away when a backup is recommended.
+- Warns before importing over an unprotected plan.
+- Strengthens the reset warning when changes are not backed up.
+- Backup Now immediately updates the protection indicator.
+
+Browser note:
+Modern browsers intentionally show their own standard wording for close/refresh warnings. Harbour North controls when that warning appears, but cannot customize the browser's text.
+
+No retirement calculations, tax logic or saved-plan schema were changed.
+
 Harbour North 4.0 RC2.4 — Overview Personalization and Controls
 
 Changes:
