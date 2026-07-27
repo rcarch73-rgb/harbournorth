@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 3.2</title>
+<title>Harbour North 3.3</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -824,6 +824,28 @@ button{touch-action:manipulation}
 }
 </style>
 
+
+<style id="hn33Styles">
+.hn33-tax-overview{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.hn33-kpi,.hn33-decade,.hn33-rrif-box{border:1px solid var(--line);border-radius:15px;padding:15px;background:#fff}
+.hn33-kpi span,.hn33-decade span,.hn33-rrif-box span{display:block;color:var(--muted);font-size:11px}
+.hn33-kpi strong{display:block;color:var(--navy);font-size:23px;margin-top:6px}
+.hn33-kpi small{display:block;color:var(--muted);margin-top:5px}
+.hn33-section{margin-bottom:18px}.hn33-chart-wrap{overflow:auto}.hn33-tax-chart{width:100%;min-width:820px;height:310px;display:block}
+.hn33-decade-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:15px}
+.hn33-decade strong,.hn33-rrif-box strong{display:block;color:var(--navy);font-size:19px;margin:5px 0}
+.hn33-two-column{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.hn33-warning-list{display:grid;gap:10px;margin-top:12px}.hn33-warning{border:1px solid var(--line);border-left:5px solid var(--warn);border-radius:14px;padding:14px;background:#fff}.hn33-warning.good{border-left-color:var(--ok)}.hn33-warning strong{display:block;color:var(--navy);margin-bottom:5px}.hn33-warning p{margin:0;color:var(--muted)}
+.hn33-rrif-metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.hn33-strategy-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
+.hn33-strategy{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff;display:flex;flex-direction:column;gap:12px}.hn33-strategy.best{border:2px solid var(--ok);background:#f4fbf7}.hn33-strategy h3{margin:0;color:var(--navy)}
+.hn33-strategy-metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.hn33-strategy-metric{border:1px solid var(--line);border-radius:11px;padding:10px}.hn33-strategy-metric span{display:block;font-size:10px;color:var(--muted)}.hn33-strategy-metric strong{display:block;color:var(--navy);margin-top:4px}
+.hn33-strategy-actions{margin-top:auto}.hn33-method{padding-top:12px;line-height:1.6}
+@media(max-width:1050px){.hn33-tax-overview{grid-template-columns:repeat(3,1fr)}.hn33-strategy-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.hn33-tax-overview,.hn33-decade-grid,.hn33-strategy-grid,.hn33-two-column{grid-template-columns:1fr}.hn33-rrif-metrics{grid-template-columns:1fr}}
+@media print{#tax{display:none!important}}
+</style>
+
 </head>
 <body>
 <header><div><h1>Harbour North</h1><p>Your retirement picture—and what to do next.</p></div><div id="saveStatus" class="status">Ready</div></header>
@@ -831,6 +853,7 @@ button{touch-action:manipulation}
 <nav class="tabs streamlined-tabs">
 <button class="tab active" data-page="home">Overview</button>
 <button class="tab" data-page="coach">Coach</button>
+<button class="tab" data-page="tax">Tax</button>
 <button class="tab" data-page="planhub">Your Plan</button>
 <button class="tab" data-page="withdrawal">Strategy</button>
 <button class="tab" data-page="resulthub">Results</button>
@@ -948,7 +971,7 @@ button{touch-action:manipulation}
 <section id="coach" class="page">
   <div class="hn30-coach-hero">
     <div>
-      <div class="eyebrow">Harbour North 3.2 · Professional Client Report</div>
+      <div class="eyebrow">Harbour North 3.3 · Tax Strategy Coach</div>
       <h2>What should you do next?</h2>
       <p>Harbour North reviews your current projection, tests practical alternatives and ranks the changes that have the greatest effect on your retirement plan.</p>
     </div>
@@ -1308,7 +1331,7 @@ button{touch-action:manipulation}
 </section>
 
 <section id="stability" class="page">
-<div class="hero"><div class="eyebrow">3.2 · Professional Client Report</div><h2>Setup &amp; Health</h2><p class="muted">Harbour North 2.7 freezes new features and verifies the complete planning system before Version 3.0 work begins.</p></div>
+<div class="hero"><div class="eyebrow">3.3 · Tax Strategy Coach</div><h2>Setup &amp; Health</h2><p class="muted">Harbour North 2.7 freezes new features and verifies the complete planning system before Version 3.0 work begins.</p></div>
 
 <div class="card">
 <div class="row-head"><div><h3>Guided setup</h3><p class="muted">Work through these steps in order. Completed steps update automatically.</p></div><span id="setupProgressBadge" class="badge warn">Checking</span></div>
@@ -1493,7 +1516,7 @@ button{touch-action:manipulation}
 
 <section id="report" class="page" aria-label="Retirement report">
 <div class="hn26-report-banner hn32-report-banner">
-  <div><div class="eyebrow">Harbour North 3.2 · Professional Client Report</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
+  <div><div class="eyebrow">Harbour North 3.3 · Tax Strategy Coach</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
   <button id="hn26PrintReport" type="button" class="btn primary">Print / Save as PDF</button>
 </div>
 <div class="hn32-report-controls card">
@@ -1880,7 +1903,7 @@ button{touch-action:manipulation}
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='3.2-professional-client-report', SCHEMA=43, MODEL_VERSION=33;
+const KEY='harbourNorth2.plan', APP='3.3-tax-strategy-coach', SCHEMA=44, MODEL_VERSION=34;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,emergencyFundAmount:0,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -2874,7 +2897,7 @@ async function runStabilityCheck(){
   });
 
   test('User-interface controls',()=>{
-   const requiredIds=['runStabilityCheck','scenarioManagerList','retirementReport','benefitPeople','exportBtn','importFile','hn30HealthScore','hn30Opportunities','hn30StressTests','hn31Explorer','hn31CreateScenario','hn31ComparisonChart','hn32PreparedFor','hn32PreparedBy','hn32ReportNote','hn32ApplyReportDetails'];
+   const requiredIds=['runStabilityCheck','scenarioManagerList','retirementReport','benefitPeople','exportBtn','importFile','hn30HealthScore','hn30Opportunities','hn30StressTests','hn31Explorer','hn31CreateScenario','hn31ComparisonChart','hn32PreparedFor','hn32PreparedBy','hn32ReportNote','hn32ApplyReportDetails','hn33TaxOverview','hn33TaxTimeline','hn33TaxWarnings','hn33StrategyCards'];
    const missing=requiredIds.filter(id=>!byId(id));
    add('User-interface controls',missing.length===0,missing.length?'Missing interface elements: '+missing.join(', ')+'.':'Core planning, scenario, report and backup controls are present.');
   });
@@ -2922,6 +2945,19 @@ async function runStabilityCheck(){
     detail=valid?'Executive summary, Coach findings, scenario comparison, action plan and assumptions are available.':'One or more professional report sections are missing.';
    }else detail='Professional Client Report functions are unavailable.';
    add('Professional Client Report',available&&valid,detail);
+  });
+  test('Tax Strategy Coach',()=>{
+   const available=typeof hn33TaxSummary==='function'&&typeof hn33StrategyResults==='function'&&typeof renderTaxStrategyCoach==='function';
+   let valid=false,detail='';
+   if(available){const s=hn33TaxSummary(state),r=hn33StrategyResults();valid=s.rows.length>0&&Number.isFinite(s.totalTax)&&r.all.length>=7&&r.all.every(x=>Number.isFinite(x.tax.totalTax));detail=valid?`${s.rows.length} tax years and ${r.all.length} strategies calculated.`:'Incomplete tax results.'}
+   else detail='Tax Strategy Coach functions unavailable.';
+   add('Tax Strategy Coach',available&&valid,detail);
+  });
+  test('Tax Scenario Isolation',()=>{
+   const available=typeof hn33ApplyStrategy==='function';let valid=false,detail='';
+   if(available){const before=JSON.stringify(corePlanSnapshot(state)),variant=hn33ApplyStrategy(state,'earlyRrsp'),after=JSON.stringify(corePlanSnapshot(state));valid=before===after&&variant!==state&&variant.planningModel?.withdrawalStrategy?.mode==='Early RRSP drawdown';detail=valid?'Tax strategies use cloned plans without changing the active scenario.':'Tax strategy isolation failed.'}
+   else detail='Tax strategy cloning unavailable.';
+   add('Tax Scenario Isolation',available&&valid,detail);
   });
 
   test('Plan completeness',()=>{
@@ -3700,12 +3736,16 @@ function renderProfessionalReport(){
  </section>
 
  <section class="hn32-report-section">
-  <h2>8. Action plan</h2>
+  <h2>8. Tax strategy summary</h2>
+  ${(()=>{const t=hn33TaxSummary(state),s=hn33StrategyResults(),best=s.ranked[0];return `<div class="report-metrics"><div class="report-metric"><span>Lifetime estimated tax</span><strong>${money(t.totalTax)}</strong></div><div class="report-metric"><span>Highest-tax year</span><strong>${t.highest.year||'—'}</strong></div><div class="report-metric"><span>OAS exposure years</span><strong>${t.oasYears.length}</strong></div><div class="report-metric"><span>Investments near age 71</span><strong>${money(t.rrifAt71)}</strong></div></div><table class="report-table" style="margin-top:14px"><thead><tr><th>Strategy</th><th>Lifetime tax</th><th>Ending net worth</th><th>Funding</th></tr></thead><tbody>${s.all.slice(0,6).map(x=>`<tr><td>${esc(x.title)}</td><td>${money(x.tax.totalTax)}</td><td>${money(x.result.endingNetWorthReal)}</td><td>${x.result.success?'Funded':`Shortfall ${x.result.firstShortfall}`}</td></tr>`).join('')}</tbody></table><div class="report-callout ${best?.taxSavings>0?'good':''}" style="margin-top:14px"><strong>${best?`Top projected strategy: ${esc(best.title)}`:'No preferred strategy identified'}</strong><br>${best?`Estimated lifetime tax change: ${hn31SignedMoney(-best.taxSavings)}. Review trade-offs before making changes.`:'Review assumptions and rerun the Tax Strategy Coach.'}</div>`})()}
+ </section>
+ <section class="hn32-report-section">
+  <h2>9. Action plan</h2>
   <div class="hn32-action-plan">${actionItems.map(x=>`<div class="hn32-action-item"><div><strong>${esc(x.title)}</strong><br><span class="muted">${esc(x.detail)}</span></div><div class="hn32-action-owner">${esc(x.owner)}</div></div>`).join('')}</div>
  </section>
 
  <section class="hn32-report-section hn32-page-break">
-  <h2>9. Core assumptions</h2>
+  <h2>10. Core assumptions</h2>
   <div class="hn32-assumption-grid">
    <div class="hn32-assumption"><span>Province</span><strong>${esc(state.household.province||'Not entered')}</strong></div>
    <div class="hn32-assumption"><span>Inflation</span><strong>${num(state.household.inflationRate)}%</strong></div>
@@ -3719,7 +3759,7 @@ function renderProfessionalReport(){
  </section>
 
  <section class="hn32-report-section">
-  <h2>10. Validation, limitations and review</h2>
+  <h2>11. Validation, limitations and review</h2>
   <div class="report-callout"><strong>Planner confidence: ${validation.confidence==null?'Not run':Math.round(validation.confidence)+'%'}</strong><br>This report is an educational projection based on the information and assumptions entered in Harbour North. It is not financial, tax, legal, pension or investment advice. Tax estimates, benefit rules, returns, inflation and personal circumstances may change. Confirm major decisions with qualified professionals.</div>
   <p class="hn32-disclaimer">All monetary figures are shown in Canadian dollars. “Today’s dollars” are adjusted using the recorded inflation assumption. Future market values and tax outcomes cannot be guaranteed. Scenario and Coach results should be used to support discussion and further analysis rather than as the sole basis for a decision.</p>
   <div class="hn32-signoff">
@@ -3728,7 +3768,7 @@ function renderProfessionalReport(){
   </div>
  </section>
 
- <div class="report-footer">Generated by Harbour North 3.2 · Professional Client Report · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
+ <div class="report-footer">Generated by Harbour North 3.3 · Tax Strategy Coach · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
 }
 
 let backgroundAnalysis={fingerprint:'',running:false,timer:null,result:null};
@@ -4328,7 +4368,94 @@ function hn31CreateScenario(){
  toast('Recommendation scenario created');
 }
 
-function showPage(id){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home'){renderHome();scheduleBackgroundAnalysis()}if(id==='coach')renderRetirementCoach();if(id==='planhub')renderSetupSteps();if(id==='resulthub'){renderResultHub();scheduleBackgroundAnalysis()}if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();if(id==='withdrawal')renderWithdrawalStrategy();if(id==='montecarlo'&&monteCarloState.results)renderMonteCarloResults();window.scrollTo({top:0,behavior:'smooth'})}
+
+let hn33TaxCache=null;
+function hn33TaxRows(plan=state){
+ const p=clone(plan);normalizePlan(p);
+ const rows=buildProjectionTimeline(p);
+ return rows.map(r=>{
+  const x=r.projection||{},totalIncome=Math.max(0,num(x.totalIncome??x.income??0)),taxableIncome=Math.max(0,num(x.taxableIncome??totalIncome)),tax=Math.max(0,num(x.tax));
+  return {year:r.year,age:r.ages?.[0]??null,totalIncome,taxableIncome,tax,effectiveRate:taxableIncome?tax/taxableIncome*100:0,withdrawals:Math.max(0,num(x.withdrawals)),oas:Math.max(0,num(x.oasIncome??0)),endingInvestments:Math.max(0,num(x.endingInvestments)),endingNetWorth:Math.max(0,num(x.netWorth))};
+ });
+}
+function hn33MarginalBand(income){
+ const fed=[[57375,14.5],[114750,20.5],[177882,26],[253414,29],[Infinity,33]];
+ const bc=[[49279,5.06],[98560,7.7],[113158,10.5],[137407,12.29],[186306,14.7],[259829,16.8],[Infinity,20.5]];
+ return (fed.find(x=>income<=x[0])?.[1]||33)+(bc.find(x=>income<=x[0])?.[1]||20.5);
+}
+function hn33TaxSummary(plan=state){
+ const rows=hn33TaxRows(plan),totalTax=rows.reduce((s,r)=>s+r.tax,0),taxable=rows.reduce((s,r)=>s+r.taxableIncome,0);
+ const highest=[...rows].sort((a,b)=>b.tax-a.tax)[0]||{},lowest=[...rows].filter(r=>r.taxableIncome>0).sort((a,b)=>a.tax-b.tax)[0]||{};
+ const oasYears=rows.filter(r=>r.oas>0&&r.taxableIncome>90997),highTaxYears=rows.filter(r=>hn33MarginalBand(r.taxableIncome)>=45),lowTaxYears=rows.filter(r=>r.taxableIncome>0&&hn33MarginalBand(r.taxableIncome)<=25);
+ const currentRegistered=(plan.accounts||[]).filter(a=>['RRSP/RRIF','RRSP','RRIF'].includes(a.type)).reduce((s,a)=>s+Math.max(0,num(a.balance)),0);
+ const age71Row=rows.find(r=>num(r.age)>=71)||rows.at(-1)||{};
+ return {rows,totalTax,taxable,avgEffective:taxable?totalTax/taxable*100:0,highest,lowest,oasYears,highTaxYears,lowTaxYears,currentRegistered,rrifAt71:Math.max(0,num(age71Row.endingInvestments))};
+}
+function hn33Warnings(s){
+ const w=[];
+ w.push(s.oasYears.length?{title:'OAS recovery tax exposure',text:`Taxable income exceeds the planning threshold in ${s.oasYears.length} projected year${s.oasYears.length===1?'':'s'}.`,level:'warn'}:{title:'No OAS recovery tax exposure detected',text:'No projected OAS year exceeds the current planning threshold.',level:'good'});
+ if(s.rrifAt71>500000)w.push({title:'Large balance near age 71',text:`Projected investments near RRIF conversion are approximately ${money(s.rrifAt71)}. Earlier registered withdrawals may deserve testing.`,level:'warn'});
+ if(s.highTaxYears.length)w.push({title:'High marginal-rate years',text:`The plan reaches an estimated combined marginal band near or above 45% in ${s.highTaxYears.length} year${s.highTaxYears.length===1?'':'s'}.`,level:'warn'});
+ if(s.lowTaxYears.length>=3&&s.currentRegistered>100000)w.push({title:'Low-tax drawdown window',text:`There are ${s.lowTaxYears.length} projected lower-tax years while registered assets remain available.`,level:'warn'});
+ const tfsa=(state.accounts||[]).filter(a=>a.type==='TFSA').reduce((a,b)=>a+Math.max(0,num(b.balance)),0);
+ if(tfsa<10000)w.push({title:'Limited TFSA reserve',text:'A larger TFSA reserve may improve flexibility for irregular expenses and reduce taxable income later.',level:'warn'});
+ return w;
+}
+function hn33ApplyStrategy(plan,type){
+ const p=clone(plan);normalizePlan(p);p.planningModel=p.planningModel||{};p.planningModel.withdrawalStrategy=p.planningModel.withdrawalStrategy||{};
+ const s=p.planningModel.withdrawalStrategy;
+ if(type==='balanced'){s.mode='Balanced';s.order=['Non-registered','RRSP/RRIF','TFSA']}
+ if(type==='rrspFirst'){s.mode='Registered first';s.order=['RRSP/RRIF','Non-registered','TFSA']}
+ if(type==='tfsaFirst'){s.mode='TFSA first';s.order=['TFSA','Non-registered','RRSP/RRIF']}
+ if(type==='earlyRrsp'){s.mode='Early RRSP drawdown';s.order=['RRSP/RRIF','Non-registered','TFSA'];s.earlyRegisteredTarget=18000}
+ if(type==='smoothTax'){s.mode='Tax smoothing';s.order=['RRSP/RRIF','Non-registered','TFSA'];s.taxableIncomeTarget=75000}
+ if(type==='delayCpp')(p.incomeSources||[]).forEach(x=>{if(String(x.type||'').toUpperCase().includes('CPP'))x.startAge=70});
+ normalizePlan(p);return p;
+}
+function hn33StrategyResults(){
+ const baseTax=hn33TaxSummary(state),baseResult=hn30Summary(state);
+ const defs=[
+  ['current','Current strategy','The active withdrawal and benefit assumptions.',clone(state)],
+  ['balanced','Balanced withdrawals','Use non-registered, registered and TFSA assets in a balanced sequence.',hn33ApplyStrategy(state,'balanced')],
+  ['rrspFirst','RRSP-first','Use registered assets earlier to reduce later RRIF pressure.',hn33ApplyStrategy(state,'rrspFirst')],
+  ['tfsaFirst','TFSA-first','Use tax-free assets earlier to reduce immediate taxable income.',hn33ApplyStrategy(state,'tfsaFirst')],
+  ['earlyRrsp','Early RRSP drawdown','Create deliberate registered withdrawals during lower-income years.',hn33ApplyStrategy(state,'earlyRrsp')],
+  ['delayCpp','Delay CPP to 70','Use portfolio withdrawals before CPP for higher indexed CPP later.',hn33ApplyStrategy(state,'delayCpp')],
+  ['smoothTax','Tax smoothing','Target steadier taxable income and reduce large late-retirement spikes.',hn33ApplyStrategy(state,'smoothTax')]
+ ];
+ const all=defs.map(([type,title,description,plan])=>{const tax=hn33TaxSummary(plan),result=hn30Summary(plan);return {type,title,description,plan,tax,result,taxSavings:baseTax.totalTax-tax.totalTax,estateDelta:result.endingNetWorthReal-baseResult.endingNetWorthReal}});
+ const ranked=all.filter(x=>x.type!=='current').sort((a,b)=>(b.taxSavings+b.estateDelta*.05+(b.result.success?5000:0))-(a.taxSavings+a.estateDelta*.05+(a.result.success?5000:0)));
+ return {base:all[0],all,ranked};
+}
+function hn33TaxChart(rows){
+ const width=960,height=300,left=60,right=25,top=20,bottom=45,max=Math.max(1,...rows.flatMap(r=>[r.taxableIncome,r.tax])),x=i=>left+(rows.length<=1?0:i/(rows.length-1)*(width-left-right)),y=v=>top+(1-v/max)*(height-top-bottom);
+ let svg=`<svg class="hn33-tax-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="Taxable income and estimated tax timeline">`;
+ [0,.25,.5,.75,1].forEach(p=>{const yy=top+(height-top-bottom)*p;svg+=`<line x1="${left}" x2="${width-right}" y1="${yy}" y2="${yy}" stroke="#dfe6ea"/><text x="0" y="${yy+4}" font-size="11" fill="#667788">${esc(money(max*(1-p)))}</text>`});
+ svg+=`<polyline points="${rows.map((r,i)=>`${x(i)},${y(r.taxableIncome)}`).join(' ')}" fill="none" stroke="#194d68" stroke-width="4"/><polyline points="${rows.map((r,i)=>`${x(i)},${y(r.tax)}`).join(' ')}" fill="none" stroke="#b66b26" stroke-width="4"/>`;
+ const step=Math.max(1,Math.ceil(rows.length/8));rows.forEach((r,i)=>{if(i%step===0||i===rows.length-1)svg+=`<text x="${x(i)}" y="${height-18}" text-anchor="middle" font-size="11" fill="#667788">${r.year}</text>`});
+ return svg+`<text x="${left}" y="${height-2}" font-size="11" fill="#194d68">Blue: taxable income</text><text x="${left+150}" y="${height-2}" font-size="11" fill="#b66b26">Orange: estimated tax</text></svg>`;
+}
+function hn33Decades(rows){const g={};rows.forEach(r=>{const d=`${Math.floor(r.year/10)*10}s`;g[d]=g[d]||{tax:0,taxable:0,count:0};g[d].tax+=r.tax;g[d].taxable+=r.taxableIncome;g[d].count++});return Object.entries(g).map(([label,x])=>({label,tax:x.tax,average:x.tax/x.count,rate:x.taxable?x.tax/x.taxable*100:0}))}
+function hn33CreateScenario(type){
+ const item=(hn33TaxCache?.strategies||hn33StrategyResults()).all.find(x=>x.type===type);if(!item||type==='current')return;
+ syncPlanningModel();const pm=state.planningModel,now=new Date().toISOString();let base=`Tax Strategy — ${item.title}`,name=base,n=2;while(pm.scenarios.some(s=>s.name===name))name=`${base} (${n++})`;
+ pm.scenarios.push({id:'scenario-'+id(),name,createdAt:now,updatedAt:now,snapshot:corePlanSnapshot(item.plan),source:'tax-strategy-coach',taxStrategyType:type});
+ save(false);renderScenarioManager();renderModelStatus();toast('Tax strategy scenario created');renderTaxStrategyCoach();
+}
+function renderTaxStrategyCoach(){
+ const root=document.getElementById('hn33TaxOverview');if(!root)return;const s=hn33TaxSummary(state),warnings=hn33Warnings(s),strategies=hn33StrategyResults();hn33TaxCache={summary:s,warnings,strategies};
+ const high=s.rows.reduce((m,r)=>Math.max(m,hn33MarginalBand(r.taxableIncome)),0);
+ root.innerHTML=`<div class="hn33-kpi"><span>Lifetime estimated tax</span><strong>${money(s.totalTax)}</strong><small>Active projection</small></div><div class="hn33-kpi"><span>Average effective rate</span><strong>${s.avgEffective.toFixed(1)}%</strong><small>Tax ÷ taxable income</small></div><div class="hn33-kpi"><span>Highest-tax year</span><strong>${s.highest.year||'—'}</strong><small>${money(s.highest.tax||0)}</small></div><div class="hn33-kpi"><span>Highest marginal band</span><strong>${high.toFixed(1)}%</strong><small>Approximate combined rate</small></div><div class="hn33-kpi"><span>OAS exposure years</span><strong>${s.oasYears.length}</strong><small>Above planning threshold</small></div>`;
+ document.getElementById('hn33TaxTimeline').innerHTML=hn33TaxChart(s.rows);
+ document.getElementById('hn33TaxDecades').innerHTML=hn33Decades(s.rows).map(d=>`<div class="hn33-decade"><span>${esc(d.label)}</span><strong>${money(d.tax)}</strong><div class="muted">${money(d.average)} average annual tax · ${d.rate.toFixed(1)}% effective</div></div>`).join('');
+ document.getElementById('hn33TaxWarnings').innerHTML=warnings.map(w=>`<div class="hn33-warning ${w.level==='good'?'good':''}"><strong>${esc(w.title)}</strong><p>${esc(w.text)}</p></div>`).join('');
+ document.getElementById('hn33RrifOutlook').innerHTML=`<p class="muted">Planning estimates based on the active projection.</p><div class="hn33-rrif-metrics"><div class="hn33-rrif-box"><span>Current registered assets</span><strong>${money(s.currentRegistered)}</strong></div><div class="hn33-rrif-box"><span>Investments near age 71</span><strong>${money(s.rrifAt71)}</strong></div><div class="hn33-rrif-box"><span>Lower-tax years</span><strong>${s.lowTaxYears.length}</strong></div><div class="hn33-rrif-box"><span>High-tax years</span><strong>${s.highTaxYears.length}</strong></div></div>`;
+ const best=strategies.ranked[0]?.type;
+ document.getElementById('hn33StrategyCards').innerHTML=strategies.all.map(x=>`<article class="hn33-strategy ${x.type===best?'best':''}"><div><div class="eyebrow">${x.type===best?'Top projected strategy':'Tax strategy'}</div><h3>${esc(x.title)}</h3><p class="muted">${esc(x.description)}</p></div><div class="hn33-strategy-metrics"><div class="hn33-strategy-metric"><span>Lifetime tax</span><strong>${money(x.tax.totalTax)}</strong></div><div class="hn33-strategy-metric"><span>Tax change</span><strong>${x.type==='current'?'Base':hn31SignedMoney(-x.taxSavings)}</strong></div><div class="hn33-strategy-metric"><span>Ending net worth</span><strong>${money(x.result.endingNetWorthReal)}</strong></div><div class="hn33-strategy-metric"><span>Funding result</span><strong>${x.result.success?'Funded':`Shortfall ${x.result.firstShortfall}`}</strong></div></div><div class="hn33-strategy-actions">${x.type==='current'?'<span class="badge">Active assumptions</span>':`<button type="button" class="btn hn33-create-tax-scenario" data-tax-strategy="${esc(x.type)}">Create scenario</button>`}</div></article>`).join('');
+}
+
+function showPage(id){
+ if(id==='tax')setTimeout(renderTaxStrategyCoach,0);document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home'){renderHome();scheduleBackgroundAnalysis()}if(id==='coach')renderRetirementCoach();if(id==='planhub')renderSetupSteps();if(id==='resulthub'){renderResultHub();scheduleBackgroundAnalysis()}if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();if(id==='withdrawal')renderWithdrawalStrategy();if(id==='montecarlo'&&monteCarloState.results)renderMonteCarloResults();window.scrollTo({top:0,behavior:'smooth'})}
 function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
 bindOptional('hn30RefreshCoach','click',()=>{hn30CoachCache=null;renderRetirementCoach(true);toast('Retirement Coach refreshed')});
@@ -4453,6 +4580,8 @@ function hn32LoadReportDetailControls(){
  if(preparedBy)preparedBy.value=details.preparedBy;
  if(note)note.value=details.note;
 }
+bindOptional('hn33RefreshTax','click',()=>{hn33TaxCache=null;renderTaxStrategyCoach();toast('Tax Strategy Coach refreshed')});
+document.addEventListener('click',event=>{const button=event.target.closest?.('.hn33-create-tax-scenario');if(button)hn33CreateScenario(button.dataset.taxStrategy)});
 bindOptional('hn32ApplyReportDetails','click',()=>{
  localStorage.setItem('hn32.preparedFor',document.getElementById('hn32PreparedFor')?.value.trim()||'');
  localStorage.setItem('hn32.preparedBy',document.getElementById('hn32PreparedBy')?.value.trim()||'');
@@ -4842,7 +4971,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     state.household.inheritanceScenario={amount:n('wInheritance'),year:n('wInheritanceYear'),certainty:inheritanceMode};
 
     state.meta=state.meta||{};
-    state.meta.appVersion='3.2';
+    state.meta.appVersion='3.3';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
