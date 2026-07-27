@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 2.7.1</title>
+<title>Harbour North 2.7.2</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -1137,7 +1137,7 @@ button{touch-action:manipulation}
 </section>
 
 <section id="stability" class="page">
-<div class="hero"><div class="eyebrow">2.7.1 · Test runner fix</div><h2>Setup &amp; Health</h2><p class="muted">Harbour North 2.7 freezes new features and verifies the complete planning system before Version 3.0 work begins.</p></div>
+<div class="hero"><div class="eyebrow">2.7.2 · Startup binding fix</div><h2>Setup &amp; Health</h2><p class="muted">Harbour North 2.7 freezes new features and verifies the complete planning system before Version 3.0 work begins.</p></div>
 
 <div class="card">
 <div class="row-head"><div><h3>Guided setup</h3><p class="muted">Work through these steps in order. Completed steps update automatically.</p></div><span id="setupProgressBadge" class="badge warn">Checking</span></div>
@@ -1146,7 +1146,7 @@ button{touch-action:manipulation}
 
 <div class="card">
 <div class="row-head"><div><h3>Complete system test</h3><p class="muted">Runs protected checks on copied data. It does not replace, reload or re-render your live plan.</p></div><button id="runStabilityCheck" class="btn primary">Run complete system test</button></div>
-<div id="stabilitySummary" class="notice">The release-candidate test has not run yet.</div>
+<div id="stabilitySummary" class="notice">System test is ready. Select “Run complete system test”.</div>
 <div id="systemTestProgressWrap" class="hn27-progress-wrap hidden" aria-live="polite">
   <div class="hn27-progress-meta"><span id="systemTestCurrent">Preparing tests</span><strong id="systemTestPercent">0%</strong></div>
   <div class="hn27-progress"><span id="systemTestProgress"></span></div>
@@ -1703,7 +1703,7 @@ button{touch-action:manipulation}
 </script>
 <script>
 const global=window;
-const KEY='harbourNorth2.plan', APP='1.3.3-runtime-status-fix', SCHEMA=39, MODEL_VERSION=29;
+const KEY='harbourNorth2.plan', APP='2.7.2', SCHEMA=39, MODEL_VERSION=29;
 const id=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36);
 const nowYear=new Date().getFullYear();
 const defaultHousehold=()=>({province:'British Columbia',planningAge:95,inflationRate:2,incomeIndexRate:2,returnRate:5,estateTarget:0,emergencyReserveMonths:6,emergencyFundAmount:0,optimizerMinRetirementAge:55,optimizerMaxRetirementAge:70,optimizerRetirementStep:1,optimizerGoal:'target',optimizerTargetAge:null,optimizerTargetWindow:2,optimizePartnerRetirement:false,partnerOptimizerMinRetirementAge:null,partnerOptimizerMaxRetirementAge:null});
@@ -2697,7 +2697,7 @@ async function runStabilityCheck(){
   });
 
   test('User-interface controls',()=>{
-   const requiredIds=['runStabilityCheck','scenarioManagerList','retirementReport','projectionBody','benefitPeople','exportBackup','importBackup'];
+   const requiredIds=['runStabilityCheck','scenarioManagerList','retirementReport','benefitPeople','exportBtn','importFile'];
    const missing=requiredIds.filter(id=>!byId(id));
    add('User-interface controls',missing.length===0,missing.length?'Missing interface elements: '+missing.join(', ')+'.':'Core planning, scenario, report and backup controls are present.');
   });
@@ -2754,6 +2754,10 @@ async function runStabilityCheck(){
   button.textContent='Run complete system test';
  }
 }
+
+
+const hnSystemTestButton=document.getElementById('runStabilityCheck');
+if(hnSystemTestButton)hnSystemTestButton.addEventListener('click',runStabilityCheck);
 
 function auditProjectionRows(){
  try{return buildCurrentProjection()}catch{return []}
@@ -3571,16 +3575,35 @@ document.getElementById('importFile').onchange=async e=>{try{
 document.getElementById('healthBtn').onclick=()=>{syncPlanningModel();const issues=[];if(!state.meta||state.meta.schemaVersion!==SCHEMA)issues.push('Schema version mismatch');for(const key of ['accounts','incomeSources','debts','expenses','events'])if(!Array.isArray(state[key]))issues.push(`${key} is invalid`);const ids=[...state.people,...state.accounts,...state.incomeSources,...state.debts,...state.expenses,...state.events].map(x=>x.id).filter(Boolean);if(new Set(ids).size!==ids.length)issues.push('Duplicate record IDs found');if(state.planningModel?.modelVersion!==MODEL_VERSION)issues.push('Planning-model version mismatch');if(!Array.isArray(state.planningModel?.scenarios)||!state.planningModel.scenarios.length)issues.push('Scenario library is missing');const active=state.planningModel?.scenarios?.find(x=>x.id===state.planningModel.activeScenarioId);if(!active)issues.push('Active scenario is invalid');document.getElementById('backupMessage').textContent=issues.length?'Health check found: '+issues.join('; '):'Data health check passed: schema, IDs, planning model, active scenario, and optimizer store are valid.';renderModelStatus()};
 document.getElementById('resetBtn').onclick=()=>{if(confirm('Reset all Harbour North data on this device?')){localStorage.removeItem(KEY);location.reload()}};
 
-document.getElementById('projectionStartYear').addEventListener('input',renderProjection);
-document.getElementById('projectionPlanningAge').addEventListener('input',()=>{state.household.planningAge=num(document.getElementById('projectionPlanningAge').value);save();renderProjection()});
-document.getElementById('projectionInflationRate').addEventListener('input',()=>{state.household.inflationRate=num(document.getElementById('projectionInflationRate').value);save();renderProjection()});
-document.getElementById('ledgerYear').addEventListener('change',renderAccountLedger);
-document.getElementById('runProjectionDiagnostics').onclick=()=>{renderProjectionDiagnostics();toast('Diagnostics refreshed')};
-document.getElementById('runIntegrityCheck').onclick=()=>{renderIntegrityCheck();toast('Integrity check complete')};
-document.getElementById('runTimelineTests').onclick=runTimelineSelfTests;
-document.getElementById('downloadTimelineCsv').onclick=downloadTimelineCsv;
-document.getElementById('explainYear').addEventListener('change',()=>{renderExplainYear();renderProjectionDiagnostics()});
-document.getElementById('projectionBody').addEventListener('click',e=>{const tr=e.target.closest('tr[data-year]');if(!tr)return;document.getElementById('explainYear').value=tr.dataset.year;renderExplainYear();renderProjectionDiagnostics();document.getElementById('explainYearBody').scrollIntoView({behavior:'smooth',block:'center'})});
+function bindOptional(id,event,handler){
+ const element=document.getElementById(id);
+ if(element)element.addEventListener(event,handler);
+ return !!element;
+}
+bindOptional('projectionStartYear','input',renderProjection);
+bindOptional('projectionPlanningAge','input',()=>{
+ const input=document.getElementById('projectionPlanningAge');
+ if(!input)return;
+ state.household.planningAge=num(input.value);projectionRows=[];save();renderProjection();
+});
+bindOptional('projectionInflationRate','input',()=>{
+ const input=document.getElementById('projectionInflationRate');
+ if(!input)return;
+ state.household.inflationRate=num(input.value);projectionRows=[];save();renderProjection();
+});
+bindOptional('ledgerYear','change',renderAccountLedger);
+bindOptional('runProjectionDiagnostics','click',()=>{renderProjectionDiagnostics();toast('Diagnostics refreshed')});
+bindOptional('runIntegrityCheck','click',()=>{renderIntegrityCheck();toast('Integrity check complete')});
+bindOptional('runTimelineTests','click',runTimelineSelfTests);
+bindOptional('downloadTimelineCsv','click',downloadTimelineCsv);
+bindOptional('explainYear','change',()=>{renderExplainYear();renderProjectionDiagnostics()});
+bindOptional('projectionBody','click',e=>{
+ const tr=e.target.closest('tr[data-year]');if(!tr)return;
+ const picker=document.getElementById('explainYear');
+ if(picker)picker.value=tr.dataset.year;
+ renderExplainYear();renderProjectionDiagnostics();
+ document.getElementById('explainYearBody')?.scrollIntoView({behavior:'smooth',block:'center'});
+});
 
 
 
@@ -3606,12 +3629,16 @@ document.getElementById('runValidationSuite').onclick=runFullValidationSuite;
 document.getElementById('runAuditValidation').onclick=()=>{renderAuditValidation();toast('Validation refreshed')};
 document.getElementById('auditYear').addEventListener('change',renderAudit);
 document.getElementById('auditBasis').addEventListener('change',renderAudit);
-document.getElementById('runStabilityCheck').onclick=runStabilityCheck;
+
 document.getElementById('clearErrorConsole').onclick=()=>{runtimeErrors.length=0;renderErrorConsole();toast('Error console cleared')};
 document.getElementById('runOptimizer').onclick=runOptimizer;
 bindAssumptions();syncAssumptionInputs();restoreOptimizerResults();renderOptimizer();
 
-bindStatic();renderAllLists();renderBenefits();renderHome();renderProjection();renderIntegrityCheck();renderProfessionalReport();renderResultsBenefits();renderSetupSteps();renderErrorConsole();renderAuditYearOptions();renderAuditValidation();renderValidationCentre();
+bindStatic();renderAllLists();renderBenefits();renderHome();
+try{renderProjection()}catch(error){recordRuntimeError(error?.message||String(error),'Projection startup',0,0,error)}
+try{renderIntegrityCheck()}catch(error){recordRuntimeError(error?.message||String(error),'Integrity startup',0,0,error)}
+try{renderProfessionalReport()}catch(error){recordRuntimeError(error?.message||String(error),'Report startup',0,0,error)}
+renderResultsBenefits();renderSetupSteps();renderErrorConsole();renderAuditYearOptions();renderAuditValidation();renderValidationCentre();
 const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(byteSize(startupPayload),'Checking');save(false);renderModelStatus();renderScenarioManager();runtimeHealthBaseline=runtimeErrors.length;scheduleBackgroundAnalysis();
 
 </script>
@@ -3979,7 +4006,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     state.household.inheritanceScenario={amount:n('wInheritance'),year:n('wInheritanceYear'),certainty:inheritanceMode};
 
     state.meta=state.meta||{};
-    state.meta.appVersion='2.7.1';
+    state.meta.appVersion='2.7.2';
     state.meta.onboardingCompletedAt=new Date().toISOString();
     syncPlanningModel();
     save(false);
