@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 4.0 RC1</title>
+<title>Harbour North 4.0 RC2</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -967,21 +967,74 @@ body{background:var(--hn-bg)!important;}
 .hn-hero{margin:16px;border-radius:18px;padding:24px;background:linear-gradient(135deg,#12344a,#2b6f8f);color:#fff}
 @media(max-width:900px){.hn-sidebar{display:none}.hn-main{margin-left:0}}
 </style>
+
+<style id="hn40rc2Styles">
+:root{--hn-sidebar:258px;--hn-navy:#0b2540;--hn-navy2:#123b5b;--hn-teal:#5eb8b2;--hn-teal-dark:#2f8582;--hn-cloud:#f4f7f8;--hn-ink:#142438;--hn-soft:#6c7b8a;--hn-border:#dbe5e8;--hn-shadow:0 12px 32px rgba(12,38,62,.08)}
+html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
+.hn-sidebar{position:fixed;inset:0 auto 0 0;width:var(--hn-sidebar);z-index:1000;background:linear-gradient(180deg,#09233d 0%,#0d304d 65%,#0a263f 100%);padding:22px 16px 18px;color:#fff;display:flex;flex-direction:column;overflow:auto;box-shadow:10px 0 40px rgba(5,22,37,.13)}
+.hn-brand-lockup{padding:7px 8px 22px;border-bottom:1px solid rgba(255,255,255,.12)}.hn-wordmark{display:block;width:205px;height:auto;filter:brightness(0) invert(1);opacity:.98}.hn-product-label{font-size:11px;letter-spacing:.055em;text-transform:uppercase;color:#a9cad7;margin:10px 4px 0;font-weight:800}
+.hn-nav{padding:10px 0;flex:1}.hn-nav-group{margin:10px 0 16px}.hn-nav h4{margin:0 12px 7px;color:#83aabd;font-size:10px;text-transform:uppercase;letter-spacing:.14em}
+.hn-side-link{width:100%;border:0;background:transparent;color:#dceaf0;display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:11px;text-align:left;cursor:pointer;transition:.16s}.hn-side-link span{width:24px;height:24px;display:grid;place-items:center;border-radius:8px;background:rgba(255,255,255,.07);font-size:13px}.hn-side-link b{font-size:13px}.hn-side-link:hover{background:rgba(255,255,255,.08);color:#fff}.hn-side-link.active{background:linear-gradient(135deg,rgba(94,184,178,.24),rgba(94,184,178,.12));color:#fff;box-shadow:inset 3px 0 0 var(--hn-teal)}.hn-side-link.active span{background:var(--hn-teal);color:#082b3e}
+.hn-sidebar-foot{border-top:1px solid rgba(255,255,255,.12);padding:15px 10px 2px;color:#bfd3dc;font-size:11px}.hn-sidebar-foot small{display:block;margin-top:7px;color:#789bad}.hn-live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#65d2a0;margin-right:7px;box-shadow:0 0 0 4px rgba(101,210,160,.11)}
+.hn-main{margin-left:var(--hn-sidebar);min-height:100vh}.hn-topbar{position:sticky;top:0;z-index:50;min-height:78px;padding:14px 30px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--hn-border);display:flex;align-items:center;justify-content:space-between;color:var(--hn-ink)}.hn-topbar h1{margin:1px 0 0;font-size:24px;letter-spacing:-.03em}.hn-topbar-kicker{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--hn-teal-dark);font-weight:900}.hn-top-actions{display:flex;align-items:center;gap:10px}.hn-icon-btn{width:38px;height:38px;border-radius:12px;border:1px solid var(--hn-border);background:#fff;color:var(--hn-navy);font-weight:900;cursor:pointer}.hn-topbar .status{background:#edf8f5;border:1px solid #c7e7dc;color:#287259;padding:8px 12px;font-size:12px}
+.hn-legacy-tabs{display:none!important}.shell{max-width:1280px;padding:26px 30px 50px}.hero,.card{border:1px solid var(--hn-border);box-shadow:var(--hn-shadow);border-radius:20px}.card{background:#fff}.eyebrow{color:var(--hn-teal-dark)}.btn.primary{background:var(--hn-navy);box-shadow:0 6px 16px rgba(11,37,64,.15)}.btn.primary:hover{background:#123b5b}.btn{border-radius:12px}.metric,.hn341-metric{background:linear-gradient(180deg,#fff,#f8fbfb)!important;border:1px solid var(--hn-border)!important}
+.hn21-snapshot{position:relative;overflow:hidden;border-radius:26px!important;background:linear-gradient(135deg,#0b2a45 0%,#104363 70%,#176576 100%)!important;color:#fff!important;border:0!important;box-shadow:0 18px 44px rgba(7,39,62,.18)!important}.hn21-snapshot:after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;right:-120px;top:-170px;border:1px solid rgba(255,255,255,.12);box-shadow:0 0 0 42px rgba(255,255,255,.035),0 0 0 90px rgba(255,255,255,.025)}.hn21-snapshot .eyebrow,.hn21-snapshot .hn21-analysis-note,.hn21-snapshot .hn21-confidence-panel span{color:#bfe0e4!important}.hn21-snapshot .hn21-summary{color:#e9f4f5!important}.hn21-snapshot .btn:not(.primary){background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.18)}.hn21-snapshot .btn.primary{background:var(--hn-teal);color:#082a3a}.hn21-confidence-panel{background:rgba(255,255,255,.09)!important;border-color:rgba(255,255,255,.16)!important;position:relative;z-index:2}.hn21-confidence-panel strong{color:#fff!important}
+.hn341-hero{border:0!important;background:linear-gradient(135deg,#fff,#f1f8f7)!important}.hn341-score-ring{border-color:#bee4df!important;color:var(--hn-navy)!important}.hn351-ask-callout{border-left:5px solid var(--hn-teal)!important;background:linear-gradient(135deg,#f6fbfa,#fff)!important}.hn351-ask-icon{background:var(--hn-teal)!important;color:#08334a!important}
+.hn341-metrics{gap:14px!important}.hn341-metric strong{color:var(--hn-navy)!important}.timeline-item:before{background:var(--hn-teal)!important}.timeline:before{background:#cbe2e2!important}.score-fill{background:var(--hn-teal-dark)!important}
+.hn-rc2-footer{margin-top:28px;padding:18px 4px 4px;border-top:1px solid var(--hn-border);display:flex;justify-content:space-between;gap:15px;color:var(--hn-soft);font-size:12px}.hn-rc2-footer strong{color:var(--hn-navy)}
+.hn-mobile-menu{display:none;position:fixed;top:14px;left:14px;z-index:1200;width:42px;height:42px;border:0;border-radius:12px;background:var(--hn-navy);color:#fff;font-size:20px;box-shadow:0 8px 20px rgba(0,0,0,.18)}.hn-sidebar-backdrop{display:none}
+@media(max-width:900px){.hn-main{margin-left:0}.hn-sidebar{transform:translateX(-105%);transition:.2s}.hn-sidebar.open{transform:none}.hn-mobile-menu{display:block}.hn-sidebar-backdrop.open{display:block;position:fixed;inset:0;background:rgba(4,20,33,.48);z-index:900}.hn-topbar{padding-left:70px}.shell{padding:20px 16px 40px}}
+@media(max-width:600px){.hn-topbar{min-height:68px;padding-right:14px}.hn-topbar h1{font-size:20px}.hn-topbar-kicker{display:none}.hn-top-actions .hn-icon-btn{display:none}.shell{padding-top:14px}.hn21-snapshot{border-radius:20px!important}.hn-rc2-footer{flex-direction:column}}
+@media print{.hn-sidebar,.hn-mobile-menu,.hn-sidebar-backdrop,.hn-topbar,.hn-rc2-footer{display:none!important}.hn-main{margin-left:0!important}}
+</style>
 </head>
 <body>
-<div class="hn-sidebar">
-<div class="hn-brand">🧭 Harbour North</div>
-<div class="hn-tag">Retirement Planning, Simplified</div>
-<div class="hn-nav">
-<h4>Dashboard</h4><a href="#">Home</a>
-<h4>Planning</h4><a href="#">Household</a><a href="#">Investments</a><a href="#">Income</a><a href="#">Spending</a>
-<h4>Analysis</h4><a href="#">Projection</a><a href="#">Taxes</a><a href="#">Reports</a>
-<h4>Tools</h4><a href="#">Smart Coach</a><a href="#">Scenarios</a><a href="#">Setup & Health</a>
-</div></div><div class="hn-main"><div class="hn-hero"><h1>Harbour North 4.0 RC1</h1><p>Welcome to the new commercial interface. Existing planning engine preserved.</p></div>
-
-<header><div><h1>Harbour North</h1><p>Your retirement picture—and what to do next.</p></div><div id="saveStatus" class="status">Ready</div></header>
+<button id="hnMobileMenu" class="hn-mobile-menu" type="button" aria-label="Open navigation">☰</button>
+<div id="hnSidebarBackdrop" class="hn-sidebar-backdrop"></div>
+<aside id="hnSidebar" class="hn-sidebar" aria-label="Primary navigation">
+  <div class="hn-brand-lockup">
+    <img src="harbour-north-logo.png" alt="Harbour North" class="hn-wordmark">
+    <div class="hn-product-label">Retirement planning for Canadians</div>
+  </div>
+  <nav class="hn-nav">
+    <div class="hn-nav-group"><h4>Dashboard</h4>
+      <button class="hn-side-link active" type="button" data-page="home"><span>⌂</span><b>Overview</b></button>
+    </div>
+    <div class="hn-nav-group"><h4>Planning</h4>
+      <button class="hn-side-link" type="button" data-page="planhub"><span>☷</span><b>Your Plan</b></button>
+      <button class="hn-side-link" type="button" data-page="withdrawal"><span>↗</span><b>Strategy</b></button>
+      <button class="hn-side-link" type="button" data-page="tax"><span>%</span><b>Tax</b></button>
+    </div>
+    <div class="hn-nav-group"><h4>Analysis</h4>
+      <button class="hn-side-link" type="button" data-page="resulthub"><span>◫</span><b>Results</b></button>
+      <button class="hn-side-link" type="button" data-page="report"><span>▤</span><b>Reports</b></button>
+    </div>
+    <div class="hn-nav-group"><h4>Guidance</h4>
+      <button class="hn-side-link" type="button" data-page="coach"><span>✦</span><b>Coach</b></button>
+      <button class="hn-side-link" type="button" data-page="smartcoach"><span>?</span><b>Ask Harbour North</b></button>
+    </div>
+    <div class="hn-nav-group"><h4>System</h4>
+      <button class="hn-side-link" type="button" data-page="stability"><span>✓</span><b>Setup &amp; Health</b></button>
+    </div>
+  </nav>
+  <div class="hn-sidebar-foot">
+    <div><span class="hn-live-dot"></span> Plan saved locally</div>
+    <small>Harbour North 4.0 RC2</small>
+  </div>
+</aside>
+<div class="hn-main">
+<header class="hn-topbar">
+  <div>
+    <div class="hn-topbar-kicker">Retirement command centre</div>
+    <h1 id="hnPageTitle">Overview</h1>
+  </div>
+  <div class="hn-top-actions">
+    <button class="hn-icon-btn" type="button" data-goto="smartcoach" title="Ask Harbour North">?</button>
+    <div id="saveStatus" class="status">Ready</div>
+  </div>
+</header>
 <main class="shell">
-<nav class="tabs streamlined-tabs">
+<nav class="tabs streamlined-tabs hn-legacy-tabs" aria-hidden="true">
 <button class="tab active" data-page="home">Overview</button>
 <button class="tab" data-page="coach">Coach</button>
 
@@ -1162,7 +1215,7 @@ body{background:var(--hn-bg)!important;}
 <section id="coach" class="page">
   <div class="hn30-coach-hero">
     <div>
-      <div class="eyebrow">Harbour North 4.0 RC1 · Beta Readiness</div>
+      <div class="eyebrow">Harbour North 4.0 RC2 · Beta Readiness</div>
       <h2>What should you do next?</h2>
       <p>Harbour North reviews your current projection, tests practical alternatives and ranks the changes that have the greatest effect on your retirement plan.</p>
     </div>
@@ -1878,7 +1931,7 @@ body{background:var(--hn-bg)!important;}
 
 <section id="report" class="page" aria-label="Retirement report">
 <div class="hn26-report-banner hn32-report-banner">
-  <div><div class="eyebrow">Harbour North 4.0 RC1 · Beta Readiness</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
+  <div><div class="eyebrow">Harbour North 4.0 RC2 · Beta Readiness</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
   <button id="hn26PrintReport" type="button" class="btn primary">Print / Save as PDF</button>
 </div>
 <div class="hn32-report-controls card">
@@ -1905,7 +1958,7 @@ body{background:var(--hn-bg)!important;}
 </div>
 </section>
 
-</main>
+<footer class="hn-rc2-footer"><div><strong>Harbour North</strong> · Canadian retirement planning</div><div>4.0 RC2 · Your information stays on this device</div></footer></main>
 
 <div id="hn36WelcomeModal" class="hn36-modal hidden" role="dialog" aria-modal="true" aria-labelledby="hn36WelcomeTitle">
   <div class="hn36-modal-panel">
@@ -4249,7 +4302,7 @@ function renderProfessionalReport(){
   </div>
  </section>
 
- <div class="report-footer">Generated by Harbour North 4.0 RC1 · Beta Readiness · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
+ <div class="report-footer">Generated by Harbour North 4.0 RC2 · Beta Readiness · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
 }
 
 let backgroundAnalysis={fingerprint:'',running:false,timer:null,result:null};
@@ -6736,4 +6789,24 @@ window.addEventListener('load',()=>setTimeout(hn342InitializePolish,120),{once:t
   </div>
 </div>
 
-</div></body></html>
+</div>
+<script id="hn40rc2Script">
+(function(){
+ const titles={home:'Overview',coach:'Coach',tax:'Tax planning',planhub:'Your plan',withdrawal:'Withdrawal strategy',resulthub:'Results',report:'Retirement report',stability:'Setup & health',smartcoach:'Ask Harbour North'};
+ const sidebar=document.getElementById('hnSidebar'),backdrop=document.getElementById('hnSidebarBackdrop'),menu=document.getElementById('hnMobileMenu');
+ function closeMenu(){sidebar?.classList.remove('open');backdrop?.classList.remove('open')}
+ menu?.addEventListener('click',()=>{sidebar?.classList.toggle('open');backdrop?.classList.toggle('open')});backdrop?.addEventListener('click',closeMenu);
+ document.querySelectorAll('.hn-side-link').forEach(btn=>btn.addEventListener('click',()=>{
+   const id=btn.dataset.page; const legacy=document.querySelector('.tab[data-page="'+id+'"]');
+   if(legacy) legacy.click(); else if(typeof showPage==='function') showPage(id);
+   document.querySelectorAll('.hn-side-link').forEach(x=>x.classList.toggle('active',x===btn));
+   const title=document.getElementById('hnPageTitle'); if(title) title.textContent=titles[id]||'Harbour North'; closeMenu();
+ }));
+ document.querySelectorAll('[data-goto]').forEach(btn=>btn.addEventListener('click',()=>{
+   const id=btn.dataset.goto; document.querySelectorAll('.hn-side-link').forEach(x=>x.classList.toggle('active',x.dataset.page===id));
+   const title=document.getElementById('hnPageTitle'); if(title) title.textContent=titles[id]||'Harbour North';
+ }));
+ const original=window.showPage; if(typeof original==='function') window.showPage=function(id){original(id);document.querySelectorAll('.hn-side-link').forEach(x=>x.classList.toggle('active',x.dataset.page===id));const title=document.getElementById('hnPageTitle');if(title)title.textContent=titles[id]||'Harbour North';};
+})();
+</script>
+</body></html>
