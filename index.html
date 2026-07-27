@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North 4.0 RC2 Calculation Audit</title>
+<title>Harbour North 4.0 RC2 Financial Audit</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -1194,6 +1194,71 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
   }
 }
 
+
+/* RC2 Financial Audit — ending estate transparency */
+.hn-estate-audit{
+  grid-column:1/-1;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#f8fbfe;
+  overflow:hidden;
+}
+.hn-estate-audit>summary{
+  cursor:pointer;
+  padding:15px 18px;
+  font-weight:900;
+  color:var(--navy);
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+}
+.hn-estate-audit-body{
+  border-top:1px solid var(--line);
+  padding:16px 18px 18px;
+}
+.hn-estate-audit-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-bottom:14px;
+}
+.hn-estate-audit-metric{
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  padding:13px;
+}
+.hn-estate-audit-metric span{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:850;
+  margin-bottom:5px;
+}
+.hn-estate-audit-metric strong{
+  display:block;
+  color:var(--navy);
+  font-size:19px;
+}
+.hn-estate-account-list{
+  display:grid;
+  gap:0;
+  margin-top:10px;
+}
+.hn-estate-note{
+  margin-top:13px;
+  padding:12px 14px;
+  border-left:4px solid var(--warn);
+  border-radius:8px;
+  background:#fff8ea;
+  color:#5f4a27;
+  font-size:12px;
+  line-height:1.5;
+}
+@media(max-width:850px){.hn-estate-audit-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.hn-estate-audit-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -1227,7 +1292,7 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
   </nav>
   <div class="hn-sidebar-foot">
     <div><span class="hn-live-dot"></span> Plan saved locally</div>
-    <small>Harbour North 4.0 RC2 Calculation Audit</small>
+    <small>Harbour North 4.0 RC2 Financial Audit</small>
   </div>
 </aside>
 <div class="hn-main">
@@ -1459,7 +1524,7 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
 <section id="coach" class="page">
   <div class="hn30-coach-hero">
     <div>
-      <div class="eyebrow">Harbour North 4.0 RC2 Calculation Audit · Beta Readiness</div>
+      <div class="eyebrow">Harbour North 4.0 RC2 Financial Audit · Beta Readiness</div>
       <h2>What should you do next?</h2>
       <p>Harbour North reviews your current projection, tests practical alternatives and ranks the changes that have the greatest effect on your retirement plan.</p>
     </div>
@@ -2175,7 +2240,7 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
 
 <section id="report" class="page" aria-label="Retirement report">
 <div class="hn26-report-banner hn32-report-banner">
-  <div><div class="eyebrow">Harbour North 4.0 RC2 Calculation Audit · Beta Readiness</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
+  <div><div class="eyebrow">Harbour North 4.0 RC2 Financial Audit · Beta Readiness</div><h3>A clear retirement plan you can review, print or share</h3><p>The report now combines the active projection, Retirement Coach findings, scenario comparisons, assumptions and a practical action plan.</p></div>
   <button id="hn26PrintReport" type="button" class="btn primary">Print / Save as PDF</button>
 </div>
 <div class="hn32-report-controls card">
@@ -4620,7 +4685,7 @@ function renderProfessionalReport(){
   </div>
  </section>
 
- <div class="report-footer">Generated by Harbour North 4.0 RC2 Calculation Audit · Beta Readiness · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
+ <div class="report-footer">Generated by Harbour North 4.0 RC2 Financial Audit · Beta Readiness · Active scenario: ${esc(active?.name||'Base plan')}</div>`;
 }
 
 let backgroundAnalysis={fingerprint:'',running:false,timer:null,result:null};
@@ -4729,7 +4794,18 @@ function renderResultHub(){
  const confidence=backgroundAnalysis.result?.mc?.successRate;
  const lifetimeTax=projections.reduce((s,p)=>s+num(p.tax),0);
  const lowestPortfolio=projections.length?Math.min(...projections.map(p=>num(p.endingInvestments))):0;
- const endingEstate=num(last.netWorth),endingPortfolio=num(last.endingInvestments);
+ const endingEstateNominal=num(last.netWorth),endingPortfolioNominal=num(last.endingInvestments);
+ const horizonYear=rows.at(-1)?.year||nowYear;
+ const inflationRate=Math.max(0,num(state.household?.inflationRate));
+ const deflator=Math.pow(1+inflationRate/100,Math.max(0,horizonYear-nowYear));
+ const endingEstateReal=deflator>0?endingEstateNominal/deflator:endingEstateNominal;
+ const endingPortfolioReal=deflator>0?endingPortfolioNominal/deflator:endingPortfolioNominal;
+ const investmentTypes=['Cash','RRSP/RRIF','TFSA','FHSA','Non-registered'];
+ const nonInvestmentAssets=(state.accounts||[]).filter(a=>!investmentTypes.includes(a.type)).reduce((s,a)=>s+Math.max(0,num(a.balance)),0);
+ const recordedDebt=(state.debts||[]).reduce((s,d)=>s+Math.max(0,num(d.balance)),0);
+ const finalAccounts=Array.isArray(last.accountBalances)?last.accountBalances:[];
+ const accountTotal=finalAccounts.reduce((s,a)=>s+Math.max(0,num(a.balance)),0);
+ const estateReconciliation=endingEstateNominal-(accountTotal+nonInvestmentAssets-recordedDebt);
  const strategy=strategyDefinition(ensureWithdrawalStrategy().mode).label;
  const pct=confidence==null?null:Math.round(confidence*100);
  let outlook='Checking…',kind='checking',note='Automatic analysis is running';
@@ -4746,9 +4822,30 @@ function renderResultHub(){
   <div class="hn24-result-card primary"><span>Retirement confidence</span><strong>${pct==null?'Checking…':pct+'%'}</strong><p>${pct==null?'Automatic market simulation is running.':pct>=90?'The plan succeeded in most simulated market paths.':pct>=80?'The plan is generally resilient but downside risk remains.':'The plan is vulnerable to weaker market outcomes.'}</p></div>
   <div class="hn24-result-card"><span>First projected shortfall</span><strong>${firstShort||'None'}</strong><p>${firstShort?'Spending first exceeds available income and withdrawals in this year.':'No unfunded spending appears in the standard projection.'}</p></div>
   <div class="hn24-result-card"><span>Lifetime tax</span><strong>${money(lifetimeTax)}</strong><p>Estimated total household income tax across the planning horizon.</p></div>
-  <div class="hn24-result-card"><span>Ending estate</span><strong>${money(endingEstate)}</strong><p>Projected net worth at the end of the planning horizon.</p></div>
-  <div class="hn24-result-card"><span>Lowest portfolio balance</span><strong>${money(lowestPortfolio)}</strong><p>The lowest projected investment balance during the plan.</p></div>
-  <div class="hn24-result-card"><span>Active strategy</span><strong>${esc(strategy)}</strong><p>The account-withdrawal approach currently used by the projection.</p></div>`;
+  <div class="hn24-result-card"><span>Ending estate (today’s dollars)</span><strong>${money(endingEstateReal)}</strong><p>${money(endingEstateNominal)} in ${horizonYear} dollars, adjusted using ${inflationRate.toFixed(1)}% inflation.</p></div>
+  <div class="hn24-result-card"><span>Lowest portfolio balance</span><strong>${money(lowestPortfolio)}</strong><p>The lowest projected investment balance during the plan, stated in that year’s dollars.</p></div>
+  <div class="hn24-result-card"><span>Active strategy</span><strong>${esc(strategy)}</strong><p>The account-withdrawal approach currently used by the projection.</p></div>
+  <details class="hn-estate-audit">
+    <summary><span>Audit the ending-estate calculation</span><span>${horizonYear}</span></summary>
+    <div class="hn-estate-audit-body">
+      <div class="hn-estate-audit-grid">
+        <div class="hn-estate-audit-metric"><span>Final investment portfolio</span><strong>${money(accountTotal)}</strong></div>
+        <div class="hn-estate-audit-metric"><span>Recorded non-investment assets</span><strong>${money(nonInvestmentAssets)}</strong></div>
+        <div class="hn-estate-audit-metric"><span>Recorded debts</span><strong>-${money(recordedDebt)}</strong></div>
+        <div class="hn-estate-audit-metric"><span>Ending net worth</span><strong>${money(endingEstateNominal)}</strong></div>
+      </div>
+      <div class="detail-row"><span>Ending net worth in ${horizonYear} dollars</span><strong>${money(endingEstateNominal)}</strong></div>
+      <div class="detail-row"><span>Inflation deflator</span><strong>${deflator.toFixed(3)}×</strong></div>
+      <div class="detail-row"><span>Ending net worth in today’s dollars</span><strong>${money(endingEstateReal)}</strong></div>
+      <div class="detail-row"><span>Portfolio in today’s dollars</span><strong>${money(endingPortfolioReal)}</strong></div>
+      <div class="detail-row"><span>Reconciliation difference</span><strong class="${Math.abs(estateReconciliation)<1?'positive':'negative'}">${money(estateReconciliation)}</strong></div>
+      <div class="hn-estate-account-list">
+        <strong style="margin:8px 0">Final account balances</strong>
+        ${finalAccounts.length?finalAccounts.map(a=>`<div class="detail-row"><span>${esc(a.name||a.type)} <small class="muted">(${esc(a.type||'Account')})</small></span><strong>${money(a.balance)}</strong></div>`).join(''):'<p class="muted">No final account ledger was available.</p>'}
+      </div>
+      <div class="hn-estate-note">Non-investment assets and debts are currently carried at their recorded values for the full planning horizon. Property appreciation, depreciation, sale timing and debt amortization are not projected unless entered separately. The headline now uses today’s dollars so it is comparable with current values.</div>
+    </div>
+  </details>`;
 
  let meaningTitle,meaningText,actionTitle,actionText,actionMode='improve';
  if(firstShort){
@@ -4769,7 +4866,7 @@ function renderResultHub(){
   actionMode='risk';
  }else if(pct!=null){
   meaningTitle='Your retirement outlook is strong under the current assumptions.';
-  meaningText=`The standard projection remains funded and the plan succeeds in ${pct}% of simulated market paths. The ending estate is ${money(endingEstate)}, but results still depend on the accuracy of your spending, income and return assumptions.`;
+  meaningText=`The standard projection remains funded and the plan succeeds in ${pct}% of simulated market paths. The ending estate is ${money(endingEstateReal)} in today’s dollars (${money(endingEstateNominal)} in ${horizonYear} dollars), but results still depend on the accuracy of your spending, income and return assumptions.`;
   actionTitle='Confirm the assumptions behind the result';
   actionText='Review spending, pensions, CPP, OAS and investment returns whenever your circumstances change.';
   actionMode='plan';

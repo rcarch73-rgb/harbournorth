@@ -1,23 +1,23 @@
-Harbour North 4.0 RC2 Calculation Audit
+Harbour North 4.0 RC2 Financial Audit
 
-Root cause corrected
---------------------
-The Tax page was reading r.ages[0], but projection rows store ages in r.people[0].age.
-Because the age was therefore blank, the app could not find the age-71 row and silently
-used the final year of the entire planning horizon instead.
+Ending-estate audit
+-------------------
+The previous Results card displayed the final net-worth value entirely in future nominal
+dollars. Over a planning horizon of several decades, this can look dramatically larger
+than the equivalent value in today's purchasing power.
 
-The card then displayed endingInvestments, which is the total portfolio across registered,
-TFSA, non-registered and cash accounts. It was mislabeled as RRIF-related.
+This build:
+- Uses ending estate in today's dollars as the primary Results-page figure.
+- Shows the corresponding future-dollar amount and final planning year.
+- Displays the inflation rate and calculated deflator.
+- Reconciles final investment accounts + recorded non-investment assets - recorded debts.
+- Lists every final account balance in an expandable audit panel.
+- Flags the current limitation that non-investment assets and debts remain at their
+  recorded values unless separate future events are entered.
+- Keeps the lowest-portfolio figure clearly labelled as nominal dollars for the year
+  in which it occurs.
 
-Corrections
------------
-- Finds the actual projection row where the primary person first reaches age 71.
-- Sums only RRSP/RRIF account balances for that row.
-- Excludes TFSA, non-registered and cash balances.
-- Adds an expandable account-by-account audit below the RRIF Outlook card.
-- Corrects the warning and retirement report labels.
-- Shows “Unavailable” rather than silently using the final planning year if the horizon
-  does not reach age 71.
-
-No withdrawal, tax, growth, contribution or retirement funding calculations were changed.
-This build corrects the selection and presentation of the age-71 registered-account metric.
+Important:
+This audit does not conceal or cap the projection. It makes the calculation traceable
+and separates future dollars from today's dollars. No investment growth, spending,
+income, withdrawal or tax formulas were changed in this build.
