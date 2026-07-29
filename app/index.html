@@ -1408,6 +1408,13 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
 .hn-account{position:relative;margin-left:2px}.hn-account-trigger{display:flex;align-items:center;gap:8px;max-width:215px;border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:11px;padding:7px 10px;cursor:pointer;box-shadow:0 2px 8px rgba(24,53,82,.06)}.hn-account-trigger:hover,.hn-account-trigger[aria-expanded="true"]{background:#eef5f7;border-color:#bfd3da}.hn-account-email{font-size:11px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:165px}.hn-account-chevron{font-size:11px;opacity:.75}.hn-account-menu{position:absolute;right:0;top:calc(100% + 9px);width:220px;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 16px 38px rgba(15,35,50,.20);padding:8px;z-index:100;display:none}.hn-account-menu.open{display:block}.hn-account-summary{padding:9px 10px 11px;border-bottom:1px solid var(--line);margin-bottom:6px}.hn-account-summary strong,.hn-account-summary span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hn-account-summary strong{font-size:13px;color:var(--navy)}.hn-account-summary span{font-size:11px;color:var(--muted);margin-top:3px}.hn-signout{width:100%;border:0;background:transparent;color:var(--danger);border-radius:9px;padding:10px;text-align:left;font-size:13px;font-weight:850;cursor:pointer}.hn-signout:hover{background:#fff1f1}.hn-cloud-status{border:1px solid var(--line);background:#f3f8f6;color:var(--navy);border-radius:10px;padding:7px 10px;font-size:11px;font-weight:850;cursor:pointer;white-space:nowrap}.hn-cloud-status.syncing{color:var(--blue);background:#eef5f7}.hn-cloud-status.saved{color:var(--ok);background:#eef8f3;border-color:#c9e4d7}.hn-cloud-status.error{color:var(--danger);background:#fff1f1;border-color:#efcaca}
 @media(max-width:700px){.hn-account-trigger{max-width:128px;padding:7px 8px}.hn-account-email{max-width:92px}.hn-cloud-status{padding:7px 8px;font-size:10px}.hn-top-actions{gap:7px}.hn-account-menu{position:fixed;right:12px;top:68px;width:min(260px,calc(100vw - 24px))}}
 </style>
+
+<style id="hnSettingsStyles">
+.hn-settings-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow);margin-bottom:16px}
+.hn-settings-hero h2{font-size:40px;letter-spacing:-.04em;color:var(--navy);margin:5px 0 8px}.hn-settings-hero p{margin:0;color:var(--muted);line-height:1.55;max-width:690px}.hn-settings-avatar{width:76px;height:76px;border-radius:22px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:25px;font-weight:900}
+.hn-settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.hn-settings-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}.hn-settings-card.full{grid-column:1/-1}.hn-settings-card h3{margin:0 0 5px;color:var(--navy)}.hn-settings-card>p{margin:0 0 18px;color:var(--muted);font-size:13px;line-height:1.5}.hn-settings-row{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:13px 0;border-bottom:1px solid #edf1f2}.hn-settings-row:last-child{border-bottom:0}.hn-settings-row-copy{min-width:0}.hn-settings-row-copy strong{display:block;color:var(--ink);margin-bottom:3px}.hn-settings-row-copy span{display:block;color:var(--muted);font-size:12px;overflow-wrap:anywhere}.hn-settings-row .btn{flex:0 0 auto}.hn-settings-control{width:190px;max-width:45%}.hn-settings-danger{border-color:#efd0d0}.hn-settings-danger h3{color:var(--danger)}.hn-settings-version{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}.hn-settings-chip{display:inline-flex;padding:7px 10px;border-radius:999px;background:#eef4f5;color:var(--navy);font-size:11px;font-weight:850}
+@media(max-width:760px){.hn-settings-hero{grid-template-columns:1fr}.hn-settings-avatar{display:none}.hn-settings-grid{grid-template-columns:1fr}.hn-settings-card.full{grid-column:auto}.hn-settings-row{align-items:flex-start;flex-direction:column}.hn-settings-row .btn,.hn-settings-control{width:100%;max-width:none}}
+</style>
 </head>
 <body>
 <div id="hnAuthGate" role="status" aria-live="polite">Checking your Harbour North account…</div>
@@ -1437,6 +1444,7 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
     </div>
     <div class="hn-nav-group"><h4>System</h4>
       <button class="hn-side-link" type="button" data-page="stability"><span>✓</span><b>Setup &amp; Health</b></button>
+      <button class="hn-side-link" type="button" data-page="settings"><span>⚙</span><b>Settings</b></button>
     </div>
   </nav>
   <div class="hn-sidebar-foot">
@@ -2425,6 +2433,52 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
   <div class="hn26-safe-card"><h3>Create a fresh plan</h3><p>Start a new plan after confirming that the current browser plan can be replaced.</p><button id="hn26NewPlan" class="btn">Start new plan</button></div>
   <div class="hn26-safe-card hn26-danger"><h3>Reset this browser</h3><p>Delete the saved plan and onboarding progress from this browser. Export a backup first.</p><button id="hn26ResetBrowser" class="btn">Reset saved plan</button></div>
 </div>
+</section>
+
+
+<section id="settings" class="page" aria-labelledby="hnSettingsTitle">
+  <div class="hn-settings-hero">
+    <div>
+      <div class="eyebrow">Account and preferences</div>
+      <h2 id="hnSettingsTitle">Settings</h2>
+      <p>Manage your Harbour North account, planning preferences, backups and support options in one place.</p>
+    </div>
+    <div id="hnSettingsAvatar" class="hn-settings-avatar" aria-hidden="true">HN</div>
+  </div>
+
+  <div class="hn-settings-grid">
+    <section class="hn-settings-card">
+      <h3>Account</h3><p>Your signed-in Harbour North profile.</p>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong id="hnSettingsName">Harbour North member</strong><span>Display name from your retirement plan</span></div><button id="hnSettingsEditProfile" class="btn small" type="button">Edit profile</button></div>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Email</strong><span id="hnSettingsEmail">Loading account…</span></div></div>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Session</strong><span>Sign out securely on this device.</span></div><button id="hnSettingsSignOut" class="btn small danger" type="button">Sign out</button></div>
+    </section>
+
+    <section class="hn-settings-card">
+      <h3>Preferences</h3><p>Choose defaults used throughout your plan.</p>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Currency</strong><span>Financial values and reports</span></div><select id="hnSettingsCurrency" class="hn-settings-control"><option value="CAD">Canadian dollars (CAD)</option></select></div>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Language</strong><span>Interface and report language</span></div><select id="hnSettingsLanguage" class="hn-settings-control"><option value="en-CA">English (Canada)</option></select></div>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Start page</strong><span>Page opened after signing in</span></div><select id="hnSettingsStartPage" class="hn-settings-control"><option value="home">Overview</option><option value="planhub">Your Plan</option><option value="resulthub">Results</option></select></div>
+    </section>
+
+    <section class="hn-settings-card">
+      <h3>Plan data</h3><p>Keep a portable copy of your retirement plan.</p>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Export backup</strong><span>Download a complete copy of your current plan.</span></div><button id="hnSettingsExport" class="btn small" type="button">Export plan</button></div>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Import backup</strong><span>Restore a Harbour North backup file.</span></div><button id="hnSettingsImport" class="btn small" type="button">Import plan</button></div>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Setup wizard</strong><span>Review your household and planning inputs again.</span></div><button id="hnSettingsWizard" class="btn small" type="button">Restart wizard</button></div>
+    </section>
+
+    <section class="hn-settings-card">
+      <h3>Support</h3><p>Product information and help resources.</p>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Help centre</strong><span>Guidance is being prepared for the public beta.</span></div><button class="btn small" type="button" disabled>Coming soon</button></div>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Release</strong><span>Harbour North cloud beta</span><div class="hn-settings-version"><span class="hn-settings-chip">Milestone 4</span><span class="hn-settings-chip">Cloud save active</span></div></div></div>
+    </section>
+
+    <section class="hn-settings-card full hn-settings-danger">
+      <h3>Account safety</h3><p>Destructive account tools will be added only after server-side safeguards and confirmation checks are in place.</p>
+      <div class="hn-settings-row"><div class="hn-settings-row-copy"><strong>Delete account</strong><span>Not available during beta. Your plan can still be exported at any time.</span></div><button class="btn small danger" type="button" disabled>Unavailable in beta</button></div>
+    </section>
+  </div>
 </section>
 
 <footer class="hn-rc2-footer"><div><strong>Harbour North</strong> · Canadian retirement planning</div><div>Harbour North 4.0 RC3 Beta 2 · Your information stays on this device</div></footer></main>
@@ -6113,7 +6167,7 @@ function showPage(id){
  }
  document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===id));
  if(id==='smartcoach')setTimeout(renderHN35Coach,0);
- if(id==='stability')setTimeout(renderHN36Readiness,0);
+ if(id==='stability')setTimeout(renderHN36Readiness,0);if(id==='settings')setTimeout(hnRenderSettings,0);
  if(id!=='home')localStorage.setItem(HN341_LAST_PAGE,id);
  hn341RenderEnhancements(id);
  if(id==='tax')setTimeout(renderTaxStrategyCoach,40);document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='ledger')renderAllLists();if(id==='benefits')renderBenefits();if(id==='home'){renderHome();hnUpdateOverviewWelcome();scheduleBackgroundAnalysis()}if(id==='coach')renderRetirementCoach();if(id==='planhub')renderSetupSteps();if(id==='resulthub'){renderResultHub();scheduleBackgroundAnalysis()}if(id==='projection')renderProjection();if(id==='assumptions')syncAssumptionInputs();if(id==='optimizer'||id==='results')renderOptimizer();if(id==='backup')renderModelStatus();if(id==='scenarios')renderScenarioManager();if(id==='stability'){renderSetupSteps();renderErrorConsole()}if(id==='audit'){renderAuditYearOptions();renderAudit();renderAuditValidation()}if(id==='validation')renderValidationCentre();if(id==='report')renderProfessionalReport();if(id==='withdrawal')renderWithdrawalStrategy();if(id==='montecarlo'&&monteCarloState.results)renderMonteCarloResults();window.scrollTo({top:0,left:0,behavior:'auto'});document.querySelector('.hn-nav')?.scrollTo({top:0,behavior:'auto'})}
@@ -7490,7 +7544,7 @@ window.addEventListener('load',()=>setTimeout(hn342InitializePolish,120),{once:t
 </div>
 <script id="hn40rc2Script">
 (function(){
- const titles={home:'Overview',coach:'Coach',tax:'Tax planning',planhub:'Your plan',withdrawal:'Withdrawal strategy',resulthub:'Results',report:'Retirement report',stability:'Setup & health',smartcoach:'Ask Harbour North'};
+ const titles={home:'Overview',coach:'Coach',tax:'Tax planning',planhub:'Your plan',withdrawal:'Withdrawal strategy',resulthub:'Results',report:'Retirement report',stability:'Setup & health',settings:'Settings',smartcoach:'Ask Harbour North'};
  const sidebar=document.getElementById('hnSidebar'),backdrop=document.getElementById('hnSidebarBackdrop'),menu=document.getElementById('hnMobileMenu');
  function closeMenu(){sidebar?.classList.remove('open');backdrop?.classList.remove('open')}
  menu?.addEventListener('click',()=>{sidebar?.classList.toggle('open');backdrop?.classList.toggle('open')});backdrop?.addEventListener('click',closeMenu);
@@ -7641,4 +7695,30 @@ hnRenderProtectionStatus();
 
 <script type="module" src="./js/auth.js"></script>
 <script type="module" src="./js/cloud.js"></script>
+
+<script id="hnSettingsScript">
+(function(){
+ const PREF_KEY='harbourNorth.settings.preferences';
+ function initials(name){return String(name||'HN').trim().split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join('').toUpperCase()||'HN'}
+ window.hnRenderSettings=function(){
+   const household=[state?.people?.[0]?.name,state?.people?.[1]?.name].filter(Boolean).join(' and ')||document.getElementById('hnAccountName')?.textContent||'Harbour North member';
+   const email=document.getElementById('hnAccountEmail')?.textContent?.trim()||'Signed-in account';
+   const nameEl=document.getElementById('hnSettingsName'),emailEl=document.getElementById('hnSettingsEmail'),avatar=document.getElementById('hnSettingsAvatar');
+   if(nameEl)nameEl.textContent=household;if(emailEl)emailEl.textContent=email;if(avatar)avatar.textContent=initials(household.replace(' and ',' '));
+   try{const prefs=JSON.parse(localStorage.getItem(PREF_KEY)||'{}');const start=document.getElementById('hnSettingsStartPage');if(start)start.value=prefs.startPage||'home'}catch(e){}
+ };
+ function savePrefs(){const start=document.getElementById('hnSettingsStartPage')?.value||'home';localStorage.setItem(PREF_KEY,JSON.stringify({currency:'CAD',language:'en-CA',startPage:start}));toast('Preferences saved')}
+ document.getElementById('hnSettingsStartPage')?.addEventListener('change',savePrefs);
+ document.getElementById('hnSettingsExport')?.addEventListener('click',()=>document.getElementById('exportBtn')?.click());
+ document.getElementById('hnSettingsImport')?.addEventListener('click',()=>document.getElementById('importFile')?.click());
+ document.getElementById('hnSettingsSignOut')?.addEventListener('click',()=>document.getElementById('hnSignOut')?.click());
+ document.getElementById('hnSettingsEditProfile')?.addEventListener('click',()=>showPage('planhub'));
+ document.getElementById('hnSettingsWizard')?.addEventListener('click',()=>{
+   const setup=document.querySelector('.setup-launch,[data-open-setup],#hn20OpenSetup,#hnStartSetup');
+   if(setup){setup.click();return}
+   if(typeof openSetupWizard==='function'){openSetupWizard();return}
+   showPage('planhub');toast('Open Your Plan to review setup details');
+ });
+})();
+</script>
 </body></html>
