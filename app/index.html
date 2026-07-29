@@ -350,6 +350,7 @@ input:focus,select:focus{outline:3px solid rgba(47,111,137,.16);border-color:var
   display:none;overflow:auto
 }
 .hn211-welcome-screen.open{display:block}
+.hn211-close{position:fixed;top:22px;right:22px;z-index:2100;width:46px;height:46px;border-radius:50%;border:1px solid rgba(24,53,82,.22);background:#fff;color:var(--navy);display:grid;place-items:center;font-size:30px;line-height:1;font-weight:500;box-shadow:0 10px 28px rgba(24,53,82,.18);cursor:pointer}.hn211-close:hover{transform:translateY(-1px);box-shadow:0 14px 32px rgba(24,53,82,.23)}.hn211-close:focus-visible{outline:3px solid rgba(47,111,137,.3);outline-offset:3px}
 .hn211-welcome-shell{
   min-height:100vh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);
   align-items:stretch
@@ -1404,8 +1405,8 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
 
 <style id="hnAccountStyles">
 #hnAuthGate{position:fixed;inset:0;z-index:10000;background:#f5f7f7;display:grid;place-items:center;color:#183552;font-weight:850;font-size:16px}
-.hn-account{display:flex;align-items:center;gap:10px;margin-left:2px}.hn-account-copy{display:flex;flex-direction:column;align-items:flex-end;max-width:190px}.hn-account-copy strong{font-size:12px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.hn-account-copy span{font-size:10px;color:#c9d8e2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.hn-signout{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:850;cursor:pointer}.hn-signout:hover{background:rgba(255,255,255,.15)}
-@media(max-width:700px){.hn-account-copy{display:none}.hn-signout{padding:8px 9px}.hn-top-actions{gap:7px}}
+.hn-account{display:flex;align-items:center;gap:10px;margin-left:2px}.hn-account-copy{display:flex;flex-direction:column;align-items:flex-end;max-width:190px}.hn-account-copy strong{font-size:12px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.hn-account-copy span{font-size:10px;color:#c9d8e2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.hn-signout{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:850;cursor:pointer}.hn-signout:hover{background:rgba(255,255,255,.15)}.hn-cloud-status{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);color:#d9e8ef;border-radius:10px;padding:7px 10px;font-size:11px;font-weight:800;cursor:pointer;white-space:nowrap}.hn-cloud-status.syncing{color:#fff}.hn-cloud-status.saved{color:#bfe8d5}.hn-cloud-status.error{color:#ffd0d0;border-color:rgba(255,160,160,.35)}
+@media(max-width:700px){.hn-account-copy{display:none}.hn-signout{padding:8px 9px}.hn-cloud-status{padding:7px 8px;font-size:10px}.hn-top-actions{gap:7px}}
 </style>
 </head>
 <body>
@@ -1453,6 +1454,7 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
   <div class="hn-top-actions">
     <button class="hn-icon-btn" type="button" data-goto="smartcoach" title="Ask Harbour North">?</button>
     <div id="saveStatus" class="status">Ready</div>
+    <button id="hnCloudStatus" class="hn-cloud-status" type="button" title="Save this plan to your secure account">Cloud: connecting…</button>
     <div class="hn-account" aria-label="Account">
       <div class="hn-account-copy"><strong id="hnAccountName">Member</strong><span id="hnAccountEmail"></span></div>
       <button id="hnSignOut" class="hn-signout" type="button">Sign out</button>
@@ -3102,6 +3104,23 @@ function safeSetItem(key,value){
 
 function load(){try{return migrate(JSON.parse(localStorage.getItem(KEY)))}catch{return defaults()}}let state=repairGovernmentBenefitAmounts(load());
 
+// Secure account storage bridge. The financial engine remains independent of Supabase.
+window.HNCloudBridge={
+ getPlan(){return clone(buildPersistedState())},
+ hasLocalPlan(){try{return !!localStorage.getItem(KEY)}catch{return false}},
+ applyPlan(plan){
+  if(!plan||typeof plan!=='object')throw new Error('Invalid cloud plan');
+  state=repairGovernmentBenefitAmounts(migrate(clone(plan)));
+  projectionRows=[];
+  save(false);
+  try{bindStaticValues();renderAllLists();syncAssumptionInputs();refreshAfterScenarioChange()}catch(e){
+   try{renderHome();renderProjection();renderModelStatus()}catch(_){ }
+  }
+  return true;
+ },
+ getUpdatedAt(){return state?.meta?.updatedAt||null}
+};
+
 const HN_BACKUP_TIME_KEY=KEY+'.lastBackupAt';
 const HN_BACKUP_SIGNATURE_KEY=KEY+'.lastBackupSignature';
 const HN_BACKUP_CHANGE_KEY=KEY+'.changesSinceBackup';
@@ -3182,6 +3201,7 @@ function save(msg=true){hn30CoachCache=null;
   state.meta={...persisted.meta};
   renderStorageStatus(bytes,'Healthy');
   hnRecordPlanChange();
+  window.dispatchEvent(new CustomEvent('hn:plan-saved',{detail:{updatedAt:state.meta?.updatedAt||new Date().toISOString()}}));
   if(msg&&statusEl){statusEl.textContent='Saved';setTimeout(()=>statusEl.textContent='Ready',800)}
  }else{
   renderStorageStatus(bytes,'Storage full');
@@ -6812,6 +6832,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
 
 
 <div id="hn211Welcome" class="hn211-welcome-screen" aria-hidden="true">
+  <button id="hn211Close" class="hn211-close" type="button" aria-label="Close welcome screen">×</button>
   <div class="hn211-welcome-shell">
     <section class="hn211-welcome-copy">
       <div class="hn211-brand">Harbour North</div>
@@ -6846,6 +6867,7 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
   const welcome=document.getElementById('hn211Welcome');
   const newPlan=document.getElementById('hn211NewPlan');
   const returning=document.getElementById('hn211Returning');
+  const closeButton=document.getElementById('hn211Close');
 
   function existingPlanPresent(){
     try{
@@ -6875,6 +6897,9 @@ const startupPayload=JSON.stringify(buildPersistedState());renderStorageStatus(b
     document.body.style.overflow='';
     try{localStorage.setItem(FIRST_VISIT_KEY,'true')}catch(e){}
   }
+
+  closeButton?.addEventListener('click',closeWelcome);
+  document.addEventListener('keydown',function(event){if(event.key==='Escape'&&welcome.classList.contains('open'))closeWelcome()});
 
   newPlan.addEventListener('click',function(){
     closeWelcome();
@@ -7610,4 +7635,5 @@ hnRenderProtectionStatus();
 </script>
 
 <script type="module" src="./js/auth.js"></script>
+<script type="module" src="./js/cloud.js"></script>
 </body></html>
