@@ -7771,4 +7771,21 @@ hnRenderProtectionStatus();
   </div>
 </div>
 
+<script>
+/* Milestone 5.1.1: bind export-dialog controls after the dialog exists in the DOM. */
+(function bindSmartExportDialog(){
+  const closeButton = document.getElementById('hnSmartExportClose');
+  const cancelButton = document.getElementById('hnSmartExportCancel');
+  const downloadButton = document.getElementById('hnSmartExportDownload');
+  const overlay = document.getElementById('hnSmartExport');
+
+  closeButton?.addEventListener('click', hnCloseSmartExport);
+  cancelButton?.addEventListener('click', hnCloseSmartExport);
+  downloadButton?.addEventListener('click', hnDownloadSmartExport);
+  overlay?.addEventListener('click', function(event){
+    if(event.target === overlay) hnCloseSmartExport();
+  });
+})();
+</script>
+
 </body></html>
