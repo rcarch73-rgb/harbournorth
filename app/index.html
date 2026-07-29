@@ -1437,6 +1437,21 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
 @media(max-width:600px){.hn-export-body{padding:22px}.hn-export-list,.hn-export-meta{grid-template-columns:1fr}.hn-export-actions{flex-direction:column-reverse}.hn-export-actions .btn{width:100%}}
 </style>
 
+
+<style id="hnSmartImportStyles">
+.hn-import-dialog{width:min(680px,100%)}
+.hn-import-drop{border:2px dashed #b9cbd3;border-radius:18px;padding:24px;text-align:center;background:#f7fbfb;transition:.18s;margin:18px 0}
+.hn-import-drop.drag{border-color:var(--hn-teal-dark,#26777a);background:#eef8f7}
+.hn-import-drop strong{display:block;color:var(--hn-navy,#0b2a45);font-size:17px;margin-bottom:6px}.hn-import-drop p{margin:0;color:#64748b}
+.hn-import-file{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid #d8e3e7;border-radius:14px;background:#fff;margin:16px 0}.hn-import-file-icon{width:42px;height:42px;border-radius:12px;background:#e9f5f4;display:grid;place-items:center;font-size:21px}.hn-import-file-copy{min-width:0;flex:1}.hn-import-file-copy strong,.hn-import-file-copy span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hn-import-file-copy span{font-size:13px;color:#64748b;margin-top:3px}
+.hn-import-validation{border-radius:14px;padding:13px 15px;margin:14px 0;font-weight:750}.hn-import-validation.good{background:#edf8f2;color:#17623d;border:1px solid #bee2ce}.hn-import-validation.bad{background:#fff1f1;color:#9f2f2f;border:1px solid #efc4c4}
+.hn-import-preview{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.hn-import-preview>div{border:1px solid #dbe5e8;border-radius:14px;padding:13px;background:#fbfdfd}.hn-import-preview span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:#657786;font-weight:850;margin-bottom:4px}.hn-import-preview strong{color:var(--hn-navy,#0b2a45)}
+.hn-import-includes{border:1px solid #dbe5e8;border-radius:16px;padding:15px;background:#f8fafb}.hn-import-includes strong{display:block;margin-bottom:9px}.hn-import-list{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}.hn-import-list span{font-size:14px}.hn-import-list i{font-style:normal;color:#27805a;font-weight:900;margin-right:8px}
+.hn-import-warning{margin:15px 0 0;padding:12px 14px;border-left:4px solid #cc8b24;background:#fff8e9;border-radius:8px;color:#6d4a13;font-size:14px}
+.hn-import-progress{display:none;border:1px solid #cfe0e3;border-radius:16px;padding:16px;background:#f5faf9;margin:16px 0}.hn-import-progress.show{display:block}.hn-import-steps{display:grid;gap:9px;margin-top:11px}.hn-import-step{display:flex;gap:9px;align-items:center;color:#5e7180}.hn-import-step.done{color:#1f714d;font-weight:750}.hn-import-step.active{color:#0b2a45;font-weight:850}
+.hn-import-success{text-align:center;padding:12px 0 4px}.hn-import-success-icon{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 14px;background:#e9f7ef;color:#237a4b;font-size:32px;font-weight:900}
+@media(max-width:620px){.hn-import-preview,.hn-import-list{grid-template-columns:1fr}.hn-export-actions{position:sticky;bottom:0;background:#fff;padding-top:12px}}
+</style>
 </head>
 <body>
 <div id="hnAuthGate" role="status" aria-live="polite">Checking your Harbour North account…</div>
@@ -6295,16 +6310,16 @@ document.getElementById('hnSmartExportCancel')?.addEventListener('click',hnClose
 document.getElementById('hnSmartExportDownload')?.addEventListener('click',hnDownloadSmartExport);
 document.getElementById('hnSmartExport')?.addEventListener('click',e=>{if(e.target.id==='hnSmartExport')hnCloseSmartExport()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('hnSmartExport')?.classList.contains('open'))hnCloseSmartExport()});
-document.getElementById('importFile').onchange=async e=>{try{
- const f=e.target.files[0];if(!f)return;
- if(hnNeedsBackupPrompt()&&!confirm('Importing will replace the current plan. Have you backed up your latest changes?\n\nChoose Cancel to create a backup first.')){e.target.value='';return}
- if(f.size>5_000_000)throw new Error('Backup file is too large.');
- const parsed=JSON.parse(await f.text()),imported=migrate(parsed);
- safeSetItem(KEY+'.recovery',JSON.stringify(buildPersistedState()));
- state=imported;
- if(!save(false))throw new Error('The imported plan could not be saved because browser storage is full.');
- location.reload();
-}catch(err){document.getElementById('backupMessage').textContent='Import failed: '+err.message}};
+document.getElementById('importFile').onchange=async e=>{
+ const file=e.target.files?.[0];
+ e.target.value='';
+ if(!file)return;
+ try{await hnPrepareSmartImport(file)}catch(err){
+   const message=err?.message||String(err);
+   const backupMessage=document.getElementById('backupMessage');if(backupMessage)backupMessage.textContent='Import failed: '+message;
+   toast('Import failed: '+message);
+ }
+};
 document.getElementById('healthBtn').onclick=()=>{syncPlanningModel();const issues=[];if(!state.meta||state.meta.schemaVersion!==SCHEMA)issues.push('Schema version mismatch');for(const key of ['accounts','incomeSources','debts','expenses','events'])if(!Array.isArray(state[key]))issues.push(`${key} is invalid`);const ids=[...state.people,...state.accounts,...state.incomeSources,...state.debts,...state.expenses,...state.events].map(x=>x.id).filter(Boolean);if(new Set(ids).size!==ids.length)issues.push('Duplicate record IDs found');if(state.planningModel?.modelVersion!==MODEL_VERSION)issues.push('Planning-model version mismatch');if(!Array.isArray(state.planningModel?.scenarios)||!state.planningModel.scenarios.length)issues.push('Scenario library is missing');const active=state.planningModel?.scenarios?.find(x=>x.id===state.planningModel.activeScenarioId);if(!active)issues.push('Active scenario is invalid');document.getElementById('backupMessage').textContent=issues.length?'Health check found: '+issues.join('; '):'Data health check passed: schema, IDs, planning model, active scenario, and optimizer store are valid.';renderModelStatus()};
 document.getElementById('resetBtn').onclick=()=>{const message=hnNeedsBackupPrompt()?'Resetting will permanently remove this browser plan, including changes that have not been backed up.\n\nCreate a backup first unless you are certain you no longer need this plan.\n\nReset now?':'Reset all Harbour North data on this device?';if(confirm(message)){localStorage.removeItem(KEY);localStorage.removeItem(HN_BACKUP_TIME_KEY);localStorage.removeItem(HN_BACKUP_SIGNATURE_KEY);localStorage.removeItem(HN_BACKUP_CHANGE_KEY);location.reload()}};
 
@@ -7755,6 +7770,31 @@ hnRenderProtectionStatus();
 })();
 </script>
 
+
+<div id="hnSmartImport" class="hn-export-overlay" role="dialog" aria-modal="true" aria-labelledby="hnSmartImportTitle">
+  <div class="hn-export-dialog hn-import-dialog">
+    <div class="hn-export-head"><strong>Harbour North Restore</strong><button id="hnSmartImportClose" class="hn-export-close" type="button" aria-label="Close import dialog">×</button></div>
+    <div class="hn-export-body">
+      <div id="hnImportChooseView">
+        <div class="eyebrow">Data protection</div><h2 id="hnSmartImportTitle">Import retirement plan</h2>
+        <p>Select a Harbour North backup. Your current plan will not be changed until you review and confirm the restore.</p>
+        <div id="hnImportDrop" class="hn-import-drop"><strong>Drop a backup file here</strong><p>Supported formats: .harbour and legacy .json</p><button id="hnImportChooseAnother" class="btn" type="button" style="margin-top:14px">Choose file</button></div>
+      </div>
+      <div id="hnImportPreviewView" class="hidden">
+        <div class="eyebrow">Backup verified</div><h2>Review retirement plan</h2>
+        <div class="hn-import-file"><div class="hn-import-file-icon">⚓</div><div class="hn-import-file-copy"><strong id="hnImportFileName">Backup.harbour</strong><span id="hnImportFileSize">—</span></div></div>
+        <div id="hnImportValidation" class="hn-import-validation good">✓ Valid Harbour North backup</div>
+        <div class="hn-import-preview"><div><span>Plan</span><strong id="hnImportOwner">Retirement plan</strong></div><div><span>Created</span><strong id="hnImportCreated">—</strong></div><div><span>App version</span><strong id="hnImportAppVersion">—</strong></div><div><span>Schema version</span><strong id="hnImportSchema">—</strong></div></div>
+        <div class="hn-import-includes"><strong>Backup contains</strong><div id="hnImportContents" class="hn-import-list"></div></div>
+        <div class="hn-import-warning"><strong>Your current plan will be protected.</strong> Harbour North will create an automatic safety copy before replacing any data.</div>
+      </div>
+      <div id="hnImportProgressView" class="hidden"><div class="eyebrow">Restoring safely</div><h2>Importing retirement plan…</h2><div class="hn-import-progress show"><strong id="hnImportProgressHeadline">Preparing restore</strong><div class="hn-import-steps"><div id="hnImportStepRead" class="hn-import-step">○ Reading backup</div><div id="hnImportStepValidate" class="hn-import-step">○ Validating data</div><div id="hnImportStepSafety" class="hn-import-step">○ Creating safety copy</div><div id="hnImportStepRestore" class="hn-import-step">○ Restoring plan</div><div id="hnImportStepSave" class="hn-import-step">○ Saving restored plan</div></div></div></div>
+      <div id="hnImportSuccessView" class="hidden"><div class="hn-import-success"><div class="hn-import-success-icon">✓</div><div class="eyebrow">Import complete</div><h2>Your retirement plan has been restored</h2><p id="hnImportSuccessCopy">The backup was imported successfully.</p></div></div>
+      <div class="hn-export-actions"><button id="hnSmartImportCancel" class="btn" type="button">Cancel</button><button id="hnSmartImportConfirm" class="btn primary hidden" type="button">Import plan</button><button id="hnSmartImportContinue" class="btn primary hidden" type="button">Continue</button></div>
+    </div>
+  </div>
+</div>
+
 <div id="hnSmartExport" class="hn-export-overlay" role="dialog" aria-modal="true" aria-labelledby="hnSmartExportTitle">
   <div class="hn-export-dialog">
     <div class="hn-export-head"><strong>Harbour North Backup</strong><button id="hnSmartExportClose" class="hn-export-close" type="button" aria-label="Close export dialog">×</button></div>
@@ -7785,6 +7825,66 @@ hnRenderProtectionStatus();
   overlay?.addEventListener('click', function(event){
     if(event.target === overlay) hnCloseSmartExport();
   });
+})();
+</script>
+
+
+<script id="hnSmartImportScript">
+/* Milestone 5.2: validated preview, automatic safety copy and guided restore. */
+let hnPendingImport=null;
+function hnImportFormatBytes(bytes){if(!Number.isFinite(bytes))return '—';if(bytes<1024)return bytes+' bytes';if(bytes<1048576)return (bytes/1024).toFixed(1)+' KB';return (bytes/1048576).toFixed(1)+' MB'}
+function hnImportDate(value){const d=new Date(value);return Number.isNaN(d.getTime())?'Not recorded':d.toLocaleString('en-CA',{year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'2-digit'})}
+function hnSetImportView(name){['Choose','Preview','Progress','Success'].forEach(v=>document.getElementById('hnImport'+v+'View')?.classList.toggle('hidden',v.toLowerCase()!==name));document.getElementById('hnSmartImportConfirm')?.classList.toggle('hidden',name!=='preview');document.getElementById('hnSmartImportContinue')?.classList.toggle('hidden',name!=='success');document.getElementById('hnSmartImportCancel')?.classList.toggle('hidden',name==='progress'||name==='success')}
+function hnCloseSmartImport(){if(document.getElementById('hnImportProgressView')?.classList.contains('hidden')===false)return;document.getElementById('hnSmartImport')?.classList.remove('open');hnPendingImport=null;hnSetImportView('choose')}
+function hnOpenSmartImport(){const overlay=document.getElementById('hnSmartImport');if(!overlay)return;hnPendingImport=null;hnSetImportView('choose');overlay.classList.add('open')}
+function hnValidateImportPayload(parsed,file){
+ if(!parsed||typeof parsed!=='object'||Array.isArray(parsed))throw new Error('This file does not contain a readable retirement plan.');
+ const wrapped=parsed.format==='HarbourNorth'&&parsed.plan&&typeof parsed.plan==='object';
+ const plan=wrapped?parsed.plan:parsed;
+ const schema=Number(wrapped?parsed.schemaVersion:(plan.meta?.schemaVersion??plan.schemaVersion??1));
+ if(!Number.isFinite(schema)||schema<1)throw new Error('The backup schema version is invalid.');
+ if(schema>Number(SCHEMA||1))throw new Error(`This backup uses schema version ${schema}, but this app supports up to version ${SCHEMA}. Update Harbour North before importing it.`);
+ const arrays=['people','accounts','incomeSources','debts','expenses','events'];
+ const validArrays=arrays.filter(k=>Array.isArray(plan[k])).length;
+ if(validArrays<3)throw new Error('The backup is missing required planning data and was not imported.');
+ if(wrapped&&parsed.checksum){const actual=hnExportChecksum(JSON.stringify(plan));if(actual!==parsed.checksum)throw new Error('The backup failed its integrity check. The file may be incomplete or changed.');}
+ let migrated;try{migrated=migrate(plan)}catch(e){throw new Error('The backup could not be upgraded to the current Harbour North format.');}
+ if(!migrated||!Array.isArray(migrated.people)||!Array.isArray(migrated.accounts))throw new Error('The restored plan did not pass validation.');
+ return {file,parsed,plan,migrated,wrapped,schema,metadata:{owner:parsed.owner?.name||(plan.people||[]).map(p=>p?.name).filter(Boolean).slice(0,2).join(' & ')||'Retirement plan',created:parsed.exportedAt||parsed.created||plan.meta?.updatedAt||file.lastModified,appVersion:parsed.appVersion||'Legacy backup',contents:parsed.contents||{profile:true,assets:true,income:true,spending:true,scenarios:true,preferences:true}}};
+}
+async function hnPrepareSmartImport(file){
+ if(file.size>5_000_000)throw new Error('Backup file is larger than the 5 MB safety limit.');
+ if(!/\.(harbour|json)$/i.test(file.name))throw new Error('Choose a .harbour or .json backup file.');
+ hnOpenSmartImport();
+ const raw=await file.text();let parsed;try{parsed=JSON.parse(raw)}catch(e){hnCloseSmartImport();throw new Error('The selected file is not valid JSON and cannot be restored.');}
+ hnPendingImport=hnValidateImportPayload(parsed,file);
+ document.getElementById('hnImportFileName').textContent=file.name;document.getElementById('hnImportFileSize').textContent=hnImportFormatBytes(file.size);
+ document.getElementById('hnImportOwner').textContent=hnPendingImport.metadata.owner;document.getElementById('hnImportCreated').textContent=hnImportDate(hnPendingImport.metadata.created);document.getElementById('hnImportAppVersion').textContent=hnPendingImport.metadata.appVersion;document.getElementById('hnImportSchema').textContent=String(hnPendingImport.schema);
+ const labels={profile:'Household profile',assets:'Assets and debts',income:'Income and benefits',spending:'Retirement spending',scenarios:'Scenarios and strategy',preferences:'Planning preferences'};
+ document.getElementById('hnImportContents').innerHTML=Object.entries(labels).filter(([k])=>hnPendingImport.metadata.contents?.[k]!==false).map(([,v])=>`<span><i>✓</i>${v}</span>`).join('');
+ hnSetImportView('preview');
+}
+function hnImportStep(id,state){const el=document.getElementById(id);if(!el)return;el.classList.remove('done','active');if(state)el.classList.add(state);el.textContent=(state==='done'?'✓':state==='active'?'●':'○')+' '+el.textContent.replace(/^[✓●○]\s*/,'')}
+async function hnRunSmartImport(){
+ if(!hnPendingImport)return;
+ hnSetImportView('progress');
+ const pause=ms=>new Promise(r=>setTimeout(r,ms));
+ try{
+  hnImportStep('hnImportStepRead','active');await pause(180);hnImportStep('hnImportStepRead','done');
+  hnImportStep('hnImportStepValidate','active');hnValidateImportPayload(hnPendingImport.parsed,hnPendingImport.file);await pause(180);hnImportStep('hnImportStepValidate','done');
+  hnImportStep('hnImportStepSafety','active');const safety={format:'HarbourNorthSafetyBackup',createdAt:new Date().toISOString(),reason:'before-import',plan:buildPersistedState()};if(!safeSetItem(KEY+'.recovery',JSON.stringify(safety)))throw new Error('A safety copy could not be created because browser storage is full. Nothing was imported.');localStorage.setItem('hn.import.lastSafetyAt',safety.createdAt);await pause(220);hnImportStep('hnImportStepSafety','done');
+  hnImportStep('hnImportStepRestore','active');state=hnPendingImport.migrated;await pause(180);hnImportStep('hnImportStepRestore','done');
+  hnImportStep('hnImportStepSave','active');if(!save(false))throw new Error('The restored plan could not be saved because browser storage is full. Your previous plan remains available in the safety copy.');await pause(220);hnImportStep('hnImportStepSave','done');
+  localStorage.setItem('hn.import.lastAt',new Date().toISOString());const owner=hnPendingImport.metadata.owner;document.getElementById('hnImportSuccessCopy').textContent=`${owner} was restored successfully. A safety copy of the previous plan was retained on this device.`;hnSetImportView('success');toast('Retirement plan imported successfully');
+ }catch(err){const recovery=localStorage.getItem(KEY+'.recovery');try{if(recovery){const saved=JSON.parse(recovery);const previous=saved.plan||saved;state=migrate(previous);save(false)}}catch(e){} hnSetImportView('preview');document.getElementById('hnImportValidation').className='hn-import-validation bad';document.getElementById('hnImportValidation').textContent='Import stopped: '+(err?.message||String(err));toast('Import stopped safely');}
+}
+(function bindSmartImport(){
+ const original=document.getElementById('importFile');
+ document.getElementById('hnSmartImportClose')?.addEventListener('click',hnCloseSmartImport);document.getElementById('hnSmartImportCancel')?.addEventListener('click',hnCloseSmartImport);document.getElementById('hnSmartImportConfirm')?.addEventListener('click',hnRunSmartImport);document.getElementById('hnSmartImportContinue')?.addEventListener('click',()=>location.reload());document.getElementById('hnImportChooseAnother')?.addEventListener('click',()=>original?.click());
+ const overlay=document.getElementById('hnSmartImport');overlay?.addEventListener('click',e=>{if(e.target===overlay)hnCloseSmartImport()});
+ const drop=document.getElementById('hnImportDrop');['dragenter','dragover'].forEach(type=>drop?.addEventListener(type,e=>{e.preventDefault();drop.classList.add('drag')}));['dragleave','drop'].forEach(type=>drop?.addEventListener(type,e=>{e.preventDefault();drop.classList.remove('drag')}));drop?.addEventListener('drop',e=>{const file=e.dataTransfer?.files?.[0];if(file)hnPrepareSmartImport(file).catch(err=>{toast('Import failed: '+err.message)})});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay?.classList.contains('open'))hnCloseSmartImport()});
+ window.hnOpenSmartImport=hnOpenSmartImport;
 })();
 </script>
 
