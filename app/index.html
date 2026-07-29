@@ -1405,8 +1405,8 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
 
 <style id="hnAccountStyles">
 #hnAuthGate{position:fixed;inset:0;z-index:10000;background:#f5f7f7;display:grid;place-items:center;color:#183552;font-weight:850;font-size:16px}
-.hn-account{display:flex;align-items:center;gap:10px;margin-left:2px}.hn-account-copy{display:flex;flex-direction:column;align-items:flex-end;max-width:190px}.hn-account-copy strong{font-size:12px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.hn-account-copy span{font-size:10px;color:#c9d8e2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.hn-signout{border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;border-radius:10px;padding:8px 11px;font-size:12px;font-weight:850;cursor:pointer}.hn-signout:hover{background:rgba(255,255,255,.15)}.hn-cloud-status{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);color:#d9e8ef;border-radius:10px;padding:7px 10px;font-size:11px;font-weight:800;cursor:pointer;white-space:nowrap}.hn-cloud-status.syncing{color:#fff}.hn-cloud-status.saved{color:#bfe8d5}.hn-cloud-status.error{color:#ffd0d0;border-color:rgba(255,160,160,.35)}
-@media(max-width:700px){.hn-account-copy{display:none}.hn-signout{padding:8px 9px}.hn-cloud-status{padding:7px 8px;font-size:10px}.hn-top-actions{gap:7px}}
+.hn-account{position:relative;margin-left:2px}.hn-account-trigger{display:flex;align-items:center;gap:8px;max-width:215px;border:1px solid rgba(255,255,255,.20);background:rgba(255,255,255,.06);color:#fff;border-radius:11px;padding:7px 10px;cursor:pointer}.hn-account-trigger:hover,.hn-account-trigger[aria-expanded="true"]{background:rgba(255,255,255,.13)}.hn-account-email{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:165px}.hn-account-chevron{font-size:11px;opacity:.75}.hn-account-menu{position:absolute;right:0;top:calc(100% + 9px);width:220px;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 16px 38px rgba(15,35,50,.20);padding:8px;z-index:100;display:none}.hn-account-menu.open{display:block}.hn-account-summary{padding:9px 10px 11px;border-bottom:1px solid var(--line);margin-bottom:6px}.hn-account-summary strong,.hn-account-summary span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hn-account-summary strong{font-size:13px;color:var(--navy)}.hn-account-summary span{font-size:11px;color:var(--muted);margin-top:3px}.hn-signout{width:100%;border:0;background:transparent;color:var(--danger);border-radius:9px;padding:10px;text-align:left;font-size:13px;font-weight:850;cursor:pointer}.hn-signout:hover{background:#fff1f1}.hn-cloud-status{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);color:#d9e8ef;border-radius:10px;padding:7px 10px;font-size:11px;font-weight:800;cursor:pointer;white-space:nowrap}.hn-cloud-status.syncing{color:#fff}.hn-cloud-status.saved{color:#bfe8d5}.hn-cloud-status.error{color:#ffd0d0;border-color:rgba(255,160,160,.35)}
+@media(max-width:700px){.hn-account-trigger{max-width:128px;padding:7px 8px}.hn-account-email{max-width:92px}.hn-cloud-status{padding:7px 8px;font-size:10px}.hn-top-actions{gap:7px}.hn-account-menu{position:fixed;right:12px;top:68px;width:min(260px,calc(100vw - 24px))}}
 </style>
 </head>
 <body>
@@ -1456,8 +1456,13 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
     <div id="saveStatus" class="status">Ready</div>
     <button id="hnCloudStatus" class="hn-cloud-status" type="button" title="Save this plan to your secure account">Cloud: connecting…</button>
     <div class="hn-account" aria-label="Account">
-      <div class="hn-account-copy"><strong id="hnAccountName">Member</strong><span id="hnAccountEmail"></span></div>
-      <button id="hnSignOut" class="hn-signout" type="button">Sign out</button>
+      <button id="hnAccountTrigger" class="hn-account-trigger" type="button" aria-haspopup="menu" aria-expanded="false">
+        <span id="hnAccountTriggerEmail" class="hn-account-email">Account</span><span class="hn-account-chevron">▾</span>
+      </button>
+      <div id="hnAccountMenu" class="hn-account-menu" role="menu">
+        <div class="hn-account-summary"><strong id="hnAccountName">Member</strong><span id="hnAccountEmail"></span></div>
+        <button id="hnSignOut" class="hn-signout" type="button" role="menuitem">Sign out</button>
+      </div>
     </div>
   </div>
 </header>

@@ -15,8 +15,10 @@ function setAccountUi(user) {
 
   const nameEl = document.getElementById('hnAccountName');
   const emailEl = document.getElementById('hnAccountEmail');
+  const triggerEmailEl = document.getElementById('hnAccountTriggerEmail');
   if (nameEl) nameEl.textContent = name;
   if (emailEl) emailEl.textContent = email;
+  if (triggerEmailEl) triggerEmailEl.textContent = email || name;
 
   const welcome = document.getElementById('hnOverviewWelcome');
   if (welcome && /^Welcome back/i.test(welcome.textContent.trim())) {
@@ -49,6 +51,32 @@ async function signOut() {
   await supabase.auth.signOut();
   window.location.replace(loginUrl.href);
 }
+
+const accountTrigger = document.getElementById('hnAccountTrigger');
+const accountMenu = document.getElementById('hnAccountMenu');
+
+function closeAccountMenu() {
+  accountMenu?.classList.remove('open');
+  accountTrigger?.setAttribute('aria-expanded', 'false');
+}
+
+accountTrigger?.addEventListener('click', (event) => {
+  event.stopPropagation();
+  const willOpen = !accountMenu?.classList.contains('open');
+  accountMenu?.classList.toggle('open', willOpen);
+  accountTrigger.setAttribute('aria-expanded', String(willOpen));
+});
+
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.hn-account')) closeAccountMenu();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeAccountMenu();
+    accountTrigger?.focus();
+  }
+});
 
 document.getElementById('hnSignOut')?.addEventListener('click', signOut);
 
