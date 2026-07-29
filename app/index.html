@@ -966,7 +966,7 @@ button{touch-action:manipulation}
 .hn341-score-ring{--score:0;width:116px;height:116px;border-radius:50%;display:grid;place-items:center;position:relative;background:conic-gradient(var(--ok) calc(var(--score)*1%),#dfe8e5 0)}
 .hn341-score-ring:before{content:"";position:absolute;inset:11px;border-radius:50%;background:#fff}.hn341-score-ring span{position:relative;z-index:1;color:var(--navy);font-size:28px;font-weight:950}
 .hn341-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.hn341-metric{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fff}.hn341-metric span{display:block;font-size:11px;color:var(--muted)}.hn341-metric strong{display:block;font-size:23px;color:var(--navy);margin-top:6px}.hn341-metric small{display:block;color:var(--muted);margin-top:5px}
+.hn341-metric{border:1px solid var(--line);border-radius:15px;padding:16px;background:#fff;min-height:128px}.hn341-metric.featured{background:linear-gradient(135deg,#edf7f4,#fff);border-color:#c8e0d6}.hn341-metric.good{border-left:5px solid var(--ok)}.hn341-metric.warn{border-left:5px solid var(--warn)}.hn341-metric.fail{border-left:5px solid var(--danger)}.hn341-metric span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.045em;font-weight:850}.hn341-metric strong{display:block;font-size:23px;color:var(--navy);margin-top:8px;letter-spacing:-.025em}.hn341-metric small{display:block;color:var(--muted);margin-top:7px;line-height:1.35}
 .hn341-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:16px}
 .hn341-priorities{display:grid;gap:10px;margin-top:10px}.hn341-priority{display:grid;grid-template-columns:34px 1fr auto;gap:11px;align-items:center;border:1px solid var(--line);border-radius:13px;padding:12px;background:#fff}
 .hn341-priority-number{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:900}.hn341-priority strong{display:block;color:var(--navy)}.hn341-priority small{display:block;color:var(--muted);margin-top:3px}
@@ -1618,10 +1618,14 @@ html{scroll-behavior:smooth}body{background:var(--hn-cloud);color:var(--hn-ink)}
   </section>
 
   <div class="hn341-metrics">
-    <article class="hn341-metric"><span>Funding outlook</span><strong id="hn341Funding">Checking</strong><small id="hn341FundingDetail">Active scenario</small></article>
-    <article class="hn341-metric"><span>Investable assets</span><strong id="hn341Investable">$0</strong><small>Recorded retirement accounts</small></article>
-    <article class="hn341-metric"><span>Annual lifestyle</span><strong id="hn341Spending">$0</strong><small>Recorded retirement spending</small></article>
-    <article class="hn341-metric"><span>Setup progress</span><strong id="hn341Completeness">0%</strong><small id="hn341CompletenessDetail">Core planning areas</small></article>
+    <article id="hn341FundingCard" class="hn341-metric featured"><span>Funding outlook</span><strong id="hn341Funding">Checking</strong><small id="hn341FundingDetail">Active scenario</small></article>
+    <article class="hn341-metric"><span>Target retirement</span><strong id="hn341Retirement">—</strong><small id="hn341RetirementDetail">Planned retirement timing</small></article>
+    <article class="hn341-metric"><span>Monthly income at retirement</span><strong id="hn341MonthlyIncome">—</strong><small>Projected after-tax household income</small></article>
+    <article class="hn341-metric"><span>Portfolio at planning horizon</span><strong id="hn341EndingPortfolio">—</strong><small id="hn341EndingPortfolioDetail">End of projection</small></article>
+    <article class="hn341-metric"><span>Investable assets today</span><strong id="hn341Investable">$0</strong><small>Recorded retirement accounts</small></article>
+    <article class="hn341-metric"><span>Annual retirement lifestyle</span><strong id="hn341Spending">$0</strong><small>Recorded retirement spending</small></article>
+    <article class="hn341-metric"><span>Plan readiness</span><strong id="hn341Completeness">0%</strong><small id="hn341CompletenessDetail">Core planning areas</small></article>
+    <article class="hn341-metric"><span>First projected shortfall</span><strong id="hn341Shortfall">—</strong><small id="hn341ShortfallDetail">Projection funding check</small></article>
   </div>
 
   <div class="hn341-grid">
@@ -5834,19 +5838,64 @@ function renderHN341Dashboard(){
  const ring=document.getElementById('hn341ScoreRing');
  ring.style.setProperty('--score',score);ring.querySelector('span').textContent=Math.round(score);
  document.getElementById('hn341ScoreLabel').textContent=hn30ScoreLabel(score);
- document.getElementById('hn341Headline').textContent=coach.base?.success?'Your retirement plan is currently funded':'Your retirement plan needs attention';
- document.getElementById('hn341Summary').textContent=coach.base?.success?'The active scenario remains funded through the planning horizon. Your next priorities focus on resilience, taxes and flexibility.':`The active scenario shows a projected funding gap${coach.base?.firstShortfall?` in ${coach.base.firstShortfall}`:''}. Review the ranked priorities below.`;
- document.getElementById('hn341Funding').textContent=coach.base?.success?'Funded':'Shortfall';
- document.getElementById('hn341FundingDetail').textContent=coach.base?.success?'Through planning horizon':(coach.base?.firstShortfall?`First gap: ${coach.base.firstShortfall}`:'Review projection');
+
+ let rows=[];
+ try{rows=projectPlan(clone(state))}catch(_){try{rows=currentProjectionRows(true)}catch(__){rows=[]}}
+ const primary=state.people?.[0]||{},partner=state.hasPartner?state.people?.[1]:null;
+ const primaryRetirementYear=primary.birthDate&&num(primary.retirementAge)>0
+  ?new Date(primary.birthDate).getFullYear()+Math.floor(num(primary.retirementAge))
+  :null;
+ const partnerRetirementYear=partner?.birthDate&&num(partner.retirementAge)>0
+  ?new Date(partner.birthDate).getFullYear()+Math.floor(num(partner.retirementAge))
+  :null;
+ const householdRetirementYear=Math.max(primaryRetirementYear||0,partnerRetirementYear||0)||primaryRetirementYear||partnerRetirementYear||null;
+ const retirementRow=(householdRetirementYear&&rows.find(r=>r.year===householdRetirementYear))
+  ||(primaryRetirementYear&&rows.find(r=>r.year===primaryRetirementYear))
+  ||rows.find(r=>(r.people||[]).some(p=>p.status==='Retired'))
+  ||null;
+ const last=rows.at(-1)||null;
+ const firstShortfall=rows.find(r=>num(r.projection?.unfunded)>1)||null;
+ const funded=rows.length? !firstShortfall : !!coach.base?.success;
+ const monthlyIncome=retirementRow?num(retirementRow.projection?.afterTaxIncome)/12:0;
+ const endingPortfolio=num(last?.projection?.endingInvestments);
+ const retirementText=householdRetirementYear
+  ?String(householdRetirementYear)
+  :(partner?`Ages ${num(primary.retirementAge)||'—'} & ${num(partner.retirementAge)||'—'}`:`Age ${num(primary.retirementAge)||'—'}`);
+
+ document.getElementById('hn341Headline').textContent=funded?'Your retirement plan is on track':'Your retirement plan needs attention';
+ document.getElementById('hn341Summary').textContent=funded
+  ?`Your active plan funds the projected lifestyle through ${last?.year||'the planning horizon'}. Review the dashboard below for retirement income, portfolio resilience and the next best action.`
+  :`The active plan shows a projected funding gap${firstShortfall?` beginning in ${firstShortfall.year}`:coach.base?.firstShortfall?` beginning in ${coach.base.firstShortfall}`:''}. Harbour North has ranked the most useful steps to improve it.`;
+
+ const fundingCard=document.getElementById('hn341FundingCard');
+ fundingCard?.classList.remove('good','warn','fail');
+ fundingCard?.classList.add(funded?'good':'fail');
+ document.getElementById('hn341Funding').textContent=funded?'On track':'Shortfall';
+ document.getElementById('hn341FundingDetail').textContent=funded
+  ?`Funded through ${last?.year||'planning horizon'}`
+  :(firstShortfall?`First gap: ${firstShortfall.year}`:'Review projection');
+ document.getElementById('hn341Retirement').textContent=retirementText;
+ document.getElementById('hn341RetirementDetail').textContent=householdRetirementYear
+  ?(partner&&primaryRetirementYear!==partnerRetirementYear?`${primary.name||'Primary'} ${primaryRetirementYear||'—'} · ${partner.name||'Partner'} ${partnerRetirementYear||'—'}`:'Household retirement year')
+  :'Add dates of birth and retirement ages';
+ document.getElementById('hn341MonthlyIncome').textContent=monthlyIncome>0?money(monthlyIncome):'—';
+ document.getElementById('hn341EndingPortfolio').textContent=last?money(endingPortfolio):'—';
+ document.getElementById('hn341EndingPortfolioDetail').textContent=last?`Projected balance in ${last.year}`:'Run the retirement projection';
+
  const totalsNow=totals();
  document.getElementById('hn341Investable').textContent=money(totalsNow.investable);
  document.getElementById('hn341Spending').textContent=money(hn30AnnualSpend(state));
  document.getElementById('hn341Completeness').textContent=`${progress.percent}%`;
  document.getElementById('hn341CompletenessDetail').textContent=`${progress.complete} of ${progress.total} core areas`;
+ document.getElementById('hn341Shortfall').textContent=firstShortfall?String(firstShortfall.year):(rows.length?'None':'—');
+ document.getElementById('hn341ShortfallDetail').textContent=firstShortfall
+  ?`${money(firstShortfall.projection?.unfunded)} unfunded in first gap year`
+  :(rows.length?'No unfunded year detected':'Projection not available');
+
  document.getElementById('hn341Priorities').innerHTML=hn341Priorities().map((x,i)=>`<div class="hn341-priority"><div class="hn341-priority-number">${i+1}</div><div><strong>${esc(x.title)}</strong><small>${esc(x.detail)}</small></div><button type="button" class="btn hn341-goto" data-page="${esc(x.page)}">Review</button></div>`).join('');
- const last=hn341LastPage();
- document.getElementById('hn341Continue').dataset.page=last;
- document.getElementById('hn341ContinueTitle').textContent=`Continue with ${hn341PageName(last)}`;
+ const lastPage=hn341LastPage();
+ document.getElementById('hn341Continue').dataset.page=lastPage;
+ document.getElementById('hn341ContinueTitle').textContent=`Continue with ${hn341PageName(lastPage)}`;
  document.getElementById('hn341ContinueText').textContent='Return to the most recent planning area you used.';
  document.getElementById('hn341ProgressBar').style.width=`${progress.percent}%`;
  document.getElementById('hn341ProgressText').textContent=`${progress.complete} of ${progress.total} core setup areas complete`;
