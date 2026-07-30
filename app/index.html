@@ -15,7 +15,7 @@ function hnTrackExplorePremium(){gtag('event','explore_premium_clicked');}
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Harbour North — Overview Visual Refresh 6.4.1.1</title>
+<title>Harbour North — Overview Chart Fix 6.4.1.2</title>
 <style>
 :root{--navy:#203e67;--blue:#4779b4;--blue2:#dceaf9;--ink:#1e293b;--muted:#64748b;--line:#d8e2ed;--bg:#f3f6fa;--card:#fff;--ok:#237a4b;--warn:#a15c00;--danger:#b13a3a;--shadow:0 2px 8px #17314f12}*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}header{background:var(--navy);color:#fff;padding:24px 26px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}header h1{margin:0;font-size:30px}header p{margin:4px 0 0;color:#dbe7f5}.status{border:1px solid #6680a0;border-radius:24px;padding:9px 15px}.shell{max-width:1220px;margin:auto;padding:20px}.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 18px;font-weight:800;color:var(--navy)}.tab.active{background:var(--blue);color:#fff}.page{display:none}.page.active{display:block}.hero,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:var(--shadow)}.hero{background:linear-gradient(135deg,#fff,#f7fbff)}.hero h2,.card h3{margin-top:0}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12px;font-weight:900;color:var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:15px;padding:18px}.metric strong{display:block;font-size:24px;margin-top:7px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-weight:800}.field small{color:var(--muted)}input,select{width:100%;padding:12px 13px;border:1px solid #cbd5e1;border-radius:11px;background:#fff;min-height:46px}input:focus,select:focus{outline:3px solid #cfe2fa;border-color:var(--blue)}input[type="date"]{width:210px;max-width:100%;align-self:flex-start} @media(max-width:650px){input[type="date"]{width:100%}}.btn{border:0;border-radius:11px;padding:12px 16px;font-weight:800;background:#e7edf4;color:var(--navy)}.btn.primary{background:var(--blue);color:#fff}.btn.danger{background:#fff0f0;color:var(--danger);border:1px solid #efbcbc}.btn.small{padding:8px 11px;font-size:13px}.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.list{display:grid;gap:12px}.item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.item-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:10px;align-items:end}.item-grid.income{grid-template-columns:1.15fr .9fr .9fr .8fr .8fr auto}.item-grid.event{grid-template-columns:1.3fr .8fr .8fr .9fr auto}.item-grid.expense{grid-template-columns:1.3fr .9fr .8fr auto}.health{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:center}.score{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;background:#e7f4ed;color:var(--ok);font-size:32px;font-weight:900;border:8px solid #cce9d8}.score.warn{background:#fff4dc;color:var(--warn);border-color:#f0d7a5}.checklist{margin:0;padding-left:20px}.checklist li{margin:8px 0}.plan-banner{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:center}.plan-message{font-size:30px;font-weight:900;color:var(--navy);margin:8px 0}.pill{display:inline-block;border-radius:999px;padding:7px 11px;background:var(--blue2);color:var(--navy);font-weight:800}.notice{border-left:5px solid var(--warn);background:#fff8ea;padding:14px 16px;border-radius:8px}.good{border-left-color:var(--ok);background:#eef9f2}.actions{display:flex;gap:10px;flex-wrap:wrap}.hidden{display:none!important}.toast{position:fixed;right:20px;bottom:20px;background:#172b49;color:white;padding:12px 18px;border-radius:12px;opacity:0;transform:translateY(8px);transition:.2s;z-index:50}.toast.show{opacity:1;transform:none}.section-label{margin:28px 0 10px;color:var(--navy)}.empty{padding:18px;border:1px dashed #b8c8da;border-radius:14px;color:var(--muted);text-align:center;background:#f9fbfd}.owner-chip{font-size:12px;font-weight:800;color:var(--blue)}@media(max-width:900px){.grid,.grid.two,.summary-grid,.plan-banner{grid-template-columns:1fr 1fr}.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr 1fr}.item-grid .remove-wrap{grid-column:1/-1}.health{grid-template-columns:110px 1fr}}@media(max-width:650px){header{padding:18px}.shell{padding:12px}.grid,.grid.two,.summary-grid,.plan-banner,.health,.item-grid,.item-grid.income,.item-grid.event,.item-grid.expense{grid-template-columns:1fr}.tabs{overflow:auto;flex-wrap:nowrap}.tab{white-space:nowrap}.plan-message{font-size:24px}.score{width:92px;height:92px}.row-head{align-items:flex-start}}
 
@@ -1688,6 +1688,16 @@ main,.main,.content,.app-main{background:var(--hn-canvas)}
 @media(max-width:700px){
   .hn641-outcome,.hn641-section,.hn641-update-card{box-shadow:0 10px 24px rgba(13,47,71,.07)}
 }
+</style>
+
+<style id="hn6412ChartHotfixStyles">
+.hn641-hero #hn641PrimaryAction{
+ background:#ffffff!important;
+ color:#0d2f47!important;
+ border-color:#ffffff!important;
+ opacity:1!important;
+}
+.hn641-chart svg{display:block!important;min-height:250px}
 </style>
 </head>
 <body>
@@ -6961,21 +6971,29 @@ function hn641FormatCompact(value){
  return money(value);
 }
 function hn641ChartData(mode){
- let rows=[];try{rows=projectPlan(clone(state))}catch(_){try{rows=currentProjectionRows(true)}catch(__){}}
- if(!rows?.length)return[];
+ let rows=[];
+ try{
+  rows=(typeof currentProjectionRows==='function'&&currentProjectionRows(true))||[];
+ }catch(_){}
+ if(!rows.length){
+  try{rows=projectPlan(clone(state))||[]}catch(_){}
+ }
+ if(!Array.isArray(rows)||!rows.length)return[];
  const step=Math.max(1,Math.ceil(rows.length/18));
  return rows.filter((_,i)=>i%step===0||i===rows.length-1).map(r=>{
+  const p=r&&r.projection?r.projection:{};
   let value=0;
-  if(mode==='portfolio')value=num(r.projection?.endingInvestments);
-  else if(mode==='tax')value=num(r.projection?.totalTax??r.projection?.tax);
-  else value=num(r.projection?.afterTaxIncome);
-  return {year:r.year,value};
- });
+  if(mode==='portfolio')value=num(p.endingInvestments);
+  else if(mode==='tax')value=num(p.tax);
+  else value=num(p.afterTaxIncome);
+  return {year:num(r.year),value:Number.isFinite(Number(value))?Number(value):0};
+ }).filter(d=>d.year>0);
 }
 function hn641RenderChart(){
  const root=document.getElementById('hn641Chart');if(!root)return;
+ try{
  const data=hn641ChartData(hn641ChartMode);
- if(!data.length){root.innerHTML='<div class="hn641-chart-empty">Complete the plan and run the projection to see the retirement outlook.</div>';return}
+ if(!data.length){root.innerHTML='<div class="hn641-chart-empty">Projection data is not available yet. Open Results once, then return to Overview.</div>';return}
  const width=900,height=250,pad={l:70,r:18,t:18,b:34};
  const values=data.map(d=>d.value),min=Math.min(0,...values),max=Math.max(...values,1),range=Math.max(1,max-min);
  const x=i=>pad.l+(i/(Math.max(1,data.length-1)))*(width-pad.l-pad.r);
@@ -6990,6 +7008,10 @@ function hn641RenderChart(){
   <polyline points="${points}" fill="none" stroke="#356f63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline>
   ${data.map((d,i)=>i===0||i===data.length-1||i===Math.floor(data.length/2)?`<text x="${x(i)}" y="${height-10}" text-anchor="middle" font-size="11" fill="#6d7c7d">${d.year}</text>`:'').join('')}
  </svg>`;
+ }catch(error){
+  console.error('Overview chart error',error);
+  root.innerHTML='<div class="hn641-chart-empty">The outlook chart could not be drawn. Your retirement calculations are still available in Results.</div>';
+ }
 }
 function hn641RenderOverviewExtras(){
  const progress=hn341Progress();
@@ -7021,7 +7043,10 @@ function hn641RenderOverviewExtras(){
 }
 
 function hn341RenderEnhancements(page){
- if(page==='home'){renderHN341Dashboard();hn641RenderOverviewExtras();}
+ if(page==='home'){
+  try{renderHN341Dashboard()}catch(error){console.error('Overview dashboard error',error)}
+  setTimeout(()=>{try{hn641RenderOverviewExtras()}catch(error){console.error('Overview extras error',error)}},0);
+ }
  if(page==='stability')renderHN341Guided();
 }
 
@@ -8918,9 +8943,9 @@ hnRenderProtectionStatus();
     }
 
     const foot=document.querySelector('.hn-sidebar-foot small');
-    if(foot)foot.textContent='Harbour North · Overview Visual Refresh 6.4.1.1';
+    if(foot)foot.textContent='Harbour North · Overview Chart Fix 6.4.1.2';
 
-    document.title='Harbour North — Overview Visual Refresh 6.4.1.1';
+    document.title='Harbour North — Overview Chart Fix 6.4.1.2';
   }
 
   if(document.readyState==='loading'){
@@ -9157,6 +9182,15 @@ document.addEventListener('click',e=>{
  hn641ChartMode=button.dataset.hn641Chart||'income';
  document.querySelectorAll('[data-hn641-chart]').forEach(x=>x.classList.toggle('active',x===button));
  hn641RenderChart();
+});
+
+
+window.addEventListener('load',()=>{
+ setTimeout(()=>{
+  if(document.getElementById('home')?.classList.contains('active')){
+   try{hn641RenderOverviewExtras()}catch(error){console.error('Initial overview chart error',error)}
+  }
+ },250);
 });
 
 </script>
